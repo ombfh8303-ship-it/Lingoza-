@@ -92,7 +92,7 @@ function addPracticeQuestions(lessons, language) {
     const vocabulary = extraVocabulary[language][lessonIndex];
     const additions = vocabulary.map(([word, arabic, english], index) => {
       const distractors = [vocabulary[(index + 1) % vocabulary.length], vocabulary[(index + 2) % vocabulary.length]];
-      const correct = index % 3;
+      const correct = Math.floor(Math.random() * 3);
       const makeOptions = (field, correctValue) => {
         const values = distractors.map(item => item[field]);
         values.splice(correct, 0, correctValue);
