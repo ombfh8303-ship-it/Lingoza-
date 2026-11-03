@@ -27,7 +27,7 @@ const copy = {
   levelSub:'سنرتب الدروس بما يناسب خبرتك.',beginner0:'مبتدئ تماماً',beginner:'لدي بعض الأساسيات',
   intermediate:'متوسط',startNow:'ابدأ التعلم',changeCourse:'تغيير اللغة',
   courseEnglish:'الإنجليزية',courseFrench:'الفرنسية',englishDesc:'لغة عالمية للحياة والعمل والسفر',
-  frenchDesc:'تعلّم لغة الثقافة والسفر والتواصل',courseLabel:'تتعلم الآن',conversationTitle:'تدرّب على مواقف الحياة',conversationIntro:'اختر موقفاً وتعلّم كيف ترد باللغة التي تتعلمها.',conversationChoose:'ابدأ المحادثة',conversationBack:'كل المواقف',conversationStep:'الخطوة',conversationReply:'اختر الرد الأنسب',conversationCheck:'تحقق من الرد',conversationCorrect:'أحسنت! هذا هو الرد المناسب.',conversationWrong:'ليس الرد الأنسب. حاول مرة أخرى.',conversationRetry:'حاول مجدداً',conversationNext:'الخطوة التالية',conversationFinish:'إنهاء المحادثة',conversationCompleted:'أكملت هذا الموقف',conversationReward:'+20 XP عند الإكمال',conversationTarget:'العبارة باللغة التي تتعلمها'
+  frenchDesc:'تعلّم لغة الثقافة والسفر والتواصل',courseLabel:'تتعلم الآن',conversationTitle:'تدرّب على مواقف الحياة',conversationIntro:'اختر موقفاً وتعلّم كيف ترد باللغة التي تتعلمها.',conversationChoose:'ابدأ المحادثة',conversationBack:'كل المواقف',conversationStep:'الخطوة',conversationReply:'اختر الرد الأنسب',conversationCheck:'تحقق من الرد',conversationCorrect:'أحسنت! إجابة صحيحة.',conversationWrong:'إجابة خاطئة.',conversationRetry:'حاول مجدداً',conversationNext:'الخطوة التالية',conversationFinish:'إنهاء المحادثة',conversationCompleted:'أكملت هذا الموقف',conversationReward:'+20 XP عند الإكمال',conversationTarget:'العبارة باللغة التي تتعلمها'
  },
  en: {
   navHome:'Home',navPath:'Learning path',navWords:'Conversations',navRanks:'Achievements',
@@ -51,7 +51,7 @@ const copy = {
   beginner:'I know some basics',intermediate:'Intermediate',startNow:'Start learning',
   changeCourse:'Change language',courseEnglish:'English',courseFrench:'French',
   englishDesc:'A global language for life, work and travel',
-  frenchDesc:'Learn the language of culture, travel and connection',courseLabel:'LEARNING',conversationTitle:'Practice real-life situations',conversationIntro:'Choose a situation and learn how to respond in your target language.',conversationChoose:'Start conversation',conversationBack:'All situations',conversationStep:'Step',conversationReply:'Choose the best reply',conversationCheck:'Check reply',conversationCorrect:'Great job! That is the best response.',conversationWrong:'That is not the best response. Try again.',conversationRetry:'Try again',conversationNext:'Next step',conversationFinish:'Finish conversation',conversationCompleted:'Situation completed',conversationReward:'+20 XP on completion',conversationTarget:'Phrase in your target language'
+  frenchDesc:'Learn the language of culture, travel and connection',courseLabel:'LEARNING',conversationTitle:'Practice real-life situations',conversationIntro:'Choose a situation and learn how to respond in your target language.',conversationChoose:'Start conversation',conversationBack:'All situations',conversationStep:'Step',conversationReply:'Choose the best reply',conversationCheck:'Check reply',conversationCorrect:'Well done! Correct answer.',conversationWrong:'Incorrect answer.',conversationRetry:'Try again',conversationNext:'Next step',conversationFinish:'Finish conversation',conversationCompleted:'Situation completed',conversationReward:'+20 XP on completion',conversationTarget:'Phrase in your target language'
  }
 };
 
