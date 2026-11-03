@@ -86,8 +86,8 @@ const vocabularyPhotos = {
  door:'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&auto=format&fit=crop&q=85',
 };
 const photoKeyFor = (value) => {
- const word=String(value||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').trim();
- const aliases={pomme:'apple',pain:'bread',riz:'rice',poulet:'chicken',eau:'water',cafe:'coffee',bus:'bus',train:'train',cuisine:'kitchen',chambre:'bedroom',passeport:'passport',bagages:'suitcase',hotel:'hotel',livre:'book',lecture:'book',musique:'music',telephone:'phone',medecin:'doctor',mere:'family',pere:'family',chaise:'chair',table:'table',cle:'key',porte:'door'};
+ const word=String(value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+ const aliases={pomme:'apple',pain:'bread',riz:'rice',poulet:'chicken',eau:'water',cafe:'coffee',bus:'bus',train:'train',cuisine:'kitchen',chambre:'bedroom',passeport:'passport',bagages:'suitcase',hotel:'hotel',livre:'book',lecture:'book',musique:'music',medecin:'doctor',mere:'family',pere:'family',chaise:'chair',table:'table',cle:'key',porte:'door'};
  const key=aliases[word]||word;
  return vocabularyPhotos[key]?key:null;
 };
