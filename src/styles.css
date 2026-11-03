@@ -29,7 +29,7 @@
 .level-option strong{font-size:12px}
 .level-option small{font-size:10px;color:#9aa5b3}
 .level-option>svg{color:#159b73}
-.setup-submit{width:100%;margin-top:27px;border:0;border-radius:11px;background:#20bd8c;color:#073e35;min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px;font:800 13px inherit;cursor:pointer}
+.setup-submit{width:100%;margin-top:27px;border:0;border-radius:11px;background:#20bd8c;color:#073e35;min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
 .setup-submit:disabled{opacity:.4;cursor:not-allowed}
 .setup-foot{text-align:center;font-size:10px;color:#a0aaba;margin-top:13px}
 .course-switch{background:#f5fcf8;border-color:#d8eee5;color:#168c6b}
