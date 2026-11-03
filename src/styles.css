@@ -174,3 +174,24 @@
 .review-panel-action button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:9px;background:#eaf8f3;color:#138b68;padding:10px 12px;font:inherit;font-size:10px;font-weight:800;cursor:pointer}
 .review-panel-action button:disabled{background:#f2f5f6;color:#9aa5b1;cursor:default}
 @media(max-width:520px){.review-panel{align-items:flex-start;flex-direction:column;gap:12px;padding:14px}.review-panel-action{width:100%;justify-content:space-between}.review-panel-action button{flex:1}}
+
+
+/* More visual and guided lesson experience */
+.lesson-illustration{height:148px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;margin:16px 0 14px;border:1px solid #dcefe7;border-radius:17px;background:radial-gradient(circle at 50% 35%,#ffffff 0,#f4fcf8 48%,#e9f8f1 100%)}
+.lesson-illustration:before,.lesson-illustration:after{content:"";position:absolute;border-radius:50%;background:#c7efdf55}
+.lesson-illustration:before{width:118px;height:118px;inset-inline-start:-35px;top:-52px}
+.lesson-illustration:after{width:92px;height:92px;inset-inline-end:-25px;bottom:-43px}
+.lesson-illustration-emoji{position:relative;z-index:1;display:grid;place-items:center;width:78px;height:78px;border-radius:25px;background:#fff;box-shadow:0 9px 25px #1c8b6720;font-size:43px;line-height:1;animation:lesson-float 3s ease-in-out infinite}
+.lesson-illustration-label{position:relative;z-index:1;color:#238568;font-size:10px;font-weight:800;letter-spacing:.3px}
+.illustration-orbit{position:absolute;border:1px dashed #9bd8bf;border-radius:50%;width:112px;height:112px}
+.orbit-left{inset-inline-start:calc(50% - 56px);top:17px}
+.orbit-right{width:134px;height:134px;inset-inline-start:calc(50% - 67px);top:6px;border-color:#d0ecdf}
+.lesson-question-meta{align-items:center;gap:8px;margin-bottom:2px;letter-spacing:0}
+.lesson-question-meta>span{font-size:10px;letter-spacing:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lesson-question-meta>b{white-space:nowrap;font-size:10px}
+.lesson-modal .word-display{padding:8px 5px 2px;line-height:1.35;overflow-wrap:anywhere}
+.lesson-modal .answers{gap:9px}
+.lesson-modal .answer-option{min-height:49px;border-radius:12px;padding:9px 12px}
+.lesson-modal .answer-option:focus-visible,.listen-play-button:focus-visible{outline:3px solid #9de5c9;outline-offset:2px}
+@keyframes lesson-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+@media(max-width:580px){.lesson-illustration{height:130px;margin:13px 0}.lesson-illustration-emoji{width:69px;height:69px;font-size:38px;border-radius:22px}.lesson-modal h2{font-size:16px}.lesson-modal .answer-option{min-height:47px;font-size:12px}}
