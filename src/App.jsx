@@ -52,23 +52,26 @@ const copy = {
  }
 };
 
+function safeStoredValue(key,fallback){try{const value=localStorage.getItem(key);return value===null?fallback:value}catch{return fallback}}
+function safeStoredArray(key){try{const value=JSON.parse(safeStoredValue(key,'[]'));return Array.isArray(value)?value:[]}catch{return []}}
+
 function App(){
- const [lang,setLang]=useState(()=>localStorage.getItem('lingoza-ui')||'ar');
- const [course,setCourse]=useState(()=>localStorage.getItem('lingoza-course')||'');
- const [level,setLevel]=useState(()=>localStorage.getItem('lingoza-level')||'');
- const [setupDone,setSetupDone]=useState(()=>localStorage.getItem('lingoza-setup-done')==='1');
+ const [lang,setLang]=useState(()=>safeStoredValue('lingoza-ui','ar')==='en'?'en':'ar');
+ const [course,setCourse]=useState(()=>['en','fr'].includes(safeStoredValue('lingoza-course',''))?safeStoredValue('lingoza-course',''):'');
+ const [level,setLevel]=useState(()=>safeStoredValue('lingoza-level',''));
+ const [setupDone,setSetupDone]=useState(()=>safeStoredValue('lingoza-setup-done','0')==='1');
  const [active,setActive]=useState('home'),[lessonOpen,setLessonOpen]=useState(false),
  [q,setQ]=useState(0),[choice,setChoice]=useState(null),[checked,setChecked]=useState(false),
- [earned,setEarned]=useState(()=>Number(localStorage.getItem('lingoza-xp')||0)),
- [completedLessons,setCompletedLessons]=useState(()=>JSON.parse(localStorage.getItem('lingoza-completed')||'[]')),
- [awardedQuestions,setAwardedQuestions]=useState(()=>JSON.parse(localStorage.getItem('lingoza-awarded')||'[]')),
+ [earned,setEarned]=useState(()=>{const n=Number(safeStoredValue('lingoza-xp','0'));return Number.isFinite(n)&&n>=0?n:0}),
+ [completedLessons,setCompletedLessons]=useState(()=>safeStoredArray('lingoza-completed')),
+ [awardedQuestions,setAwardedQuestions]=useState(()=>safeStoredArray('lingoza-awarded')), 
  [lessonIndex,setLessonIndex]=useState(0),[mobileNav,setMobileNav]=useState(false);
  const rtl=lang==='ar';
  const t=copy[lang];
  const courseLessons=lessonLibrary[course]||lessonLibrary.en;
  const selectedLesson=courseLessons[lessonIndex]||courseLessons[0];
  const questions=selectedLesson.questions;
- const current=questions[q];
+ const current=questions[q]||questions[0];
  const options=rtl?current.ar:current.en;
  const courseCompleted=completedLessons.filter(x=>x.startsWith(course+'-')).length;
  const progress=Math.min(100,Math.round((Math.min(courseCompleted,3)/3)*100));
