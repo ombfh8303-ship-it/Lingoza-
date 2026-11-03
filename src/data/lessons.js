@@ -164,7 +164,7 @@ export const learningNotes = {
     "My family": ["تعني عائلتي. كلمة family تعامل غالباً كمفرد في الإنجليزية الأمريكية.", "My family is here. — عائلتي هنا."],
     "Water": ["اسم غير معدود عادةً؛ نقول some water أو a glass of water.", "Can I have some water? — هل يمكنني الحصول على بعض الماء؟"],
     "Book": ["تعني كتاب. الجمع Books بإضافة s.", "This is my book. — هذا كتابي."],
-    "Phone": ["تعني هاتف، وغالباً تُستخدم اختصاراً لـ mobile phone أو cell phone.", "My phone is new. — هاتفي جديد."]
+    "Phone": ["تعني هاتف، وغالباً تُستخدم اختصاراً لـ mobile phone أو cell phone.", "My phone is new. — هاتفي جديد."],
     "I am hungry.": ["نستخدم hungry لوصف الشعور بالجوع، ونقول I am hungry باستخدام فعل be.","I am hungry after work. — أشعر بالجوع بعد العمل."],
     "A glass of water, please.": ["نستخدم a glass of مع المشروبات عندما نطلب كوباً واحداً، وplease تجعل الطلب مهذباً.","A glass of water, please. — كوب ماء من فضلك."],
     "How much is this?": ["هذا سؤال شائع عن السعر. كلمة this تشير إلى الشيء القريب منك.","How much is this bag? — كم سعر هذه الحقيبة؟"],
@@ -202,7 +202,8 @@ export const learningNotes = {
     "Ma famille": ["تعني عائلتي. كلمة famille مؤنثة، لذلك نستخدم ma.", "Ma famille est grande. — عائلتي كبيرة."],
     "Eau": ["تعني ماء، وهي مؤنثة: de l'eau. يبدأ نطقها بصوت قريب من «أو».", "Je voudrais de l'eau. — أريد ماءً."],
     "Livre": ["تعني كتاب، وهي مذكرة: un livre. لا تخلط بينها وبين livre بمعنى رطل في سياقات أخرى.", "C'est un livre intéressant. — هذا كتاب ممتع."],
-    "Téléphone": ["تعني هاتف، وتُستخدم أيضاً في الفعل téléphoner بمعنى يتصل هاتفياً.", "Mon téléphone est ici. — هاتفي هنا."]    "J'ai faim.": ["في الفرنسية نستخدم الفعل avoir مع faim؛ والتعبير حرفياً يعني «لدي جوع».","J'ai faim maintenant. — أنا جائع الآن."],
+    "Téléphone": ["تعني هاتف، وتُستخدم أيضاً في الفعل téléphoner بمعنى يتصل هاتفياً.", "Mon téléphone est ici. — هاتفي هنا."],
+    "J'ai faim.": ["في الفرنسية نستخدم الفعل avoir مع faim؛ والتعبير حرفياً يعني «لدي جوع».","J'ai faim maintenant. — أنا جائع الآن."],
     "Un verre d'eau, s'il vous plaît.": ["كلمة verre مذكرة، لذلك نقول un verre. ونستخدم d'eau بعد كمية أو وعاء.","Un verre d'eau, s'il vous plaît. — كوب ماء من فضلك."],
     "Combien ça coûte ?": ["هذا التعبير هو السؤال الشائع عن السعر، وكلمة coûte من الفعل coûter أي يكلّف.","Combien ça coûte, ce sac ? — كم سعر هذه الحقيبة؟"],
     "Je peux payer par carte ?": ["peux هي صيغة je من الفعل pouvoir، وتُستخدم للسؤال عمّا إذا كان الشيء ممكناً.","Je peux payer par carte bancaire ? — هل يمكنني الدفع ببطاقة مصرفية؟"],
