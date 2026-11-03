@@ -38,3 +38,5 @@
 .lesson-picker{display:block;max-width:100%;margin-top:9px;border:1px solid #dceee7;border-radius:8px;background:#f7fcf9;color:#28745f;padding:7px 9px;font:600 10px inherit;outline:none;cursor:pointer}
 .lesson-picker:focus{border-color:#20bd8c;box-shadow:0 0 0 3px #20bd8c18}
 .lesson-picker option{color:#24364d;background:#fff}
+
+.daily-challenge-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid #edf0f5}.daily-challenge-row>span{font-size:11px;color:#8290a2;line-height:1.6}.daily-challenge-row button{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex-shrink:0;border:0;border-radius:9px;background:#e8f8f2;color:#128963;padding:9px 12px;font:inherit;font-size:11px;font-weight:800;cursor:pointer}.daily-challenge-row button:disabled{background:#f1f4f6;color:#8995a3;cursor:default}@media(max-width:520px){.daily-challenge-row{align-items:flex-start;flex-direction:column}.daily-challenge-row button{width:100%}}
