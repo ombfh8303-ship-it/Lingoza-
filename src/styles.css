@@ -472,3 +472,31 @@
   .content:has(> .welcome-row) .path-grid { grid-template-columns: 1fr; gap: 10px; }
   .content:has(> .welcome-row) .path-card { min-height: 0; padding: 15px; }
 }
+
+/* Requested compact dashboard + mobile fixed tabs */
+.mobile-bottom-nav{display:none}
+@media(max-width:700px){
+ .mobile-bottom-nav{position:fixed;z-index:100;inset-inline:0;bottom:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:8px 7px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid #dcebe5;box-shadow:0 -7px 22px #12382b12;backdrop-filter:blur(14px)}
+ .mobile-bottom-nav button{border:0;background:transparent;color:#789087;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:48px;font:inherit;font-size:10px;font-weight:700;border-radius:12px}
+ .mobile-bottom-nav button.current{color:#087c5b;background:#e9f7f0}
+ .mobile-bottom-nav button.current svg{stroke-width:2.7}
+ .main{padding-bottom:82px!important}
+ .content:has(>.welcome-row){padding:17px 13px 24px}
+ .content:has(>.welcome-row) .welcome-row{margin-bottom:13px}
+ .content:has(>.welcome-row) .welcome-row .eyebrow{display:none}
+ .content:has(>.welcome-row) .welcome-row h1{font-size:20px;margin:0 0 4px}
+ .content:has(>.welcome-row) .welcome-row p{font-size:11px}
+ .content:has(>.welcome-row) .hero-grid{gap:9px;margin-bottom:13px}
+ .content:has(>.welcome-row) .hero-card{min-height:174px;padding:16px 15px;border-radius:17px}
+ .content:has(>.welcome-row) .hero-content{max-width:76%;position:relative;z-index:2}
+ .content:has(>.welcome-row) .hero-card h2{font-size:18px;line-height:1.45;margin:9px 0 5px}
+ .content:has(>.welcome-row) .hero-card p{font-size:10px;line-height:1.55;margin:0 0 8px}
+ .content:has(>.welcome-row) .primary-btn{min-height:37px;padding:8px 13px;font-size:11px}
+ .content:has(>.welcome-row) .hero-art{opacity:.48;transform:translateY(-50%) scale(.57);inset-inline-end:-32px}
+ .content:has(>.welcome-row) .stats-column{gap:8px}
+ .content:has(>.welcome-row) .stat-card{min-height:88px;padding:11px;align-items:center}
+ .content:has(>.welcome-row) .stat-card strong{font-size:24px}
+ .content:has(>.welcome-row) .stat-card em{font-size:9px;font-style:normal;color:#15805f;font-weight:700}
+ .content:has(>.welcome-row) .dashboard-grid{gap:9px}
+ .content:has(>.welcome-row) .daily-panel .daily-challenge-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+}
