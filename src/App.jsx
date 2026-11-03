@@ -83,8 +83,15 @@ const vocabularyPhotos = {
  table:'https://images.unsplash.com/photo-1499933374294-4584851497cc?w=900&auto=format&fit=crop&q=85',
 };
 const photoKeyFor = (value) => {
- const word=String(value||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').trim();
- const aliases={pomme:'apple',pain:'bread',riz:'rice',poulet:'chicken',eau:'water',cafe:'coffee',bus:'bus',train:'train',cuisine:'kitchen',bagages:'suitcase',hotel:'hotel',livre:'book',lecture:'book',musique:'music',medecin:'doctor',chaise:'chair',table:'table'};
+ const word=String(value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+ const aliases={
+  // French vocabulary mapped only to an already curated, matching photo.
+  pomme:'apple',pommes:'apple',pain:'bread',riz:'rice',poulet:'chicken',eau:'water',cafe:'coffee',cafes:'coffee',
+  cuisine:'kitchen',bagage:'suitcase',bagages:'suitcase',valise:'suitcase',valises:'suitcase',hotel:'hotel',hotels:'hotel',
+  livre:'book',livres:'book',lecture:'book',musique:'music',medecin:'doctor',medecins:'doctor',famille:'family',chaise:'chair',chaises:'chair',table:'table',tables:'table',
+  // Common exact English forms used in lesson prompts.
+  'my family':'family','the family':'family',books:'book',chairs:'chair',tables:'table',apples:'apple'
+ };
  const key=aliases[word]||word;
  return vocabularyPhotos[key]?key:null;
 };
