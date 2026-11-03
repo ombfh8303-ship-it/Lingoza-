@@ -141,3 +141,51 @@ function buildAdditionalLessons(language) {
 }
 lessonLibrary.en = [...lessonLibrary.en, ...buildAdditionalLessons('en')];
 lessonLibrary.fr = [...lessonLibrary.fr, ...buildAdditionalLessons('fr')];
+
+
+export const learningNotes = {
+  en: {
+    "Hello": ["تُستخدم للتحية في معظم المواقف اليومية، وهي مناسبة مع الأصدقاء والغرباء.", "Hello, how are you? — مرحباً، كيف حالك؟"],
+    "Good morning": ["تُقال عادةً في الصباح حتى وقت الظهيرة.", "Good morning, everyone. — صباح الخير جميعاً."],
+    "Goodbye": ["تُستخدم عند المغادرة. ويمكن قول Bye في المواقف غير الرسمية.", "Goodbye! See you tomorrow. — إلى اللقاء! أراك غداً."],
+    "My name is Ali": ["استخدم My name is ثم اسمك للتعريف بنفسك.", "My name is Ahmad. — اسمي أحمد."],
+    "Nice to meet you": ["عبارة مهذبة تقال عند مقابلة شخص للمرة الأولى.", "Nice to meet you, too. — وأنا سعيد بلقائك أيضاً."],
+    "Where are you from?": ["للسؤال عن بلد الشخص أو أصله. الجواب يبدأ غالباً بـ I'm from…", "I'm from Jordan. — أنا من الأردن."],
+    "Please": ["تجعل الطلب أكثر تهذيباً، وغالباً تأتي في نهاية الطلب أو بدايته.", "A glass of water, please. — كوب ماء من فضلك."],
+    "Thank you": ["تُستخدم للتعبير عن الشكر. والرد الشائع هو You're welcome.", "Thank you for your help. — شكراً لمساعدتك."],
+    "I'm sorry": ["تُستخدم للاعتذار، ويمكن أن تعبّر أيضاً عن الأسف عند سماع خبر سيئ.", "I'm sorry I'm late. — أنا آسف لأنني تأخرت."],
+    "Three": ["انتبه إلى نطق th في بداية الكلمة؛ يخرج طرف اللسان قليلاً بين الأسنان.", "I have three books. — لدي ثلاثة كتب."],
+    "Seven": ["العدد سبعة. تدرّب على تمييزه عن Seventeen (سبعة عشر).", "The bus arrives at seven. — تصل الحافلة الساعة السابعة."],
+    "Ten": ["العدد عشرة، ويختلف عن كلمة Then التي تعني ثمّ.", "I have ten minutes. — لدي عشر دقائق."],
+    "Jordan": ["اسم البلد باللغة الإنجليزية، ويُقال I'm from Jordan للتعريف ببلدك.", "Jordan is my home. — الأردن وطني."],
+    "I speak Arabic": ["نستخدم speak مع اللغات: speak Arabic, speak English.", "I speak Arabic and English. — أتحدث العربية والإنجليزية."],
+    "Mother": ["تعني الأم. كلمة Mom شائعة أكثر في الإنجليزية الأمريكية غير الرسمية.", "My mother is kind. — أمي لطيفة."],
+    "Sister": ["تعني أخت، وتُستخدم للأخت من أي عمر.", "I have one sister. — لدي أخت واحدة."],
+    "My family": ["تعني عائلتي. كلمة family تعامل غالباً كمفرد في الإنجليزية الأمريكية.", "My family is here. — عائلتي هنا."],
+    "Water": ["اسم غير معدود عادةً؛ نقول some water أو a glass of water.", "Can I have some water? — هل يمكنني الحصول على بعض الماء؟"],
+    "Book": ["تعني كتاب. الجمع Books بإضافة s.", "This is my book. — هذا كتابي."],
+    "Phone": ["تعني هاتف، وغالباً تُستخدم اختصاراً لـ mobile phone أو cell phone.", "My phone is new. — هاتفي جديد."]
+  },
+  fr: {
+    "Bonjour": ["تُستخدم للتحية خلال النهار، ويمكن أن تعني مرحباً أو صباح الخير.", "Bonjour, comment ça va ? — مرحباً، كيف حالك؟"],
+    "Bonsoir": ["تُستخدم للتحية في المساء، أما Bonne nuit فتقال عند الذهاب للنوم.", "Bonsoir, madame. — مساء الخير سيدتي."],
+    "Au revoir": ["عبارة الوداع الأساسية في الفرنسية.", "Au revoir et à bientôt ! — إلى اللقاء وإلى قريب!"],
+    "Je m'appelle Lina": ["للتعريف بالاسم: Je m'appelle ثم اسمك، ومعناها اسمي…", "Je m'appelle Adam. — اسمي آدم."],
+    "Enchanté(e)": ["تقال عند التعارف بمعنى سعيد بلقائك. تتغير الكتابة حسب المتحدث في الصيغة المكتوبة التقليدية.", "Enchanté de vous rencontrer. — سعيد بلقائك."],
+    "Tu viens d'où ?": ["سؤال غير رسمي عن الأصل. للصيغة الرسمية نقول Vous venez d'où ?", "Je viens de Jordanie. — أنا من الأردن."],
+    "S'il vous plaît": ["صيغة مهذبة لقول من فضلك، وتُستخدم مع الغرباء أو في المواقف الرسمية.", "Un café, s'il vous plaît. — قهوة من فضلك."],
+    "Merci": ["تعني شكراً، والرد الشائع هو De rien أو Je vous en prie.", "Merci beaucoup ! — شكراً جزيلاً!"],
+    "Pardon": ["تُستخدم للاعتذار الخفيف أو لطلب تكرار الكلام.", "Pardon, vous pouvez répéter ? — عذراً، هل يمكنك الإعادة؟"],
+    "Trois": ["تعني ثلاثة. انتبه إلى أن s في نهاية الكلمة لا تُنطق هنا.", "J'ai trois frères. — لدي ثلاثة إخوة."],
+    "Sept": ["تعني سبعة، وحرف p الأخير لا يُنطق في النطق المعتاد.", "Il est sept heures. — الساعة السابعة."],
+    "Dix": ["تعني عشرة، ويختلف نطق x بحسب الكلمة التي تليها.", "Dix minutes, s'il vous plaît. — عشر دقائق من فضلك."],
+    "La Jordanie": ["اسم الأردن بالفرنسية، ويأتي غالباً مع أداة التعريف المؤنثة la.", "Je viens de Jordanie. — أنا من الأردن."],
+    "Je parle arabe": ["الفعل parler يعني يتحدث؛ نقول Je parle ثم اسم اللغة.", "Je parle anglais et arabe. — أتحدث الإنجليزية والعربية."],
+    "Mère": ["تعني أم. ويمكن قول Ma mère بمعنى أمي.", "Ma mère habite ici. — أمي تسكن هنا."],
+    "Sœur": ["تعني أخت، والـ œ تُكتب كحرفين متداخلين في بعض لوحات المفاتيح.", "J'ai une sœur. — لدي أخت."],
+    "Ma famille": ["تعني عائلتي. كلمة famille مؤنثة، لذلك نستخدم ma.", "Ma famille est grande. — عائلتي كبيرة."],
+    "Eau": ["تعني ماء، وهي مؤنثة: de l'eau. يبدأ نطقها بصوت قريب من «أو».", "Je voudrais de l'eau. — أريد ماءً."],
+    "Livre": ["تعني كتاب، وهي مذكرة: un livre. لا تخلط بينها وبين livre بمعنى رطل في سياقات أخرى.", "C'est un livre intéressant. — هذا كتاب ممتع."],
+    "Téléphone": ["تعني هاتف، وتُستخدم أيضاً في الفعل téléphoner بمعنى يتصل هاتفياً.", "Mon téléphone est ici. — هاتفي هنا."]
+  }
+};
