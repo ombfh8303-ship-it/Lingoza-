@@ -87,18 +87,29 @@ export const lessonLibrary = {
 
 
 const extraVocabulary = {"en":[[["How are you?","كيف حالك؟","How are you?"],["I'm fine, thank you.","أنا بخير، شكراً.","I'm fine, thank you."],["Good afternoon","مساء الخير","Good afternoon"],["See you later","أراك لاحقاً","See you later"],["Welcome","أهلاً وسهلاً","Welcome"]],[["What's your name?","ما اسمك؟","What's your name?"],["I'm from Jordan.","أنا من الأردن.","I'm from Jordan."],["I am twenty years old.","عمري عشرون عاماً.","I am twenty years old."],["Where do you live?","أين تعيش؟","Where do you live?"],["I live in Amman.","أعيش في عمّان.","I live in Amman."]],[["You're welcome","على الرحب والسعة","You're welcome"],["Excuse me","المعذرة","Excuse me"],["No problem","لا مشكلة","No problem"],["Could you help me?","هل يمكنك مساعدتي؟","Could you help me?"],["That's okay","لا بأس","That's okay"]],[["One","واحد","One"],["Two","اثنان","Two"],["Four","أربعة","Four"],["Eight","ثمانية","Eight"],["Nine","تسعة","Nine"]],[["I'm Jordanian.","أنا أردني.","I'm Jordanian."],["I speak English.","أتحدث الإنجليزية.","I speak English."],["I'm learning French.","أتعلم الفرنسية.","I'm learning French."],["What language do you speak?","ما اللغة التي تتحدثها؟","What language do you speak?"],["I am from Jordan.","أنا من الأردن.","I am from Jordan."]],[["Father","أب","Father"],["Brother","أخ","Brother"],["Grandmother","جدة","Grandmother"],["My parents","والداي","My parents"],["I have one sister.","لدي أخت واحدة.","I have one sister."]],[["Chair","كرسي","Chair"],["Table","طاولة","Table"],["Key","مفتاح","Key"],["Door","باب","Door"],["Bag","حقيبة","Bag"]],[["Good night","تصبح على خير","Good night"],["How are you?","كيف حالك؟","How are you?"],["My name is Omar.","اسمي عمر.","My name is Omar."],["Thank you very much.","شكراً جزيلاً.","Thank you very much."],["I'm from Jordan.","أنا من الأردن.","I'm from Jordan."]]],"fr":[[["Comment ça va ?","كيف حالك؟","How are you?"],["Ça va bien, merci.","أنا بخير، شكراً.","I'm fine, thank you."],["Salut","أهلاً","Hi"],["À bientôt","أراك قريباً","See you soon"],["Bienvenue","أهلاً وسهلاً","Welcome"]],[["Comment tu t'appelles ?","ما اسمك؟","What's your name?"],["Je viens de Jordanie.","أنا من الأردن.","I'm from Jordan."],["J'ai vingt ans.","عمري عشرون عاماً.","I'm twenty years old."],["Où habites-tu ?","أين تسكن؟","Where do you live?"],["J'habite à Amman.","أسكن في عمّان.","I live in Amman."]],[["Je vous en prie","على الرحب والسعة","You're welcome"],["Excusez-moi","المعذرة","Excuse me"],["Pas de problème","لا مشكلة","No problem"],["Pouvez-vous m'aider ?","هل يمكنك مساعدتي؟","Can you help me?"],["Ce n'est pas grave","لا بأس","It's okay"]],[["Un","واحد","One"],["Deux","اثنان","Two"],["Quatre","أربعة","Four"],["Huit","ثمانية","Eight"],["Neuf","تسعة","Nine"]],[["Je suis jordanien.","أنا أردني.","I'm Jordanian."],["Je parle anglais.","أتحدث الإنجليزية.","I speak English."],["J'apprends le français.","أتعلم الفرنسية.","I'm learning French."],["Quelle langue parles-tu ?","ما اللغة التي تتحدثها؟","What language do you speak?"],["Je viens de Jordanie.","أنا من الأردن.","I'm from Jordan."]],[["Père","أب","Father"],["Frère","أخ","Brother"],["Grand-mère","جدة","Grandmother"],["Mes parents","والداي","My parents"],["J'ai une sœur.","لدي أخت واحدة.","I have one sister."]],[["Chaise","كرسي","Chair"],["Table","طاولة","Table"],["Clé","مفتاح","Key"],["Porte","باب","Door"],["Sac","حقيبة","Bag"]],[["Bonne nuit","تصبح على خير","Good night"],["Comment ça va ?","كيف حالك؟","How are you?"],["Je m'appelle Omar.","اسمي عمر.","My name is Omar."],["Merci beaucoup.","شكراً جزيلاً.","Thank you very much."],["Je viens de Jordanie.","أنا من الأردن.","I'm from Jordan."]]]};
+function shuffleChoices(items) {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function addPracticeQuestions(lessons, language) {
   return lessons.map((lesson, lessonIndex) => {
     const vocabulary = extraVocabulary[language][lessonIndex];
     const additions = vocabulary.map(([word, arabic, english], index) => {
-      const distractors = [vocabulary[(index + 1) % vocabulary.length], vocabulary[(index + 2) % vocabulary.length]];
-      const correct = Math.floor(Math.random() * 3);
-      const makeOptions = (field, correctValue) => {
-        const values = distractors.map(item => item[field]);
-        values.splice(correct, 0, correctValue);
-        return values;
+      const correctItem = vocabulary[index];
+      const distractors = shuffleChoices(vocabulary.filter((_, itemIndex) => itemIndex !== index)).slice(0, 2);
+      const choices = shuffleChoices([correctItem, ...distractors]);
+      const correct = choices.indexOf(correctItem);
+      const question = {
+        word,
+        ar: choices.map(item => item[1]),
+        en: choices.map(item => item[2]),
+        correct
       };
-      const question = { word, ar: makeOptions(1, arabic), en: makeOptions(2, english), correct };
       if (index < 2) { question.type = 'listening'; question.audioText = word; }
       return question;
     });
@@ -117,12 +128,14 @@ function buildAdditionalLessons(language) {
       english
     }));
     const questions = rows.map((row, index) => {
-      const distractors = [rows[(index + 1) % rows.length], rows[(index + 2) % rows.length]];
-      const correct = index % 3;
-      const ar = distractors.map(item => item.arabic);
-      const en = distractors.map(item => item.english);
-      ar.splice(correct, 0, row.arabic);
-      en.splice(correct, 0, row.english);
+      // Keep vocabulary questions matched with vocabulary distractors,
+      // and phrase questions matched with other phrases.
+      const sameTypeRows = index < 5 ? rows.slice(0, 5) : rows.slice(5);
+      const distractors = shuffleChoices(sameTypeRows.filter((_, itemIndex) => (index < 5 ? itemIndex : itemIndex + 5) !== index)).slice(0, 2);
+      const choices = shuffleChoices([row, ...distractors]);
+      const correct = choices.indexOf(row);
+      const ar = choices.map(item => item.arabic);
+      const en = choices.map(item => item.english);
       const question = { word: row.word, ar, en, correct };
       if (index === 1 || index === 4) {
         question.type = 'listening';
