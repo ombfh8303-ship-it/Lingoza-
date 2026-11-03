@@ -84,7 +84,6 @@ function App(){
  const todayKey=localDateKey();
  const dailyChallengeKey=course+'-'+todayKey;
  const dailyChallengeDone=completedChallenges.includes(dailyChallengeKey);
- const dailyChallengeIndex=dailyLessonFor(courseLessons.length);
  const selectedLesson=courseLessons[lessonIndex]||courseLessons[0];
  const questions=selectedLesson.questions;
  const current=questions[q]||questions[0];
@@ -96,6 +95,7 @@ function App(){
  const unit2Unlocked=unit1Done===3;
  const unit3Unlocked=unit2Unlocked&&unit2Done===3;
  const unlockedLessonLimit=unit3Unlocked?8:unit2Unlocked?6:3;
+ const dailyChallengeIndex=dailyLessonFor(unlockedLessonLimit);
  const firstIncompleteInUnit=(start,end)=>{for(let i=start;i<end;i++){if(!completedLessons.includes(course+'-'+i))return i}return start};
  const courseConversationsCompleted=completedConversations.filter(x=>x.startsWith(course+'-')).length;
  const courseChallengesCompleted=completedChallenges.filter(x=>x.startsWith(course+'-')).length;
