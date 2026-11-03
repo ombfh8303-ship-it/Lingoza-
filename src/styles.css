@@ -34,3 +34,7 @@
 .setup-foot{text-align:center;font-size:10px;color:#a0aaba;margin-top:13px}
 .course-switch{background:#f5fcf8;border-color:#d8eee5;color:#168c6b}
 @media(max-width:600px){.setup-top{padding:0 17px;height:66px}.setup-content{padding:25px 18px;margin:18px auto 35px;border-radius:18px}.setup-content>h1{font-size:24px}.setup-intro{font-size:11px;margin-bottom:23px}.course-options{grid-template-columns:1fr}.course-option{min-height:74px}.setup-section-head h2{font-size:14px}.setup-section-head p{font-size:9px}.top-actions{gap:6px}.course-switch{max-width:112px;padding:7px 8px}.course-switch span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.lesson-picker{display:block;max-width:100%;margin-top:9px;border:1px solid #dceee7;border-radius:8px;background:#f7fcf9;color:#28745f;padding:7px 9px;font:600 10px inherit;outline:none;cursor:pointer}
+.lesson-picker:focus{border-color:#20bd8c;box-shadow:0 0 0 3px #20bd8c18}
+.lesson-picker option{color:#24364d;background:#fff}
