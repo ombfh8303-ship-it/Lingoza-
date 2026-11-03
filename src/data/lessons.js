@@ -219,6 +219,7 @@ export const learningNotes = {
     "Répétez, s'il vous plaît.": ["Répétez صيغة مهذبة للأمر من الفعل répéter، وتناسب الحديث مع شخص لا تعرفه.","Répétez plus lentement, s'il vous plaît. — أعد ببطء أكثر من فضلك."],
     "Tu es libre aujourd'hui ?": ["نستخدم Tu es للسؤال غير الرسمي مع شخص تعرفه، وlibre هنا تعني متفرغ.","Tu es libre ce soir ? — هل أنت متفرغ هذا المساء؟"],
     "J'aime lire.": ["بعد aimer يمكن أن يأتي فعل بالمصدر مباشرةً، مثل lire بمعنى يقرأ.","J'aime lire le soir. — أحب القراءة مساءً."],
+    "Fatigué(e)": ["هذه كتابة مختصرة للمذكر والمؤنث: Fatigué للمذكر وFatiguée للمؤنث. في هذه الكلمة يكون النطق عادةً متشابهاً في الحالتين.","Je suis fatigué. / Je suis fatiguée. — أنا متعب / أنا متعبة."],
 
   }
 };
