@@ -6,14 +6,14 @@ export const lessonLibrary = {
       { word: "Goodbye", ar: ["شكراً", "أهلاً", "إلى اللقاء"], en: ["Thank you", "Welcome", "Goodbye"], correct: 2 }
     ]},
     { title: "Introducing yourself", arTitle: "التعريف بالنفس", description: "Share your name and meet people", arDescription: "عرّف عن نفسك وتعرّف إلى الآخرين", questions: [
-      { word: "My name is Ali", ar: ["أنا اسمي علي", "أين علي؟", "أنا مع علي"], en: ["My name is Ali", "Where is Ali?", "I am with Ali"], correct: 0 },
+      { word: "My name is Ali", ar: ["اسمي علي", "أين علي؟", "أنا مع علي"], en: ["My name is Ali", "Where is Ali?", "I am with Ali"], correct: 0 },
       { word: "Nice to meet you", ar: ["أراك لاحقاً", "سعيد بلقائك", "كيف حالك؟"], en: ["See you later", "Nice to meet you", "How are you?"], correct: 1 },
       { word: "Where are you from?", ar: ["كم عمرك؟", "أين تسكن؟", "من أين أنت؟"], en: ["How old are you?", "Where do you live?", "Where are you from?"], correct: 2 }
     ]},
     { title: "Polite expressions", arTitle: "عبارات مهذبة", description: "Use please, thanks and apologies", arDescription: "استخدم من فضلك وشكراً والاعتذار", questions: [
       { word: "Please", ar: ["شكراً", "من فضلك", "عفواً"], en: ["Thank you", "Please", "Sorry"], correct: 1 },
-      { word: "Thank you", ar: ["شكراً", "آسف", "صباح الخير"], en: ["Thank you", "Sorry", "Good morning"], correct: 0 },
-      { word: "I'm sorry", ar: ["أنا سعيد", "أنا آسف", "أنا جاهز"], en: ["I'm happy", "I'm sorry", "I'm ready"], correct: 1 }
+      { word: "Thank you", ar: ["شكراً", "على الرحب والسعة", "من فضلك"], en: ["Thank you", "You're welcome", "Please"], correct: 0 },
+      { word: "I'm sorry", ar: ["أنا بخير", "أنا آسف", "أنا قلق"], en: ["I'm fine", "I'm sorry", "I'm worried"], correct: 1 }
     ]},
     { title: "Numbers 1–10", arTitle: "الأرقام من 1 إلى 10", description: "Recognize common numbers", arDescription: "تعرّف إلى الأرقام الأساسية", questions: [
       { word: "Three", ar: ["اثنان", "ثلاثة", "أربعة"], en: ["Two", "Three", "Four"], correct: 1 },
@@ -54,7 +54,7 @@ export const lessonLibrary = {
     ]},
     { title: "Polite expressions", arTitle: "عبارات مهذبة", description: "Be polite in everyday situations", arDescription: "استخدم العبارات المهذبة يومياً", questions: [
       { word: "S'il vous plaît", ar: ["شكراً", "من فضلك", "آسف"], en: ["Thank you", "Please", "Sorry"], correct: 1 },
-      { word: "Merci", ar: ["شكراً", "عفواً", "صباح الخير"], en: ["Thank you", "You're welcome", "Good morning"], correct: 0 },
+      { word: "Merci", ar: ["شكراً", "على الرحب والسعة", "من فضلك"], en: ["Thank you", "You're welcome", "Please"], correct: 0 },
       { word: "Pardon", ar: ["مرحباً", "عفواً / المعذرة", "إلى اللقاء"], en: ["Hello", "Excuse me", "Goodbye"], correct: 1 }
     ]},
     { title: "Numbers 1–10", arTitle: "الأرقام من 1 إلى 10", description: "Recognize common French numbers", arDescription: "تعرّف إلى الأرقام بالفرنسية", questions: [
