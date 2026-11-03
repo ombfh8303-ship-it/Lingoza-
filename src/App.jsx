@@ -190,6 +190,7 @@ function App(){
  const activeDays=safeStoredArray('lingoza-active-days');
  const streakCount=(()=>{const dates=new Set(activeDays);const cursor=new Date();if(!dates.has(dateKeyFor(cursor))){cursor.setDate(cursor.getDate()-1);if(!dates.has(dateKeyFor(cursor)))return 0}let count=0;while(dates.has(dateKeyFor(cursor))){count++;cursor.setDate(cursor.getDate()-1)}return count})();
  const displayStreak=streakCount;
+ const greetingText=completedLessons.length===0?(rtl?'أهلاً بك':'Welcome'):(rtl?'أهلاً بعودتك':'Welcome back');
  const markActiveDay=()=>{const updated=[...new Set([...activeDays,todayKey])];localStorage.setItem('lingoza-active-days',JSON.stringify(updated));};
  const celebrate=()=>{setCelebration(true);window.setTimeout(()=>setCelebration(false),1700)};
  const dailyChallengeKey=course+'-'+todayKey;
