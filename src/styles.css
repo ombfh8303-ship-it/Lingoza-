@@ -154,3 +154,10 @@
  .breadcrumb span{display:none}
  .placement-test-link{font-size:10px}
 }
+
+
+/* In-lesson listening exercises */
+.listening-question{display:flex;flex-direction:column;align-items:center;gap:9px;margin:12px 0 14px;padding:20px 12px;border:1px solid #dcefe7;border-radius:13px;background:#f5fbf8}
+.listen-play-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:190px;min-height:52px;padding:10px 18px;border:0;border-radius:12px;background:#20bd8c;color:#073e35;font:inherit;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 5px 14px #20bd8c22}
+.listen-play-button:active{transform:scale(.98)}
+.listening-note{font-size:10px;color:#8795a5}
