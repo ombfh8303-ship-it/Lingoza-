@@ -195,3 +195,13 @@
 .lesson-modal .answer-option:focus-visible,.listen-play-button:focus-visible{outline:3px solid #9de5c9;outline-offset:2px}
 @keyframes lesson-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
 @media(max-width:580px){.lesson-illustration{height:130px;margin:13px 0}.lesson-illustration-emoji{width:69px;height:69px;font-size:38px;border-radius:22px}.lesson-modal h2{font-size:16px}.lesson-modal .answer-option{min-height:47px;font-size:12px}}
+
+
+/* Real-photo vocabulary challenge */
+.photo-mode-launch{width:100%;margin:12px 0 2px;padding:13px 15px;border:1px solid #b9e5d2;border-radius:13px;background:#f0faf5;color:#176b50;display:flex;align-items:center;gap:10px;font:700 13px inherit;cursor:pointer}
+.photo-mode-launch b{margin-inline-start:auto;background:#d8f2e5;border-radius:20px;padding:3px 9px;font-size:11px}
+.photo-vocab-frame{height:220px;position:relative;overflow:hidden;border-radius:17px;background:#eaf1ed;margin:16px 0 14px}
+.photo-vocab-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-image-tag{position:absolute;inset-inline-start:12px;bottom:12px;background:#ffffffed;color:#176b50;border-radius:20px;padding:7px 11px;display:flex;align-items:center;gap:6px;font-size:11px;font-weight:800}
+.lesson-modal .photo-vocab-frame+h2{margin:8px 0 14px}
+@media(max-width:580px){.photo-vocab-frame{height:190px}.photo-mode-launch{font-size:12px}}
