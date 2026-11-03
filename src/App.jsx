@@ -182,6 +182,8 @@ function App(){
  const rtl=lang==='ar';
  const t=copy[lang];
  const courseLessons=lessonLibrary[course]||lessonLibrary.en;
+ const nextLessonIndex=Math.max(0,courseLessons.findIndex((_,i)=>!completedLessons.includes(course+'-'+i)))<0?Math.max(0,courseLessons.length-1):courseLessons.findIndex((_,i)=>!completedLessons.includes(course+'-'+i));
+ const nextLessonTitle=rtl?(courseLessons[nextLessonIndex]?.arTitle||courseLessons[nextLessonIndex]?.title||'الدرس التالي'):(courseLessons[nextLessonIndex]?.title||courseLessons[nextLessonIndex]?.arTitle||'Next lesson');
  const conversations=conversationLibrary[course]||conversationLibrary.en;
  const selectedConversation=conversationIndex===null?null:conversations[conversationIndex];
  const activeConversationStep=selectedConversation?.steps[conversationStep];
