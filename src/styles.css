@@ -244,3 +244,9 @@
 .studio-feedback .studio-speak{border:0;background:transparent;padding:4px 8px;font:inherit;font-size:11px;font-weight:750;cursor:pointer}
 .studio-quiz-progress{height:5px;background:#edf1f4;border-radius:9px;overflow:hidden;margin:12px 0 4px}
 .studio-quiz-progress span{height:100%;display:block;background:#20bd8c;border-radius:9px;transition:width .25s}
+
+
+.learning-note{margin:12px 0 16px;padding:14px 16px;border:1px solid #dce8e4;border-radius:16px;background:#f5faf8;text-align:start}
+.learning-note strong{display:block;margin-bottom:7px;color:#16866f;font-size:.9rem}
+.learning-note p{margin:0 0 7px;line-height:1.7;font-size:.92rem}
+.learning-note small{display:block;line-height:1.7;color:#64748b;font-size:.82rem}
