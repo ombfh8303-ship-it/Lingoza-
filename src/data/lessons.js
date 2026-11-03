@@ -1,12 +1,12 @@
 export const lessonLibrary = {
   en: [
     { title: "Greetings", arTitle: "التحيات", description: "Say hello and goodbye naturally", arDescription: "تعلّم إلقاء التحية والوداع", questions: [
-      { word: "Hello", ar: ["مرحباً", "وداعاً", "من فضلك"], en: ["Goodbye", "Hello", "Please"], correct: 1 },
+      { word: "Hello", ar: ["مرحباً", "وداعاً", "من فضلك"], en: ["Hello", "Goodbye", "Please"], correct: 0 },
       { word: "Good morning", ar: ["تصبح على خير", "صباح الخير", "مساء الخير"], en: ["Good night", "Good morning", "Good evening"], correct: 1 },
       { word: "Goodbye", ar: ["شكراً", "أهلاً", "إلى اللقاء"], en: ["Thank you", "Welcome", "Goodbye"], correct: 2 }
     ]},
     { title: "Introducing yourself", arTitle: "التعريف بالنفس", description: "Share your name and meet people", arDescription: "عرّف عن نفسك وتعرّف إلى الآخرين", questions: [
-      { word: "My name is Ali", ar: ["اسمي علي", "أين علي؟", "أنا مع علي"], en: ["Where is Ali?", "My name is Ali", "I am with Ali"], correct: 1 },
+      { word: "My name is Ali", ar: ["أنا اسمي علي", "أين علي؟", "أنا مع علي"], en: ["My name is Ali", "Where is Ali?", "I am with Ali"], correct: 0 },
       { word: "Nice to meet you", ar: ["أراك لاحقاً", "سعيد بلقائك", "كيف حالك؟"], en: ["See you later", "Nice to meet you", "How are you?"], correct: 1 },
       { word: "Where are you from?", ar: ["كم عمرك؟", "أين تسكن؟", "من أين أنت؟"], en: ["How old are you?", "Where do you live?", "Where are you from?"], correct: 2 }
     ]},
