@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { lessonLibrary } from './data/lessons.js';
 import { ArrowLeft, BookOpen, Check, ChevronLeft, Flame, Globe2, Headphones, Home, LockKeyhole, Menu, Sparkles, Star, Target, Trophy, X, Zap, Languages } from 'lucide-react';
 
