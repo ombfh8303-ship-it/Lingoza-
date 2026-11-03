@@ -59,7 +59,10 @@ function App(){
  const [setupDone,setSetupDone]=useState(()=>localStorage.getItem('lingoza-setup-done')==='1');
  const [active,setActive]=useState('home'),[lessonOpen,setLessonOpen]=useState(false),
  [q,setQ]=useState(0),[choice,setChoice]=useState(null),[checked,setChecked]=useState(false),
- [earned,setEarned]=useState(0),[mobileNav,setMobileNav]=useState(false);
+ [earned,setEarned]=useState(()=>Number(localStorage.getItem('lingoza-xp')||0)),
+ [completedLessons,setCompletedLessons]=useState(()=>JSON.parse(localStorage.getItem('lingoza-completed')||'[]')),
+ [awardedQuestions,setAwardedQuestions]=useState(()=>JSON.parse(localStorage.getItem('lingoza-awarded')||'[]')),
+ [lessonIndex,setLessonIndex]=useState(0),[mobileNav,setMobileNav]=useState(false);
  const rtl=lang==='ar';
  const t=copy[lang];
  const courseLessons=lessonLibrary[course]||lessonLibrary.en;
