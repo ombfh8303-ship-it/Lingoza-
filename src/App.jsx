@@ -62,6 +62,7 @@ function dailyLessonFor(count){const d=new Date();const start=new Date(d.getFull
 function dateKeyFor(date){return [date.getFullYear(),String(date.getMonth()+1).padStart(2,'0'),String(date.getDate()).padStart(2,'0')].join('-')}
 
 
+// Curated, word-specific photos only. Unverified or mismatched terms stay out of photo practice.
 const vocabularyPhotos = {
  apple:'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=900&auto=format&fit=crop&q=85',
  bread:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&auto=format&fit=crop&q=85',
@@ -72,22 +73,18 @@ const vocabularyPhotos = {
  bus:'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=900&auto=format&fit=crop&q=85',
  train:'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=900&auto=format&fit=crop&q=85',
  kitchen:'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&auto=format&fit=crop&q=85',
- passport:'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&auto=format&fit=crop&q=85',
  suitcase:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=85',
  hotel:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&auto=format&fit=crop&q=85',
  book:'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=900&auto=format&fit=crop&q=85',
  music:'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=900&auto=format&fit=crop&q=85',
- phone:'https://images.unsplash.com/photo-151 मोब?w=900&auto=format&fit=crop&q=85',
  doctor:'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&auto=format&fit=crop&q=85',
  family:'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=900&auto=format&fit=crop&q=85',
  chair:'https://images.unsplash.com/photo-1503602642458-232111445657?w=900&auto=format&fit=crop&q=85',
  table:'https://images.unsplash.com/photo-1499933374294-4584851497cc?w=900&auto=format&fit=crop&q=85',
- key:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=85',
- door:'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&auto=format&fit=crop&q=85',
 };
 const photoKeyFor = (value) => {
- const word=String(value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
- const aliases={pomme:'apple',pain:'bread',riz:'rice',poulet:'chicken',eau:'water',cafe:'coffee',bus:'bus',train:'train',cuisine:'kitchen',chambre:'bedroom',passeport:'passport',bagages:'suitcase',hotel:'hotel',livre:'book',lecture:'book',musique:'music',medecin:'doctor',mere:'family',pere:'family',chaise:'chair',table:'table',cle:'key',porte:'door'};
+ const word=String(value||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').trim();
+ const aliases={pomme:'apple',pain:'bread',riz:'rice',poulet:'chicken',eau:'water',cafe:'coffee',bus:'bus',train:'train',cuisine:'kitchen',bagages:'suitcase',hotel:'hotel',livre:'book',lecture:'book',musique:'music',medecin:'doctor',chaise:'chair',table:'table'};
  const key=aliases[word]||word;
  return vocabularyPhotos[key]?key:null;
 };
