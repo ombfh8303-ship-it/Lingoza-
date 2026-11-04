@@ -692,3 +692,20 @@
 .cafe-goal button{border:0;border-radius:10px;padding:10px;background:#e2f3e8;color:#176b46;font-weight:800}
 .cafe-quiz-count{text-align:center;color:#27805b;font-weight:800}
 @media(max-width:600px){.cafe-lesson-modal{width:100%!important;max-width:none!important;height:100dvh!important;max-height:100dvh!important;border-radius:0!important;padding:14px!important}.cafe-lesson{padding:5px 0 12px}.cafe-scene{height:100px;margin:12px 0}.cafe-dialogue p{font-size:15px}.cafe-options button{min-height:50px}}
+
+
+/* Persistent lesson navigation: keep next/continue actions visible on every step */
+.greetings-coach .coach-action,
+.cafe-lesson .coach-action{
+  position:sticky!important;
+  bottom:0!important;
+  z-index:20!important;
+  flex-shrink:0!important;
+  box-shadow:0 -8px 18px rgba(247,250,247,.92),0 4px 16px rgba(24,87,58,.15)!important;
+}
+.greetings-coach .coach-action{margin-top:auto!important}
+.cafe-lesson .coach-action{margin-top:auto!important}
+.modal-backdrop:has(.cafe-lesson){position:fixed;inset:0;z-index:9999;padding:0!important;align-items:stretch!important;justify-content:stretch!important}
+.modal-backdrop:has(.cafe-lesson)>.cafe-lesson-modal{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow-y:auto!important;box-sizing:border-box!important}
+.cafe-lesson{min-height:100%;box-sizing:border-box;display:flex;flex-direction:column;padding-bottom:max(12px,env(safe-area-inset-bottom))!important}
+.cafe-lesson .coach-action{width:100%;min-height:54px;margin-bottom:env(safe-area-inset-bottom)!important}
