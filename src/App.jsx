@@ -187,8 +187,18 @@ const next=()=>{
 };
 const listeningOptions=['Canada','Australia','Jordan'];
 const listeningCorrect=0;
-const normalizePractice=(value)=>String(value||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
-const practiceCorrect=normalizePractice(practiceSentence)===normalizePractice('Hi, I’m '+learnerName+'. I’m from '+learnerCountry+'.');
+const normalizePractice=(value)=>String(value||'').toLocaleLowerCase().replace(/[’‘]/g,"'").replace(/[^\\p{L}\\p{N}']+/gu,' ').replace(/\\s+/g,' ').trim();
+const practiceName=normalizePractice(learnerName),practiceCountry=normalizePractice(learnerCountry),practiceText=normalizePractice(practiceSentence);
+const practiceCorrect=Boolean(practiceName&&practiceCountry&&(
+ practiceText===normalizePractice("hi i'm "+learnerName+" i'm from "+learnerCountry)||
+ practiceText===normalizePractice("hi my name is "+learnerName+" i'm from "+learnerCountry)||
+ practiceText===normalizePractice("hello i'm "+learnerName+" i'm from "+learnerCountry)||
+ practiceText===normalizePractice("hello my name is "+learnerName+" i'm from "+learnerCountry)||
+ practiceText===normalizePractice("hi i'm "+learnerName+" i'm from "+learnerCountry+" nice to meet you")||
+ practiceText===normalizePractice("hi my name is "+learnerName+" i'm from "+learnerCountry+" nice to meet you")||
+ practiceText===normalizePractice("hello i'm "+learnerName+" i'm from "+learnerCountry+" nice to meet you")||
+ practiceText===normalizePractice("hello my name is "+learnerName+" i'm from "+learnerCountry+" nice to meet you")
+));
 return <section className="greetings-coach" dir={rtl?'rtl':'ltr'}>
 <div className="coach-top"><span>{rtl?'تعلّم موجّه':'GUIDED LEARNING'}</span><b>{page+1} / {total}</b></div><div className="coach-progress"><span style={{width:((page+1)/total*100)+'%'}}/></div>
 {teaching?<><div className="coach-icon">{cards[page].icon}</div><p className="coach-kicker">{rtl?'افهم ثم استخدم':'UNDERSTAND & USE'} · {String(page+1).padStart(2,'0')}</p><h2>{rtl?cards[page].arTitle:cards[page].title}</h2><div className="coach-phrase" dir="ltr">{cards[page].phrase}</div><p className="coach-meaning">{cards[page].meaning}</p><div className="coach-explain"><strong>{rtl?'متى وكيف تستخدمها':'When & how to use it'}</strong><p>{rtl?cards[page].arDetail:cards[page].detail}</p></div><div className="coach-example"><span>{rtl?'مثال واقعي':'REAL-LIFE EXAMPLE'}</span><strong dir="ltr">{rtl?cards[page].arExample:cards[page].example}</strong><small>{rtl?cards[page].arTranslation:cards[page].translation}</small></div><button className="primary-btn coach-action" onClick={next}>{rtl?'فهمت، التالي':'Got it — next'} <ArrowLeft size={17}/></button></>:
