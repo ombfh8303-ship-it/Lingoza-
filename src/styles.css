@@ -525,3 +525,37 @@
 [dir="ltr"] .lesson-intro-panel{direction:ltr;text-align:left}
 [dir="ltr"] .lesson-intro-preview>div span,[dir="ltr"] .lesson-intro-preview>div small{text-align:left}
 @media(max-width:420px){.lesson-intro-panel{padding:14px 14px 19px}.lesson-intro-art{height:90px}.lesson-intro-panel h2{font-size:22px}.lesson-intro-steps{gap:7px}.lesson-intro-steps>div{padding:8px;gap:7px}.lesson-intro-steps b{font-size:11px}}
+
+
+/* First English lesson: teach before testing */
+.greetings-coach{padding:15px 2px 8px;max-height:calc(94vh - 78px);overflow-y:auto;color:#24382e}
+.coach-top{display:flex;align-items:center;justify-content:space-between;font-size:10px;font-weight:850;letter-spacing:.7px;color:#27805b}
+.coach-progress{height:5px;background:#e9f0eb;border-radius:8px;overflow:hidden;margin:10px 0 17px}
+.coach-progress span{display:block;height:100%;background:#20a477;border-radius:8px;transition:width .2s}
+.coach-icon{display:grid;place-items:center;width:57px;height:57px;margin:0 auto 10px;border-radius:18px;background:#e9f7ef;font-size:31px}
+.coach-kicker{text-align:center;font-size:9px;font-weight:850;letter-spacing:1px;color:#27805b;margin:0 0 7px}
+.greetings-coach h2{text-align:center;font-size:20px;line-height:1.45;margin:0 auto 13px;color:#213b2d}
+.coach-phrase{background:#f0f9f4;border:1px solid #d5eee0;border-radius:15px;padding:16px 10px;text-align:center;font-size:20px;font-weight:850;color:#117a56;line-height:1.5}
+.coach-meaning{text-align:center;font-size:14px;font-weight:750;margin:7px 0 13px;color:#40574a}
+.coach-explain{border:1px solid #e4ebe5;border-radius:13px;padding:12px 14px;margin:0 0 10px;line-height:1.65}
+.coach-explain strong{font-size:11px;color:#27805b}
+.coach-explain p{font-size:12px;margin:4px 0 0;color:#46584c}
+.coach-example{display:grid;gap:5px;padding:12px 14px;background:#fbfaf3;border:1px solid #efead7;border-radius:13px;margin-bottom:13px}
+.coach-example span{font-size:9px;font-weight:850;letter-spacing:.8px;color:#8b7941}
+.coach-example strong{font-size:13px;line-height:1.6;color:#344737}
+.coach-example small{font-size:11px;color:#697568;line-height:1.5}
+.coach-action{width:100%;min-height:47px;justify-content:center;gap:8px}
+.coach-action:disabled{opacity:.45;cursor:not-allowed}
+.coach-note{text-align:center;color:#87958a;font-size:10px;line-height:1.5;margin:12px 0 0}
+.coach-question{font-size:14px;font-weight:800;line-height:1.65;text-align:center;margin:10px 0}
+.coach-question-ar{font-size:12px;text-align:center;color:#728075;margin:0 0 13px}
+.coach-options{display:grid;gap:8px;margin-bottom:12px}
+.coach-options button{background:white;border:1px solid #e0e9e2;border-radius:11px;padding:12px;text-align:left;direction:ltr;font:700 13px inherit;color:#304639;min-height:44px}
+.coach-options button.selected{border:2px solid #248a62;background:#eff9f3}
+.coach-options button.correct{border:2px solid #1b9b67;background:#e5f8ed;color:#17613f}
+.coach-options button.wrong{border-color:#dc7a72;background:#fff0ee}
+.coach-feedback{padding:10px 12px;border-radius:11px;margin-bottom:11px;font-size:12px;line-height:1.6}
+.coach-feedback p{margin:4px 0 0}
+.coach-feedback.ok{background:#e9f8ee;color:#206340}
+.coach-feedback.retry{background:#fff6e6;color:#74551e}
+@media(max-width:480px){.greetings-coach{padding-top:10px}.coach-phrase{font-size:18px;padding:13px 8px}.greetings-coach h2{font-size:18px}.coach-explain{padding:10px 12px}}
