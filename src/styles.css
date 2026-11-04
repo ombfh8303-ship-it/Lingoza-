@@ -709,3 +709,19 @@
 .modal-backdrop:has(.cafe-lesson)>.cafe-lesson-modal{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow-y:auto!important;box-sizing:border-box!important}
 .cafe-lesson{min-height:100%;box-sizing:border-box;display:flex;flex-direction:column;padding-bottom:max(12px,env(safe-area-inset-bottom))!important}
 .cafe-lesson .coach-action{width:100%;min-height:54px;margin-bottom:env(safe-area-inset-bottom)!important}
+
+/* Readable target-language prompts and expandable unit curriculum */
+.word-display{font-size:32px;line-height:1.35;padding:2px 8px;overflow-wrap:anywhere}
+.lesson-modal h2{font-size:20px;line-height:1.45}
+.unit-lessons-list{margin:12px 0 4px;border:1px solid #e9eef2;border-radius:12px;background:#fbfdfc;overflow:hidden}
+.unit-lessons-list summary{cursor:pointer;list-style:none;padding:11px 12px;color:#168c6b;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:space-between}
+.unit-lessons-list summary::-webkit-details-marker{display:none}
+.unit-lessons-list summary:after{content:'＋';font-size:16px;color:#159b73}
+.unit-lessons-list[open] summary:after{content:'−'}
+.unit-lesson-items{display:grid;gap:0;padding:0 8px 8px}
+.unit-lesson-item{width:100%;display:flex;align-items:center;gap:9px;padding:9px 7px;border:0;border-top:1px solid #edf1f3;background:transparent;text-align:start;color:#405267;font:inherit;font-size:12px;cursor:pointer}
+.unit-lesson-item:disabled{opacity:.42;cursor:not-allowed}
+.unit-lesson-index{width:24px;height:24px;flex:0 0 24px;border-radius:8px;background:#edf6f2;color:#168c6b;display:grid;place-items:center;font-size:10px;font-weight:800}
+.unit-lesson-item.completed .unit-lesson-index{background:#dff7eb}
+.unit-lesson-name{flex:1;min-width:0;font-weight:700}
+.unit-lesson-state{font-size:10px;color:#159b73;font-weight:800}
