@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "note": "Editorial catalog starter. Current player does not load this manifest yet. Entries are scripts only; no recordings approved or published.",
+  "entries": [
+    {
+      "id": "en-us-restaurant-what-would-you-like",
+      "locale": "en-US",
+      "accent": "General American",
+      "kind": "phrase",
+      "transcript": "What would you like?",
+      "path": "/Lingoza-/audio/en/what-would-you-like.mp3",
+      "status": "script-only",
+      "speakerId": null,
+      "source": null,
+      "license": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "en-us-restaurant-id-like-a-burger-please",
+      "locale": "en-US",
+      "accent": "General American",
+      "kind": "phrase",
+      "transcript": "I'd like a burger, please.",
+      "path": "/Lingoza-/audio/en/id-like-a-burger-please.mp3",
+      "status": "script-only",
+      "speakerId": null,
+      "source": null,
+      "license": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "en-us-restaurant-anything-to-drink",
+      "locale": "en-US",
+      "accent": "General American",
+      "kind": "phrase",
+      "transcript": "Anything to drink?",
+      "path": "/Lingoza-/audio/en/anything-to-drink.mp3",
+      "status": "script-only",
+      "speakerId": null,
+      "source": null,
+      "license": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "en-us-restaurant-a-glass-of-water-please",
+      "locale": "en-US",
+      "accent": "General American",
+      "kind": "phrase",
+      "transcript": "A glass of water, please.",
+      "path": "/Lingoza-/audio/en/a-glass-of-water-please.mp3",
+      "status": "script-only",
+      "speakerId": null,
+      "source": null,
+      "license": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "en-us-restaurant-sorry-were-out-of-burgers",
+      "locale": "en-US",
+      "accent": "General American",
+      "kind": "phrase",
+      "transcript": "Sorry, we're out of burgers.",
+      "path": "/Lingoza-/audio/en/sorry-were-out-of-burgers.mp3",
+      "status": "script-only",
+      "speakerId": null,
+      "source": null,
+      "license": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "en-us-restaurant-could-i-have-the-bill-please",
+      "locale": "en-US",
+      "accent": "General American",
+      "kind": "phrase",
+      "transcript": "Could I have the bill, please?",
+      "path": "/Lingoza-/audio/en/could-i-have-the-bill-please.mp3",
+      "status": "script-only",
+      "speakerId": null,
+      "source": null,
+      "license": null,
+      "reviewedAt": null
+    }
+  ],
+  "approvalStatus": "No files recorded or approved"
+}
