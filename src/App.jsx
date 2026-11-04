@@ -187,7 +187,7 @@ const next=()=>{
 };
 const listeningOptions=['Canada','Australia','Jordan'];
 const listeningCorrect=0;
-const normalizePractice=(value)=>String(value||'').toLocaleLowerCase().replace(/[’‘]/g,"'").replace(/[^\\p{L}\\p{N}']+/gu,' ').replace(/\\s+/g,' ').trim();
+const normalizePractice=(value)=>String(value||'').toLocaleLowerCase().replace(/[’‘]/g,"'").replace(/[^\p{L}\p{N}']+/gu,' ').replace(/\s+/g,' ').trim();
 const practiceName=normalizePractice(learnerName),practiceCountry=normalizePractice(learnerCountry),practiceText=normalizePractice(practiceSentence);
 const practiceCorrect=Boolean(practiceName&&practiceCountry&&(
  practiceText===normalizePractice("hi i'm "+learnerName+" i'm from "+learnerCountry)||
