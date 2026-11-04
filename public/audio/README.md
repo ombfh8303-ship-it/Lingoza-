@@ -1,47 +1,50 @@
 # Lingoza Audio Library
 
-This folder is the home for reviewed, reusable listening audio. The app checks for a matching curated MP3 first and uses device text-to-speech only as a temporary fallback.
+This directory contains reviewed, reusable listening audio. The app checks a curated MP3 first and uses device text-to-speech only as a temporary fallback.
 
-## Asset conventions
+## Storage convention
+- Deployed assets live under `public/audio/`; Vite publishes them under the app base URL.
+- English US: `public/audio/en/`
+- English UK (future): `public/audio/en-gb/`
+- French legacy support: `public/audio/fr/`
+- Filename: lowercase ASCII slug + `.mp3`, derived from the spoken phrase using the current player normalization.
+- Keep lossless WAV masters outside the deployed web assets, and preserve source and licensing details.
+- Never commit empty or fake MP3s.
 
-- English (US): public/audio/en/
-- English (UK), if added later: public/audio/en-gb/
-- French: public/audio/fr/
-- File name: lowercase ASCII phrase slug + .mp3 (e.g. what-would-you-like.mp3)
-- Keep a lossless WAV master outside the deployed app/library archive, and retain source/licensing details.
-- Do not commit empty or fake audio files. Add an asset only after listening review and pronunciation approval.
+## Quality standard
+- Choose one consistent, natural English voice for the pilot (recommend General American); clearly label alternate accents.
+- Speech only: no music or effects. Natural cadence, deliberate but not exaggerated enunciation.
+- Clean recording, minimal room echo/noise, no clipping/plosives, consistent perceived loudness.
+- Keep phrase clips short and dialogues as separate speaker turns; also provide a full-dialogue clip when useful.
+- Master: WAV, mono, 44.1/48 kHz, 24-bit PCM. Archive it outside deploy assets.
+- Delivery: MP3, mono, 44.1 kHz, 128–192 kbps; target true peak at or below -1 dBTP. Keep consistent loudness between assets.
+- Listen to each exported file on a normal phone speaker and headphones.
 
-## Recording / generation standard
+## Pilot: At the Restaurant (English / US)
+Suggested scripts; not recordings and not approved audio yet:
+- `what-would-you-like.mp3` — “What would you like?”
+- `id-like-a-burger-please.mp3` — “I'd like a burger, please.”
+- `anything-to-drink.mp3` — “Anything to drink?”
+- `a-glass-of-water-please.mp3` — “A glass of water, please.”
+- `sorry-were-out-of-burgers.mp3` — “Sorry, we're out of burgers.”
+- `could-i-have-the-bill-please.mp3` — “Could I have the bill, please?”
+- `restaurant-pilot-dialogue.mp3` — Waiter/customer dialogue, with natural turn-taking and pauses.
 
-1. Use one consistent, natural native-quality voice per course path; no exaggerated announcer delivery.
-2. Record each dialogue line separately, plus a full-dialogue version when useful.
-3. Target clean speech with no music/effects, minimal room noise, natural pauses, consistent loudness, and no clipping.
-4. Export mono MP3, 44.1 kHz, 128–192 kbps (or equivalent high-quality speech export). Preserve WAV masters.
-5. Review on a phone speaker and headphones. Check names, contractions, word endings, pacing, and intelligibility.
-6. Keep script, voice/provider, license/usage permission, generation date, and reviewer in an audio manifest before publishing.
-7. Avoid over-slow synthetic speech as the only sample. Offer a slower practice variant later while preserving natural pronunciation.
+Important: current app playback uses normalized spoken text as the filename. Check each intended filename against the exact string in `audioText` before adding it; punctuation can affect the normalized slug.
 
-## Pilot unit: At the Restaurant (English / US)
+## Approval checklist
+- [ ] Learning script and accepted transcript reviewed
+- [ ] English variety, speaker identity, creator/provider, and creation date recorded
+- [ ] Commercial/redistribution rights documented
+- [ ] Transcript matches the actual spoken recording
+- [ ] Pronunciation, endings, names, pauses, noise, loudness, and clipping checked
+- [ ] Export checked on phone speaker and headphones
+- [ ] Asset filename matches the current player's expected path
+- [ ] Audio is not revealing answer text before the learner's attempt
+- [ ] Deployed GitHub Pages playback tested
+- [ ] Reviewer and approval date recorded in the catalog
 
-Pilot dialogue authored for learning goals; final editorial/audio review is required before recording:
+## Catalog
+`manifest.json` is an editorial tracking proposal. The current app does not read it yet; adding a manifest-driven player is a separate integration task and must preserve current playback fallback behavior.
 
-- what-would-you-like.mp3 — “What would you like?”
-- id-like-a-burger-please.mp3 — “I'd like a burger, please.”
-- anything-to-drink.mp3 — “Anything to drink?”
-- a-glass-of-water-please.mp3 — “A glass of water, please.”
-- sorry-were-out-of-burgers.mp3 — “Sorry, we're out of burgers.”
-- could-i-have-the-bill-please.mp3 — “Could I have the bill, please?”
-- restaurant-pilot-dialogue.mp3 — Waiter/customer dialogue with natural turn-taking and pauses.
-
-## Publishing checklist
-
-- [ ] Script and accepted transcript reviewed
-- [ ] English variety and voice identity recorded
-- [ ] Rights/usage permission verified
-- [ ] File names and paths match the app
-- [ ] Playback reviewed on mobile
-- [ ] Listening prompt does not reveal transcript before the attempt
-- [ ] Transcript and translation revealed after the attempt
-- [ ] Audio tested in deployed Pages build
-
-**Current status:** Playback support is prepared. Professional recorded/generated audio assets have not been added yet.
+**Status:** audio delivery path and playback fallback exist. Professional custom recordings have not yet been supplied or approved.
