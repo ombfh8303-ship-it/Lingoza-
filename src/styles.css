@@ -617,3 +617,12 @@
 .greetings-coach .coach-input,.greetings-coach .coach-writing-input{font-size:19px!important;min-height:56px}
 .greetings-coach .coach-result-card strong{font-size:30px!important}
 @media(max-width:600px){.modal-backdrop:has(.greetings-coach)>.lesson-modal{padding:16px!important}.greetings-coach{justify-content:flex-start;padding:8px 0 20px}.greetings-coach .coach-progress{margin:10px 0 22px}.greetings-coach .coach-options button{min-height:62px!important}}
+
+
+/* Friendly success bubble for answer feedback */
+.greetings-coach .coach-success-bubble{position:relative;border:1px solid #a8e3bf!important;border-radius:20px 20px 20px 6px!important;background:linear-gradient(135deg,#edfff4,#dff8e9)!important;color:#176b46!important;box-shadow:0 8px 22px rgba(34,139,88,.12);padding:17px 20px!important;animation:coachBubblePop .28s cubic-bezier(.2,.85,.3,1.2) both}
+.greetings-coach .coach-success-bubble:before{content:' ';position:absolute;left:20px;bottom:-9px;width:16px;height:16px;background:#e2f9eb;border-right:1px solid #a8e3bf;border-bottom:1px solid #a8e3bf;transform:rotate(45deg)}
+[dir="rtl"] .greetings-coach .coach-success-bubble{border-radius:20px 20px 6px 20px!important}
+[dir="rtl"] .greetings-coach .coach-success-bubble:before{left:auto;right:20px}
+@keyframes coachBubblePop{from{opacity:0;transform:translateY(7px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.greetings-coach .coach-success-bubble{animation:none}}
