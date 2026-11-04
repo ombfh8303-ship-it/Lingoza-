@@ -575,3 +575,6 @@
 .coach-listening-script strong{font-size:13px;line-height:1.65;color:#304a3a}
 [dir="rtl"] .coach-field-label{text-align:right}
 [dir="rtl"] .coach-input{text-align:right}
+
+/* Comfortable multiline writing field in the guided lesson */
+.coach-writing-input{min-height:94px;resize:vertical;line-height:1.8;direction:ltr;text-align:left}
