@@ -187,7 +187,7 @@ const next=()=>{
 };
 const listeningOptions=['Canada','Australia','Jordan'];
 const listeningCorrect=0;
-const normalizePractice=(value)=>String(value||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\\s+/g,' ').trim();
+const normalizePractice=(value)=>String(value||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
 const practiceCorrect=normalizePractice(practiceSentence)===normalizePractice('Hi, I’m '+learnerName+'. I’m from '+learnerCountry+'.');
 return <section className="greetings-coach" dir={rtl?'rtl':'ltr'}>
 <div className="coach-top"><span>{rtl?'تعلّم موجّه':'GUIDED LEARNING'}</span><b>{page+1} / {total}</b></div><div className="coach-progress"><span style={{width:((page+1)/total*100)+'%'}}/></div>
