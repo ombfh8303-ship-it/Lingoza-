@@ -189,7 +189,7 @@ function FirstGreetingsCoach({rtl,onComplete}){
   {type:'إكمال حوار',q:'A: Nice to meet you. B: ____',ar:'أكمل الحوار.',opts:['Nice to meet you, too.','I’m from Jordan.','Good night.'],a:0,why:'This is the natural reply when meeting someone.'},
   {type:'اختيار معنى',q:'What does “And you?” do in a conversation?',ar:'ما وظيفة And you? في المحادثة؟',opts:['Ends the conversation','Returns the question','Introduces your country'],a:1,why:'And you? invites the other person to answer the same question.'}
  ];
- const total=20,quizStart=11,resultPage=19;
+ const total=21,quizStart=12,resultPage=20;
  const isExercise=page<10&&page%2===0,lessonIndex=Math.floor(page/2),isExplain=page<10&&page%2===1,quizIndex=page-quizStart,isQuiz=page>=quizStart&&page<resultPage;
  const normalize=(v)=>String(v||'').toLocaleLowerCase().replace(/[’‘]/g,"'").replace(/[^\p{L}\p{N}']+/gu,' ').replace(/\s+/g,' ').trim();
  const name=normalize(learnerName),country=normalize(learnerCountry),written=normalize(practiceSentence);
