@@ -578,3 +578,17 @@
 
 /* Comfortable multiline writing field in the guided lesson */
 .coach-writing-input{min-height:94px;resize:vertical;line-height:1.8;direction:ltr;text-align:left}
+
+/* First lesson interaction refinements */
+.coach-top b{direction:ltr;unicode-bidi:isolate;display:inline-block;font-variant-numeric:tabular-nums}
+.coach-input[dir="ltr"],.coach-writing-input{direction:ltr!important;text-align:left!important;unicode-bidi:isolate}
+[dir="rtl"] .coach-input[dir="ltr"]{direction:ltr!important;text-align:left!important}
+.coach-why{margin:0 0 14px;border:1px solid #e4ebe5;border-radius:12px;background:#fbfcfa;padding:11px 13px;color:#46584c;font-size:12px;line-height:1.7}
+.coach-why summary{cursor:pointer;color:#27805b;font-weight:850;list-style:none}
+.coach-why summary::-webkit-details-marker{display:none}
+.coach-why summary:after{content:'＋';float:inline-end}
+.coach-why[open] summary:after{content:'−'}
+.coach-why p{margin:8px 0 0}
+.coach-result-card{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;margin:18px 0;padding:18px 14px;border:1px solid #d5eee0;border-radius:16px;background:#f0f9f4;text-align:center}
+.coach-result-card strong{font-size:25px;line-height:1.3;color:#117a56}
+.coach-result-card span{font-size:11px;color:#65786b;align-self:center}
