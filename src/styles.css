@@ -1589,3 +1589,19 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @media(max-width:600px){.greetings-game{height:calc(100dvh - 145px);min-height:490px;padding:11px;gap:8px;border-radius:21px}.gg-avatar{width:70px;flex-basis:70px;height:67px}.greet-mascot-svg{width:68px;height:66px}.gg-choice{min-height:90px;border-radius:15px}.gg-feedback{padding:7px;gap:6px}.gg-feedback button{min-width:82px}.gg-title{font-size:21px}}
 @media(max-height:690px){.greetings-game{height:calc(100dvh - 112px);min-height:0;padding:8px;gap:5px}.gg-mascot{min-height:64px}.gg-avatar{height:58px}.greet-mascot-svg{height:57px}.gg-choice{min-height:68px;padding:6px}.gg-choice-emoji{font-size:28px}.gg-feedback{padding:5px 8px}.gg-primary{min-height:44px}}
 @media(prefers-reduced-motion:reduce){.greetings-game *{animation:none!important;transition:none!important}}
+
+/* Greetings game refinements: balanced HUD, listen control and tighter cards */
+.gg-top{gap:8px;flex-wrap:nowrap}
+.gg-xp,.gg-best{flex:0 0 auto;white-space:nowrap;font-size:11px;font-weight:900;color:#648575;background:#fff;border:1px solid #dcece1;border-radius:10px;padding:5px 7px}
+.gg-bubble bdi{unicode-bidi:isolate;direction:ltr;display:inline-block}
+.gg-title{margin:0 0 2px}
+.gg-listen{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;border:1px solid #b9dfca;border-radius:999px;background:#e8f7ed;color:#087f69;font-weight:850;padding:7px 13px;font-size:12px;cursor:pointer}
+.gg-choices{margin-top:0;gap:12px}
+.gg-choice{min-height:118px;padding:12px 8px}
+.gg-choice b,.gg-choice bdi{unicode-bidi:isolate;direction:ltr}
+.gg-primary{background:#cbd5d0;color:#65766d;box-shadow:0 4px 0 #aebbb4}
+.gg-primary.ready{background:linear-gradient(100deg,#087f69,#13a47a);color:#fff;box-shadow:0 5px 0 #075e50,0 8px 15px #087f6930}
+.gg-feedback{min-height:66px}
+.gg-feedback p bdi{direction:ltr;unicode-bidi:isolate}
+@media(max-width:600px){.gg-top{gap:5px}.gg-xp,.gg-best{font-size:9px;padding:4px 5px}.gg-hearts svg{width:19px;height:19px}.gg-choice{min-height:100px}.gg-choices{gap:8px}}
+@media(max-height:690px){.gg-choice{min-height:82px;padding:7px}.gg-choices{gap:7px}.gg-mascot{min-height:58px}.gg-listen{padding:5px 10px}}
