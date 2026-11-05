@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { lessonLibrary, learningNotes } from './data/lessons.js';
 import { conversationLibrary } from './data/conversations.js';
-import { ArrowLeft, BookOpen, Check, ChevronLeft, Flame, Globe2, Headphones, Home, LockKeyhole, Menu, Sparkles, Star, Target, Trophy, X, Zap, Languages, MessageCircle, Coffee, ShoppingBag, Plane, UserRound } from 'lucide-react';
+import { ArrowLeft, BookOpen, Check, ChevronLeft, Flame, Globe2, Headphones, Heart, Home, BookText, RotateCcw, Dumbbell, LockKeyhole, Menu, Sparkles, Star, Target, Trophy, X, Zap, Languages, MessageCircle, Coffee, ShoppingBag, Plane, UserRound } from 'lucide-react';
 
 const conversationIcons={coffee:Coffee,shopping:ShoppingBag,plane:Plane};
 
