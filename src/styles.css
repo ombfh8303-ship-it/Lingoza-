@@ -1403,3 +1403,28 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .greetings-v2 .coach-options button{min-height:53px;padding:12px 14px;font-size:14px}
  .greetings-v2 .coach-result-card{padding:17px}
 }
+
+
+/* New daily-routine mission lesson */
+.daily-mission .daily-mission-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:650px;margin:18px auto}
+.daily-mission .daily-mission-stats>div{display:flex;flex-direction:column;align-items:center;gap:4px;padding:15px 8px;border:1px solid #e1eee6;border-radius:17px;background:#fff}
+.daily-mission .daily-mission-stats strong{font-size:24px;font-weight:950;color:#168765}
+.daily-mission .daily-mission-stats span{font-size:11px;color:#718176;text-align:center}
+.daily-mission .daily-routine-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;max-width:690px;margin:18px auto}
+.daily-mission .daily-routine-card{display:flex;align-items:center;gap:11px;min-width:0;padding:13px;border:1px solid #e3eee7;border-radius:17px;background:#fff;box-shadow:0 5px 15px #285b3b0a}
+.daily-mission .daily-routine-card>span{display:grid;place-items:center;width:43px;height:43px;flex:0 0 43px;border-radius:14px;background:#eef8f1;font-size:23px}
+.daily-mission .daily-routine-card>div{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px}
+.daily-mission .daily-routine-card strong{font-size:14px;color:#204b37}
+.daily-mission .daily-routine-card small{font-size:11px;color:#718176;line-height:1.5}
+.daily-mission .daily-routine-card button,.daily-mission .daily-example-row button{border:0;background:#eaf7ef;color:#168765;border-radius:12px;width:36px;height:36px;flex:0 0 36px;cursor:pointer}
+.daily-mission .daily-example-list{display:flex;flex-direction:column;gap:9px;max-width:680px;margin:18px auto}
+.daily-mission .daily-example-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid #e3eee7;border-radius:16px;background:#fff}
+.daily-mission .daily-example-row>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.daily-mission .daily-example-row strong{color:#204b37;font-size:14px}
+.daily-mission .daily-example-row small{color:#718176;font-size:12px}
+.daily-mission .daily-routine-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:650px;margin:18px auto}
+.daily-mission .daily-routine-choices button{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border:2px solid #e3eee7;border-radius:17px;background:#fff;color:#264638;cursor:pointer}
+.daily-mission .daily-routine-choices button.selected{border-color:#55ad7c;background:#f1faf4}
+.daily-mission .daily-routine-choices span{font-size:26px}
+.daily-mission .daily-routine-choices b{font-size:13px}
+@media(max-width:600px){.daily-mission .daily-routine-grid{grid-template-columns:1fr}.daily-mission .daily-routine-choices{gap:7px}.daily-mission .daily-routine-choices button{padding:13px 5px}.daily-mission .daily-routine-choices b{font-size:11px}.daily-mission .daily-mission-stats strong{font-size:21px}}
