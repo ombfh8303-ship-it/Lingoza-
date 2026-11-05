@@ -1636,3 +1636,9 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @keyframes ggGift{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(3deg)}}
 @media(max-width:600px){.gg-adventure{height:calc(100dvh - 132px);min-height:510px;padding:10px;gap:7px}.gg-adventure .gg-choice{min-height:91px}.gg-match-grid .gg-choice{min-height:88px}.gg-adventure .gg-mascot{min-height:64px}.gg-adventure .gg-avatar{width:65px;flex-basis:65px}.gg-adventure .gg-bubble{font-size:12px}.gg-profile-form{padding:10px}}
 @media(max-height:700px){.gg-adventure{height:calc(100dvh - 112px);min-height:0;padding:8px;gap:5px}.gg-adventure .gg-mascot{min-height:54px}.gg-adventure .gg-choice{min-height:70px;padding:6px}.gg-match-grid .gg-choice{min-height:70px}.gg-adventure .gg-intro-card{padding:8px}.gg-adventure .gg-gift{width:75px;height:75px;font-size:43px}.gg-adventure .gg-profile-form{gap:5px;padding:7px}.gg-adventure .gg-profile-form input{padding:7px}}
+
+.gg-match-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gg-match-column{display:flex;flex-direction:column;gap:8px}
+.gg-match-column .gg-choice{min-height:66px;font-size:clamp(12px,1.8vh,15px)}
+.gg-match-column .gg-choice.selected{border-color:#e9a43b;background:#fff7e8}
+@media(max-height:700px){.gg-match-column .gg-choice{min-height:54px}}
