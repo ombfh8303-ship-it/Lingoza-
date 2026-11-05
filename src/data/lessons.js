@@ -1,9 +1,9 @@
 export const lessonLibrary = {
   en: [
-    { title: "Greetings", arTitle: "التحيات", description: "Say hello and goodbye naturally", arDescription: "تعلّم إلقاء التحية والوداع", questions: [
-      { word: "Hello", ar: ["مرحباً", "وداعاً", "من فضلك"], en: ["Hello", "Goodbye", "Please"], correct: 0 },
-      { word: "Good morning", ar: ["تصبح على خير", "صباح الخير", "مساء الخير"], en: ["Good night", "Good morning", "Good evening"], correct: 1 },
-      { word: "Goodbye", ar: ["شكراً", "أهلاً", "إلى اللقاء"], en: ["Thank you", "Welcome", "Goodbye"], correct: 2 }
+    { title: "Daily routine", arTitle: "الروتين اليومي", description: "Describe your day from morning to night", arDescription: "صف يومك من الصباح حتى المساء", questions: [
+      { word: "Wake up", ar: ["يستيقظ", "ينام", "يأكل"], en: ["Wake up", "Go to bed", "Eat"], correct: 0 },
+      { word: "Have breakfast", ar: ["يتناول العشاء", "يتناول الفطور", "يدرس"], en: ["Have dinner", "Have breakfast", "Study"], correct: 1 },
+      { word: "Study", ar: ["يلعب", "يستريح", "يدرس"], en: ["Play", "Rest", "Study"], correct: 2 }
     ]},
     { title: "Introducing yourself", arTitle: "التعريف بالنفس", description: "Share your name and meet people", arDescription: "عرّف عن نفسك وتعرّف إلى الآخرين", questions: [
       { word: "My name is Ali", ar: ["اسمي علي", "أين علي؟", "أنا مع علي"], en: ["My name is Ali", "Where is Ali?", "I am with Ali"], correct: 0 },
@@ -42,10 +42,10 @@ export const lessonLibrary = {
     ]}
   ],
   fr: [
-    { title: "Greetings", arTitle: "التحيات", description: "Say hello and goodbye in French", arDescription: "تعلّم التحية والوداع بالفرنسية", questions: [
-      { word: "Bonjour", ar: ["مرحباً / صباح الخير", "إلى اللقاء", "شكراً"], en: ["Hello / Good morning", "Goodbye", "Thank you"], correct: 0 },
-      { word: "Bonsoir", ar: ["تصبح على خير", "مساء الخير", "صباح الخير"], en: ["Good night", "Good evening", "Good morning"], correct: 1 },
-      { word: "Au revoir", ar: ["من فضلك", "أهلاً", "إلى اللقاء"], en: ["Please", "Welcome", "Goodbye"], correct: 2 }
+    { title: "La routine quotidienne", arTitle: "الروتين اليومي", description: "Describe your day in French", arDescription: "صف يومك باللغة الفرنسية", questions: [
+      { word: "Se réveiller", ar: ["يستيقظ", "ينام", "يأكل"], en: ["Wake up", "Sleep", "Eat"], correct: 0 },
+      { word: "Prendre le petit-déjeuner", ar: ["يتناول العشاء", "يتناول الفطور", "يدرس"], en: ["Have dinner", "Have breakfast", "Study"], correct: 1 },
+      { word: "Étudier", ar: ["يلعب", "يستريح", "يدرس"], en: ["Play", "Rest", "Study"], correct: 2 }
     ]},
     { title: "Introducing yourself", arTitle: "التعريف بالنفس", description: "Introduce yourself in French", arDescription: "عرّف عن نفسك باللغة الفرنسية", questions: [
       { word: "Je m'appelle Lina", ar: ["اسمي لينا", "أين لينا؟", "أنا مع لينا"], en: ["Where is Lina?", "My name is Lina", "I am with Lina"], correct: 1 },
