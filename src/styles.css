@@ -1428,3 +1428,70 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .daily-mission .daily-routine-choices span{font-size:26px}
 .daily-mission .daily-routine-choices b{font-size:13px}
 @media(max-width:600px){.daily-mission .daily-routine-grid{grid-template-columns:1fr}.daily-mission .daily-routine-choices{gap:7px}.daily-mission .daily-routine-choices button{padding:13px 5px}.daily-mission .daily-routine-choices b{font-size:11px}.daily-mission .daily-mission-stats strong{font-size:21px}}
+
+
+/* Lingoza daily mission — game feel, playful feedback and stronger visual rhythm */
+.daily-mission{
+ --mission-ink:#173c34;--mission-green:#087f69;--mission-lime:#b8ec83;--mission-gold:#ffca58;
+ background:radial-gradient(ellipse at 90% 8%,#fff0c9 0,transparent 28%),radial-gradient(ellipse at 4% 35%,#dff8ec 0,transparent 30%),linear-gradient(145deg,#fbfff9 0%,#f4fbff 52%,#fffaf0 100%);
+ border:2px solid #e5f2e9;border-radius:30px;box-shadow:0 18px 48px rgba(24,87,65,.12);padding:clamp(16px,3vw,30px);
+}
+.daily-mission .coach-top{font-size:11px;letter-spacing:.08em;color:#55796d}
+.daily-mission .coach-top b{background:#173c34;color:#fff;padding:8px 13px;border-radius:999px;box-shadow:0 4px 0 #0a5d4c}
+.daily-mission .coach-progress{height:13px;background:#dcece2;border:2px solid #fff;box-shadow:inset 0 2px 4px #173c3414;border-radius:99px;margin-bottom:20px}
+.daily-mission .coach-progress span{background:linear-gradient(90deg,#10a985,#8edb63,#ffcf5c);box-shadow:0 2px 10px #26a77c66}
+.daily-mission .lingo-coach-mascot{border:2px solid #d5eddb;background:linear-gradient(105deg,#e9fff1,#fff4d9);box-shadow:0 7px 0 #d9ecdf,0 12px 20px #285b3b12;animation:missionFloat 3.4s ease-in-out infinite}
+.daily-mission .lingo-mascot-face{border:2px solid #fff;box-shadow:0 5px 0 #e6b65f,0 7px 15px #b77b2840;animation:missionWiggle 4s ease-in-out infinite}
+.daily-mission .lingo-mascot-copy strong{font-size:15px}
+.daily-mission .coach-icon{width:88px;height:88px;border-radius:28px;background:linear-gradient(145deg,#fff0c9,#ffdb8c);border:3px solid #fff;box-shadow:0 8px 0 #f1d9a8,0 12px 24px #b27c2a20;animation:missionPop .55s cubic-bezier(.2,1.5,.4,1) both}
+.daily-mission .coach-kicker{display:inline-flex;align-items:center;gap:6px;margin:12px auto;padding:7px 12px;border-radius:999px;background:#e4f7e9;color:#08745d;font-size:10px;letter-spacing:.08em}
+.daily-mission h2{font-size:clamp(25px,4vw,34px);text-shadow:0 2px 0 #fff;margin-bottom:18px}
+.daily-mission .daily-mission-stats{gap:12px;margin:22px auto}
+.daily-mission .daily-mission-stats>div{border:2px solid #e5f1e7;border-bottom-width:5px;border-radius:20px;background:#fff;transition:transform .2s}
+.daily-mission .daily-mission-stats>div:nth-child(2){background:#fff9e9;border-color:#f5e5bd}
+.daily-mission .daily-mission-stats>div:nth-child(3){background:#eff8ff;border-color:#dcecf7}
+.daily-mission .daily-mission-stats strong{font-size:29px}
+.daily-mission .coach-example{border:2px dashed #b6ddc4;background:linear-gradient(110deg,#effbf1,#fff);box-shadow:none}
+.daily-mission .coach-example>strong{font-size:clamp(16px,2.3vw,21px)}
+.daily-mission .daily-routine-grid{gap:13px}
+.daily-mission .daily-routine-card{border:2px solid #e3efe6;border-bottom-width:5px;border-radius:20px;padding:14px;background:#fff;transition:transform .18s,border-color .18s,box-shadow .18s}
+.daily-mission .daily-routine-card:hover{transform:translateY(-4px) rotate(-.3deg);border-color:#9bd4ac;box-shadow:0 10px 20px #285b3b16}
+.daily-mission .daily-routine-card>span{width:49px;height:49px;flex-basis:49px;background:linear-gradient(145deg,#e7f9ed,#fff1d2);font-size:27px}
+.daily-mission .daily-routine-card button,.daily-mission .daily-example-row button{width:42px;height:42px;border-radius:14px;background:#e8f7ed;font-size:17px;box-shadow:0 3px 0 #cce8d5}
+.daily-mission .daily-example-row{border:2px solid #e5efe7;border-radius:18px;padding:16px;background:#fff;transition:transform .18s}
+.daily-mission .daily-example-row:hover{transform:translateX(-3px);border-color:#a9d9b8}
+.daily-mission .daily-routine-choices button{border:2px solid #e1ede4;border-bottom-width:5px;border-radius:20px;min-height:112px;transition:transform .18s,background .18s}
+.daily-mission .daily-routine-choices button.selected{border-color:#45b47e;background:#eaffef;box-shadow:0 0 0 4px #45b47e20;transform:translateY(-3px)}
+.daily-mission .coach-options{gap:12px}
+.daily-mission .coach-options button{position:relative;min-height:62px;border:2px solid #e3eee6;border-bottom-width:5px;border-radius:19px;padding:15px 18px;background:#fff;font-size:16px;font-weight:850;box-shadow:0 4px 12px #234f3510;transition:transform .16s,border-color .16s,background .16s}
+.daily-mission .coach-options button:not(:disabled):hover{transform:translateY(-3px);border-color:#8bcaa0;background:#f7fff8}
+.daily-mission .coach-options button.selected{border-color:#3eaa79;background:#e9faef;box-shadow:0 0 0 4px #3eaa791c}
+.daily-mission .coach-options button.correct{border-color:#2eaa70;background:#ddf9e7;color:#176b45;animation:missionPop .35s ease}
+.daily-mission .coach-options button.wrong{border-color:#e18c82;background:#fff0ed;color:#9e4037;animation:missionShake .3s ease}
+.daily-mission .coach-feedback{border:2px solid #d9ebdf;border-radius:19px;font-weight:750;animation:missionPop .3s ease}
+.daily-mission .coach-feedback.ok{background:linear-gradient(110deg,#e2f9e9,#f8fff4);border-color:#9ddab0}
+.daily-mission .coach-feedback.retry{background:linear-gradient(110deg,#fff0e9,#fffaf2);border-color:#f0c5ad}
+.daily-mission .coach-action{min-height:62px;border-radius:19px;background:linear-gradient(100deg,#087d68,#16a47b 58%,#75bf65);box-shadow:0 6px 0 #086b59,0 12px 20px #16876530;font-size:17px;letter-spacing:.01em;transition:transform .16s,box-shadow .16s,filter .16s}
+.daily-mission .coach-action:not(:disabled):hover{transform:translateY(-3px);box-shadow:0 9px 0 #086b59,0 16px 24px #16876535}
+.daily-mission .coach-action:not(:disabled):active{transform:translateY(3px);box-shadow:0 2px 0 #086b59}
+.daily-mission .coach-action:disabled{box-shadow:none}
+.daily-mission .coach-result-card{position:relative;border:2px solid #f0dfad;background:radial-gradient(circle at 50% 0,#fff4cf,#effbf1 75%);box-shadow:0 8px 0 #e9ddb9,0 14px 25px #886d2b15;animation:missionPop .5s cubic-bezier(.2,1.4,.4,1) both}
+.daily-mission .coach-result-card strong{color:#087f69}
+.daily-mission .coach-result-card strong:nth-of-type(2){color:#d28a20}
+.daily-mission .coach-note{font-weight:700;color:#789086}
+@keyframes missionFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes missionWiggle{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(-9deg)}96%{transform:rotate(8deg)}}
+@keyframes missionPop{0%{opacity:.5;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
+@keyframes missionShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@media(max-width:600px){
+ .daily-mission{padding:13px;border-radius:23px}
+ .daily-mission .coach-icon{width:72px;height:72px;font-size:36px}
+ .daily-mission .daily-mission-stats{gap:7px}
+ .daily-mission .daily-mission-stats>div{padding:12px 5px;border-radius:16px}
+ .daily-mission .daily-mission-stats strong{font-size:24px}
+ .daily-mission .daily-mission-stats span{font-size:10px}
+ .daily-mission .coach-options button{min-height:58px;font-size:14px}
+ .daily-mission .coach-action{min-height:58px;font-size:15px}
+ .daily-mission .coach-result-card{gap:10px;padding:17px}
+}
+@media(prefers-reduced-motion:reduce){.daily-mission *{animation:none!important;transition:none!important}}
