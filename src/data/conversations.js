@@ -154,3 +154,8 @@ export const conversationLibrary = {
     }
   ]
 };
+
+
+// Café lessons belong to the Lessons path; keep the Conversations area for dialogue practice in other situations.
+conversationLibrary.en = conversationLibrary.en.filter((item) => item.id !== 'cafe');
+conversationLibrary.fr = conversationLibrary.fr.filter((item) => item.id !== 'cafe');
