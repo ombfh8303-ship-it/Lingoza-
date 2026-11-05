@@ -1319,3 +1319,30 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .greetings-coach .coach-options button{transition:border-color .18s,background .18s,transform .18s}
 .greetings-coach .coach-options button:active{transform:scale(.99)}
 @media(max-width:600px){.lingo-coach-mascot{padding:9px 11px;gap:10px;border-radius:15px;margin-bottom:8px}.lingo-mascot-face{width:46px;height:46px;flex-basis:46px;font-size:29px}.lingo-mascot-copy p{font-size:11px}}
+
+
+/* Premium greetings lesson: scenario practice, clarity and mobile comfort */
+.greetings-coach .coach-top span{letter-spacing:.035em}
+.greetings-coach .coach-progress span{background:linear-gradient(90deg,#078c78,#35b58b)}
+.greetings-coach .coach-question{max-width:680px;margin:14px auto 9px;padding:15px 18px;border-radius:17px;background:#f5faf6;border:1px solid #e1eee5;color:#183f30;font-size:clamp(16px,2.1vw,21px);line-height:1.65}
+.greetings-coach .coach-question-ar{font-size:clamp(13px,1.5vw,15px);line-height:1.7}
+.greetings-coach .coach-options{max-width:680px;width:100%;margin:10px auto 16px}
+.greetings-coach .coach-options button{min-height:54px;border-radius:15px;padding:13px 16px;font-size:15px;box-shadow:0 2px 8px rgba(27,75,48,.035)}
+.greetings-coach .coach-options button:focus-visible,.greetings-coach .coach-listen-btn:focus-visible,.greetings-coach .coach-action:focus-visible{outline:3px solid #8ad6b2;outline-offset:3px}
+.greetings-coach .coach-feedback{max-width:680px;width:100%;margin:0 auto 14px;border-radius:15px;padding:14px 16px;font-size:14px}
+.greetings-coach .coach-phrase{font-size:clamp(21px,3vw,30px);letter-spacing:.01em;padding:22px 16px;border-radius:20px}
+.greetings-coach .coach-example{border-radius:17px;padding:16px 18px}
+.greetings-coach .coach-example strong{font-size:clamp(15px,1.8vw,18px)}
+.greetings-coach .coach-why{padding:12px 15px;border:1px solid #e1ebe3;border-radius:14px;background:#fff;margin:0 0 14px;color:#355343}
+.greetings-coach .coach-why summary{font-weight:850;cursor:pointer}
+.greetings-coach .coach-why p{font-size:13px;line-height:1.8;margin:8px 0 0}
+.greetings-coach .coach-action{border-radius:15px;min-height:54px;font-size:15px;font-weight:850}
+.greetings-coach .coach-result-card{border-radius:20px;padding:22px;background:linear-gradient(140deg,#effaf3,#fffdf4)}
+.greetings-coach .coach-result-card strong:first-child{font-size:clamp(32px,5vw,48px)}
+@media(max-width:600px){
+ .greetings-coach .coach-question{font-size:16px;padding:13px 12px}
+ .greetings-coach .coach-options button{min-height:52px;font-size:14px;padding:12px}
+ .greetings-coach .coach-phrase{font-size:21px;padding:17px 12px}
+ .greetings-coach .coach-feedback{font-size:13px}
+ .greetings-coach .coach-action{min-height:52px}
+}
