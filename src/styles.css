@@ -1093,3 +1093,69 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* Reference-match: lesson path cards */
+.quest-path-page{max-width:760px;margin-inline:auto;padding-top:27px}
+.quest-path-title{display:flex;flex-direction:column;align-items:flex-end;text-align:right;margin:0 0 28px;padding:0 5px}
+.quest-path-title>span{display:none}
+.quest-path-title h1{font-size:34px;font-weight:950;letter-spacing:-.7px;color:#142f32;margin:0 0 7px}
+.quest-path-title p{font-size:14px;color:#748b89;margin:0}
+.quest-unit-preview{border:0!important;border-radius:30px!important;background:rgba(255,255,255,.94)!important;box-shadow:0 12px 30px rgba(48,102,93,.10)!important;padding:24px 24px 19px!important;margin:0 0 28px}
+.quest-unit-heading{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;text-align:right}
+.quest-unit-heading>div{grid-column:1;grid-row:1}
+.quest-unit-heading>b{grid-column:2;grid-row:1;background:#d7f4e4;color:#29976a;padding:9px 15px;border-radius:30px;font-size:14px}
+.quest-unit-heading small{font-size:12px!important;letter-spacing:0!important;color:#238b80!important;font-weight:900}
+.quest-unit-heading h3{font-size:21px!important;font-weight:950!important;margin:4px 0!important;color:#152f35!important}
+.quest-unit-heading p{display:none}
+.quest-unit-icon{display:none!important}
+.quest-unit-progress{height:10px!important;border-radius:30px;margin:18px 0 0;background:#edf3f2!important;overflow:hidden}
+.quest-unit-progress i{border-radius:30px;background:linear-gradient(90deg,#008c83,#42ad8b)!important}
+.game-map{border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;overflow:visible}
+.game-map-hint,.game-map-svg,.game-map-reward,.game-map-test{display:none!important}
+.game-map-path{display:flex!important;flex-direction:column;gap:18px;position:relative;padding:0!important}
+.game-node{position:relative!important;display:flex!important;align-items:center!important;flex-direction:row-reverse!important;justify-content:flex-start!important;gap:17px!important;width:90%!important;min-height:132px!important;margin:0!important;padding:18px 20px!important;border:1px solid rgba(222,239,234,.9)!important;border-radius:38px!important;background:#fff!important;box-shadow:0 9px 22px rgba(46,99,91,.10)!important;text-align:right!important;transform:none!important;overflow:visible}
+.game-node:nth-child(even){align-self:flex-end!important}
+.game-node:nth-child(odd){align-self:flex-start!important}
+.game-node-orbit{width:96px!important;height:96px!important;flex:0 0 96px!important;border:0!important;background:#d5f5e2!important;box-shadow:none!important;display:grid!important;place-items:center}
+.game-node-core{width:72px!important;height:72px!important;border-radius:50%!important;background:transparent!important;color:#299d70!important;display:grid!important;place-items:center}
+.game-node.done .game-node-orbit{background:#d5f5e2!important}
+.game-node.done .game-node-core{color:#2d9b70!important}
+.game-node.active{border:2px solid #d9eeeb!important;box-shadow:0 10px 25px rgba(46,99,91,.12)!important}
+.game-node.active .game-node-orbit{background:#fff0e4!important;box-shadow:none!important}
+.game-node.active .game-node-core{width:72px!important;height:72px!important;border-radius:50%!important;background:#f06a2e!important;color:white!important}
+.game-node.locked{background:#f0f7f4!important;box-shadow:none!important;opacity:.75}
+.game-node.locked .game-node-orbit{background:#edf4f1!important}
+.game-node.locked .game-node-core{color:#8b9c9a!important}
+.game-node-label{display:flex!important;flex:1!important;min-width:0!important;align-items:flex-end!important;flex-direction:column!important;gap:6px!important;text-align:right!important}
+.game-node-meta{display:flex;align-items:center;gap:9px;direction:rtl}
+.game-node-meta i{font-style:normal;font-size:12px;font-weight:900;color:#138d83;background:#d9f2ee;padding:7px 13px;border-radius:30px}
+.game-node:nth-child(3n) .game-node-meta i{color:#7e70c2;background:#eeebff}
+.game-node:nth-child(4n) .game-node-meta i{color:#29976a;background:#d9f4e4}
+.game-node:nth-child(5n) .game-node-meta i{color:#ce8650;background:#ffead8}
+.game-node-meta small{font-size:11px!important;color:#708080!important;font-weight:900}
+.game-node-label>b{max-width:100%!important;font-size:20px!important;line-height:1.35!important;font-weight:950!important;color:#172f35!important}
+.game-node-label .game-node-state{font-size:10px!important;color:#899a98!important;font-weight:800!important}
+.game-node.active .game-node-label>b{color:#142f35!important}
+.game-node.active .game-node-state{color:#148b82!important}
+.game-node-start{display:inline-flex!important;align-items:center;gap:5px;background:#f06a2e!important;color:#fff!important;border-radius:10px!important;padding:6px 10px!important;font-size:10px!important}
+.game-node-mascot{display:none!important}
+.quest-unit-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;margin-top:16px;border-top:1px solid #edf1ed;color:#82938b;font-size:11px}
+.quest-unit-footer button{border:0;border-radius:12px;background:#e4f3e8;color:#237d5c;padding:9px 13px;font-weight:900}
+.quest-locked{opacity:.68}
+@media(max-width:600px){
+ .quest-path-page{padding:24px 15px 115px!important}
+ .quest-path-title{margin-bottom:27px;padding:0 4px}
+ .quest-path-title h1{font-size:31px}
+ .quest-path-title p{font-size:13px}
+ .quest-unit-preview{padding:22px 18px 17px!important;border-radius:27px!important;margin-bottom:25px}
+ .quest-unit-heading h3{font-size:19px!important}
+ .game-map-path{gap:19px}
+ .game-node{width:91%!important;min-height:138px!important;padding:15px 14px!important;gap:12px!important;border-radius:38px!important}
+ .game-node-orbit{width:83px!important;height:83px!important;flex-basis:83px!important}
+ .game-node-core,.game-node.active .game-node-core{width:65px!important;height:65px!important}
+ .game-node-label>b{font-size:17px!important}
+ .game-node-meta i{font-size:11px;padding:6px 11px}
+ .game-node-meta small{font-size:10px!important}
+ .quest-unit-footer{font-size:9px}
+}
