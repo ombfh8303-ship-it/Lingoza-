@@ -182,7 +182,8 @@ function FirstGreetingsCoach({rtl,onComplete}){
  const next=()=>{if(!feedback)return;if(!feedback.ok&&hearts<=1){setDone(true);return}if(step===9){setDone(true);return}setStep(v=>v+1);setScene(0);resetStage()};
  const restart=()=>{setStep(0);setHearts(3);setCombo(0);setBestCombo(0);setXp(0);setCorrect(0);setChoice([]);setFeedback(null);setDone(false);setWrong([]);setName('');setCountry('');setScene(0);setReviewIndex(0);resetStage()};
  const check=()=>{if(feedback)return;
-  if(q.type==='picture'||q.type==='listen'||q.type==='reply')answer(choice[0]===q.answer,q.options?.[q.answer]?.[1]);\n  if(q.type==='review')answer(choice[0]===reviewAnswer,reviewOptions?.[reviewAnswer]?.[1]);
+  if(q.type==='picture'||q.type==='listen'||q.type==='reply')answer(choice[0]===q.answer,q.options?.[q.answer]?.[1]);
+  if(q.type==='review')answer(choice[0]===reviewAnswer,reviewOptions?.[reviewAnswer]?.[1]);
   if(q.type==='match')answer(matched.length===3&&matched.every((v,i)=>v===i),'Hello / Goodbye / Thanks');
   if(q.type==='order')answer(wordOrder.join('|')===q.answer.join('|'),q.answer.join(' '));
   if(q.type==='profile')answer(name.trim().length>0&&country.trim().length>0,'Hi, I’m [name]. I’m from [country].');
