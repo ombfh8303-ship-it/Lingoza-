@@ -1499,3 +1499,80 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 /* Lulu character animation and playful adventure scene */
 .daily-mission .lingo-mascot-face{position:relative;display:grid;place-items:center;transform-origin:50% 85%;animation:luluIdle 2.8s ease-in-out infinite}.daily-mission .lulu-character{display:block;filter:drop-shadow(0 4px 2px #8b653344);animation:luluBlink 4.8s infinite,luluBounce 2.8s ease-in-out infinite}.daily-mission .lulu-effect{position:absolute;right:-8px;top:-9px;font-style:normal;color:#f1ae36;opacity:0}.daily-mission .lulu-happy .lulu-character{animation:luluJump .62s cubic-bezier(.2,1.6,.4,1) 2}.daily-mission .lulu-happy .lulu-effect,.daily-mission .lulu-win .lulu-effect{animation:luluSpark .8s ease-out 2}.daily-mission .lulu-oops .lulu-character{animation:luluNo .42s ease-in-out 2}.daily-mission .lulu-win .lulu-character{animation:luluVictory .8s ease-in-out 3}.daily-mission .adventure-paths button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}.daily-mission .adventure-paths button span{font-size:32px}.daily-mission .adventure-paths button small{font-size:11px;color:#668075}.daily-mission .adventure-narrative{display:grid;gap:9px;border:2px solid #dcefe1;background:linear-gradient(120deg,#effcf2,#fff8e9);border-radius:20px;padding:17px;margin-top:14px}.daily-mission .adventure-narrative p{margin:0;color:#547366;line-height:1.6}.daily-mission .adventure-scene{display:flex;align-items:center;gap:13px;background:linear-gradient(110deg,#fff4d7,#f0faef);border:2px solid #f1e2bd;border-radius:19px;padding:14px;margin:14px 0}.daily-mission .adventure-scene>span{font-size:36px;animation:missionFloat 2.5s ease-in-out infinite}.daily-mission .adventure-scene p{margin:0;font-weight:700;line-height:1.6;color:#48695a}@keyframes luluIdle{0%,100%{transform:rotate(0) translateY(0)}50%{transform:rotate(2deg) translateY(-3px)}}@keyframes luluBlink{0%,45%,48%,100%{scale:1}46%,47%{scale:1 .82}}@keyframes luluBounce{0%,100%{translate:0 0}50%{translate:0 -3px}}@keyframes luluJump{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-17px) rotate(-12deg)}70%{transform:translateY(0) rotate(8deg)}}@keyframes luluNo{0%,100%{transform:rotate(0)}25%{transform:rotate(-13deg)}75%{transform:rotate(13deg)}}@keyframes luluVictory{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-11px) rotate(-14deg)}50%{transform:translateY(0) rotate(12deg)}}@keyframes luluSpark{0%{opacity:0;transform:scale(.2)}40%{opacity:1;transform:scale(1.5)}100%{opacity:0;transform:scale(.6)}}
 @media(prefers-reduced-motion:reduce){.daily-mission .lulu-character,.daily-mission .lingo-mascot-face{animation:none!important}}
+
+/* Compact story lesson: fit the complete activity to a phone viewport */
+.daily-mission{
+ box-sizing:border-box;width:100%;height:calc(100svh - 116px);height:calc(100dvh - 116px);
+ min-height:490px;max-height:790px;overflow:hidden;
+ display:flex;flex-direction:column;gap:clamp(5px,1.05vh,10px);
+ padding:clamp(10px,1.7vh,18px) clamp(12px,2.5vw,22px);
+}
+.daily-mission *{box-sizing:border-box}
+.daily-mission .coach-top{flex:0 0 auto;margin:0}
+.daily-mission .coach-progress{flex:0 0 8px;height:8px;margin:0 0 2px}
+.daily-mission .lingo-coach-mascot{flex:0 0 auto;min-height:58px;padding:7px 12px;margin:0;gap:10px}
+.daily-mission .lingo-mascot-face{width:48px;height:48px;min-width:48px;font-size:30px}
+.daily-mission .lingo-mascot-copy p{font-size:11px;line-height:1.25;margin:2px 0 0}
+.daily-mission .coach-kicker{margin:2px auto 0;padding:5px 9px;font-size:9px}
+.daily-mission h2{font-size:clamp(19px,3vh,27px);line-height:1.12;margin:0 0 3px}
+.daily-mission .coach-question-ar{font-size:clamp(11px,1.65vh,14px);line-height:1.35;margin:2px 0}
+.daily-mission .coach-icon{width:clamp(48px,8vh,68px);height:clamp(48px,8vh,68px);font-size:32px;margin:0 auto}
+.daily-mission .daily-mission-stats{margin:5px auto;gap:7px}
+.daily-mission .daily-mission-stats>div{padding:7px 5px}
+.daily-mission .daily-mission-stats strong{font-size:clamp(19px,3vh,25px)}
+.daily-mission .daily-mission-stats span{font-size:9px}
+.daily-mission .coach-example{padding:9px 12px;margin:2px 0}
+.daily-mission .coach-example>strong{font-size:clamp(13px,2vh,17px)}
+.daily-mission .coach-example small{font-size:10px}
+.daily-mission .daily-routine-grid{display:grid;grid-template-columns:1fr;gap:5px;min-height:0}
+.daily-mission .daily-routine-card{min-height:0;padding:5px 9px;border-radius:13px;border-bottom-width:3px;gap:8px}
+.daily-mission .daily-routine-card>span{width:34px;height:34px;flex-basis:34px;font-size:20px}
+.daily-mission .daily-routine-card strong{font-size:12px}
+.daily-mission .daily-routine-card small{font-size:10px;line-height:1.15}
+.daily-mission .daily-routine-card button,.daily-mission .daily-example-row button{width:32px;height:32px;min-width:32px}
+.daily-mission .daily-example-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;min-height:0}
+.daily-mission .daily-example-row{min-height:0;padding:8px;border-radius:12px;gap:5px}
+.daily-mission .daily-example-row strong{font-size:clamp(10px,1.5vh,12px);line-height:1.2}
+.daily-mission .daily-example-row small{font-size:9px;line-height:1.2}
+.daily-mission .daily-routine-choices{gap:7px}
+.daily-mission .daily-routine-choices button{min-height:72px;padding:7px;border-radius:14px}
+.daily-mission .adventure-paths button span{font-size:24px}
+.daily-mission .adventure-paths button small{font-size:9px}
+.daily-mission .adventure-narrative{gap:5px;padding:9px 11px;margin-top:4px}
+.daily-mission .adventure-narrative p{font-size:11px;line-height:1.3}
+.daily-mission .adventure-narrative strong{font-size:11px}
+.daily-mission .coach-listen-btn{padding:5px 8px;font-size:10px}
+.daily-mission .adventure-scene{padding:7px 10px;margin:3px 0;gap:8px}
+.daily-mission .adventure-scene>span{font-size:25px}
+.daily-mission .adventure-scene p{font-size:10px;line-height:1.25}
+.daily-mission .coach-question{font-size:clamp(12px,1.8vh,15px);line-height:1.28;margin:2px 0}
+.daily-mission .coach-options{display:grid;grid-template-columns:1fr;gap:5px}
+.daily-mission .coach-options button{min-height:42px;padding:7px 12px;font-size:clamp(12px,1.8vh,14px);border-radius:13px;border-bottom-width:3px}
+.daily-mission .coach-feedback{padding:7px 10px;margin:2px 0;font-size:11px}
+.daily-mission .coach-feedback p{font-size:10px;margin:2px 0 0;line-height:1.2}
+.daily-mission .coach-action{flex:0 0 auto;min-height:44px;padding:9px 13px;margin-top:auto;font-size:14px;border-radius:14px;box-shadow:0 3px 0 #086b59}
+.daily-mission .coach-result-card{padding:12px;gap:7px}
+.daily-mission .coach-note{font-size:9px;margin:0;text-align:center}
+@media(max-width:600px){
+ .daily-mission{height:calc(100svh - 104px);height:calc(100dvh - 104px);min-height:470px;padding:9px 10px;gap:5px;border-radius:20px}
+ .daily-mission .daily-example-list{grid-template-columns:1fr 1fr}
+ .daily-mission .daily-example-row{padding:6px}
+ .daily-mission .daily-routine-card{padding:4px 7px}
+ .daily-mission .coach-action{min-height:42px}
+}
+@media(max-height:680px){
+ .daily-mission{height:calc(100svh - 86px);height:calc(100dvh - 86px);min-height:0;padding:7px 9px;gap:3px}
+ .daily-mission .lingo-coach-mascot{min-height:48px;padding:4px 8px}
+ .daily-mission .lingo-mascot-face{width:39px;height:39px;min-width:39px;font-size:25px}
+ .daily-mission .coach-icon{width:42px;height:42px}
+ .daily-mission .coach-example{padding:6px 9px}
+ .daily-mission .daily-routine-card{padding:3px 7px}
+ .daily-mission .daily-routine-card>span{width:29px;height:29px;flex-basis:29px}
+ .daily-mission .daily-example-row{padding:5px}
+ .daily-mission .daily-routine-choices button{min-height:60px}
+ .daily-mission .adventure-narrative{padding:6px 9px}
+ .daily-mission .adventure-scene{padding:5px 8px}
+ .daily-mission .coach-options button{min-height:36px;padding:5px 9px}
+ .daily-mission .coach-action{min-height:38px;padding:6px 10px}
+}
+@media(prefers-reduced-motion:reduce){.daily-mission *{scroll-behavior:auto!important}}
