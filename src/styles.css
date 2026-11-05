@@ -851,3 +851,11 @@
 .game-node.done .game-node-core svg{animation:mapStarPop .55s cubic-bezier(.2,.8,.2,1)}
 @media(max-width:420px){.game-map-path{grid-auto-rows:98px}.game-node-orbit{width:51px;height:51px;flex-basis:51px}.game-node-core{width:39px;height:39px}.game-node.active .game-node-orbit{width:59px;height:59px;flex-basis:59px}.game-node.active .game-node-core{width:45px;height:45px}.game-node-label b{max-width:115px;font-size:9px}.game-map-reward{padding:7px 11px}.game-map-test{padding:11px 10px}}
 @media(prefers-reduced-motion:reduce){.game-node.active .game-node-orbit,.game-node-mascot{animation:none}.game-node.done .game-node-core svg{animation:none}}
+
+
+/* Profile destination replaces the old achievements-only tab */
+.profile-hero{display:flex;align-items:center;gap:15px;padding:19px 21px;margin:0 0 22px;border:1px solid #e1eee5;border-radius:20px;background:linear-gradient(115deg,#f0faf4,#fffaf2);box-shadow:0 7px 22px #173c2c0a}
+.profile-hero-avatar{width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;border-radius:19px;background:linear-gradient(145deg,#1b9b70,#12694f);color:#fff;font-size:24px;font-weight:900;box-shadow:0 5px 0 #d4e8db}
+.profile-hero-copy{flex:1;min-width:0}.profile-hero-copy>span{font-size:9px;font-weight:900;letter-spacing:1.2px;color:#16865f}.profile-hero-copy h2{margin:4px 0;font-size:18px;color:#18382f;font-weight:900}.profile-hero-copy p{margin:0;font-size:11px;color:#829187}
+.profile-hero-xp{display:flex;align-items:baseline;gap:4px;padding:9px 12px;border-radius:13px;background:#fff;border:1px solid #e6eee7;color:#16865f}.profile-hero-xp strong{font-size:20px;font-weight:900}.profile-hero-xp small{font-size:9px;font-weight:900}
+@media(max-width:520px){.profile-hero{gap:11px;padding:14px;border-radius:17px}.profile-hero-avatar{width:49px;height:49px;flex-basis:49px;border-radius:16px;font-size:20px}.profile-hero-copy h2{font-size:15px}.profile-hero-copy p{font-size:10px}.profile-hero-xp{padding:8px 9px}.profile-hero-xp strong{font-size:17px}}
