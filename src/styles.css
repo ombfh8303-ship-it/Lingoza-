@@ -1772,3 +1772,10 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .gg-adventure .gg-combo.active svg{transform:scale(1.08);transform-origin:center;transition:transform .18s ease}
 .gg-adventure .gg-choice:disabled{cursor:default}
 @media(prefers-reduced-motion:reduce){.gg-lulu.dance,.gg-combo-banner::before,.gg-combo-banner::after{animation:none!important}}
+
+/* Lesson QA: translation clarity and settings anchoring */
+.gg-adventure .gg-top{position:relative}
+.gg-bubble-translation{display:block;margin-top:2px;padding-top:4px;border-top:1px solid #e5f0e8;color:#668675;font-size:12px;line-height:1.4;font-weight:700}
+.gg-adventure .gg-dialogue{min-width:0}
+.gg-adventure .gg-bubble{overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){.gg-adventure .gg-lulu,.gg-adventure .gg-sara{animation:none!important}}
