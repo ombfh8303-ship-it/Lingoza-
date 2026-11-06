@@ -1756,3 +1756,19 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .gg-adventure .gg-person:not(.sara){justify-self:end}
 .gg-adventure .gg-dialogue{direction:ltr}
 @media(prefers-reduced-motion:reduce){.gg-lulu.idle,.gg-sara.idle{animation:none!important}.gg-adventure .gg-combo-banner,.gg-adventure .gg-feedback{animation:none!important}}
+
+/* Polished mascot timing and end-of-lesson celebration */
+.gg-lulu.idle .fox-eyes,.gg-sara.idle .bunny-eyes{animation:mascotBlinkCycle 4s linear infinite}
+.gg-lulu.idle .fox-eyes{transform-origin:50% 62%}
+.gg-sara.idle .bunny-eyes{transform-origin:50% 68%}
+@keyframes mascotBlinkCycle{0%,95%,100%{transform:scaleY(1)}96%,98%{transform:scaleY(.08)}}
+.gg-lulu.dance{animation:foxDance .72s ease-in-out 3}
+.gg-lulu.dance .fox-tail{animation:foxTail  .25s ease-in-out infinite alternate}
+@keyframes foxDance{0%,100%{transform:translateY(0) rotate(0) scale(1)}18%{transform:translateY(-8px) rotate(-9deg) scale(.96,1.05)}36%{transform:translateY(0) rotate(8deg) scale(1.05,.95)}54%{transform:translateY(-7px) rotate(-7deg)}72%{transform:translateY(0) rotate(7deg)}}
+.gg-combo-banner{position:relative;overflow:visible;transform-origin:center;z-index:1}
+.gg-combo-banner::before,.gg-combo-banner::after{content:"✦  ✧  🔥  ✧  ✦";position:absolute;top:50%;font-size:15px;pointer-events:none;opacity:0;color:#ef922e;animation:comboParticles 1s ease-out both}
+.gg-combo-banner::before{left:4px}.gg-combo-banner::after{right:4px;animation-delay:.08s}
+@keyframes comboParticles{0%{opacity:0;transform:translateY(10px) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translateY(-28px) scale(1.25)}}
+.gg-adventure .gg-combo.active svg{transform:scale(1.08);transform-origin:center;transition:transform .18s ease}
+.gg-adventure .gg-choice:disabled{cursor:default}
+@media(prefers-reduced-motion:reduce){.gg-lulu.dance,.gg-combo-banner::before,.gg-combo-banner::after{animation:none!important}}
