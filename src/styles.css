@@ -2025,3 +2025,10 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @keyframes iuAnswerPop{0%{transform:scale(.97)}100%{transform:scale(1)}}
 @media(max-width:600px){.iu-fullscreen-overlay .iu-adventure-modal{padding:10px!important;gap:8px!important}.iu-fullscreen-overlay .iu-lulu-coach{min-height:78px;padding:7px 10px}.iu-lulu-stage,.iu-lulu-art{width:66px;height:66px}.iu-lulu-stage{flex-basis:66px}.iu-fullscreen-overlay .iu-content-card{padding:13px!important}.iu-fullscreen-overlay .iu-tabs{overflow-x:auto;flex-wrap:nowrap}.iu-fullscreen-overlay .iu-tabs button{flex:0 0 auto}.iu-settings-panel{gap:12px}}
 @media(prefers-reduced-motion:reduce){.iu-fullscreen-overlay *, .iu-fullscreen-overlay *::before,.iu-fullscreen-overlay *::after{animation:none!important;transition:none!important}.iu-lulu-art.cheer,.iu-lulu-art.fire{transform:none!important}}
+
+.iu-lulu-ears{transform-box:fill-box;transform-origin:50% 100%;animation:iuEarTwitch 3.2s ease-in-out infinite}
+.iu-lulu-tail{transform-box:fill-box;transform-origin:20% 50%;animation:iuTailSway 1.8s ease-in-out infinite}
+.iu-lulu-art.cheer .iu-lulu-ears,.iu-lulu-art.fire .iu-lulu-ears{animation:iuEarTwitch .35s ease-in-out 4}
+.iu-lulu-art.sad .iu-lulu-ears{transform:rotate(-7deg)}
+@keyframes iuEarTwitch{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(-5deg)}96%{transform:rotate(5deg)}}
+@keyframes iuTailSway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(8deg)}}
