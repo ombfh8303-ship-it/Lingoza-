@@ -1,0 +1,14 @@
+{
+  "unit_id": "unit-1",
+  "pronunciation": {
+    "locale": "en-US",
+    "accent": "American",
+    "voice": "female",
+    "style": "clear, warm, learner-friendly",
+    "speaking_rate": 0.86,
+    "format": "mp3",
+    "sample_rate_hz": 48000,
+    "channels": 1
+  },
+  "recordings": {}
+}
