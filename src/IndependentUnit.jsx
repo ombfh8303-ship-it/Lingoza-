@@ -86,7 +86,18 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   useEffect(() => { if (luluMood === 'idle') return; const timer = window.setTimeout(() => setLuluMood('idle'), 1500); return () => window.clearTimeout(timer); }, [luluMood]);
   const vibrate = (pattern) => { if (!vibrationOn || typeof navigator === 'undefined' || !navigator.vibrate) return; try { navigator.vibrate(pattern); } catch {} };
   const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); setLuluMood('idle'); setComboMessage(''); };
-  const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
+  const resolveFeedback = (correct) => {
+    if (correct) {
+      const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next));
+      setLuluMood(next>=3?'fire':'cheer'); playUnitTone(next>=3?'combo':'correct',soundOn);
+      vibrate(next>=3?[40,40,40,40,90]:40);
+      if(next>=3){ const lines=rtl?['أنت نار! لا يوقفك أحد!','مذهل، استمر!','أداء رائع!']:['You are on fire!','Amazing, keep going!','Unstoppable!']; setComboMessage(lines[(next-3)%lines.length]); }
+    } else {
+      setCombo(0); setComboMessage(rtl?'لا بأس، المحاولة القادمة لك!':'No worries, you’ve got this!');
+      setLuluMood('sad'); playUnitTone('wrong',soundOn); vibrate([90,50,90]);
+    }
+  };
+  const unlockAudio = () => { if (!soundOn) return; try { const Audio=window.AudioContext||window.webkitAudioContext; if(Audio){ const ctx=new Audio(); if(ctx.state==='suspended')ctx.resume(); ctx.close(); } } catch {} };
   const beginLesson = (lesson) => {
     setCombo(0); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
@@ -128,7 +139,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
       const next = [...matches, matchLeft];
       setMatches(next); setMatchLeft(null);
       if (next.length === current.pairs.length) { setChecked(true); resolveFeedback(true); }
-    } else { setMatchLeft(null); }
+    } else { setMatchLeft(null); resolveFeedback(false); }
   };
   const beginSpeaking = () => { setPhase('speaking'); setContentIndex(0); };
   const phases = ['vocabulary', 'phrases', 'mistakes', 'exercises', 'speaking'];
