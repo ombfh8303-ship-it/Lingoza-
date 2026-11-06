@@ -79,7 +79,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const percent = Math.round(completed.length / unitData.lessons.length * 100);
   const unitComplete = completed.length === unitData.lessons.length;
 
-  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };
+  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); setLuluMood('idle'); };
   const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
   const beginLesson = (lesson) => {
     setCombo(0); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
