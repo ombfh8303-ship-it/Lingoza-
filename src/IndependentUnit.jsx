@@ -15,12 +15,23 @@ const speak = (value) => {
 };
 
 function UnitLulu({ mood = 'idle' }) {
-  return <svg viewBox="0 0 120 120" className={"iu-lulu-art " + mood} role="img" aria-label="لولو">
-    <path className="iu-lulu-tail" d="M83 82Q112 82 108 48Q105 70 88 64" fill="#e98532" stroke="#a94e1c" strokeWidth="3"/><path d="M103 50Q109 62 96 67" fill="#fff1dc"/>
-    <path className="iu-lulu-ears" d="M25 42 18 8Q38 14 46 38Z M75 38Q83 14 103 8L95 48Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="3"/><path d="M27 30 24 17 39 36Z M82 36 98 17 94 33Z" fill="#f7b4a1"/>
-    <ellipse cx="60" cy="68" rx="42" ry="39" fill="#f39b43" stroke="#a94e1c" strokeWidth="3"/><path d="M24 70Q60 42 96 70Q88 104 60 104Q32 104 24 70Z" fill="#fff0dd"/>
-    <ellipse cx="45" cy="62" rx="4" ry="6" fill="#34271f"/><ellipse cx="75" cy="62" rx="4" ry="6" fill="#34271f"/><path d="M55 75Q60 70 65 75L60 80Z" fill="#9b4c40"/><path className="iu-lulu-mouth" d="M51 85Q60 93 69 85" fill="none" stroke="#78402d" strokeWidth="3" strokeLinecap="round"/>
-    <g fill="#ffc84d"><path d="M12 35 15 43 23 46 15 49 12 57 9 49 1 46 9 43Z"/><path d="M105 74 108 81 115 84 108 87 105 94 102 87 95 84 102 81Z"/></g>
+  return <svg viewBox="0 0 160 190" className={"iu-lulu-art " + mood} role="img" aria-label="لولو">
+    <path className="iu-lulu-tail" d="M112 122Q151 132 143 83Q160 113 137 143Q126 151 113 139" fill="#e98532" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M55 111Q49 91 48 82L31 70Q18 64 15 80L30 101 40 130Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M104 111Q111 91 112 82L129 70Q142 64 145 80L130 101 120 130Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M51 145Q45 164 43 174Q41 183 54 183L70 183Q78 181 72 173L70 145Z" fill="#d9782d" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M90 145Q87 164 89 174Q90 183 103 183L117 183Q126 181 119 172L111 145Z" fill="#d9782d" stroke="#a94e1c" strokeWidth="4"/>
+    <ellipse cx="80" cy="126" rx="42" ry="43" fill="#f39b43" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M51 126Q80 109 109 126Q104 163 80 164Q56 163 51 126Z" fill="#fff0dd"/>
+    <path d="M47 48 36 7Q59 16 68 42Z M92 42Q101 16 124 7L113 51Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M48 31 43 17 60 40Z M100 40 117 17 112 33Z" fill="#f7b4a1"/>
+    <ellipse cx="80" cy="65" rx="43" ry="39" fill="#f39b43" stroke="#a94e1c" strokeWidth="4"/>
+    <path d="M48 70Q80 47 112 70Q105 103 80 104Q55 103 48 70Z" fill="#fff0dd"/>
+    <g className="iu-lulu-eye"><ellipse cx="65" cy="65" rx="4.5" ry="7" fill="#34271f"/><ellipse cx="95" cy="65" rx="4.5" ry="7" fill="#34271f"/></g>
+    <path d="M74 79Q80 73 86 79L80 85Z" fill="#9b4c40"/>
+    <path className="iu-lulu-mouth" d="M69 89Q80 99 91 89" fill="none" stroke="#78402d" strokeWidth="3.5" strokeLinecap="round"/>
+    <g fill="#ffc84d"><path d="M10 43 14 53 24 57 14 61 10 71 6 61 0 57 6 53Z"/><path d="M136 48 140 58 150 62 140 66 136 76 132 66 122 62 132 58Z"/></g>
+    <path className="iu-lulu-tear" d="M104 74Q114 86 104 91Q94 86 104 74Z" fill="#69bfe8"/>
   </svg>;
 }
 const playUnitTone = (kind, enabled) => {
