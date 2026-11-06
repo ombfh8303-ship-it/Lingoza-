@@ -2393,3 +2393,7 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .hearts-modal h2{font-size:24px}
  .hearts-ad-button,.hearts-training-button,.hearts-subscribe-button,.hearts-training-submit{font-size:15px;min-height:50px}
 }
+
+.gg-hearts>b{align-self:center;margin-inline-start:4px;padding:2px 6px;border-radius:8px;background:#fff0f3;color:#a52d48;font:900 13px 'DM Sans',sans-serif;direction:ltr;unicode-bidi:isolate}
+.modal-hearts-count{display:inline-flex;align-items:center;gap:5px;margin-inline-start:10px;padding:5px 9px;border:1px solid #f4cbd3;border-radius:11px;background:#fff4f6;color:#a52d48;font-size:14px;font-weight:900;white-space:nowrap}
+.modal-hearts-count b{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
