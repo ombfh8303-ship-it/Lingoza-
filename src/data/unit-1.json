@@ -106,12 +106,12 @@
       "common_mistakes": [
         {
           "wrong": "{{Good night}}, {{Sara}}! (عند لقاء صديقتك في المساء)",
-          "right": "Good evening, Sara!",
+          "right": "{{Good evening, Sara!}}",
           "explain_ar": "عند مقابلة شخص في المساء نقول {{Good evening}}. أما {{Good night}} فتُستخدم غالبًا عند الوداع أو قبل النوم. ويمكن استخدام {{Hello}} للتحية في أوقات مختلفة."
         },
         {
           "wrong": "{{Good morning}}! (بعد الظهر)",
-          "right": "Good afternoon!",
+          "right": "{{Good afternoon!}}",
           "explain_ar": "{{Good morning}} تُقال في الصباح، و{{Good afternoon}} تُقال بعد الظهر، و{{Good evening}} تُقال في المساء عند اللقاء."
         }
       ],
@@ -305,13 +305,13 @@
       ],
       "common_mistakes": [
         {
-          "wrong": "How is your situation?",
-          "right": "How are you?",
+          "wrong": "{{How is your situation?}}",
+          "right": "{{How are you?}}",
           "explain_ar": "لا نترجم «كيف حالك؟» كلمة بكلمة. التعبير الطبيعي للسؤال عن الحال هو {{How are you}}?"
         },
         {
-          "wrong": "I fine. / I am good, thank.",
-          "right": "I'm fine. / I'm good, thank you.",
+          "wrong": "{{I fine. / I am good, thank.}}",
+          "right": "{{I'm fine. / I'm good, thank you.}}",
           "explain_ar": "عند وصف حالك نحتاج فعل {{am}} مع {{I}}، ونقول {{thank you}} كاملة عند الشكر: {{I'm fine}}, {{thank you}}."
         }
       ],
@@ -497,13 +497,13 @@
       ],
       "common_mistakes": [
         {
-          "wrong": "Me Ahmed. / My name Ahmed.",
-          "right": "I'm Ahmed. / My name is Ahmed.",
+          "wrong": "{{Me Ahmed. / My name Ahmed.}}",
+          "right": "{{I'm Ahmed. / My name is Ahmed.}}",
           "explain_ar": "في الإنجليزية نحتاج فعلًا في الجملة: {{I'm Ahmed}} أو {{My name is Ahmed}}. لا نحذف {{am}} أو {{is}}."
         },
         {
-          "wrong": "What your name?",
-          "right": "What's your name?",
+          "wrong": "{{What your name?}}",
+          "right": "{{What's your name?}}",
           "explain_ar": "السؤال الصحيح يحتاج فعل {{is}}: {{What is your name}}? ويمكن اختصاره إلى {{What's your name}}? ومعناه: ما اسمك؟"
         }
       ],
@@ -716,13 +716,13 @@
       ],
       "common_mistakes": [
         {
-          "wrong": "I'm come from Jordan. / I from Saudi Arabia.",
-          "right": "I'm from Jordan. / I come from Jordan. / I'm from Saudi Arabia.",
+          "wrong": "{{I'm come from Jordan. / I from Saudi Arabia.}}",
+          "right": "{{I'm from Jordan. / I come from Jordan. / I'm from Saudi Arabia.}}",
           "explain_ar": "لا نضع {{am}} قبل {{come}}. استخدم {{I'm from}} أو {{I come from}}. وإذا استخدمت {{I from}} فلا بد من إضافة {{am}}: {{I'm from}}."
         },
         {
-          "wrong": "I am Jordan.",
-          "right": "I'm from Jordan. / I'm Jordanian.",
+          "wrong": "{{I am Jordan.}}",
+          "right": "{{I'm from Jordan. / I'm Jordanian.}}",
           "explain_ar": "للتعبير عن بلدك نقول {{I'm from Jordan}}. وللجنسية نقول {{I'm Jordanian}}. لا نستخدم اسم البلد وحده بعد {{am}} لوصف الجنسية."
         }
       ],
@@ -918,13 +918,13 @@
       ],
       "common_mistakes": [
         {
-          "wrong": "He tired. / She happy. / She are happy.",
-          "right": "He is tired. / She is happy.",
+          "wrong": "{{He tired. / She happy. / She are happy.}}",
+          "right": "{{He is tired. / She is happy.}}",
           "explain_ar": "نستخدم فعل {{to be}} قبل الصفة: {{am}} مع {{I}}، و{{is}} مع {{he}} و{{she}}، و{{are}} مع {{you}} و{{we}} و{{they}}. لذلك نقول {{She is happy}} وليس {{She are happy}}."
         },
         {
-          "wrong": "I am student. / She is teacher.",
-          "right": "I am a student. / She is a teacher.",
+          "wrong": "{{I am student. / She is teacher.}}",
+          "right": "{{I am a student. / She is a teacher.}}",
           "explain_ar": "عندما نتحدث عن مهنة مفردة نضع {{a}} أو {{an}} قبل الاسم: {{a student}} و{{a teacher}}. لا نقول {{I am student}}."
         }
       ],
