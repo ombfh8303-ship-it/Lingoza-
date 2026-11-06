@@ -14,7 +14,7 @@ const urls = new Map();
 async function getArchiveFiles() {
   if (!archivePromise) {
     archivePromise = (async () => {
-      const response = await fetch('https://www.dropbox.com/scl/fi/ubjspjkyxzm18a3ex0ebb/Lingoza-Audio-Unit-1..zip?rlkey=ewr4qs95jc0umja2coxbfdmnh&st=wwbnvvhg&dl=1');
+      const response = await fetch('https://dl.dropboxusercontent.com/scl/fi/ubjspjkyxzm18a3ex0ebb/Lingoza-Audio-Unit-1..zip?rlkey=ewr4qs95jc0umja2coxbfdmnh&st=wwbnvvhg&dl=1');
       if (!response.ok) throw new Error('Audio archive unavailable');
       const buffer = await response.arrayBuffer();
       const bytes = new Uint8Array(buffer);
