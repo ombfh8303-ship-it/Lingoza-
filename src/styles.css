@@ -2085,3 +2085,32 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .iu-fullscreen-overlay .iu-match-grid small{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:14px!important;font-weight:900!important;color:#087f62!important}
 .iu-fullscreen-overlay .iu-content-card .iu-example span{font-family:'Tajawal',sans-serif!important}
 @media(max-width:600px){.iu-fullscreen-overlay .iu-exercise-prompt{font-size:21px!important;line-height:1.8!important;margin:12px 0 17px!important}.iu-fullscreen-overlay .iu-match-grid>p{font-size:15px!important}}
+
+
+/* Unit 1: larger, high-contrast common-mistake explanations */
+.iu-fullscreen-overlay .iu-mistake{display:flex;flex-direction:column;gap:12px;padding:clamp(17px,3vw,25px)!important;border-radius:20px}
+.iu-fullscreen-overlay .iu-mistake>span{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:clamp(17px,2.1vw,20px)!important;line-height:1.6!important;font-weight:900!important;color:#087c5d!important}
+.iu-fullscreen-overlay .iu-mistake>b{font-family:'DM Sans','Tajawal',sans-serif!important;font-size:clamp(19px,2.5vw,24px)!important;line-height:1.7!important;font-weight:900!important;padding:12px 15px!important;border-radius:13px;background:#fff!important;color:#183d32!important;overflow-wrap:anywhere}
+.iu-fullscreen-overlay .iu-mistake>p{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:clamp(18px,2.2vw,21px)!important;line-height:2!important;font-weight:800!important;color:#294d40!important;margin:5px 0!important}
+
+/* Unit 1: make both sides of matching exercises easy to read and tap */
+.iu-fullscreen-overlay .iu-match-grid{gap:clamp(12px,2.5vw,22px)!important}
+.iu-fullscreen-overlay .iu-match-grid>div{gap:11px!important}
+.iu-fullscreen-overlay .iu-match-grid small{display:block;font-family:'Tajawal','DM Sans',sans-serif!important;font-size:17px!important;line-height:1.6!important;font-weight:900!important;margin-bottom:5px!important}
+.iu-fullscreen-overlay .iu-match-grid>div>button{min-height:62px!important;padding:13px 15px!important;border-radius:15px!important;font-size:clamp(19px,2.4vw,23px)!important;line-height:1.6!important;font-weight:900!important;box-shadow:0 3px 0 rgba(23,75,55,.09)}
+.iu-fullscreen-overlay .iu-match-grid>div:first-child>button{font-family:'DM Sans','Tajawal',sans-serif!important;letter-spacing:.1px}
+.iu-fullscreen-overlay .iu-match-grid>div:nth-child(2)>button{font-family:'Tajawal','DM Sans',sans-serif!important;color:#174b3b!important}
+.iu-fullscreen-overlay .iu-match-grid>div>button.selected{border:2px solid #15966d!important;background:#e8f8ef!important;transform:scale(1.015)}
+.iu-fullscreen-overlay .iu-match-grid>div>button:disabled{opacity:1!important;background:#e5f6eb!important;border-color:#78c99a!important;color:#17633f!important}
+.iu-fullscreen-overlay .iu-match-grid>p{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:18px!important;line-height:1.8!important;font-weight:900!important;color:#315d4d!important}
+@media(max-width:600px){
+ .iu-fullscreen-overlay .iu-mistake{gap:10px!important;padding:15px!important}
+ .iu-fullscreen-overlay .iu-mistake>span{font-size:18px!important}
+ .iu-fullscreen-overlay .iu-mistake>b{font-size:19px!important;padding:12px!important}
+ .iu-fullscreen-overlay .iu-mistake>p{font-size:18px!important;line-height:1.9!important}
+ .iu-fullscreen-overlay .iu-match-grid{gap:9px!important}
+ .iu-fullscreen-overlay .iu-match-grid>div{gap:8px!important}
+ .iu-fullscreen-overlay .iu-match-grid small{font-size:15px!important}
+ .iu-fullscreen-overlay .iu-match-grid>div>button{min-height:58px!important;padding:10px 8px!important;font-size:18px!important}
+ .iu-fullscreen-overlay .iu-match-grid>p{font-size:16px!important}
+}
