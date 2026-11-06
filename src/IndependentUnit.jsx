@@ -71,17 +71,19 @@ export default function IndependentUnit({ rtl = true, onEarnXp }) {
   const chooseOption = (index) => { if (!checked) setSelected(index); };
   const submit = () => {
     if (!checked) { setChecked(true); return; }
-    if (!isCorrect) { resetExercise(); return; }
-    if (isLastExercise) {
-      if (testMode) {
-        const score = testScore + 1;
-        setTestScore(score); setTestDone(true);
+    if (testMode) {
+      const score = testScore + (isCorrect ? 1 : 0);
+      setTestScore(score);
+      if (isLastExercise) {
+        setTestDone(true);
         if (score / exercises.length * 100 >= unitData.unit_test.pass_score_percent && !testPassed) {
           setTestPassed(true); localStorage.setItem(TEST_KEY, 'passed'); onEarnXp?.(unitData.unit_test.xp || 50);
         }
-      } else goPhase('speaking');
+      } else { setExerciseIndex(v => v + 1); resetExercise(); }
       return;
     }
+    if (!isCorrect) { resetExercise(); return; }
+    if (isLastExercise) { goPhase('speaking'); return; }
     setExerciseIndex(v => v + 1); resetExercise();
   };
   const selectMatchRight = (index) => {
