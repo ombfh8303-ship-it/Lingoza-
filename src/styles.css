@@ -2157,3 +2157,50 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .iu-lulu-coach p{font-size:16px!important}
 }
 @media(prefers-reduced-motion:reduce){.iu-lulu-stage .iu-lulu-art{animation:none!important}}
+
+
+/* Lulu character performance: expressive, layered fox animation */
+.iu-lulu-stage{perspective:700px}
+.iu-lulu-stage .iu-lulu-art{overflow:visible!important;transform-origin:50% 90%;filter:drop-shadow(0 4px 2px rgba(106,67,35,.08))}
+.iu-lulu-head{transform-box:fill-box;transform-origin:50% 85%;animation:iuLuluHeadIdle 3.8s ease-in-out infinite}
+.iu-lulu-eyes{transform-box:fill-box;transform-origin:center;animation:iuLuluBlink 4.2s infinite}
+.iu-lulu-tail{transform-box:fill-box;transform-origin:12% 80%;animation:iuLuluTailIdle 2.1s ease-in-out infinite}
+.iu-lulu-arms{transform-box:fill-box;transform-origin:50% 15%}
+.iu-lulu-arm-left,.iu-lulu-arm-right{transform-box:fill-box;transform-origin:50% 10%}
+.iu-lulu-legs{transform-box:fill-box;transform-origin:50% 0}
+.iu-lulu-mouth-sad,.iu-lulu-mouth-open{opacity:0}
+.iu-lulu-tear,.iu-lulu-sparkles,.iu-lulu-hearts{opacity:0;pointer-events:none}
+.iu-lulu-shadow{transform-box:fill-box;transform-origin:center;animation:iuLuluShadow 2.4s ease-in-out infinite}
+.iu-lulu-art.idle{animation:iuLuluBreath 2.4s ease-in-out infinite}
+.iu-lulu-art.idle .iu-lulu-head{animation:iuLuluHeadIdle 3.8s ease-in-out infinite}
+.iu-lulu-art.idle .iu-lulu-tail{animation:iuLuluTailIdle 2.1s ease-in-out infinite}
+.iu-lulu-art.cheer{animation:iuLuluHop .68s cubic-bezier(.3,.8,.35,1.15) 2}
+.iu-lulu-art.cheer .iu-lulu-arms,.iu-lulu-art.fire .iu-lulu-arms{animation:iuLuluArmsUp .55s ease-in-out 2}
+.iu-lulu-art.cheer .iu-lulu-tail,.iu-lulu-art.fire .iu-lulu-tail{animation:iuLuluTailHappy .32s ease-in-out infinite alternate}
+.iu-lulu-art.cheer .iu-lulu-mouth-smile,.iu-lulu-art.fire .iu-lulu-mouth-smile{opacity:0}
+.iu-lulu-art.cheer .iu-lulu-mouth-open,.iu-lulu-art.fire .iu-lulu-mouth-open{opacity:1}
+.iu-lulu-art.cheer .iu-lulu-sparkles,.iu-lulu-art.fire .iu-lulu-sparkles,.iu-lulu-art.fire .iu-lulu-hearts{opacity:1;animation:iuLuluSparkle .8s ease-out both}
+.iu-lulu-art.sad{animation:iuLuluConcern .5s ease-in-out 2}
+.iu-lulu-art.sad .iu-lulu-mouth-smile{opacity:0}
+.iu-lulu-art.sad .iu-lulu-mouth-sad,.iu-lulu-art.sad .iu-lulu-tear{opacity:1}
+.iu-lulu-art.sad .iu-lulu-head{animation:iuLuluHeadTilt .5s ease-in-out 2}
+.iu-lulu-art.fire{animation:iuLuluVictoryDance .48s ease-in-out 4}
+.iu-lulu-art.fire .iu-lulu-arm-left{animation:iuLuluWave .28s ease-in-out infinite alternate}
+.iu-lulu-art.fire .iu-lulu-arm-right{animation:iuLuluWave .28s ease-in-out infinite alternate-reverse}
+@keyframes iuLuluBreath{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-2px) scale(1.012,.99)}}
+@keyframes iuLuluHeadIdle{0%,100%{transform:rotate(0)}35%{transform:rotate(-2deg)}70%{transform:rotate(1.5deg)}}
+@keyframes iuLuluTailIdle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(9deg)}}
+@keyframes iuLuluBlink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.08)}}
+@keyframes iuLuluShadow{0%,100%{transform:scaleX(1);opacity:.13}50%{transform:scaleX(.78);opacity:.07}}
+@keyframes iuLuluHop{0%,100%{transform:translateY(0) scale(1)}22%{transform:translateY(-18px) scale(.96,1.04)}48%{transform:translateY(0) scale(1.07,.93)}68%{transform:translateY(-8px) scale(.98,1.02)}}
+@keyframes iuLuluArmsUp{0%,100%{transform:rotate(0)}50%{transform:rotate(-28deg)}}
+@keyframes iuLuluTailHappy{from{transform:rotate(-18deg)}to{transform:rotate(22deg)}}
+@keyframes iuLuluSparkle{0%{transform:scale(.4) translateY(8px);opacity:0}35%{opacity:1}100%{transform:scale(1.1) translateY(-9px);opacity:0}}
+@keyframes iuLuluConcern{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-4px) rotate(-2deg)}75%{transform:translateX(4px) rotate(2deg)}}
+@keyframes iuLuluHeadTilt{0%,100%{transform:rotate(0)}50%{transform:rotate(-7deg)}}
+@keyframes iuLuluVictoryDance{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-13px) rotate(-8deg)}50%{transform:translateY(0) rotate(8deg)}75%{transform:translateY(-8px) rotate(-5deg)}}
+@keyframes iuLuluWave{from{transform:rotate(-22deg)}to{transform:rotate(24deg)}}
+@media(prefers-reduced-motion:reduce){
+ .iu-lulu-stage .iu-lulu-art,.iu-lulu-stage .iu-lulu-art *{animation:none!important;transition:none!important}
+ .iu-lulu-stage .iu-lulu-art.idle{transform:none!important}
+}
