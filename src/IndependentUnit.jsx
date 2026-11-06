@@ -16,10 +16,10 @@ const speak = (value) => {
 
 function UnitLulu({ mood = 'idle' }) {
   return <svg viewBox="0 0 120 120" className={"iu-lulu-art " + mood} role="img" aria-label="لولو">
-    <path d="M83 82Q112 82 108 48Q105 70 88 64" fill="#e98532" stroke="#a94e1c" strokeWidth="3"/><path d="M103 50Q109 62 96 67" fill="#fff1dc"/>
-    <path d="M25 42 18 8Q38 14 46 38Z M75 38Q83 14 103 8L95 48Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="3"/><path d="M27 30 24 17 39 36Z M82 36 98 17 94 33Z" fill="#f7b4a1"/>
+    <path className="iu-lulu-tail" d="M83 82Q112 82 108 48Q105 70 88 64" fill="#e98532" stroke="#a94e1c" strokeWidth="3"/><path d="M103 50Q109 62 96 67" fill="#fff1dc"/>
+    <path className="iu-lulu-ears" d="M25 42 18 8Q38 14 46 38Z M75 38Q83 14 103 8L95 48Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="3"/><path d="M27 30 24 17 39 36Z M82 36 98 17 94 33Z" fill="#f7b4a1"/>
     <ellipse cx="60" cy="68" rx="42" ry="39" fill="#f39b43" stroke="#a94e1c" strokeWidth="3"/><path d="M24 70Q60 42 96 70Q88 104 60 104Q32 104 24 70Z" fill="#fff0dd"/>
-    <ellipse cx="45" cy="62" rx="4" ry="6" fill="#34271f"/><ellipse cx="75" cy="62" rx="4" ry="6" fill="#34271f"/><path d="M55 75Q60 70 65 75L60 80Z" fill="#9b4c40"/><path d="M51 85Q60 93 69 85" fill="none" stroke="#78402d" strokeWidth="3" strokeLinecap="round"/>
+    <ellipse cx="45" cy="62" rx="4" ry="6" fill="#34271f"/><ellipse cx="75" cy="62" rx="4" ry="6" fill="#34271f"/><path d="M55 75Q60 70 65 75L60 80Z" fill="#9b4c40"/><path className="iu-lulu-mouth" d="M51 85Q60 93 69 85" fill="none" stroke="#78402d" strokeWidth="3" strokeLinecap="round"/>
     <g fill="#ffc84d"><path d="M12 35 15 43 23 46 15 49 12 57 9 49 1 46 9 43Z"/><path d="M105 74 108 81 115 84 108 87 105 94 102 87 95 84 102 81Z"/></g>
   </svg>;
 }
