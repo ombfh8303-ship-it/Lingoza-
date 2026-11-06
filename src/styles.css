@@ -2397,3 +2397,25 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .gg-hearts>b{align-self:center;margin-inline-start:4px;padding:2px 6px;border-radius:8px;background:#fff0f3;color:#a52d48;font:900 13px 'DM Sans',sans-serif;direction:ltr;unicode-bidi:isolate}
 .modal-hearts-count{display:inline-flex;align-items:center;gap:5px;margin-inline-start:10px;padding:5px 9px;border:1px solid #f4cbd3;border-radius:11px;background:#fff4f6;color:#a52d48;font-size:14px;font-weight:900;white-space:nowrap}
 .modal-hearts-count b{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+
+
+/* Daily practice recovery: ad first and most prominent */
+.hearts-ad-button{
+  min-height:60px!important;margin-top:9px!important;
+  border:2px solid #075a41!important;
+  background:linear-gradient(180deg,#18a875 0%,#087653 100%)!important;
+  color:#fff!important;font-size:17px!important;font-weight:950!important;
+  box-shadow:0 5px 0 #064b39,0 10px 22px rgba(8,127,91,.2)!important;
+}
+.hearts-ad-button:disabled{opacity:.48!important;box-shadow:none!important}
+.hearts-training-button{margin-top:13px!important;min-height:53px!important}
+.hearts-training-button:disabled{opacity:.42!important;background:#edf0ed!important;color:#78847d!important}
+.hearts-daily-remaining{display:block;margin:5px 0 2px;color:#718078;font-size:12px;font-weight:800;text-align:center}
+.hearts-daily-remaining bdi{color:#177653;font-weight:950}
+.hearts-training-limit{
+  margin:7px 0 4px!important;padding:10px 12px;border:1px solid #f0d8a7;
+  border-radius:12px;background:#fff8e9;color:#80551b!important;
+  font-size:13px!important;font-weight:900!important;line-height:1.65!important;
+}
+.hearts-training-modal .hearts-training-progress i{background:linear-gradient(90deg,#16a36f,#70c99d)}
+.hearts-training-modal .hearts-training-submit:disabled{opacity:.5;cursor:not-allowed}
