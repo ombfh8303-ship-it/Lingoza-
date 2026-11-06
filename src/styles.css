@@ -2133,3 +2133,27 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @keyframes iuLuluBodySad{0%,100%{transform:translateX(0) rotate(0)}30%{transform:translateX(-4px) rotate(-4deg)}70%{transform:translateX(4px) rotate(4deg)}}
 @media(max-width:600px){.iu-fullscreen-overlay .iu-lulu-stage{width:88px;height:108px;flex-basis:88px}.iu-fullscreen-overlay .iu-lulu-art{width:88px;height:108px}}
 @media(prefers-reduced-motion:reduce){.iu-fullscreen-overlay .iu-lulu-art{animation:none!important}}
+
+
+/* Definitive Unit 1 layout correction */
+.iu-adventure-modal .iu-tabs,
+.iu-fullscreen-overlay .iu-tabs{display:none!important;height:0!important;min-height:0!important;padding:0!important;margin:0!important;visibility:hidden!important}
+.iu-lulu-coach{min-height:142px!important;align-items:center!important;gap:14px!important;padding:10px 16px!important}
+.iu-lulu-stage{position:relative!important;flex:0 0 116px!important;width:116px!important;height:138px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:visible!important}
+.iu-lulu-stage .iu-lulu-art{display:block!important;width:116px!important;height:138px!important;max-width:none!important;max-height:none!important;flex:none!important;overflow:visible!important;object-fit:contain!important;transform-origin:50% 88%!important}
+.iu-lulu-coach>div:not(.iu-lulu-stage){flex:1 1 auto!important;min-width:0!important}
+.iu-lulu-coach>div>b{font-size:15px!important}
+.iu-lulu-coach p{font-size:clamp(16px,2.3vw,20px)!important;line-height:1.65!important;font-weight:900!important}
+.iu-lulu-art.idle{animation:iuLuluFloat 2.4s ease-in-out infinite}
+.iu-lulu-art.cheer{animation:iuLuluBodyCheer .62s ease-in-out 2!important}
+.iu-lulu-art.fire{animation:iuLuluBodyDance .42s ease-in-out 4!important}
+.iu-lulu-art.sad{animation:iuLuluBodySad .5s ease-in-out 2!important}
+.iu-lulu-art.cheer .iu-lulu-mouth,.iu-lulu-art.fire .iu-lulu-mouth{d:path("M68 87Q80 103 92 87");fill:#8f4435}
+.iu-lulu-art.sad .iu-lulu-mouth{d:path("M69 96Q80 86 91 96")}
+@media(max-width:600px){
+ .iu-lulu-coach{min-height:120px!important;padding:8px 11px!important;gap:8px!important}
+ .iu-lulu-stage{flex-basis:94px!important;width:94px!important;height:112px!important}
+ .iu-lulu-stage .iu-lulu-art{width:94px!important;height:112px!important}
+ .iu-lulu-coach p{font-size:16px!important}
+}
+@media(prefers-reduced-motion:reduce){.iu-lulu-stage .iu-lulu-art{animation:none!important}}
