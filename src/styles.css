@@ -2254,3 +2254,39 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .iu-fullscreen-overlay .iu-match-grid>div>button.selected{outline:3px solid rgba(8,127,91,.16)!important;outline-offset:1px!important}
 .iu-fullscreen-overlay .iu-match-grid>div>button:disabled{cursor:default!important}
 @media(max-width:600px){.iu-fullscreen-overlay .iu-content-card>.iu-primary{min-height:60px!important;font-size:19px!important;margin-top:18px!important}}
+
+
+/* Matching exercise: reveal each incorrect pair only after verification */
+.iu-fullscreen-overlay .iu-match-grid>div>button.right{
+  border:2px solid #35b982!important;background:#eaf9f0!important;color:#126b49!important;
+}
+.iu-fullscreen-overlay .iu-match-grid>div>button.incorrect{
+  border:2px solid #e56c6c!important;background:#fff0f0!important;color:#a83e3e!important;
+}
+.iu-fullscreen-overlay .iu-match-status{
+  display:inline-grid;place-items:center;float:inline-end;margin-inline-start:8px;
+  width:23px;height:23px;border-radius:50%;font:900 14px 'DM Sans',sans-serif;
+  background:#fff9;line-height:1;
+}
+.iu-fullscreen-overlay .iu-match-corrections{
+  margin:16px 0 8px;padding:15px 17px;border:1px solid #f0c5c5;
+  border-radius:15px;background:#fff7f7;color:#713f3f;
+  font-family:'Tajawal','DM Sans',sans-serif;
+}
+.iu-fullscreen-overlay .iu-match-corrections>strong{
+  display:block;font-size:17px;font-weight:900;line-height:1.6;margin-bottom:9px;
+}
+.iu-fullscreen-overlay .iu-match-corrections>p{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 0;
+  padding:10px 12px;background:#fff;border:1px solid #f4dddd;border-radius:10px;
+  font-size:16px;font-weight:800;line-height:1.6;
+}
+.iu-fullscreen-overlay .iu-match-corrections>p>span[dir="ltr"]{
+  direction:ltr;unicode-bidi:isolate;color:#294b40;
+}
+.iu-fullscreen-overlay .iu-match-corrections>p>b{color:#c45b5b}
+@media(max-width:600px){
+ .iu-fullscreen-overlay .iu-match-corrections{padding:12px}
+ .iu-fullscreen-overlay .iu-match-corrections>strong{font-size:16px}
+ .iu-fullscreen-overlay .iu-match-corrections>p{font-size:15px;padding:9px}
+}
