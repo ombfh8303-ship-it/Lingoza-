@@ -1,12 +1,12 @@
 # Lingoza shared pronunciation library
 
-This is the shared pronunciation library for the whole app—not a Unit 1-only asset folder.
+This folder is reserved for the shared pronunciation library used throughout the app—not a Unit 1-only asset folder.
 
-- MP3 files are stored in `public/audio/library/`.
-- Exact normalized spoken-text keys and filenames are mapped in `src/data/audio-library.json`.
-- The shared player in `src/audio.js` is used by lessons, conversations, listening exercises, reviews and other speaking controls.
-- Text matching ignores letter case and punctuation differences, while keeping the complete phrase intact.
-- If a phrase has no matching recording, or the recording cannot play, the browser speech voice remains the fallback.
-- Correct/incorrect answers, clicks, combo and celebration effects remain separate from pronunciation audio.
+- The shared player is in `src/audio.js`.
+- The global phrase-to-file mapping is in `src/data/audio-library.json`.
+- Lessons, conversations, listening exercises and reviews now use the same player.
+- Matching ignores capitalization and punctuation differences while preserving the full phrase.
+- If a recording is not available or cannot play, browser speech synthesis remains the fallback.
+- Correct/incorrect answer sounds and other game effects remain separate.
 
-Add future recordings to this folder and add their spoken-text key to the shared manifest. Any component using the shared player can then use the new recording automatically.
+The recording files still need a binary-safe upload step before the custom voice can play. Once hosted, add their paths or URLs to the shared manifest; do not add them to a unit-specific folder.
