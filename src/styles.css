@@ -1884,3 +1884,53 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .iu-unit .iu-test-card{align-items:stretch;flex-direction:column}
  .iu-unit .iu-test-card button{width:100%;justify-content:center}
 }
+
+
+/* Unit 1 path cards — visual language matched to the supplied learning-path reference */
+.iu-reference-style{margin:0 0 25px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.iu-reference-heading{position:relative;margin:0 0 28px;padding:27px 25px 25px;border-radius:34px;background:linear-gradient(110deg,#fff 0%,#fff 68%,#e8fbf5 100%);box-shadow:0 10px 25px rgba(45,93,78,.09);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
+.iu-reference-title small{display:block;color:#238b80;font-size:12px;font-weight:900;margin-bottom:5px}
+.iu-reference-title h3{font-size:21px!important;line-height:1.45;color:#152f35!important;font-weight:950!important;margin:0!important}
+.iu-reference-count{align-self:start;background:#d7f4e4;color:#29976a;border-radius:30px;padding:9px 15px;font-size:14px;font-weight:900}
+.iu-reference-track{grid-column:1/-1;height:10px;border-radius:30px;background:#edf3f2;overflow:hidden;margin-top:4px}
+.iu-reference-track i{display:block;height:100%;border-radius:30px;background:linear-gradient(90deg,#008c83,#42ad8b);transition:width .3s}
+.iu-reference-lessons{display:flex;flex-direction:column;gap:20px;padding:0 4px}
+.iu-reference-lesson{width:91%;min-height:118px;display:flex;align-items:center;gap:16px;padding:15px 19px;border:0;border-radius:48px;background:rgba(255,255,255,.97);box-shadow:0 9px 22px rgba(48,102,93,.11);transition:transform .2s,box-shadow .2s}
+.iu-reference-lesson.offset{width:88%;align-self:flex-end}
+.iu-reference-lesson:nth-child(3n){width:94%}
+.iu-reference-status{width:88px;height:88px;flex:0 0 88px;border:0;border-radius:50%;display:grid;place-items:center;background:#eaf1ee;color:#879b98}
+.iu-reference-lesson.is-done .iu-reference-status{background:#d2f4df;color:#30996d}
+.iu-reference-lesson.is-active .iu-reference-status{background:#f06a2d;color:#fff;box-shadow:0 5px 13px rgba(240,106,45,.16)}
+.iu-reference-lesson.is-locked{opacity:.58;background:#f5f8f6;box-shadow:none}
+.iu-reference-status:disabled{cursor:default}
+.iu-play-mark{width:0;height:0;border-top:17px solid transparent;border-bottom:17px solid transparent;border-left:25px solid currentColor;margin-left:5px}
+.iu-reference-copy{flex:1;min-width:0}
+.iu-reference-meta{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.iu-reference-kind{padding:7px 13px;border-radius:22px;background:#d8f3ef;color:#18877d;font-size:12px;font-weight:900;white-space:nowrap}
+.iu-reference-kind.kind-1{background:#ece9ff;color:#8273bd}
+.iu-reference-kind.kind-2{background:#d8f4e2;color:#399b6d}
+.iu-reference-kind.kind-3{background:#ffeadb;color:#d5824c}
+.iu-reference-kind.kind-4{background:#edf0ef;color:#81908b}
+.iu-reference-meta>small{font-size:12px;color:#66777a;font-weight:900;white-space:nowrap}
+.iu-reference-copy h4{font-size:19px;line-height:1.5;font-weight:950;color:#172e33;margin:0;overflow-wrap:anywhere}
+.iu-reference-mini-track{height:8px;border-radius:20px;background:#edf3f2;margin-top:12px;overflow:hidden}
+.iu-reference-mini-track i{display:block;width:48%;height:100%;border-radius:20px;background:#0b9688}
+.iu-reference-test{margin:24px 5px 0!important;padding:16px 3px 0!important;border:0!important;border-top:1px solid #e7eeea!important;border-radius:0!important;background:transparent!important;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.iu-reference-test h3{font-size:16px!important;color:#172e33!important}
+.iu-reference-test p{font-size:11px!important;line-height:1.7}
+.iu-reference-test button{border:0;border-radius:13px;background:#e4f3e8;color:#237d5c;padding:10px 13px;font-weight:900;white-space:nowrap}
+.iu-reference-test button:disabled{opacity:.45}
+@media(max-width:650px){
+ .iu-reference-heading{padding:22px 20px 22px;border-radius:30px;margin-bottom:25px}
+ .iu-reference-title h3{font-size:18px!important}
+ .iu-reference-title small{font-size:10px}
+ .iu-reference-lessons{gap:18px;padding:0 2px}
+ .iu-reference-lesson{width:91%;min-height:105px;padding:12px 14px;gap:12px;border-radius:43px}
+ .iu-reference-lesson.offset{width:88%}
+ .iu-reference-status{width:76px;height:76px;flex-basis:76px}
+ .iu-reference-copy h4{font-size:16px}
+ .iu-reference-kind{font-size:11px;padding:6px 11px}
+ .iu-reference-meta>small{font-size:11px}
+ .iu-reference-test{align-items:stretch;flex-direction:column}
+ .iu-reference-test button{width:100%;justify-content:center}
+}
