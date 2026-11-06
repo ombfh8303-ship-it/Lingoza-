@@ -2466,3 +2466,21 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
   .iu-completion-stats strong{font-size:16px}
   .iu-completion-stats span{font-size:10px}
 }
+
+
+/* Unit 1: clear Arabic meaning beside speaking lines and completed fill-in answers */
+.iu-fullscreen-overlay .iu-speaking-line-translated{align-items:center;gap:12px;padding:12px 14px}
+.iu-fullscreen-overlay .iu-speaking-copy{display:grid;gap:6px;min-width:0;flex:1}
+.iu-fullscreen-overlay .iu-speaking-copy>span{font:800 15px 'DM Sans',sans-serif;line-height:1.5;color:#294b40;text-align:start}
+.iu-fullscreen-overlay .iu-speaking-copy>small{font:700 13px 'Tajawal',sans-serif;line-height:1.6;color:#64786e;text-align:start}
+.iu-fullscreen-overlay .iu-speaking-line-translated>button{flex:0 0 40px;min-width:40px;min-height:40px}
+.iu-answer-meaning{display:grid;gap:7px;margin:13px 0 5px;padding:13px 15px;border:1px solid #bfe8d1;border-radius:13px;background:#f0faf4;color:#285b43}
+.iu-answer-meaning>b{font:900 13px 'Tajawal',sans-serif;color:#147c5c}
+.iu-answer-meaning>span{font:800 15px 'DM Sans',sans-serif;line-height:1.6;text-align:start;color:#294b40}
+.iu-answer-meaning>p{margin:0;font:700 14px 'Tajawal',sans-serif;line-height:1.8;color:#49695a;text-align:start}
+.iu-answer-meaning>p>b{color:#147c5c}
+@media(max-width:600px){
+ .iu-fullscreen-overlay .iu-speaking-copy>span{font-size:14px}
+ .iu-fullscreen-overlay .iu-speaking-copy>small{font-size:13px}
+ .iu-answer-meaning{padding:12px}
+}
