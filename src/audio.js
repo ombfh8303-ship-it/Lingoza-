@@ -8,78 +8,72 @@ const normalizeSpeechText = (value) => String(value || '')
   .trim()
   .replace(/\s+/g, ' ');
 
-let archivePromise = null;
-const objectUrls = new Map();
+let archivePromise;
+const urls = new Map();
 
-async function loadArchive() {
-  if (archivePromise) return archivePromise;
-  archivePromise = (async () => {
-    const response = await fetch(audioLibrary.archiveUrl, { mode: 'cors', credentials: 'omit' });
-    if (!response.ok) throw new Error('Audio archive could not be loaded');
-    const buffer = await response.arrayBuffer();
-    const view = new DataView(buffer);
-    const bytes = new Uint8Array(buffer);
-    const decoder = new TextDecoder();
-    let end = -1;
-    const min = Math.max(0, bytes.length - 65557);
-    for (let i = bytes.length - 22; i >= min; i--) {
-      if (view.getUint32(i, true) === 0x06054b50) { end = i; break; }
-    }
-    if (end < 0) throw new Error('Invalid audio archive');
-    const count = view.getUint16(end + 10, true);
-    let cursor = view.getUint32(end + 16, true);
-    const files = new Map();
-    for (let i = 0; i < count; i++) {
-      if (view.getUint32(cursor, true) !== 0x02014b50) break;
-      const method = view.getUint16(cursor + 10, true);
-      const compressedSize = view.getUint32(cursor + 20, true);
-      const nameLength = view.getUint16(cursor + 28, true);
-      const extraLength = view.getUint16(cursor + 30, true);
-      const commentLength = view.getUint16(cursor + 32, true);
-      const localOffset = view.getUint32(cursor + 42, true);
-      const filename = decoder.decode(bytes.slice(cursor + 46, cursor + 46 + nameLength));
-      const localNameLength = view.getUint16(localOffset + 26, true);
-      const localExtraLength = view.getUint16(localOffset + 28, true);
-      const dataStart = localOffset + 30 + localNameLength + localExtraLength;
-      const compressed = bytes.slice(dataStart, dataStart + compressedSize);
-      if (filename.toLowerCase().endsWith('.mp3')) {
-        let audioBytes;
-        if (method === 0) audioBytes = compressed;
-        else if (method === 8 && typeof DecompressionStream !== 'undefined') {
-          const stream = new Blob([compressed]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-          audioBytes = new Uint8Array(await new Response(stream).arrayBuffer());
-        } else throw new Error('Unsupported audio archive compression');
-        files.set(filename.split('/').pop(), URL.createObjectURL(new Blob([audioBytes], { type: 'audio/mpeg' })));
+async function getArchiveFiles() {
+  if (!archivePromise) {
+    archivePromise = (async () => {
+      const response = await fetch('https://www.dropbox.com/scl/fi/ubjspjkyxzm18a3ex0ebb/Lingoza-Audio-Unit-1..zip?rlkey=ewr4qs95jc0umja2coxbfdmnh&st=wwbnvvhg&dl=1');
+      if (!response.ok) throw new Error('Audio archive unavailable');
+      const buffer = await response.arrayBuffer();
+      const bytes = new Uint8Array(buffer);
+      const view = new DataView(buffer);
+      const decoder = new TextDecoder();
+      let end = -1;
+      for (let i = bytes.length - 22; i >= Math.max(0, bytes.length - 65557); i--) {
+        if (view.getUint32(i, true) === 0x06054b50) { end = i; break; }
       }
-      cursor += 46 + nameLength + extraLength + commentLength;
-    }
-    if (!files.size) throw new Error('No MP3 recordings found in archive');
-    return files;
-  })().catch((error) => {
-    archivePromise = null;
-    throw error;
-  });
+      if (end < 0) throw new Error('Invalid ZIP');
+      const count = view.getUint16(end + 10, true);
+      let offset = view.getUint32(end + 16, true);
+      const files = new Map();
+      for (let n = 0; n < count; n++) {
+        if (view.getUint32(offset, true) !== 0x02014b50) break;
+        const method = view.getUint16(offset + 10, true);
+        const size = view.getUint32(offset + 20, true);
+        const nameLength = view.getUint16(offset + 28, true);
+        const extraLength = view.getUint16(offset + 30, true);
+        const commentLength = view.getUint16(offset + 32, true);
+        const local = view.getUint32(offset + 42, true);
+        const name = decoder.decode(bytes.slice(offset + 46, offset + 46 + nameLength));
+        const localName = view.getUint16(local + 26, true);
+        const localExtra = view.getUint16(local + 28, true);
+        const start = local + 30 + localName + localExtra;
+        const packed = bytes.slice(start, start + size);
+        if (name.toLowerCase().endsWith('.mp3')) {
+          let data = packed;
+          if (method === 8) {
+            const stream = new Blob([packed]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+            data = new Uint8Array(await new Response(stream).arrayBuffer());
+          }
+          files.set(name.split('/').pop(), URL.createObjectURL(new Blob([data], { type: 'audio/mpeg' })));
+        }
+        offset += 46 + nameLength + extraLength + commentLength;
+      }
+      return files;
+    })().catch((error) => { archivePromise = null; throw error; });
+  }
   return archivePromise;
 }
 
-async function recordingUrlFor(value) {
-  const key = normalizeSpeechText(value);
-  const filename = audioLibrary.recordings?.[key];
+async function findRecording(text) {
+  const filename = audioLibrary.recordings?.[normalizeSpeechText(text)];
   if (!filename) return null;
-  if (objectUrls.has(filename)) return objectUrls.get(filename);
-  const files = await loadArchive();
-  const url = files.get(filename);
-  if (url) objectUrls.set(filename, url);
-  return url || null;
+  if (urls.has(filename)) return urls.get(filename);
+  const files = await getArchiveFiles();
+  const url = files.get(filename) || null;
+  if (url) urls.set(filename, url);
+  return url;
 }
 
 export async function playLingozaRecording(value) {
   if (!value || typeof window === 'undefined') return false;
   try {
-    const path = await recordingUrlFor(value);
-    if (!path) return false;
-    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    const player = new Audio(path);
+    const url = await findRecording(value);
+    if (!url) return false;
+    window.speechSynthesis?.cancel();
+    const player = new Audio(url);
     player.preload = 'auto';
     await player.play();
     return true;
@@ -90,12 +84,13 @@ export async function playLingozaRecording(value) {
 
 export function speakLingoza(value, { lang = 'en-US', rate = 0.86, pitch = 1, volume = 1 } = {}) {
   if (!value || typeof window === 'undefined') return;
-  recordingUrlFor(value).then((path) => {
-    if (!path) return speakFallback(value, { lang, rate, pitch, volume });
-    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    const player = new Audio(path);
-    player.preload = 'auto';
-    player.play().catch(() => speakFallback(value, { lang, rate, pitch, volume }));
+  findRecording(value).then((url) => {
+    if (url) {
+      window.speechSynthesis?.cancel();
+      const player = new Audio(url);
+      player.preload = 'auto';
+      player.play().catch(() => speakFallback(value, { lang, rate, pitch, volume }));
+    } else speakFallback(value, { lang, rate, pitch, volume });
   }).catch(() => speakFallback(value, { lang, rate, pitch, volume }));
 }
 
