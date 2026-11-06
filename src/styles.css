@@ -2233,3 +2233,24 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @keyframes iuLuluCuriousLook{0%,100%{transform:rotate(0)}35%{transform:rotate(7deg)}70%{transform:rotate(-4deg)}}
 @keyframes iuLuluPlayfulWiggle{from{transform:rotate(-16deg)}to{transform:rotate(18deg)}}
 @media(prefers-reduced-motion:reduce){.iu-lulu-art.action-peek .iu-lulu-head,.iu-lulu-art.action-wave .iu-lulu-arm-right,.iu-lulu-art.action-look .iu-lulu-head,.iu-lulu-art.action-wiggle .iu-lulu-tail{animation:none!important}}
+
+
+/* Unit 1 matching: clear verification action and calm, consistent spacing */
+.iu-fullscreen-overlay .iu-content-card>.iu-primary{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:12px!important;width:100%!important;min-height:64px!important;margin:22px 0 4px!important;
+  padding:15px 22px!important;border:2px solid #086b50!important;border-radius:16px!important;
+  background:#087f5b!important;color:#fff!important;font-family:'Tajawal','DM Sans',sans-serif!important;
+  font-size:20px!important;font-weight:900!important;line-height:1.4!important;
+  box-shadow:0 5px 0 #07533f,0 10px 22px rgba(8,127,91,.16)!important;
+  opacity:1!important;visibility:visible!important;text-shadow:none!important;
+}
+.iu-fullscreen-overlay .iu-content-card>.iu-primary:disabled{
+  background:#dcebe4!important;border-color:#b7d2c5!important;color:#45695a!important;
+  box-shadow:0 3px 0 #b7d2c5!important;opacity:1!important;cursor:not-allowed!important;
+}
+.iu-fullscreen-overlay .iu-content-card>.iu-primary:not(:disabled):active{transform:translateY(2px)!important;box-shadow:0 2px 0 #07533f!important}
+.iu-fullscreen-overlay .iu-match-grid{margin-bottom:8px!important}
+.iu-fullscreen-overlay .iu-match-grid>div>button.selected{outline:3px solid rgba(8,127,91,.16)!important;outline-offset:1px!important}
+.iu-fullscreen-overlay .iu-match-grid>div>button:disabled{cursor:default!important}
+@media(max-width:600px){.iu-fullscreen-overlay .iu-content-card>.iu-primary{min-height:60px!important;font-size:19px!important;margin-top:18px!important}}
