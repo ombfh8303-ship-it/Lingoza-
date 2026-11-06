@@ -19,7 +19,7 @@ const normalizeExercise = (item) => ({
   answerIndex: Number.isInteger(item.answer) ? item.answer : 0
 });
 
-export default function IndependentUnit({ rtl = true, onEarnXp }) {
+export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }) {
   const [completed, setCompleted] = useState(() => readArray(PROGRESS_KEY));
   const [testPassed, setTestPassed] = useState(() => localStorage.getItem(TEST_KEY) === 'passed');
   const [activeLesson, setActiveLesson] = useState(null);
@@ -77,7 +77,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp }) {
       if (isLastExercise) {
         setTestDone(true);
         if (score / exercises.length * 100 >= unitData.unit_test.pass_score_percent && !testPassed) {
-          setTestPassed(true); localStorage.setItem(TEST_KEY, 'passed'); onEarnXp?.(unitData.unit_test.xp || 50);
+          setTestPassed(true); localStorage.setItem(TEST_KEY, 'passed'); onEarnXp?.(unitData.unit_test.xp || 50); onUnitComplete?.();
         }
       } else { setExerciseIndex(v => v + 1); resetExercise(); }
       return;
