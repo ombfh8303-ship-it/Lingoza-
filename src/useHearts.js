@@ -17,7 +17,9 @@ function readInitial() {
       persist(initial);
       return initial;
     }
-    const normalized = calculate({ hearts: Math.max(0, Math.min(MAX_HEARTS, Math.floor(Number(raw.hearts)))), updatedAt: Number(raw.updatedAt) }, now);\n    persist(normalized);\n    return normalized;
+    const normalized = calculate({ hearts: Math.max(0, Math.min(MAX_HEARTS, Math.floor(Number(raw.hearts)))), updatedAt: Number(raw.updatedAt) }, now);
+    persist(normalized);
+    return normalized;
   } catch {
     return { hearts: MAX_HEARTS, updatedAt: now };
   }
