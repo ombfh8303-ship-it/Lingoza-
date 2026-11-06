@@ -2221,3 +2221,15 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 /* Keep the answer action reachable above the mobile safe area */
 .iu-fullscreen-overlay .iu-content-card{padding-bottom:calc(18px + env(safe-area-inset-bottom, 0px))!important}
 .iu-fullscreen-overlay .iu-content-card>.iu-primary{position:sticky!important;bottom:env(safe-area-inset-bottom, 0px)!important;z-index:8!important;box-shadow:0 -8px 18px rgba(255,255,255,.88)!important}
+
+
+/* Lulu's spontaneous, personality-led idle gestures */
+.iu-lulu-art.action-peek .iu-lulu-head{animation:iuLuluPeek .72s ease-in-out both!important}
+.iu-lulu-art.action-wave .iu-lulu-arm-right{animation:iuLuluFriendlyWave .34s ease-in-out 3!important;transform-origin:50% 20%}
+.iu-lulu-art.action-look .iu-lulu-head{animation:iuLuluCuriousLook .9s ease-in-out both!important}
+.iu-lulu-art.action-wiggle .iu-lulu-tail{animation:iuLuluPlayfulWiggle .2s ease-in-out 5 alternate!important}
+@keyframes iuLuluPeek{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-5px) rotate(-5deg)}70%{transform:translateY(1px) rotate(3deg)}}
+@keyframes iuLuluFriendlyWave{0%,100%{transform:rotate(0)}50%{transform:rotate(-38deg)}}
+@keyframes iuLuluCuriousLook{0%,100%{transform:rotate(0)}35%{transform:rotate(7deg)}70%{transform:rotate(-4deg)}}
+@keyframes iuLuluPlayfulWiggle{from{transform:rotate(-16deg)}to{transform:rotate(18deg)}}
+@media(prefers-reduced-motion:reduce){.iu-lulu-art.action-peek .iu-lulu-head,.iu-lulu-art.action-wave .iu-lulu-arm-right,.iu-lulu-art.action-look .iu-lulu-head,.iu-lulu-art.action-wiggle .iu-lulu-tail{animation:none!important}}
