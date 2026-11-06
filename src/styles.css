@@ -2077,3 +2077,11 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .iu-fullscreen-overlay .iu-primary{font-size:17px!important}
  .iu-fullscreen-overlay .iu-lulu-coach p{font-size:15px!important}
 }
+
+
+/* Clear instruction typography for every Unit 1 exercise */
+.iu-fullscreen-overlay .iu-exercise-prompt{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:clamp(21px,3vw,27px)!important;line-height:1.75!important;font-weight:900!important;letter-spacing:0!important;color:#153f34!important;text-align:start;margin:16px 0 20px!important;text-wrap:pretty}
+.iu-fullscreen-overlay .iu-match-grid>p{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:16px!important;line-height:1.8!important;font-weight:800!important;color:#426458!important}
+.iu-fullscreen-overlay .iu-match-grid small{font-family:'Tajawal','DM Sans',sans-serif!important;font-size:14px!important;font-weight:900!important;color:#087f62!important}
+.iu-fullscreen-overlay .iu-content-card .iu-example span{font-family:'Tajawal',sans-serif!important}
+@media(max-width:600px){.iu-fullscreen-overlay .iu-exercise-prompt{font-size:21px!important;line-height:1.8!important;margin:12px 0 17px!important}.iu-fullscreen-overlay .iu-match-grid>p{font-size:15px!important}}
