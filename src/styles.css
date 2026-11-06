@@ -1934,3 +1934,54 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .iu-reference-test{align-items:stretch;flex-direction:column}
  .iu-reference-test button{width:100%;justify-content:center}
 }
+
+
+/* Unit 1 lesson gameplay — inspired by the Daily Routine lesson experience */
+.iu-adventure-modal{border:2px solid #dcece1;background:linear-gradient(180deg,#f8fcf9 0%,#fff 42%);padding:17px;gap:10px}
+.iu-adventure-header{align-items:center!important;padding-bottom:9px;border-bottom:1px solid #e7f0e9}
+.iu-adventure-header small{color:#159b73!important;font-size:9px!important;letter-spacing:.7px}
+.iu-adventure-header h2{font-size:18px!important;color:#17463b!important;font-weight:900}
+.iu-game-hud{display:flex;align-items:center;gap:9px;min-height:34px}
+.iu-game-progress{height:9px;flex:1;overflow:hidden;border-radius:99px;background:#dce9df;box-shadow:inset 0 2px 3px #183d2918}
+.iu-game-progress i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#0a9b77,#a7db61);transition:width .35s ease}
+.iu-game-combo{display:flex;align-items:center;gap:4px;min-width:62px;color:#e87925;font-weight:900}
+.iu-game-combo span{font-size:17px;filter:grayscale(1);opacity:.45}
+.iu-game-combo b{font-size:15px}
+.iu-game-combo small{font-size:8px;letter-spacing:.3px;color:#84958b}
+.iu-game-combo.is-hot span{filter:none;opacity:1;animation:iuFlamePulse .35s ease-in-out infinite alternate}
+.iu-sound-toggle{width:34px;height:32px;border:0;border-radius:10px;background:#eaf7ed;color:#168b69;font-size:16px;cursor:pointer}
+.iu-lulu-coach{display:flex;align-items:center;gap:10px;min-height:76px;padding:8px 11px;border:2px solid #dceee1;border-radius:17px;background:#fff;box-shadow:0 4px 0 #e0eee4}
+.iu-lulu-art{width:68px;height:68px;flex:0 0 68px;overflow:visible;animation:iuLuluFloat 2.4s ease-in-out infinite}
+.iu-lulu-art.mood-happy{animation:iuLuluHappy .45s ease-in-out 2}
+.iu-lulu-art.mood-fire{animation:iuLuluFire .22s ease-in-out infinite alternate}
+.iu-lulu-art.mood-sad{animation:iuLuluSad .5s ease}
+.iu-lulu-coach>div{min-width:0;flex:1}
+.iu-lulu-coach>div>b{display:block;color:#168b69;font-size:11px;margin-bottom:3px}
+.iu-lulu-coach p{margin:0;color:#345b49;font-size:12px;line-height:1.5;font-weight:850}
+.iu-adventure-modal .iu-tabs{padding:5px 0 8px;gap:6px}
+.iu-adventure-modal .iu-tabs button{border-radius:12px;border:1px solid #dcece1;background:#fff;color:#6e887a;font-size:10px}
+.iu-adventure-modal .iu-tabs button.active{background:#e3f8e9;border-color:#91d5a6;color:#087f69}
+.iu-adventure-modal .iu-content-card{border:2px solid #dcece1;background:#fff;border-radius:18px;box-shadow:0 4px 0 #e7f0e9;padding:16px}
+.iu-adventure-modal .iu-content-card h3{color:#17463b;font-weight:900}
+.iu-adventure-modal .iu-option{border:2px solid #d7eadc;border-bottom-width:4px;border-radius:14px;min-height:48px;font-weight:800}
+.iu-adventure-modal .iu-option.selected{background:#effaf2;border-color:#91d5a6}
+.iu-adventure-modal .iu-option.correct{background:#e0f7e8;border-color:#159b69;color:#126344}
+.iu-adventure-modal .iu-option.wrong{background:#fff0ef;border-color:#df7770;color:#a4433c}
+.iu-adventure-modal .iu-primary{min-height:49px;border-radius:15px;background:linear-gradient(100deg,#087f69,#13a47a);box-shadow:0 5px 0 #075e50,0 8px 15px #087f6930}
+.iu-adventure-modal .iu-feedback{border:2px solid #91d5a6;background:#e3f8e9;color:#176b49;border-radius:14px;font-size:12px}
+.iu-adventure-modal .iu-feedback.bad{border-color:#efb0a8;background:#fff0ed;color:#a3463d}
+.iu-result-combo{margin:0;color:#e87925;font-size:12px;font-weight:850}
+@keyframes iuLuluFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
+@keyframes iuLuluHappy{0%,100%{transform:rotate(0) scale(1)}35%{transform:rotate(-9deg) scale(1.08)}70%{transform:rotate(8deg) scale(1.08)}}
+@keyframes iuLuluFire{from{transform:translateY(0) rotate(-5deg) scale(1)}to{transform:translateY(-5px) rotate(5deg) scale(1.07)}}
+@keyframes iuLuluSad{0%,100%{transform:translateY(0)}40%{transform:translateY(3px) rotate(-5deg)}}
+@keyframes iuFlamePulse{from{transform:scale(1)}to{transform:scale(1.2)}}
+@media(max-width:600px){
+ .iu-adventure-modal{padding:12px!important;gap:8px}
+ .iu-lulu-coach{min-height:66px;padding:6px 9px}
+ .iu-lulu-art{width:58px;height:58px;flex-basis:58px}
+ .iu-lulu-coach p{font-size:11px}
+ .iu-adventure-header h2{font-size:16px!important}
+ .iu-adventure-modal .iu-content-card{padding:12px}
+}
+@media(prefers-reduced-motion:reduce){.iu-adventure-modal *,.iu-adventure-modal *:before,.iu-adventure-modal *:after{animation:none!important;transition:none!important}}
