@@ -77,7 +77,7 @@ const normalizeExercise = (item) => ({
   answerIndex: Number.isInteger(item.answer) ? item.answer : 0
 });
 
-export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }) {
+export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUnitComplete }) {
   const [completed, setCompleted] = useState(() => readArray(PROGRESS_KEY));
   const [testPassed, setTestPassed] = useState(() => localStorage.getItem(TEST_KEY) === 'passed');
   const [activeLesson, setActiveLesson] = useState(null);
@@ -266,7 +266,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
 
     {(activeLesson || testMode) && <div className="iu-overlay iu-fullscreen-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'} onPointerDownCapture={unlockAudio} onClickCapture={e=>{if(e.target.closest("button")&&!e.target.closest("button").disabled)playUnitTone("click",soundOn)}}>
       <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?('الوحدة الأولى · الدرس '+lessonNumber):('UNIT 1 · LESSON '+lessonNumber))}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
-      <div className="iu-game-hud"><div className="iu-game-progress" role="progressbar" aria-label={rtl?'تقدم الدرس':'Lesson progress'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={lessonProgressPercent}><i style={{width:lessonProgressPercent+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
+      <div className="iu-game-hud"><div className="iu-game-progress" role="progressbar" aria-label={rtl?'تقدم الدرس':'Lesson progress'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={lessonProgressPercent}><i style={{width:lessonProgressPercent+'%'}}/></div><div className="iu-game-hearts" aria-label={rtl?'القلوب المتبقية':'Hearts remaining'}><span>❤️</span><b dir="ltr">{hearts}</b></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
       {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
       <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood} action={luluAction}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{renderMixedText(checked?(comboMessage || luluMessage):luluMessage)}</p></div></div>
       {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
