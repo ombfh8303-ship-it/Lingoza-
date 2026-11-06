@@ -14,8 +14,8 @@ const speak = (value) => {
   window.speechSynthesis.speak(utterance);
 };
 
-function UnitLulu({ mood = 'idle' }) {
-  return <svg viewBox="0 0 180 220" className={"iu-lulu-art " + mood} role="img" aria-label="لولو، ثعلب Lingoza">
+function UnitLulu({ mood = 'idle', action = 'none' }) {
+  return <svg viewBox="0 0 180 220" className={"iu-lulu-art " + mood + " action-" + action} role="img" aria-label="لولو، ثعلب Lingoza">
     <defs>
       <linearGradient id="luluFur" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffbd68"/><stop offset="1" stopColor="#e8792e"/></linearGradient>
       <linearGradient id="luluBelly" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff7e9"/><stop offset="1" stopColor="#f5dfc5"/></linearGradient>
@@ -99,6 +99,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const [vibrationOn, setVibrationOn] = useState(() => localStorage.getItem('lingoza-unit1-vibration') !== 'off');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [luluMood, setLuluMood] = useState('idle');
+  const [luluAction, setLuluAction] = useState('none');
   const [comboMessage, setComboMessage] = useState('');
   const [luluMessage, setLuluMessage] = useState('هيا نبدأ مغامرتنا!');
 
@@ -124,10 +125,34 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const unitComplete = completed.length === unitData.lessons.length;
 
   useEffect(() => { if (luluMood === 'idle') return; const timer = window.setTimeout(() => setLuluMood('idle'), 1500); return () => window.clearTimeout(timer); }, [luluMood]);
+  useEffect(() => {
+    if ((!activeLesson && !testMode) || luluMood !== 'idle' || checked) { setLuluAction('none'); return; }
+    let actionTimer, resetTimer;
+    const actions = ['peek','wave','look','wiggle'];
+    const tick = () => {
+      const action = actions[Math.floor(Math.random() * actions.length)];
+      setLuluAction(action);
+      if (Math.random() < 0.62) setLuluMessage(chooseLuluLine('idle'));
+      resetTimer = window.setTimeout(() => setLuluAction('none'), 1450);
+      actionTimer = window.setTimeout(tick, 4200 + Math.random() * 3200);
+    };
+    actionTimer = window.setTimeout(tick, 2600 + Math.random() * 2400);
+    return () => { window.clearTimeout(actionTimer); window.clearTimeout(resetTimer); };
+  }, [activeLesson?.id, testMode, luluMood, checked]);
   const vibrate = (pattern) => { if (!vibrationOn || typeof navigator === 'undefined' || !navigator.vibrate) return; try { navigator.vibrate(pattern); } catch {} };
   const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };
   const chooseLuluLine = (kind) => {
-    const lines={start:['أهلًا بك! هل أنت مستعد؟','لنبدأ خطوة خطوة، أنا معك!','هذه مغامرتنا الجديدة، هيا بنا!'],correct:['أحسنت! إجابة رائعة!','ممتاز! أنت تتقدم بسرعة!','رائع! لقد أتقنتها!'],wrong:['لا بأس، نتعلم من المحاولة!','اقتربت كثيرًا، جرّب مجددًا!','أنا معك، سننجح معًا!'],streak:['يا لك من نجم! استمر!','ثلاثة انتصارات وأكثر! مذهل!','أنت تتألق، واصل التقدم!'],finish:['أنهيتها ببراعة! أنا فخورة بك!','يا له من إنجاز رائع!','لقد أصبحت أقوى في الإنجليزية!']};
+    const lines={
+      start:['أهلًا بك! هل أنت مستعد؟','لنبدأ خطوة خطوة، أنا معك!','هذه مغامرتنا الجديدة، هيا بنا!','جهّز تركيزك، لدينا إنجازات جميلة!','أنا متحمسة لنتعلم معًا!'],
+      correct:['أحسنت! إجابة رائعة!','ممتاز! أنت تتقدم بسرعة!','رائع! لقد أتقنتها!','يا سلام على هذه الإجابة!','كل محاولة تجعلك أقوى!','أبدعت، استمر بهذا الحماس!'],
+      wrong:['لا بأس، نتعلم من المحاولة!','اقتربت كثيرًا، جرّب مجددًا!','أنا معك، سننجح معًا!','الخطأ خطوة في طريق التعلم!','خذ نفسًا وفكّر، أنت تستطيع!','لا تستعجل، جرّب مرة أخرى!'],
+      streak:['يا لك من نجم! استمر!','ثلاثة انتصارات وأكثر! مذهل!','أنت تتألق، واصل التقدم!','هذا تسلسل رائع!','حماسك معدٍ، هيا إلى التالي!','أصبحت سريع البديهة!'],
+      finish:['أنهيتها ببراعة! أنا فخورة بك!','يا له من إنجاز رائع!','لقد أصبحت أقوى في الإنجليزية!','أكملت التحدي مثل الأبطال!','تستحق احتفالًا كبيرًا!'],
+      idle:['هل نجرّب تحديًا جديدًا؟','أنا هنا أشجعك!','تركيزك رائع، واصل!','أحب فضولك في التعلم!','هيا، خطوة صغيرة أخرى!','هل لاحظت كم تعلمت؟','سأبقى بجانبك حتى تنجح!','لنمنح عقولنا تحديًا لطيفًا!'],
+      thinking:['فكّر بهدوء، ستجد الإجابة!','تذكّر العبارة التي تعلمناها!','خذ وقتك، لا يوجد داعٍ للعجلة!','أنا أثق بقدرتك على التذكر!'],
+      transition:['رائع، انتقلنا إلى خطوة جديدة!','مستعد للمحطة التالية؟','كل درس يضيف لك كلمة جديدة!','هيا نواصل رحلتنا!'],
+      comboBreak:['لا بأس، ما زالت مغامرتنا مستمرة!','تعثر بسيط، والفرصة التالية أمامك!','أنا أشجعك، حاول من جديد!','التقدم أهم من الكمال!']
+    };
     const pool=lines[kind]||lines.start; return pool[Math.floor(Math.random()*pool.length)];
   };
   const resolveFeedback = (correct) => {
@@ -137,7 +162,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
       vibrate(next>=3?[40,40,40,40,90]:40);
       if(next>=3){ const lines=rtl?['أنت نار! لا يوقفك أحد!','مذهل، استمر!','أداء رائع!']:['You are on fire!','Amazing, keep going!','Unstoppable!']; setComboMessage(lines[(next-3)%lines.length]); }
     } else {
-      setCombo(0); setComboMessage(rtl?'لا بأس، المحاولة القادمة لك!':'No worries, you’ve got this!');
+      setCombo(0); setComboMessage(chooseLuluLine('comboBreak'));
       setLuluMood('sad'); setLuluMessage(chooseLuluLine('wrong')); playUnitTone('wrong',soundOn); vibrate([90,50,90]);
     }
   };
@@ -242,7 +267,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
       <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?('الوحدة الأولى · الدرس '+lessonNumber):('UNIT 1 · LESSON '+lessonNumber))}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
       <div className="iu-game-hud"><div className="iu-game-progress"><i style={{width:((exerciseIndex+1)/Math.max(1,exercises.length)*100)+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
       {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
-      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{renderMixedText(checked?(comboMessage || luluMessage):luluMessage)}</p></div></div>
+      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood} action={luluAction}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{renderMixedText(checked?(comboMessage || luluMessage):luluMessage)}</p></div></div>
       {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
       {!testMode && <>
       {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {vocabulary.length}</span></div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{activeContent.pron_ar}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{activeContent.example_en}</b><span>{activeContent.example_ar}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
