@@ -1827,3 +1827,9 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .gg-adventure .gg-character-art{width:60px;height:60px}
  .gg-adventure .gg-learned{max-height:26vh}
 }
+
+.gg-adventure .gg-combo-slot{min-height:38px;display:flex;align-items:center;justify-content:center;flex:0 0 38px}
+.gg-adventure .gg-combo-banner{margin:0 auto;min-height:30px}
+.gg-adventure .gg-match-english>span{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:3px 6px;background:#e8f7ed;color:#087f69;font-size:12px}
+.gg-adventure .gg-result .gg-learned{flex:0 1 auto}
+.gg-adventure .gg-result>.gg-primary{align-self:stretch}
