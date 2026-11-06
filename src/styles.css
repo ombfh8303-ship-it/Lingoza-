@@ -2174,17 +2174,17 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .iu-lulu-art.idle{animation:iuLuluBreath 2.4s ease-in-out infinite}
 .iu-lulu-art.idle .iu-lulu-head{animation:iuLuluHeadIdle 3.8s ease-in-out infinite}
 .iu-lulu-art.idle .iu-lulu-tail{animation:iuLuluTailIdle 2.1s ease-in-out infinite}
-.iu-lulu-art.cheer{animation:iuLuluHop .68s cubic-bezier(.3,.8,.35,1.15) 2}
+.iu-lulu-art.cheer{animation:iuLuluHop .68s cubic-bezier(.3,.8,.35,1.15) 2!important}
 .iu-lulu-art.cheer .iu-lulu-arms,.iu-lulu-art.fire .iu-lulu-arms{animation:iuLuluArmsUp .55s ease-in-out 2}
 .iu-lulu-art.cheer .iu-lulu-tail,.iu-lulu-art.fire .iu-lulu-tail{animation:iuLuluTailHappy .32s ease-in-out infinite alternate}
 .iu-lulu-art.cheer .iu-lulu-mouth-smile,.iu-lulu-art.fire .iu-lulu-mouth-smile{opacity:0}
 .iu-lulu-art.cheer .iu-lulu-mouth-open,.iu-lulu-art.fire .iu-lulu-mouth-open{opacity:1}
 .iu-lulu-art.cheer .iu-lulu-sparkles,.iu-lulu-art.fire .iu-lulu-sparkles,.iu-lulu-art.fire .iu-lulu-hearts{opacity:1;animation:iuLuluSparkle .8s ease-out both}
-.iu-lulu-art.sad{animation:iuLuluConcern .5s ease-in-out 2}
+.iu-lulu-art.sad{animation:iuLuluConcern .5s ease-in-out 2!important}
 .iu-lulu-art.sad .iu-lulu-mouth-smile{opacity:0}
 .iu-lulu-art.sad .iu-lulu-mouth-sad,.iu-lulu-art.sad .iu-lulu-tear{opacity:1}
 .iu-lulu-art.sad .iu-lulu-head{animation:iuLuluHeadTilt .5s ease-in-out 2}
-.iu-lulu-art.fire{animation:iuLuluVictoryDance .48s ease-in-out 4}
+.iu-lulu-art.fire{animation:iuLuluVictoryDance .48s ease-in-out 4!important}
 .iu-lulu-art.fire .iu-lulu-arm-left{animation:iuLuluWave .28s ease-in-out infinite alternate}
 .iu-lulu-art.fire .iu-lulu-arm-right{animation:iuLuluWave .28s ease-in-out infinite alternate-reverse}
 @keyframes iuLuluBreath{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-2px) scale(1.012,.99)}}
