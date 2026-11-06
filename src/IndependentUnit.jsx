@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import unitData from './data/unit-1.json';
 import { ArrowLeft, BookOpen, Check, Headphones, LockKeyhole, Volume2, X } from 'lucide-react';
 
@@ -15,7 +15,7 @@ const speak = (value) => {
 };
 
 function UnitLulu({ mood = 'idle' }) {
-  return <svg viewBox="0 0 120 120" className={"iu-lulu-art mood-" + mood} role="img" aria-label="لولو">
+  return <svg viewBox="0 0 120 120" className={"iu-lulu-art " + mood} role="img" aria-label="لولو">
     <path d="M83 82Q112 82 108 48Q105 70 88 64" fill="#e98532" stroke="#a94e1c" strokeWidth="3"/><path d="M103 50Q109 62 96 67" fill="#fff1dc"/>
     <path d="M25 42 18 8Q38 14 46 38Z M75 38Q83 14 103 8L95 48Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="3"/><path d="M27 30 24 17 39 36Z M82 36 98 17 94 33Z" fill="#f7b4a1"/>
     <ellipse cx="60" cy="68" rx="42" ry="39" fill="#f39b43" stroke="#a94e1c" strokeWidth="3"/><path d="M24 70Q60 42 96 70Q88 104 60 104Q32 104 24 70Z" fill="#fff0dd"/>
@@ -29,9 +29,10 @@ const playUnitTone = (kind, enabled) => {
     const Audio = window.AudioContext || window.webkitAudioContext;
     if (!Audio) return;
     const ctx = new Audio();
-    const notes = kind === 'wrong' ? [300,210] : kind === 'combo' ? [520,660,820,1040] : kind === 'click' ? [650] : [560,780];
+    const notes = kind === 'wrong' ? [290,220] : kind === 'combo' || kind === 'success' ? [520,660,820,1040] : kind === 'click' ? [650] : [560,780];
     let at = ctx.currentTime + .02;
-    notes.forEach(hz => { const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type='sine'; osc.frequency.setValueAtTime(hz,at); gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(.026,at+.025); gain.gain.exponentialRampToValueAtTime(.0001,at+.14); osc.connect(gain); gain.connect(ctx.destination); osc.start(at); osc.stop(at+.15); at+=.16; });
+    const duration = kind === 'click' ? .055 : kind === 'combo' || kind === 'success' ? .22 : .12;
+    notes.forEach(hz => { const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type='sine'; osc.frequency.setValueAtTime(hz,at); gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(.026,at+.025); gain.gain.exponentialRampToValueAtTime(.0001,at+duration); osc.connect(gain); gain.connect(ctx.destination); osc.start(at); osc.stop(at+duration+.01); at+=duration+.035; });
     window.setTimeout(()=>ctx.close().catch(()=>{}),800);
   } catch {}
 };
@@ -60,8 +61,11 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const [testDone, setTestDone] = useState(false);
   const [combo, setCombo] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
-  const [soundOn, setSoundOn] = useState(true);
+  const [soundOn, setSoundOn] = useState(() => localStorage.getItem('lingoza-unit1-sound') !== 'off');
+  const [vibrationOn, setVibrationOn] = useState(() => localStorage.getItem('lingoza-unit1-vibration') !== 'off');
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [luluMood, setLuluMood] = useState('idle');
+  const [comboMessage, setComboMessage] = useState('');
 
   const exercises = testMode
     ? unitData.unit_test.questions.map(normalizeExercise)
@@ -79,13 +83,16 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const percent = Math.round(completed.length / unitData.lessons.length * 100);
   const unitComplete = completed.length === unitData.lessons.length;
 
-  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); setLuluMood('idle'); };
+  useEffect(() => { if (luluMood === 'idle') return; const timer = window.setTimeout(() => setLuluMood('idle'), 1500); return () => window.clearTimeout(timer); }, [luluMood]);
+  const vibrate = (pattern) => { if (!vibrationOn || typeof navigator === 'undefined' || !navigator.vibrate) return; try { navigator.vibrate(pattern); } catch {} };
+  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); setLuluMood('idle'); setComboMessage(''); };
   const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
   const beginLesson = (lesson) => {
     setCombo(0); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
   const closeLesson = () => { setActiveLesson(null); setTestMode(false); setTestDone(false); resetExercise(); };
   const finishLesson = () => {
+    playUnitTone('success',soundOn); vibrate([40,40,40,40,90]); setLuluMood('fire');
     if (!completed.includes(activeLesson.id)) {
       const next = [...completed, activeLesson.id];
       setCompleted(next); localStorage.setItem(PROGRESS_KEY, JSON.stringify(next));
@@ -175,10 +182,12 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     })}</div>
     <div className="iu-test-card iu-reference-test"><div><small>{rtl?'الاختبار النهائي':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?'أكمل الدروس الخمسة لفتح الاختبار. درجة النجاح 70٪.':'Complete all five lessons to unlock the test. Pass mark: 70%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'إعادة الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
 
-    {(activeLesson || testMode) && <div className="iu-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'}>
+    {(activeLesson || testMode) && <div className="iu-overlay iu-fullscreen-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'} onPointerDownCapture={unlockAudio} onClickCapture={e=>{if(e.target.closest("button")&&!e.target.closest("button").disabled)playUnitTone("click",soundOn)}}>
       <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?'الوحدة الأولى · الدرس':'UNIT 1 · LESSON')}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
-      <div className="iu-game-hud"><div className="iu-game-progress"><i style={{width:((exerciseIndex+1)/Math.max(1,exercises.length)*100)+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSoundOn(v=>!v)} aria-label={soundOn?'إيقاف الأصوات':'تشغيل الأصوات'}>{soundOn?'🔊':'🔇'}</button></div>
-      <div className="iu-lulu-coach"><UnitLulu mood={luluMood}/><div><b>لولو</b><p>{checked?(isCorrect?(combo>=3?(rtl?'رائع! ثلاث إجابات متتالية!':'Amazing streak!'):(rtl?'أحسنت! إجابة صحيحة':'Well done!')):(rtl?'لا بأس، حاول مرة أخرى':'It is okay, try again')):(rtl?'هيا نكمل المغامرة! أنا معك':'Let’s keep going! I’m with you.')}</p></div></div>
+      <div className="iu-game-hud"><div className="iu-game-progress"><i style={{width:((exerciseIndex+1)/Math.max(1,exercises.length)*100)+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
+      {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>
+      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{checked?(isCorrect?(combo>=3?(rtl?'رائع! ثلاث إجابات متتالية!':'Amazing streak!'):(rtl?'أحسنت! إجابة صحيحة':'Well done!')):(rtl?'لا بأس، حاول مرة أخرى':'It is okay, try again')):(rtl?'هيا نكمل المغامرة! أنا معك':'Let’s keep going! I’m with you.')}</p></div></div>
+      {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
       {!testMode && <><div className="iu-tabs">{phaseLabels.map((label,i)=><button key={label} className={phaseIndex===i?'active':''} onClick={()=>goPhase(phases[i])}>{String(i+1).padStart(2,'0')} · {label}</button>)}</div>
       {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {vocabulary.length}</div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{activeContent.pron_ar}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{activeContent.example_en}</b><span>{activeContent.example_ar}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
       {phase==='phrases' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {phrases.length}</div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><button className="iu-listen" onClick={()=>speak(activeContent.en)}><Volume2 size={18}/>{rtl?'استمع للنطق':'Listen'}</button><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===phrases.length-1?goPhase('mistakes'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
