@@ -1642,3 +1642,52 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .gg-match-column .gg-choice{min-height:66px;font-size:clamp(12px,1.8vh,15px)}
 .gg-match-column .gg-choice.selected{border-color:#e9a43b;background:#fff7e8}
 @media(max-height:700px){.gg-match-column .gg-choice{min-height:54px}}
+
+/* Arabic-first Lulu and Sara dialogue lesson */
+.gg-adventure .gg-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px}
+.gg-adventure .gg-xp,.gg-adventure .gg-best{display:none!important}
+.gg-dialogue{display:grid;grid-template-columns:62px minmax(0,1fr) 62px;align-items:center;gap:8px;min-height:92px}
+.gg-person{display:flex;flex-direction:column;align-items:center;gap:2px;color:#527765;font-size:11px;font-weight:900}
+.gg-character-art{width:62px;height:62px;overflow:visible}
+.gg-bubble{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0;padding:10px 12px;background:#fff;border:2px solid #d8ebdf;border-radius:17px;color:#244c3d;font-weight:850;box-shadow:0 3px 0 #d6e8db}
+.gg-bubble:after{content:"";position:absolute;right:-7px;top:27px;width:12px;height:12px;background:#fff;border-top:2px solid #d8ebdf;border-right:2px solid #d8ebdf;transform:rotate(45deg)}
+.gg-bubble>span{font-size:11px;color:#638575;font-weight:750}
+.gg-bubble bdi{font-size:clamp(15px,2.1vh,20px);direction:ltr;unicode-bidi:isolate}
+.gg-bubble button,.gg-phrase button{border:0;border-radius:10px;background:#e8f7ed;color:#087f69;padding:5px 9px;font-weight:850;font-size:11px}
+.gg-adventure .gg-title{margin:0;text-align:right;font-size:clamp(17px,2.4vh,22px)}
+.gg-adventure .gg-meta{font-size:11px}
+.gg-adventure .gg-choices{margin:0;gap:9px}
+.gg-adventure .gg-choice{min-height:82px;background:#fff;border:2px solid #d7eadc;border-bottom:5px solid #bddac5;border-radius:17px;box-shadow:0 3px 0 #e0eee4}
+.gg-adventure .gg-choice bdi{font-size:clamp(15px,2vh,19px);direction:ltr;unicode-bidi:isolate}
+.gg-adventure .gg-text-option{min-height:65px}
+.gg-adventure .gg-intro-card{gap:8px;padding:12px}
+.gg-story-intro{color:#47705c;line-height:1.5}
+.gg-phrase{width:100%;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:9px;padding:9px 11px;border:1px solid #dcece1;border-radius:13px;background:#fbfffc}
+.gg-phrase bdi{direction:ltr;unicode-bidi:isolate;font-size:17px;font-weight:900}
+.gg-phrase span{font-size:13px;color:#527765}
+.gg-adventure .gg-bottom{margin-top:auto}
+.gg-adventure .gg-feedback{background:#effaf2;border-radius:15px;padding:10px 12px}
+.gg-adventure .gg-feedback.error{background:#fff0f0}
+.gg-adventure .gg-feedback strong{font-size:15px}
+.gg-adventure .gg-feedback p{font-size:12px;line-height:1.45;margin:4px 0 0}
+.gg-write-input{width:100%;padding:13px;border:2px solid #cfe6d5;border-radius:13px;font-size:18px;font-weight:800;text-align:center}
+.gg-order-answer,.gg-word-bank{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;min-height:42px}
+.gg-order-answer button,.gg-word-bank button{border:2px solid #cfe6d5;border-bottom:4px solid #b8d7c0;border-radius:12px;background:#fff;color:#17463b;padding:9px 12px;font-weight:900;direction:ltr}
+.gg-word-bank button:disabled{opacity:.25}
+.gg-match-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.gg-match-column{display:flex;flex-direction:column;gap:8px}
+.gg-match-column .gg-choice{min-height:62px}
+.gg-match-count{grid-column:1/-1;text-align:center;color:#638575;font-size:12px;font-weight:850}
+.gg-result .gg-character-art{width:90px;height:90px}
+.gg-learned{width:100%;display:grid;gap:6px;max-height:170px;overflow:auto}
+.gg-learned>div{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:8px;padding:7px 10px;background:#f4fbf6;border:1px solid #dcece1;border-radius:11px;font-size:12px}
+.gg-learned bdi{direction:ltr;unicode-bidi:isolate;font-weight:900}
+.gg-learned button{border:0;border-radius:8px;padding:5px 7px;background:#e2f4e8;color:#087f69;font-size:10px;font-weight:850}
+.gg-adventure .gg-result-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.gg-adventure .gg-result-stats span{font-size:12px}
+.gg-adventure .gg-avatar{animation:ggLuluDance .55s ease-in-out infinite alternate}
+.gg-adventure .mood-sad{animation:ggSad .6s ease}
+.gg-adventure .mood-excited{animation:ggExcited .22s ease-in-out infinite alternate}
+@keyframes ggLuluDance{from{transform:rotate(-3deg) translateY(0)}to{transform:rotate(3deg) translateY(-3px)}}
+@media(max-width:600px){.gg-dialogue{grid-template-columns:50px minmax(0,1fr) 50px;gap:5px;min-height:82px}.gg-character-art{width:50px;height:50px}.gg-bubble{padding:8px}.gg-phrase{grid-template-columns:1fr auto;gap:6px}.gg-phrase span{grid-column:1}.gg-adventure .gg-choice{min-height:74px}.gg-learned{max-height:145px}}
+@media(max-height:700px){.gg-dialogue{min-height:64px}.gg-character-art{width:45px;height:45px}.gg-adventure .gg-choice{min-height:58px;padding:6px}.gg-adventure .gg-intro-card{padding:7px}.gg-phrase{padding:5px 8px}.gg-adventure .gg-feedback{padding:6px 8px}}
