@@ -2357,7 +2357,7 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .hearts-count{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 18px;padding:11px 18px;width:max-content;min-width:128px;border-radius:15px;background:#fff1f3;color:#a52d48;font-size:21px;font-weight:950}
 .hearts-count>span{font-size:23px}
 .hearts-count>b{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
-.hearts-option{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;margin:0 0 12px;border:1px solid #e7eee9;border-radius:15px;background:#f8fbf9;text-align:start}
+.hearts-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:13px 15px;margin:0 0 12px;border:1px solid #e7eee9;border-radius:15px;background:#f8fbf9;text-align:start;color:inherit;font-family:inherit;cursor:pointer}
 .hearts-option>div{display:grid;gap:4px}
 .hearts-option strong{font-size:16px;font-weight:900}
 .hearts-option small{font-size:13px;color:#687970}
