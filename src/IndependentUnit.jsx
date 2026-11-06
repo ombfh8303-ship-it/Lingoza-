@@ -65,6 +65,12 @@ const playUnitTone = (kind, enabled) => {
   } catch {}
 };
 
+const renderMixedText = (value) => {
+  if (typeof value !== 'string') return value;
+  const parts = value.split(/\{\{([^{}]+)\}\}/g);
+  return parts.map((part,index) => index % 2 ? <bdi key={index} dir="ltr" className="iu-inline-en">{part}</bdi> : part);
+};
+
 const normalizeExercise = (item) => ({
   ...item,
   prompt: item.prompt_ar || '',
@@ -94,11 +100,17 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [luluMood, setLuluMood] = useState('idle');
   const [comboMessage, setComboMessage] = useState('');
+  const [luluMessage, setLuluMessage] = useState('هيا نبدأ مغامرتنا!');
 
   const exercises = testMode
     ? unitData.unit_test.questions.map(normalizeExercise)
     : (activeLesson?.exercises || []).map(normalizeExercise);
   const current = exercises[exerciseIndex];
+  const shuffledMatch = useMemo(() => {
+    if (current?.type !== 'match') return {left:[],right:[]};
+    const shuffle = (values) => { const a=[...values]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+    const indexes=current.pairs.map((_,i)=>i); return {left:shuffle(indexes),right:shuffle(indexes)};
+  },[current?.id]);
   const vocabulary = activeLesson?.vocabulary || [];
   const phrases = activeLesson?.phrases || [];
   const mistakes = activeLesson?.common_mistakes || [];
@@ -114,24 +126,28 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   useEffect(() => { if (luluMood === 'idle') return; const timer = window.setTimeout(() => setLuluMood('idle'), 1500); return () => window.clearTimeout(timer); }, [luluMood]);
   const vibrate = (pattern) => { if (!vibrationOn || typeof navigator === 'undefined' || !navigator.vibrate) return; try { navigator.vibrate(pattern); } catch {} };
   const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };
+  const chooseLuluLine = (kind) => {
+    const lines={start:['أهلًا بك! هل أنت مستعد؟','لنبدأ خطوة خطوة، أنا معك!','هذه مغامرتنا الجديدة، هيا بنا!'],correct:['أحسنت! إجابة رائعة!','ممتاز! أنت تتقدم بسرعة!','رائع! لقد أتقنتها!'],wrong:['لا بأس، نتعلم من المحاولة!','اقتربت كثيرًا، جرّب مجددًا!','أنا معك، سننجح معًا!'],streak:['يا لك من نجم! استمر!','ثلاثة انتصارات وأكثر! مذهل!','أنت تتألق، واصل التقدم!'],finish:['أنهيتها ببراعة! أنا فخورة بك!','يا له من إنجاز رائع!','لقد أصبحت أقوى في الإنجليزية!']};
+    const pool=lines[kind]||lines.start; return pool[Math.floor(Math.random()*pool.length)];
+  };
   const resolveFeedback = (correct) => {
     if (correct) {
       const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next));
-      setLuluMood(next>=3?'fire':'cheer'); playUnitTone(next>=3?'combo':'correct',soundOn);
+      setLuluMood(next>=3?'fire':'cheer'); setLuluMessage(chooseLuluLine(next>=3?'streak':'correct')); playUnitTone(next>=3?'combo':'correct',soundOn);
       vibrate(next>=3?[40,40,40,40,90]:40);
       if(next>=3){ const lines=rtl?['أنت نار! لا يوقفك أحد!','مذهل، استمر!','أداء رائع!']:['You are on fire!','Amazing, keep going!','Unstoppable!']; setComboMessage(lines[(next-3)%lines.length]); }
     } else {
       setCombo(0); setComboMessage(rtl?'لا بأس، المحاولة القادمة لك!':'No worries, you’ve got this!');
-      setLuluMood('sad'); playUnitTone('wrong',soundOn); vibrate([90,50,90]);
+      setLuluMood('sad'); setLuluMessage(chooseLuluLine('wrong')); playUnitTone('wrong',soundOn); vibrate([90,50,90]);
     }
   };
   const unlockAudio = () => { if (!soundOn) return; try { const Audio=window.AudioContext||window.webkitAudioContext; if(Audio){ const ctx=new Audio(); if(ctx.state==='suspended')ctx.resume(); ctx.close(); } } catch {} };
   const beginLesson = (lesson) => {
-    setCombo(0); setComboMessage(''); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
+    setCombo(0); setComboMessage(''); setLuluMood('idle'); setLuluMessage(chooseLuluLine('start')); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
   const closeLesson = () => { setActiveLesson(null); setTestMode(false); setTestDone(false); resetExercise(); };
   const finishLesson = () => {
-    playUnitTone('success',soundOn); vibrate([40,40,40,40,90]); setLuluMood('fire');
+    playUnitTone('success',soundOn); vibrate([40,40,40,40,90]); setLuluMood('fire'); setLuluMessage(chooseLuluLine('finish'));
     if (!completed.includes(activeLesson.id)) {
       const next = [...completed, activeLesson.id];
       setCompleted(next); localStorage.setItem(PROGRESS_KEY, JSON.stringify(next));
@@ -177,11 +193,12 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const lessonContent = phase === 'vocabulary' ? vocabulary : phase === 'phrases' ? phrases : mistakes;
   const activeContent = lessonContent[contentIndex];
 
+  const lessonNumber = activeLesson ? unitData.lessons.findIndex(item => item.id === activeLesson.id) + 1 : null;
   const renderExercise = () => {
     if (!current) return null;
     if (current.type === 'match') return <div className="iu-match-grid">
-      <div><small>{rtl ? 'الإنجليزية' : 'English'}</small>{current.pairs.map((pair,i)=><button key={i} disabled={matches.includes(i)} className={matchLeft===i?'selected':''} onClick={()=>setMatchLeft(i)} dir="ltr">{pair.en}</button>)}</div>
-      <div><small>{rtl ? 'المعنى' : 'Meaning'}</small>{current.pairs.map((pair,i)=><button key={i} disabled={matches.includes(i)} onClick={()=>selectMatchRight(i)}>{pair.ar}</button>)}</div>
+      <div><small>{rtl ? 'الإنجليزية' : 'English'}</small>{shuffledMatch.left.map(i=>{const pair=current.pairs[i];return <button key={i} disabled={matches.includes(i)} className={matchLeft===i?'selected':''} onClick={()=>setMatchLeft(i)} dir="ltr">{pair.en}</button>;})}</div>
+      <div><small>{rtl ? 'المعنى' : 'Meaning'}</small>{shuffledMatch.right.map(i=>{const pair=current.pairs[i];return <button key={i} disabled={matches.includes(i)} onClick={()=>selectMatchRight(i)}>{pair.ar}</button>;})}</div>
       <p>{rtl ? 'اختر عبارة ثم معناها المطابق.' : 'Choose a phrase, then its matching meaning.'} · {matches.length}/{current.pairs.length}</p>
     </div>;
     if (current.type === 'word_order') return <div className="iu-order">
@@ -222,20 +239,20 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     <div className="iu-test-card iu-reference-test"><div><small>{rtl?'الاختبار النهائي':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?'أكمل الدروس الخمسة لفتح الاختبار. درجة النجاح 70٪.':'Complete all five lessons to unlock the test. Pass mark: 70%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'إعادة الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
 
     {(activeLesson || testMode) && <div className="iu-overlay iu-fullscreen-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'} onPointerDownCapture={unlockAudio} onClickCapture={e=>{if(e.target.closest("button")&&!e.target.closest("button").disabled)playUnitTone("click",soundOn)}}>
-      <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?'الوحدة الأولى · الدرس':'UNIT 1 · LESSON')}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
+      <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?('الوحدة الأولى · الدرس '+lessonNumber):('UNIT 1 · LESSON '+lessonNumber))}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
       <div className="iu-game-hud"><div className="iu-game-progress"><i style={{width:((exerciseIndex+1)/Math.max(1,exercises.length)*100)+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
       {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
-      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{checked?(comboMessage || (isCorrect?(rtl?'أحسنت! إجابة صحيحة':'Well done!'):(rtl?'لا بأس، حاول مرة أخرى':'It is okay, try again'))):(rtl?'هيا نكمل المغامرة! أنا معك':'Let’s keep going! I’m with you.')}</p></div></div>
+      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{renderMixedText(checked?(comboMessage || luluMessage):luluMessage)}</p></div></div>
       {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
       {!testMode && <>
-      {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {vocabulary.length}</div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{activeContent.pron_ar}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{activeContent.example_en}</b><span>{activeContent.example_ar}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
-      {phase==='phrases' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {phrases.length}</div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><button className="iu-listen" onClick={()=>speak(activeContent.en)}><Volume2 size={18}/>{rtl?'استمع للنطق':'Listen'}</button><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===phrases.length-1?goPhase('mistakes'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
-      {phase==='mistakes' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {mistakes.length}</div><div className="iu-mistake"><span>{rtl?'❌ الخطأ الشائع':'❌ Common mistake'}</span><b dir="ltr">{activeContent.wrong}</b><span>{rtl?'✅ الصحيح':'✅ Correct form'}</span><b dir="ltr">{activeContent.right}</b><p>{activeContent.explain_ar}</p></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===mistakes.length-1?goPhase('exercises'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
-      {phase==='exercises' && <div className="iu-content-card"><div className="iu-card-counter">{exerciseIndex+1} / {exercises.length}</div><h3 className="iu-exercise-prompt">{current?.prompt}</h3>{current?.audio_text && <p className="iu-audio-hint">{rtl?'استمع ثم اختر المعنى':'Listen, then choose the meaning'}</p>}{renderExercise()}{checked && <div className={'iu-feedback '+(isCorrect?'good':'bad')}>{isCorrect?(rtl?'إجابة صحيحة، أحسنت!':'Correct! Well done.'):(rtl?'ليست صحيحة، حاول مرة أخرى.':'Not quite. Try again.')}</div>}{!checked && current?.type==='match' && matches.length===current.pairs.length && <div className="iu-feedback good">{rtl?'اكتملت المطابقة!':'All pairs matched!'}</div>}<button className="iu-primary" disabled={current?.type==='match'?matches.length!==current.pairs.length:current?.type==='word_order'?order.length!==(current.answer||[]).length:selected===null} onClick={submit}>{!checked?(rtl?'تحقق من الإجابة':'Check answer'):(isCorrect?(isLastExercise?(testMode?(rtl?'إنهاء الاختبار':'Finish test'):(rtl?'إنهاء الدرس':'Finish lesson')):(rtl?'التالي':'Next')):(rtl?'حاول مجدداً':'Try again'))}<ArrowLeft size={17}/></button></div>}
+      {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {vocabulary.length}</span></div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{activeContent.pron_ar}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{activeContent.example_en}</b><span>{activeContent.example_ar}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
+      {phase==='phrases' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {phrases.length}</span></div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><button className="iu-listen" onClick={()=>speak(activeContent.en)}><Volume2 size={18}/>{rtl?'استمع للنطق':'Listen'}</button><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===phrases.length-1?goPhase('mistakes'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
+      {phase==='mistakes' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {mistakes.length}</span></div><div className="iu-mistake"><span>{rtl?'❌ الخطأ الشائع':'❌ Common mistake'}</span><b dir="ltr">{activeContent.wrong}</b><span>{rtl?'✅ الصحيح':'✅ Correct form'}</span><b dir="ltr">{activeContent.right}</b><p>{renderMixedText(activeContent.explain_ar)}</p></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===mistakes.length-1?goPhase('exercises'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
+      {phase==='exercises' && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{exerciseIndex+1} / {exercises.length}</span></div><h3 className="iu-exercise-prompt">{renderMixedText(current?.prompt)}</h3>{current?.audio_text && <p className="iu-audio-hint">{rtl?'استمع ثم اختر المعنى':'Listen, then choose the meaning'}</p>}{renderExercise()}{checked && <div className={'iu-feedback '+(isCorrect?'good':'bad')}>{isCorrect?(rtl?'إجابة صحيحة، أحسنت!':'Correct! Well done.'):(rtl?'ليست صحيحة، حاول مرة أخرى.':'Not quite. Try again.')}</div>}{!checked && current?.type==='match' && matches.length===current.pairs.length && <div className="iu-feedback good">{rtl?'اكتملت المطابقة!':'All pairs matched!'}</div>}<button className="iu-primary" disabled={current?.type==='match'?matches.length!==current.pairs.length:current?.type==='word_order'?order.length!==(current.answer||[]).length:selected===null} onClick={submit}>{!checked?(rtl?'تحقق من الإجابة':'Check answer'):(isCorrect?(isLastExercise?(testMode?(rtl?'إنهاء الاختبار':'Finish test'):(rtl?'إنهاء الدرس':'Finish lesson')):(rtl?'التالي':'Next')):(rtl?'حاول مجدداً':'Try again'))}<ArrowLeft size={17}/></button></div>}
       {phase==='speaking' && <div className="iu-content-card"><h3>{activeLesson.speaking.prompt_ar}</h3>{activeLesson.speaking.repeat.map((line,i)=><div className="iu-speaking-line" key={i}><span dir="ltr">{line}</span><button onClick={()=>speak(line)}><Volume2 size={18}/></button></div>)}<button className="iu-primary" onClick={finishLesson}>{rtl?'إنهاء الدرس · +30 XP':'Complete lesson · +30 XP'}<Check size={17}/></button></div>}
       {phase==='complete' && <div className="iu-content-card iu-lesson-complete"><UnitLulu mood="fire"/><h3>{rtl?'أحسنت! أنهيت الدرس 🎉':'Lesson complete! 🎉'}</h3><p>{rtl?'لولو فخورة بإنجازك!':'Lulu is proud of you!'}</p><button className="iu-primary" onClick={closeLesson}>{rtl?'العودة إلى الوحدة':'Back to unit'}<Check size={17}/></button></div>}
       </>}
-      {testMode && !testDone && <div className="iu-content-card"><div className="iu-card-counter">{exerciseIndex+1} / {exercises.length}</div><h3>{current?.prompt}</h3>{current?.audio_text && <p className="iu-audio-hint">{rtl?'استمع ثم اختر المعنى':'Listen, then choose the meaning'}</p>}{renderExercise()}{checked && <div className={'iu-feedback '+(isCorrect?'good':'bad')}>{isCorrect?(rtl?'إجابة صحيحة، أحسنت!':'Correct! Well done.'):(rtl?'ليست صحيحة، حاول مرة أخرى.':'Not quite. Try again.')}</div>}<button className="iu-primary" disabled={current?.type==='match'?matches.length!==current.pairs.length:current?.type==='word_order'?order.length!==(current.answer||[]).length:selected===null} onClick={submit}>{!checked?(rtl?'تحقق من الإجابة':'Check answer'):(isCorrect?(isLastExercise?(rtl?'إنهاء الاختبار':'Finish test'):(rtl?'التالي':'Next')):(rtl?'حاول مجدداً':'Try again'))}<ArrowLeft size={17}/></button></div>}
+      {testMode && !testDone && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{exerciseIndex+1} / {exercises.length}</span></div><h3>{renderMixedText(current?.prompt)}</h3>{current?.audio_text && <p className="iu-audio-hint">{rtl?'استمع ثم اختر المعنى':'Listen, then choose the meaning'}</p>}{renderExercise()}{checked && <div className={'iu-feedback '+(isCorrect?'good':'bad')}>{isCorrect?(rtl?'إجابة صحيحة، أحسنت!':'Correct! Well done.'):(rtl?'ليست صحيحة، حاول مرة أخرى.':'Not quite. Try again.')}</div>}<button className="iu-primary" disabled={current?.type==='match'?matches.length!==current.pairs.length:current?.type==='word_order'?order.length!==(current.answer||[]).length:selected===null} onClick={submit}>{!checked?(rtl?'تحقق من الإجابة':'Check answer'):(isCorrect?(isLastExercise?(rtl?'إنهاء الاختبار':'Finish test'):(rtl?'التالي':'Next')):(rtl?'حاول مجدداً':'Try again'))}<ArrowLeft size={17}/></button></div>}
       {testMode && testDone && <div className="iu-content-card iu-test-result"><div className="iu-test-score">{Math.round(testScore/exercises.length*100)}%</div><p className="iu-result-combo">{rtl?("أفضل كومبو: "+bestCombo):("Best combo: "+bestCombo)}</p><h3>{testScore/exercises.length*100>=unitData.unit_test.pass_score_percent?(rtl?'اجتزت اختبار الوحدة!':'Unit test passed!'):(rtl?'حاول مرة أخرى':'Try again')}</h3><p>{testScore} / {exercises.length} {rtl?'إجابات صحيحة':'correct answers'}</p><button className="iu-primary" onClick={closeLesson}>{rtl?'العودة إلى الوحدة':'Back to unit'}<ArrowLeft size={17}/></button></div>}
     </section></div>}
   </section>;
