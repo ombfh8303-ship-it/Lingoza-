@@ -122,15 +122,30 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     </div>;
   };
 
-  return <section className="quest-unit-preview iu-unit">
-    <div className="quest-unit-heading iu-unit-head"><div className="quest-unit-icon"><span>01</span></div><div><small>{unitData.level} · {rtl?'الوحدة الأولى':'UNIT 01'}</small><h3>{rtl?unitData.title_ar:unitData.title_en}</h3><p>{rtl?unitData.goal_ar:'Greet people, introduce yourself and say where you are from.'}</p></div><b>{completed.length}/{unitData.lessons.length}</b></div>
-    <div className="quest-unit-progress iu-progress"><i style={{width:percent+'%'}}/></div>
-    <div className="iu-progress-label"><span>{rtl?'تقدم الوحدة':'Unit progress'}</span><b>{percent}%</b></div>
-    <div className="iu-lessons">{unitData.lessons.map((lesson,index)=>{
+  const activeIndex = unitData.lessons.findIndex(lesson => !completed.includes(lesson.id));
+  const lessonKinds = rtl ? ['مفردات','قواعد','استماع','تحدث','مراجعة'] : ['Vocabulary','Grammar','Listening','Speaking','Review'];
+  return <section className="iu-unit iu-reference-style">
+    <div className="iu-reference-heading">
+      <div className="iu-reference-title"><small>{rtl?'الوحدة الأولى · أساسيات المحادثة':'UNIT 01 · CONVERSATION BASICS'}</small><h3>{rtl?unitData.title_ar:unitData.title_en}</h3></div>
+      <b className="iu-reference-count">{completed.length}/{unitData.lessons.length}</b>
+      <div className="iu-reference-track"><i style={{width:percent+'%'}}/></div>
+    </div>
+    <div className="iu-reference-lessons">{unitData.lessons.map((lesson,index)=>{
       const done=completed.includes(lesson.id);
-      return <article className="iu-lesson-card" key={lesson.id}><div className="iu-lesson-number">{done?<Check size={18}/>:String(index+1).padStart(2,'0')}</div><div className="iu-lesson-copy"><small>{rtl?'الدرس':'LESSON'} {index+1}</small><h3>{rtl?lesson.title_ar:lesson.title_en}</h3><p>{rtl?lesson.objectives_ar.join(' · '):lesson.objectives_ar.join(' · ')}</p></div><div className="iu-lesson-action"><span>{done?(rtl?'مكتمل':'Completed'):'+'+(unitData.xp_per_lesson||30)+' XP'}</span><button onClick={()=>beginLesson(lesson)}>{done?(rtl?'إعادة':'Review'):(rtl?'ابدأ':'Start')}<ArrowLeft size={15}/></button></div></article>;
+      const available=done||index===activeIndex||testPassed;
+      const category=lessonKinds[index]|| (rtl?'درس':'Lesson');
+      return <article className={'iu-reference-lesson '+(done?'is-done ':'')+(available&&!done?'is-active ':'')+(!available?'is-locked ':'')+(index%2?'offset':'')} key={lesson.id}>
+        <button className="iu-reference-status" disabled={!available} onClick={()=>beginLesson(lesson)} aria-label={done?(rtl?'إعادة الدرس':'Review lesson'):(rtl?'ابدأ الدرس':'Start lesson')}>
+          {done?<Check size={27}/>:available?<span className="iu-play-mark"/>:<LockKeyhole size={24}/>}
+        </button>
+        <div className="iu-reference-copy">
+          <div className="iu-reference-meta"><span className={'iu-reference-kind kind-'+index}>{category}</span><small>XP {index===2?'25':index===3?'30':'20'}+</small></div>
+          <h4>{rtl?lesson.title_ar:lesson.title_en}</h4>
+          {!done&&available&&<div className="iu-reference-mini-track"><i/></div>}
+        </div>
+      </article>;
     })}</div>
-    <div className="iu-test-card quest-unit-footer"><div><small>{rtl?'المرحلة الأخيرة':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?'يتاح الاختبار بعد إكمال الدروس الخمسة. النجاح من 70٪.':'Complete all five lessons to unlock the 8-question test. Pass mark: 70%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'أعد الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
+    <div className="iu-test-card iu-reference-test"><div><small>{rtl?'الاختبار النهائي':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?'أكمل الدروس الخمسة لفتح الاختبار. درجة النجاح 70٪.':'Complete all five lessons to unlock the test. Pass mark: 70%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'إعادة الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
 
     {(activeLesson || testMode) && <div className="iu-overlay"><section className="iu-modal" dir={rtl?'rtl':'ltr'}>
       <header><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?'الوحدة الأولى · الدرس':'UNIT 1 · LESSON')}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
