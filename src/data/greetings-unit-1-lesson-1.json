@@ -1,101 +1,118 @@
 {
   "lessonId": "unit-1-lesson-1",
-  "title": "Greetings with Lulu and Sara",
-  "story": "Lulu meets her neighbour Sara in the morning. Help Lulu have a friendly conversation.",
+  "title": "مغامرة التحيات مع لولو وسارة",
+  "story": "تلتقي لولو بجارتها سارة في الصباح. ساعد لولو على بدء حوار لطيف والتعرّف إلى التحيات الأساسية.",
+  "learned": [
+    {
+      "en": "Hello",
+      "ar": "مرحباً"
+    },
+    {
+      "en": "Good morning",
+      "ar": "صباح الخير"
+    },
+    {
+      "en": "How are you?",
+      "ar": "كيف حالك؟"
+    },
+    {
+      "en": "I’m fine, thank you!",
+      "ar": "أنا بخير، شكراً لك!"
+    },
+    {
+      "en": "Goodbye",
+      "ar": "إلى اللقاء"
+    },
+    {
+      "en": "Nice to meet you",
+      "ar": "سعيد بلقائك"
+    }
+  ],
   "challenges": [
     {
       "id": 1,
       "type": "intro",
-      "title": "تعرّف على التحية",
-      "line": "Hello! Good morning!",
-      "translation": "مرحباً! صباح الخير.",
-      "hint": "Hello works at any time. Good morning is for the morning.",
-      "options": [
-        [
-          "👋",
-          "Hello"
-        ],
-        [
-          "🌞",
-          "Good morning"
-        ]
-      ]
+      "title": "تعلّم العبارات الأساسية",
+      "line": "",
+      "translation": "",
+      "explain": ""
     },
     {
       "id": 2,
       "type": "picture",
-      "title": "اختر الصورة المناسبة",
+      "title": "اختر التحية المناسبة",
+      "sara": "تقول سارة:",
       "line": "Good morning!",
-      "translation": "صباح الخير",
       "options": [
         [
-          "🌞",
+          "",
           "Good morning"
         ],
         [
-          "🌙",
+          "",
           "Good night"
         ],
         [
-          "😊",
-          "Hello"
+          "",
+          "Goodbye"
         ]
       ],
       "answer": 0,
-      "explain": "Good morning is used in the morning."
+      "explain": "Good morning تُقال في الصباح، أما Hello فتصلح للتحية في أي وقت."
     },
     {
       "id": 3,
-      "type": "listen",
+      "type": "listenOnly",
       "title": "استمع واختر المعنى",
-      "line": "Hello, Sara!",
-      "translation": "مرحباً يا سارة!",
+      "sara": "استمع إلى سارة دون إظهار كلماتها:",
+      "line": "",
+      "audio": "How are you?",
       "options": [
         [
-          "👋",
-          "مرحباً يا سارة"
+          "",
+          "كيف حالك؟"
         ],
         [
-          "🌙",
-          "تصبحين على خير"
+          "",
+          "إلى اللقاء"
         ],
         [
-          "🙏",
-          "شكراً"
+          "",
+          "شكراً لك"
         ]
       ],
       "answer": 0,
-      "explain": "Hello is a friendly greeting."
+      "explain": "How are you? سؤال نستخدمه للاطمئنان على حال الشخص."
     },
     {
       "id": 4,
       "type": "reply",
-      "title": "ردّ على لولو",
+      "title": "اختر الرد المناسب",
+      "sara": "تسأل سارة:",
       "line": "How are you?",
-      "translation": "كيف حالك؟",
       "options": [
         [
-          "😊",
+          "",
           "I’m fine, thank you!"
         ],
         [
-          "🌙",
+          "",
           "Good night!"
         ],
         [
-          "🚪",
+          "",
           "Goodbye!"
         ]
       ],
       "answer": 0,
-      "explain": "I’m fine, thank you is a polite reply."
+      "explain": "I’m fine, thank you! رد مهذب عندما يسألك شخص عن حالك."
     },
     {
       "id": 5,
       "type": "match",
-      "title": "طابق العبارات",
+      "title": "طابق كل عبارة مع معناها",
+      "sara": "تقول لولو:",
       "line": "Let’s match the words!",
-      "translation": "هيا نطابق الكلمات!",
       "pairs": [
         [
           "Hello",
@@ -110,14 +127,15 @@
           "شكراً"
         ]
       ],
-      "explain": "These are three useful everyday expressions."
+      "explain": "هذه عبارات يومية أساسية ستستخدمها كثيراً."
     },
     {
       "id": 6,
       "type": "order",
-      "title": "رتّب الكلمات",
+      "title": "رتّب كلمات العبارة",
+      "sara": "تقول سارة:",
       "line": "Nice to meet you.",
-      "translation": "سعيد بلقائك.",
+      "translation": "سعيدة بلقائك.",
       "words": [
         "you",
         "meet",
@@ -130,69 +148,57 @@
         "meet",
         "you"
       ],
-      "explain": "Say Nice to meet you when you meet someone for the first time."
+      "explain": "نقول Nice to meet you عندما نقابل شخصاً للمرة الأولى."
     },
     {
       "id": 7,
       "type": "surprise",
       "title": "افتح صندوق المفاجأة",
-      "line": "You’re doing great!",
-      "translation": "أنت تتقدم بشكل رائع!",
+      "sara": "لولو لديها مكافأة لك!",
+      "line": "",
+      "translation": "مكافأة صغيرة على تقدمك.",
       "reward": 20,
-      "explain": "A little bonus for your effort!"
+      "explain": "حصلت على نقاط إضافية لأنك واصلت التعلم!"
     },
     {
       "id": 8,
       "type": "profile",
-      "title": "اصنع تعريفك بنفسك",
+      "title": "اكتب تعريفك بنفسك",
+      "sara": "تقول لولو:",
       "line": "Hi, I’m [name]. I’m from [country].",
       "translation": "مرحباً، أنا [الاسم]. أنا من [البلد].",
-      "explain": "Use I’m from before the name of your country."
+      "explain": "نستخدم I’m from قبل اسم البلد لنتحدث عن موطننا."
     },
     {
       "id": 9,
-      "type": "review",
-      "title": "لنجرّبها مرة أخرى",
-      "line": "Let’s practise once more!",
-      "translation": "هيا نتدرّب مرة أخرى!",
-      "options": [
-        [
-          "👋",
-          "Hello"
-        ],
-        [
-          "🌞",
-          "Good morning"
-        ],
-        [
-          "🌙",
-          "Good night"
-        ]
-      ],
-      "answer": 0,
-      "explain": "Review helps you remember the expressions."
+      "type": "write",
+      "title": "اكتب الكلمة التي سمعتها",
+      "sara": "استمع إلى سارة جيداً:",
+      "line": "",
+      "audio": "Hello",
+      "answer": "Hello",
+      "explain": "Hello تعني مرحباً، وهي تحية مناسبة في أي وقت."
     },
     {
       "id": 10,
       "type": "final",
-      "title": "تحدّي الختام",
-      "line": "Sara says: How are you?",
-      "translation": "تقول سارة: كيف حالك؟",
+      "title": "أكمل الحوار مع سارة",
+      "sara": "تسألك سارة:",
+      "line": "How are you?",
       "scenes": [
         {
           "line": "How are you?",
-          "translation": "كيف حالك؟",
           "options": [
             [
-              "😊",
-              "I’m great, thanks!"
+              "",
+              "I'm great, thanks!"
             ],
             [
-              "🌙",
+              "",
               "Good night!"
             ],
             [
-              "🚪",
+              "",
               "Goodbye!"
             ]
           ],
@@ -200,25 +206,24 @@
         },
         {
           "line": "Nice to meet you!",
-          "translation": "سعيدة بلقائك!",
           "options": [
             [
-              "🤝",
+              "",
               "Nice to meet you, too!"
             ],
             [
-              "🌞",
+              "",
               "Good morning!"
             ],
             [
-              "🙏",
-              "Thanks, goodbye!"
+              "",
+              "Goodbye!"
             ]
           ],
           "answer": 0
         }
       ],
-      "explain": "You can now greet someone and keep a short conversation going."
+      "explain": "أحسنت! أصبحت قادراً على بدء حوار قصير والتحية باللغة الإنجليزية."
     }
   ]
 }
