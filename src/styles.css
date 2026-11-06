@@ -1985,3 +1985,43 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .iu-adventure-modal .iu-content-card{padding:12px}
 }
 @media(prefers-reduced-motion:reduce){.iu-adventure-modal *,.iu-adventure-modal *:before,.iu-adventure-modal *:after{animation:none!important;transition:none!important}}
+
+
+/* Full-page Unit 1 lesson experience */
+.iu-fullscreen-overlay{position:fixed!important;inset:0!important;z-index:99999!important;width:100vw!important;height:100dvh!important;min-height:100vh!important;padding:0!important;margin:0!important;display:flex!important;align-items:stretch!important;justify-content:stretch!important;background:#f7fbf8!important;overflow:hidden!important}
+.iu-fullscreen-overlay .iu-adventure-modal{width:100%!important;max-width:none!important;height:100%!important;max-height:none!important;min-height:100%!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:clamp(12px,3vw,26px)!important;display:flex!important;flex-direction:column!important;overflow-y:auto!important;overscroll-behavior:contain}
+.iu-fullscreen-overlay .iu-content-card{width:100%;max-width:820px;margin:0 auto;flex:1 0 auto;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.iu-fullscreen-overlay .iu-adventure-header,.iu-fullscreen-overlay .iu-game-hud,.iu-fullscreen-overlay .iu-lulu-coach,.iu-fullscreen-overlay .iu-tabs,.iu-fullscreen-overlay .iu-combo-banner{width:100%;max-width:820px;margin-left:auto;margin-right:auto}
+.iu-fullscreen-overlay .iu-adventure-header h2{font-size:clamp(19px,3vw,27px)!important}
+.iu-fullscreen-overlay .iu-lulu-coach{min-height:100px;padding:12px 18px;border-radius:22px}
+.iu-lulu-stage{position:relative;flex:0 0 82px;width:82px;height:82px}
+.iu-lulu-art{display:block;width:82px;height:82px;transform-origin:50% 85%}
+.iu-lulu-art.idle{animation:iuLuluIdle 2.8s ease-in-out infinite}
+.iu-lulu-art.cheer{animation:iuLuluCheer .48s ease-in-out 2}
+.iu-lulu-art.sad{animation:iuLuluSad .42s ease-in-out 2}
+.iu-lulu-art.fire{animation:iuLuluFireDance .34s ease-in-out 3}
+.iu-lulu-eye{transform-box:fill-box;transform-origin:center;animation:iuLuluBlink 4s infinite}
+.iu-lulu-art.cheer .iu-lulu-mouth,.iu-lulu-art.fire .iu-lulu-mouth{d:path("M49 82Q60 99 71 82");fill:#8f4435}
+.iu-lulu-tear{opacity:0}.iu-lulu-art.sad .iu-lulu-tear{opacity:1}
+.iu-lulu-sparks{position:absolute;inset:-4px;pointer-events:none;font-size:15px;animation:iuSparkRise 1s ease-out both}
+.iu-combo-banner{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 14px;border-radius:16px;background:linear-gradient(100deg,#fff0d9,#ffe1bc);color:#b85b19;box-shadow:0 4px 0 #f5d2a8;animation:iuComboPop .36s cubic-bezier(.2,1.5,.5,1) both}
+.iu-combo-banner b{font-size:13px}.iu-combo-banner strong{font-size:17px;background:#fff;border-radius:20px;padding:3px 9px}
+.iu-settings-panel{width:100%;max-width:820px;margin:0 auto;padding:12px 15px;border:1px solid #d9eae0;border-radius:14px;background:#fff;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.iu-settings-panel label{display:flex;align-items:center;gap:8px;color:#31594a;font-size:12px;font-weight:800}
+.iu-settings-panel input{accent-color:#0b9678;width:17px;height:17px}
+.iu-adventure-modal button{transition:transform .12s ease,background-color .16s ease,border-color .16s ease}
+.iu-adventure-modal button:active:not(:disabled){transform:scale(.96)}
+.iu-adventure-modal .iu-option.correct,.iu-adventure-modal .iu-option.wrong{animation:iuAnswerPop .2s ease-out}
+.iu-adventure-modal .iu-match-grid button.selected{background:#e7f8ec;border-color:#65c58b}
+.iu-adventure-modal .iu-order button{border-radius:12px;border:2px solid #d7eadc;background:#f8fcf9;padding:9px 12px;font-weight:800}
+.iu-game-combo.is-hot span{color:#f07824;filter:none;transform:scale(1.12)}
+@keyframes iuLuluIdle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@keyframes iuLuluBlink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.12)}}
+@keyframes iuLuluCheer{0%,100%{transform:translateY(0) scale(1)}25%{transform:translateY(-17px) scale(1.08,.94)}50%{transform:translateY(0) scale(.94,1.08)}75%{transform:translateY(-9px) scale(1.04,.97)}}
+@keyframes iuLuluSad{0%,100%{transform:translateX(0)}25%,75%{transform:translateX(-5px) rotate(-4deg)}50%{transform:translateX(5px) rotate(4deg)}}
+@keyframes iuLuluFireDance{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-14px) rotate(-8deg)}50%{transform:translateY(0) rotate(7deg)}75%{transform:translateY(-9px) rotate(-5deg)}}
+@keyframes iuSparkRise{0%{opacity:0;transform:translateY(12px) scale(.5)}25%{opacity:1}100%{opacity:0;transform:translateY(-24px) scale(1.3)}}
+@keyframes iuComboPop{0%{opacity:0;transform:scale(.86)}70%{transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
+@keyframes iuAnswerPop{0%{transform:scale(.97)}100%{transform:scale(1)}}
+@media(max-width:600px){.iu-fullscreen-overlay .iu-adventure-modal{padding:10px!important;gap:8px!important}.iu-fullscreen-overlay .iu-lulu-coach{min-height:78px;padding:7px 10px}.iu-lulu-stage,.iu-lulu-art{width:66px;height:66px}.iu-lulu-stage{flex-basis:66px}.iu-fullscreen-overlay .iu-content-card{padding:13px!important}.iu-fullscreen-overlay .iu-tabs{overflow-x:auto;flex-wrap:nowrap}.iu-fullscreen-overlay .iu-tabs button{flex:0 0 auto}.iu-settings-panel{gap:12px}}
+@media(prefers-reduced-motion:reduce){.iu-fullscreen-overlay *, .iu-fullscreen-overlay *::before,.iu-fullscreen-overlay *::after{animation:none!important;transition:none!important}.iu-lulu-art.cheer,.iu-lulu-art.fire{transform:none!important}}
