@@ -32,8 +32,8 @@ const playUnitTone = (kind, enabled) => {
     const notes = kind === 'wrong' ? [290,220] : kind === 'combo' || kind === 'success' ? [520,660,820,1040] : kind === 'click' ? [650] : [560,780];
     let at = ctx.currentTime + .02;
     const duration = kind === 'click' ? .055 : kind === 'combo' || kind === 'success' ? .22 : .12;
-    notes.forEach(hz => { const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type='sine'; osc.frequency.setValueAtTime(hz,at); gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(.026,at+.025); gain.gain.exponentialRampToValueAtTime(.0001,at+duration); osc.connect(gain); gain.connect(ctx.destination); osc.start(at); osc.stop(at+duration+.01); at+=duration+.035; });
-    window.setTimeout(()=>ctx.close().catch(()=>{}),800);
+    notes.forEach(hz => { const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type='sine'; osc.frequency.setValueAtTime(hz,at); gain.gain.setValueAtTime(.0001,at); const volume = kind === 'wrong' ? .058 : kind === 'combo' || kind === 'success' ? .075 : kind === 'click' ? .022 : .072; gain.gain.exponentialRampToValueAtTime(volume,at+.025); gain.gain.exponentialRampToValueAtTime(.0001,at+duration); osc.connect(gain); gain.connect(ctx.destination); osc.start(at); osc.stop(at+duration+.01); at+=duration+.035; });
+    window.setTimeout(()=>ctx.close().catch(()=>{}),1600);
   } catch {}
 };
 
