@@ -1691,3 +1691,55 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @keyframes ggLuluDance{from{transform:rotate(-3deg) translateY(0)}to{transform:rotate(3deg) translateY(-3px)}}
 @media(max-width:600px){.gg-dialogue{grid-template-columns:50px minmax(0,1fr) 50px;gap:5px;min-height:82px}.gg-character-art{width:50px;height:50px}.gg-bubble{padding:8px}.gg-phrase{grid-template-columns:1fr auto;gap:6px}.gg-phrase span{grid-column:1}.gg-adventure .gg-choice{min-height:74px}.gg-learned{max-height:145px}}
 @media(max-height:700px){.gg-dialogue{min-height:64px}.gg-character-art{width:45px;height:45px}.gg-adventure .gg-choice{min-height:58px;padding:6px}.gg-adventure .gg-intro-card{padding:7px}.gg-phrase{padding:5px 8px}.gg-adventure .gg-feedback{padding:6px 8px}}
+
+/* Character animation, feedback and accessibility */
+.gg-dialogue{direction:ltr;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:4px 14px;min-height:112px}
+.gg-bubble{grid-column:1/-1;grid-row:1;direction:rtl;align-items:flex-start}
+.gg-person.sara{grid-column:1;grid-row:2}
+.gg-person:not(.sara){grid-column:2;grid-row:2}
+.gg-character-art{overflow:visible;transform-origin:50% 75%}
+.gg-lulu.idle{animation:foxFloat 2.8s ease-in-out infinite}
+.gg-lulu.idle .fox-ears{transform-origin:50% 100%;animation:foxEar 3.4s ease-in-out infinite}
+.gg-lulu.idle .fox-tail{transform-origin:90% 70%;animation:foxTail 1.5s ease-in-out infinite alternate}
+.gg-lulu.idle .fox-eyes{animation:foxBlink .16s 4s infinite}
+.gg-lulu.cheer{animation:foxHop .55s ease-in-out 1}
+.gg-lulu.cheer .fox-mouth,.gg-lulu.fire .fox-mouth{d:path("M49 82Q60 101 71 82")}
+.gg-lulu.sad{animation:foxSad .45s ease-in-out 2}
+.gg-lulu.sad .fox-tear{opacity:1;animation:foxTear .8s ease-in-out}
+.gg-lulu.fire{animation:foxTripleHop .95s ease-in-out 1}
+.gg-lulu.fire .fox-sparkles{animation:foxSpark .8s ease-out}
+.gg-sara.idle .bunny-ears{transform-origin:50% 100%;animation:bunnyEar 3s ease-in-out infinite}
+.gg-sara.idle{animation:bunnyFloat 3s ease-in-out infinite}
+.gg-sara.cheer{animation:foxHop .55s ease-in-out 1}
+.gg-sara.sad{animation:foxSad .5s ease-in-out 1}
+.gg-sara.sad .bunny-mouth{d:path("M52 91Q60 82 68 91")}
+.gg-combo.active{animation:comboPulse .35s ease-in-out}
+.gg-combo-banner{display:flex;align-items:center;justify-content:center;gap:9px;padding:7px 12px;border-radius:14px;background:linear-gradient(90deg,#fff3d8,#ffe2aa);color:#985014;box-shadow:0 3px 0 #f3c77c;animation:bannerPop .38s cubic-bezier(.2,1.6,.4,1)}
+.gg-combo-banner strong{font-size:14px}.gg-combo-banner b{font-size:12px}.gg-combo-banner i{font-style:normal;animation:starFly 1s ease-out}
+.gg-settings-toggle{border:0;border-radius:10px;background:#edf7ef;color:#47705c;padding:5px 8px;font-size:17px}
+.gg-settings{position:absolute;z-index:20;top:45px;left:8px;display:grid;gap:8px;padding:12px 15px;background:white;border:1px solid #d8ebdf;border-radius:13px;box-shadow:0 5px 20px #23483325;font-size:12px;font-weight:800}
+.gg-settings label{display:flex;align-items:center;gap:7px}
+.gg-settings input{accent-color:#15966f}
+.gg-choice,.gg-primary,.gg-listen,.gg-bubble button,.gg-word-bank button,.gg-phrase button{transition:transform .12s ease,background-color .18s ease,border-color .18s ease,box-shadow .12s ease}
+.gg-choice:active,.gg-primary:active,.gg-listen:active,.gg-bubble button:active,.gg-word-bank button:active,.gg-phrase button:active{transform:translateY(3px) scale(.98)}
+.gg-adventure .gg-choice.correct-answer{background:#e0f7e8!important;border-color:#159b69!important;color:#126344}
+.gg-adventure .gg-choice.wrong-answer{background:#fff0ef!important;border-color:#df7770!important;color:#a4433c}
+.gg-adventure .gg-progress span{transition:width .55s cubic-bezier(.2,.8,.2,1)}
+.gg-adventure .gg-feedback{animation:feedbackRise .3s ease-out both}
+@keyframes foxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes foxEar{0%,85%,100%{transform:rotate(0)}90%{transform:rotate(-5deg)}95%{transform:rotate(4deg)}}
+@keyframes foxTail{from{transform:rotate(-7deg)}to{transform:rotate(9deg)}}
+@keyframes foxBlink{0%,45%,100%{transform:scaleY(1)}48%,52%{transform:scaleY(.08)}}
+@keyframes foxHop{0%,100%{transform:translateY(0) scale(1)}30%{transform:translateY(-17px) scale(.94,1.06)}55%{transform:translateY(0) scale(1.08,.92)}75%{transform:translateY(-6px) scale(.98,1.02)}}
+@keyframes foxTripleHop{0%,100%{transform:translateY(0)}18%,48%,78%{transform:translateY(-12px) scale(.96,1.05)}32%,62%,90%{transform:translateY(0) scale(1.04,.96)}}
+@keyframes foxSad{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-4px) rotate(-4deg)}75%{transform:translateX(4px) rotate(4deg)}}
+@keyframes foxTear{0%{opacity:0;transform:translateY(-4px)}30%{opacity:1}100%{opacity:0;transform:translateY(9px)}}
+@keyframes foxSpark{0%{opacity:0;transform:scale(.3)}30%{opacity:1;transform:scale(1.2)}100%{opacity:0;transform:scale(1.6)}}
+@keyframes bunnyEar{0%,100%{transform:rotate(0)}40%{transform:rotate(3deg)}60%{transform:rotate(-3deg)}}
+@keyframes bunnyFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes comboPulse{50%{transform:scale(1.18)}}
+@keyframes bannerPop{0%{opacity:0;transform:scale(.75)}75%{transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+@keyframes starFly{0%{opacity:0;transform:translateY(9px) scale(.3)}30%{opacity:1}100%{opacity:0;transform:translateY(-20px) scale(1.3)}}
+@keyframes feedbackRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.gg-dialogue{min-height:100px;gap:2px 10px}.gg-character-art{width:56px;height:56px}.gg-settings{top:42px}}
+@media(prefers-reduced-motion:reduce){.gg-adventure *, .gg-adventure *::before,.gg-adventure *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.gg-adventure .gg-choice:active,.gg-adventure .gg-primary:active{transform:none!important}}
