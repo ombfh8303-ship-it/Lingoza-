@@ -1743,3 +1743,16 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 @keyframes feedbackRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.gg-dialogue{min-height:100px;gap:2px 10px}.gg-character-art{width:56px;height:56px}.gg-settings{top:42px}}
 @media(prefers-reduced-motion:reduce){.gg-adventure *, .gg-adventure *::before,.gg-adventure *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.gg-adventure .gg-choice:active,.gg-adventure .gg-primary:active{transform:none!important}}
+
+/* Final polish: independent bunny blink, combo particles and clear answer states */
+.gg-sara.idle .bunny-eyes{transform-origin:50% 68%;animation:foxBlink .16s 4s infinite}
+.gg-sara.sad .bunny-mouth{d:path("M52 91Q60 82 68 91")}
+.gg-lulu .fox-tear{opacity:0}
+.gg-lulu.cheer .fox-sparkles,.gg-lulu.fire .fox-sparkles{transform-origin:center;animation:foxSpark 1s ease-out}
+.gg-adventure .gg-choice.correct-answer{background:#dff8e8!important;border-color:#159b69!important;color:#126344!important;box-shadow:0 3px 0 #a9d9ba}
+.gg-adventure .gg-choice.wrong-answer{background:#fff0ef!important;border-color:#df7770!important;color:#a4433c!important;box-shadow:0 3px 0 #edc0bc}
+.gg-combo-banner i{display:inline-block}
+.gg-adventure .gg-person.sara{justify-self:start}
+.gg-adventure .gg-person:not(.sara){justify-self:end}
+.gg-adventure .gg-dialogue{direction:ltr}
+@media(prefers-reduced-motion:reduce){.gg-lulu.idle,.gg-sara.idle{animation:none!important}.gg-adventure .gg-combo-banner,.gg-adventure .gg-feedback{animation:none!important}}
