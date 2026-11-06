@@ -35,7 +35,8 @@ const playUnitTone = (kind, enabled) => {
     window.setTimeout(()=>ctx.close().catch(()=>{}),800);
   } catch {}
 };
-\nconst normalizeExercise = (item) => ({
+
+const normalizeExercise = (item) => ({
   ...item,
   prompt: item.prompt_ar || '',
   answerIndex: Number.isInteger(item.answer) ? item.answer : 0
@@ -56,7 +57,11 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const [testMode, setTestMode] = useState(false);
   const [testIndex, setTestIndex] = useState(0);
   const [testScore, setTestScore] = useState(0);
-  const [testDone, setTestDone] = useState(false);\n  const [combo, setCombo] = useState(0);\n  const [bestCombo, setBestCombo] = useState(0);\n  const [soundOn, setSoundOn] = useState(true);\n  const [luluMood, setLuluMood] = useState('idle');
+  const [testDone, setTestDone] = useState(false);
+  const [combo, setCombo] = useState(0);
+  const [bestCombo, setBestCombo] = useState(0);
+  const [soundOn, setSoundOn] = useState(true);
+  const [luluMood, setLuluMood] = useState('idle');
 
   const exercises = testMode
     ? unitData.unit_test.questions.map(normalizeExercise)
@@ -74,7 +79,8 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const percent = Math.round(completed.length / unitData.lessons.length * 100);
   const unitComplete = completed.length === unitData.lessons.length;
 
-  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };\n  const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
+  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };
+  const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
   const beginLesson = (lesson) => {
     setCombo(0); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
