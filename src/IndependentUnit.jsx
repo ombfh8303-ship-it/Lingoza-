@@ -85,7 +85,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
 
   useEffect(() => { if (luluMood === 'idle') return; const timer = window.setTimeout(() => setLuluMood('idle'), 1500); return () => window.clearTimeout(timer); }, [luluMood]);
   const vibrate = (pattern) => { if (!vibrationOn || typeof navigator === 'undefined' || !navigator.vibrate) return; try { navigator.vibrate(pattern); } catch {} };
-  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); setLuluMood('idle'); setComboMessage(''); };
+  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };
   const resolveFeedback = (correct) => {
     if (correct) {
       const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next));
@@ -99,7 +99,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   };
   const unlockAudio = () => { if (!soundOn) return; try { const Audio=window.AudioContext||window.webkitAudioContext; if(Audio){ const ctx=new Audio(); if(ctx.state==='suspended')ctx.resume(); ctx.close(); } } catch {} };
   const beginLesson = (lesson) => {
-    setCombo(0); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
+    setCombo(0); setComboMessage(''); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
   const closeLesson = () => { setActiveLesson(null); setTestMode(false); setTestDone(false); resetExercise(); };
   const finishLesson = () => {
@@ -112,7 +112,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     setPhase('complete');
   };
   const beginTest = () => {
-    setCombo(0); setLuluMood('idle'); setTestMode(true); setActiveLesson(null); setPhase('exercises'); setTestIndex(0); setTestScore(0); setTestDone(false); setExerciseIndex(0); resetExercise();
+    setCombo(0); setComboMessage(''); setLuluMood('idle'); setTestMode(true); setActiveLesson(null); setPhase('exercises'); setTestIndex(0); setTestScore(0); setTestDone(false); setExerciseIndex(0); resetExercise();
   };
   const chooseOption = (index) => { if (!checked) setSelected(index); };
   const submit = () => {
@@ -197,7 +197,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
       <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?'الوحدة الأولى · الدرس':'UNIT 1 · LESSON')}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
       <div className="iu-game-hud"><div className="iu-game-progress"><i style={{width:((exerciseIndex+1)/Math.max(1,exercises.length)*100)+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
       {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
-      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{checked?(isCorrect?(combo>=3?(rtl?'رائع! ثلاث إجابات متتالية!':'Amazing streak!'):(rtl?'أحسنت! إجابة صحيحة':'Well done!')):(rtl?'لا بأس، حاول مرة أخرى':'It is okay, try again')):(rtl?'هيا نكمل المغامرة! أنا معك':'Let’s keep going! I’m with you.')}</p></div></div>
+      <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{checked?(comboMessage || (isCorrect?(rtl?'أحسنت! إجابة صحيحة':'Well done!'):(rtl?'لا بأس، حاول مرة أخرى':'It is okay, try again'))):(rtl?'هيا نكمل المغامرة! أنا معك':'Let’s keep going! I’m with you.')}</p></div></div>
       {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
       {!testMode && <><div className="iu-tabs">{phaseLabels.map((label,i)=><button key={label} className={phaseIndex===i?'active':''} onClick={()=>goPhase(phases[i])}>{String(i+1).padStart(2,'0')} · {label}</button>)}</div>
       {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {vocabulary.length}</div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{activeContent.pron_ar}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{activeContent.example_en}</b><span>{activeContent.example_ar}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
