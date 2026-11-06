@@ -46,15 +46,15 @@
       "line": "Good morning!",
       "options": [
         [
-          "",
+          "☀️",
           "Good morning"
         ],
         [
-          "",
+          "🌙",
           "Good night"
         ],
         [
-          "",
+          "🚪",
           "Goodbye"
         ]
       ],
@@ -79,7 +79,7 @@
         ],
         [
           "",
-          "شكراً لك"
+          "شكراً جزيلاً لك"
         ]
       ],
       "answer": 0,
@@ -94,15 +94,15 @@
       "options": [
         [
           "",
-          "I’m fine, thank you!"
+          "I'm fine, thank you!"
         ],
         [
           "",
-          "Good night!"
+          "Nice to meet you."
         ],
         [
           "",
-          "Goodbye!"
+          "Thank you very much."
         ]
       ],
       "answer": 0,
