@@ -1779,3 +1779,51 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .gg-adventure .gg-dialogue{min-width:0}
 .gg-adventure .gg-bubble{overflow-wrap:anywhere}
 @media(prefers-reduced-motion:reduce){.gg-adventure .gg-lulu,.gg-adventure .gg-sara{animation:none!important}}
+
+/* Requested greetings lesson layout and direction fixes */
+.gg-adventure{height:auto!important;min-height:min(760px,calc(100dvh - 150px));max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;padding:12px 12px calc(28px + env(safe-area-inset-bottom))!important;box-sizing:border-box}
+.gg-adventure .gg-top{position:relative;grid-template-columns:auto minmax(70px,1fr) auto auto;min-height:42px;padding-inline-end:2px}
+.gg-adventure .gg-settings-toggle{justify-self:end;align-self:center}
+.gg-adventure .gg-settings{top:calc(100% + 5px);inset-inline-start:auto;inset-inline-end:4px}
+.gg-adventure .gg-combo-banner{position:relative!important;inset:auto!important;z-index:1;min-height:32px;margin:2px auto 4px;width:fit-content;max-width:100%;box-sizing:border-box}
+.gg-adventure .gg-dialogue{min-height:132px;grid-template-columns:minmax(78px,1fr) minmax(78px,1fr);grid-template-rows:auto auto;align-items:center;overflow:visible}
+.gg-adventure .gg-character-art{width:clamp(68px,12vw,88px);height:clamp(68px,12vw,88px);max-width:100%;overflow:visible}
+.gg-adventure .gg-bubble{grid-row:1;grid-column:1/-1;position:relative;z-index:0}
+.gg-adventure .gg-person{grid-row:2;align-self:center;min-width:0}
+.gg-adventure .gg-order-answer,.gg-adventure .gg-word-bank{direction:ltr!important;justify-content:flex-start!important;text-align:left!important;unicode-bidi:isolate;min-height:48px;padding:7px 9px;box-sizing:border-box;border-radius:12px}
+.gg-adventure .gg-order-answer{background:#f2faf4;border:1px dashed #9dcbb0}
+.gg-adventure .gg-word-bank{background:#fff;border:1px solid #dcece1}
+.gg-adventure .gg-order-answer button,.gg-adventure .gg-word-bank button{direction:ltr!important;text-align:left!important;unicode-bidi:isolate}
+.gg-adventure .gg-intro-card>p{width:100%;box-sizing:border-box;padding:9px 12px;margin:0 0 3px;border-radius:11px;background:#f3faf5;text-align:right;line-height:1.5}
+.gg-adventure .gg-feedback{width:100%;box-sizing:border-box;min-width:0}
+.gg-adventure .gg-feedback p{direction:rtl;text-align:right;unicode-bidi:plaintext;overflow-wrap:anywhere}
+.gg-adventure .gg-feedback p bdi{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.gg-adventure .gg-bottom{position:sticky;bottom:0;z-index:4;padding:8px 0 calc(5px + env(safe-area-inset-bottom));background:linear-gradient(180deg,#f8fcf9ee,#f8fcf9 30%);margin-top:auto}
+.gg-adventure .gg-primary{width:100%;min-height:48px}
+.gg-adventure .gg-result{min-height:0;justify-content:flex-start;gap:9px;padding-bottom:4px}
+.gg-adventure .gg-result-top{display:flex;align-items:center;justify-content:space-between;min-height:38px}
+.gg-adventure .gg-result-top-label{font-weight:900;color:#47705c}
+.gg-adventure .gg-learned{width:100%;max-height:min(34vh,270px);overflow-y:auto;overscroll-behavior:contain;padding:2px 3px 6px;box-sizing:border-box}
+.gg-adventure .gg-result>.gg-primary{position:sticky;bottom:0;z-index:5;flex:0 0 auto;margin-top:auto;width:100%;min-height:50px;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+.gg-adventure .gg-result h3{margin:2px 0 0}
+.gg-adventure .gg-result-stats{gap:7px}
+.gg-adventure .gg-option-art{display:inline-flex;align-items:center;justify-content:center;font-size:23px;min-width:28px;margin-inline-end:8px;vertical-align:middle}
+.gg-adventure .gg-choice b{display:flex;align-items:center;justify-content:center;gap:7px}
+.gg-adventure .gg-match-english{display:flex;align-items:center;justify-content:center;gap:7px;direction:ltr}
+.gg-adventure .gg-match-english button{border:0;border-radius:8px;padding:4px 7px;background:#e8f7ed;color:#087f69}
+.gg-adventure .gg-person b{font-size:12px}
+.gg-adventure .gg-bubble button{align-self:flex-start}
+.gg-adventure .gg-result-top .gg-settings{top:calc(100% + 4px)}
+@media(max-width:600px){
+ .gg-adventure{min-height:calc(100dvh - 140px);padding:8px 9px calc(24px + env(safe-area-inset-bottom))!important;gap:7px}
+ .gg-adventure .gg-dialogue{min-height:116px;grid-template-columns:minmax(74px,1fr) minmax(74px,1fr)}
+ .gg-adventure .gg-character-art{width:70px;height:70px}
+ .gg-adventure .gg-learned{max-height:30vh}
+ .gg-adventure .gg-result>.gg-primary{position:sticky;bottom:0}
+}
+@media(max-height:700px){
+ .gg-adventure{min-height:calc(100dvh - 118px);height:auto!important;gap:5px}
+ .gg-adventure .gg-dialogue{min-height:100px}
+ .gg-adventure .gg-character-art{width:60px;height:60px}
+ .gg-adventure .gg-learned{max-height:26vh}
+}
