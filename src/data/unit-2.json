@@ -1,0 +1,527 @@
+{
+  "id": "unit-2",
+  "version": 1,
+  "level": "A1",
+  "title_ar": "الأرقام والوقت",
+  "title_en": "Numbers and Time",
+  "goal_ar": "في نهاية هذه الوحدة ستستطيع أن تعدّ، وتسأل عن الأسعار، وتقول الساعة واليوم والشهر، وتحجز موعدًا.",
+  "tts_lang": "en-US",
+  "xp_per_lesson": 30,
+  "lesson_flow": ["vocabulary", "phrases", "common_mistakes", "exercises", "speaking"],
+  "lessons": [
+    {
+      "id": "u2-l1",
+      "title_ar": "الأرقام من 1 إلى 20",
+      "title_en": "Numbers 1 to 20",
+      "objectives_ar": [
+        "عدّ الأشياء من 1 إلى 10",
+        "التفريق بين {{13}} و{{30}} وبين {{15}} و{{50}} في السمع والنطق"
+      ],
+      "vocabulary": [
+        { "id": "v1", "en": "one", "ar": "واحد", "pron_ar": "وَان", "example_en": "I have one brother.", "example_ar": "عندي أخ واحد." },
+        { "id": "v2", "en": "two", "ar": "اثنان", "pron_ar": "تو", "example_en": "I have two books.", "example_ar": "عندي كتابان." },
+        { "id": "v3", "en": "three", "ar": "ثلاثة", "pron_ar": "ثْري", "example_en": "There are three students.", "example_ar": "يوجد ثلاثة طلاب." },
+        { "id": "v4", "en": "four", "ar": "أربعة", "pron_ar": "فور", "example_en": "I have four pens.", "example_ar": "عندي أربعة أقلام." },
+        { "id": "v5", "en": "five", "ar": "خمسة", "pron_ar": "فايف", "example_en": "I have five books.", "example_ar": "عندي خمسة كتب." },
+        { "id": "v6", "en": "six", "ar": "ستة", "pron_ar": "سِكْس", "example_en": "It's six.", "example_ar": "إنه ستة." },
+        { "id": "v7", "en": "seven", "ar": "سبعة", "pron_ar": "سِفِن", "example_en": "I have seven cups.", "example_ar": "عندي سبعة أكواب." },
+        { "id": "v8", "en": "eight", "ar": "ثمانية", "pron_ar": "إيت", "example_en": "There are eight chairs.", "example_ar": "يوجد ثمانية كراسي." },
+        { "id": "v9", "en": "nine", "ar": "تسعة", "pron_ar": "ناين", "example_en": "I have nine apples.", "example_ar": "عندي تسع تفاحات." },
+        { "id": "v10", "en": "ten", "ar": "عشرة", "pron_ar": "تِن", "example_en": "There are ten students.", "example_ar": "يوجد عشرة طلاب." },
+        { "id": "v11", "en": "thirteen / thirty", "ar": "13 / 30", "pron_ar": "ثِرْتِين / ثِرْتي", "example_en": "He is thirteen. She is thirty.", "example_ar": "هو عمره 13 سنة. هي عمرها 30 سنة." },
+        { "id": "v12", "en": "fifteen / fifty", "ar": "15 / 50", "pron_ar": "فِفْتِين / فِفْتي", "example_en": "I have fifteen books. She has fifty books.", "example_ar": "عندي 15 كتابًا. عندها 50 كتابًا." }
+      ],
+      "phrases": [
+        { "en": "I have three books.", "ar": "عندي ثلاثة كتب." },
+        { "en": "There are ten students.", "ar": "يوجد عشرة طلاب." },
+        { "en": "I'm thirteen years old.", "ar": "عمري 13 سنة." },
+        { "en": "I'm thirty years old.", "ar": "عمري 30 سنة." }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "{{I'm thirty}}. (تقصد 13 سنة)",
+          "right": "{{I'm thirteen}}.",
+          "explain_ar": "الأرقام التي تنتهي بـ {{teen}} مثل {{thirteen}} يكون النبر فيها على آخر الكلمة ويُمدّ الصوت: {{thir-TEEN}}. أما التي تنتهي بـ {{ty}} مثل {{thirty}} فيكون النبر في أولها والنهاية خفيفة: {{THIR-ty}}. استمع جيدًا للفرق."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u2-l1-e1", "type": "match",
+          "prompt_ar": "طابق الرقم بالإنجليزية مع معناه",
+          "pairs": [
+            { "en": "one", "ar": "واحد" },
+            { "en": "three", "ar": "ثلاثة" },
+            { "en": "seven", "ar": "سبعة" },
+            { "en": "ten", "ar": "عشرة" }
+          ]
+        },
+        {
+          "id": "u2-l1-e2", "type": "listening",
+          "prompt_ar": "استمع واختر الرقم الصحيح",
+          "audio_text": "thirteen",
+          "options": ["13", "30", "3"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l1-e3", "type": "listening",
+          "prompt_ar": "استمع واختر الرقم الصحيح",
+          "audio_text": "fifty",
+          "options": ["15", "50", "5"],
+          "answer": 1
+        },
+        {
+          "id": "u2-l1-e4", "type": "multiple_choice",
+          "prompt_ar": "كيف تقول الرقم 30 بالإنجليزية؟",
+          "options": ["thirteen", "thirty", "three"],
+          "answer": 1,
+          "feedback_ar": "الرقم 30 هو {{thirty}}، والنبر في أول الكلمة."
+        },
+        {
+          "id": "u2-l1-e5", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة: عندي 5 كتب",
+          "sentence": "I have ___ books.",
+          "options": ["five", "fifty", "fifteen"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l1-e6", "type": "word_order",
+          "prompt_ar": "رتّب الكلمات: «عندي ثلاثة كتب»",
+          "words": ["books", "I", "have", "three"],
+          "answer": ["I", "have", "three", "books"]
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع ثم كرّر كل جملة بصوت عالٍ مرتين، وانتبه للنبر في {{13}} و{{30}}",
+        "repeat": ["One, two, three.", "Thirteen or thirty?", "I'm thirteen.", "I have fifty books."]
+      }
+    },
+    {
+      "id": "u2-l2",
+      "title_ar": "الأسعار وأرقام الهاتف",
+      "title_en": "Prices and Phone Numbers",
+      "objectives_ar": [
+        "السؤال عن السعر وفهم الجواب",
+        "قراءة رقم الهاتف رقمًا رقمًا"
+      ],
+      "vocabulary": [
+        { "id": "v1", "en": "zero", "ar": "صفر", "pron_ar": "زيرو", "example_en": "My number is zero five five.", "example_ar": "رقمي صفر خمسة خمسة." },
+        { "id": "v2", "en": "twenty-one", "ar": "واحد وعشرون (21)", "pron_ar": "توِنتي وَان", "example_en": "I'm twenty-one years old.", "example_ar": "عمري 21 سنة." },
+        { "id": "v3", "en": "ninety-nine", "ar": "تسعة وتسعون (99)", "pron_ar": "نايْنتي ناين", "example_en": "It costs ninety-nine dollars.", "example_ar": "سعره 99 دولارًا." },
+        { "id": "v4", "en": "one hundred", "ar": "مئة (100)", "pron_ar": "وَان هَنْدرد", "example_en": "It costs one hundred dollars.", "example_ar": "سعره مئة دولار." },
+        { "id": "v5", "en": "How much is this?", "ar": "بكم هذا؟", "pron_ar": "هاو ماتش إز ذِس؟", "example_en": "Excuse me, how much is this?", "example_ar": "عفوًا، بكم هذا؟" },
+        { "id": "v6", "en": "It costs ...", "ar": "سعره ...", "pron_ar": "إت كوستس", "example_en": "It costs twenty dollars.", "example_ar": "سعره عشرون دولارًا." },
+        { "id": "v7", "en": "cheap", "ar": "رخيص", "pron_ar": "تشيب", "example_en": "This phone is cheap.", "example_ar": "هذا الهاتف رخيص." },
+        { "id": "v8", "en": "expensive", "ar": "غالٍ", "pron_ar": "إكْسْبِنْسِف", "example_en": "That car is expensive.", "example_ar": "تلك السيارة غالية." },
+        { "id": "v9", "en": "phone number", "ar": "رقم الهاتف", "pron_ar": "فُون نَمْبر", "example_en": "What's your phone number?", "example_ar": "ما رقم هاتفك؟" },
+        { "id": "v10", "en": "My number is ...", "ar": "رقمي ...", "pron_ar": "ماي نَمْبر إز", "example_en": "My number is zero five five.", "example_ar": "رقمي صفر خمسة خمسة." }
+      ],
+      "phrases": [
+        { "en": "How much is this? It costs fifty dollars.", "ar": "بكم هذا؟ سعره خمسون دولارًا." },
+        { "en": "That's expensive!", "ar": "هذا غالٍ!" },
+        { "en": "My number is zero five five, one two three.", "ar": "رقمي صفر خمسة خمسة، واحد اثنان ثلاثة." }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "{{How much this}}?",
+          "right": "{{How much is this}}?",
+          "explain_ar": "في العربية نقول «بكم هذا؟» بدون فعل. أما في الإنجليزية فلا بد من الفعل {{is}} كما تعلّمنا في الوحدة الأولى."
+        },
+        {
+          "wrong": "{{My number is fifty-five, one hundred twenty-three}}.",
+          "right": "{{My number is zero five five, one two three}}.",
+          "explain_ar": "أرقام الهاتف تُقرأ رقمًا رقمًا، ولا تُقرأ كعدد واحد كبير. والصفر يُنطق {{zero}}."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u2-l2-e1", "type": "match",
+          "prompt_ar": "طابق الكلمة مع معناها",
+          "pairs": [
+            { "en": "cheap", "ar": "رخيص" },
+            { "en": "expensive", "ar": "غالٍ" },
+            { "en": "How much is this?", "ar": "بكم هذا؟" },
+            { "en": "phone number", "ar": "رقم الهاتف" }
+          ]
+        },
+        {
+          "id": "u2-l2-e2", "type": "multiple_choice",
+          "prompt_ar": "تسأل عن سعر قميص. ماذا تقول؟",
+          "options": ["How much is this?", "How much this?", "What is this much?"],
+          "answer": 0,
+          "feedback_ar": "الصيغة الصحيحة {{How much is this}}؟ ولا بد من الفعل {{is}}."
+        },
+        {
+          "id": "u2-l2-e3", "type": "listening",
+          "prompt_ar": "استمع واختر المعنى الصحيح",
+          "audio_text": "It costs twenty dollars",
+          "options": ["سعره 20 دولارًا", "سعره 12 دولارًا", "سعره 200 دولار"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l2-e4", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة",
+          "sentence": "How much ___ this?",
+          "options": ["is", "are", "am"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l2-e5", "type": "multiple_choice",
+          "prompt_ar": "كيف تقرأ رقم الهاتف 0551234؟",
+          "options": [
+            "zero five five, one two three four",
+            "fifty-five, one thousand two hundred thirty-four",
+            "zero fifty-five, twelve thirty-four"
+          ],
+          "answer": 0,
+          "feedback_ar": "أرقام الهاتف تُقرأ رقمًا رقمًا."
+        },
+        {
+          "id": "u2-l2-e6", "type": "word_order",
+          "prompt_ar": "رتّب الكلمات: «سعره مئة دولار»",
+          "words": ["dollars", "It", "one", "costs", "hundred"],
+          "answer": ["It", "costs", "one", "hundred", "dollars"]
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع ثم كرّر كل جملة بصوت عالٍ مرتين",
+        "repeat": ["How much is this?", "It costs fifty dollars.", "That's expensive!", "My number is zero five five."]
+      }
+    },
+    {
+      "id": "u2-l3",
+      "title_ar": "الساعة",
+      "title_en": "Telling the Time",
+      "objectives_ar": [
+        "السؤال عن الوقت والإجابة عنه",
+        "قول الساعة تمامًا والنصف والربع",
+        "التفريق بين {{AM}} و{{PM}}"
+      ],
+      "vocabulary": [
+        { "id": "v1", "en": "What time is it?", "ar": "كم الساعة؟", "pron_ar": "وات تايم إز إت؟", "example_en": "Excuse me, what time is it?", "example_ar": "عفوًا، كم الساعة؟" },
+        { "id": "v2", "en": "It's three o'clock.", "ar": "الساعة الثالثة تمامًا.", "pron_ar": "إتس ثْري أُوكْلُوك", "example_en": "It's three o'clock.", "example_ar": "الساعة الثالثة تمامًا." },
+        { "id": "v3", "en": "half past", "ar": "والنصف", "pron_ar": "هاف باست", "example_en": "It's half past four. (4:30)", "example_ar": "الساعة الرابعة والنصف." },
+        { "id": "v4", "en": "quarter past", "ar": "والربع", "pron_ar": "كُوورتر باست", "example_en": "It's quarter past five. (5:15)", "example_ar": "الساعة الخامسة والربع." },
+        { "id": "v5", "en": "quarter to", "ar": "إلا ربع", "pron_ar": "كُوورتر تو", "example_en": "It's quarter to six. (5:45)", "example_ar": "الساعة السادسة إلا ربع." },
+        { "id": "v6", "en": "AM", "ar": "صباحًا (من منتصف الليل حتى الظهر)", "pron_ar": "إي إم", "example_en": "The class is at 8 AM.", "example_ar": "الحصة الساعة 8 صباحًا." },
+        { "id": "v7", "en": "PM", "ar": "مساءً (من الظهر حتى منتصف الليل)", "pron_ar": "بي إم", "example_en": "Dinner is at 8 PM.", "example_ar": "العشاء الساعة 8 مساءً." },
+        { "id": "v8", "en": "noon", "ar": "الظهر", "pron_ar": "نُون", "example_en": "Lunch is at noon.", "example_ar": "الغداء وقت الظهر." },
+        { "id": "v9", "en": "midnight", "ar": "منتصف الليل", "pron_ar": "مِدْنايت", "example_en": "I sleep at midnight.", "example_ar": "أنام عند منتصف الليل." },
+        { "id": "v10", "en": "minute", "ar": "دقيقة", "pron_ar": "مِنِت", "example_en": "I'm ten minutes late.", "example_ar": "أنا متأخر عشر دقائق." }
+      ],
+      "phrases": [
+        { "en": "What time is it? It's half past three.", "ar": "كم الساعة؟ الساعة الثالثة والنصف." },
+        { "en": "The lesson starts at nine AM.", "ar": "يبدأ الدرس الساعة التاسعة صباحًا." },
+        { "en": "See you at quarter to six.", "ar": "أراك الساعة السادسة إلا ربع." }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "{{The hour is three}}. / {{What is the hour}}?",
+          "right": "{{It's three o'clock}}. / {{What time is it}}?",
+          "explain_ar": "لا نترجم «الساعة الثالثة» حرفيًا. نستخدم كلمة {{time}} في السؤال، ونبدأ الجواب بـ {{It's}}."
+        },
+        {
+          "wrong": "{{It's 7 AM}} (في المساء)",
+          "right": "{{It's 7 PM}}.",
+          "explain_ar": "{{AM}} للفترة من منتصف الليل حتى الظهر، و{{PM}} من الظهر حتى منتصف الليل. فالساعة 7 مساءً هي {{7 PM}}."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u2-l3-e1", "type": "match",
+          "prompt_ar": "طابق الكلمة مع معناها",
+          "pairs": [
+            { "en": "AM", "ar": "صباحًا" },
+            { "en": "PM", "ar": "مساءً" },
+            { "en": "noon", "ar": "الظهر" },
+            { "en": "midnight", "ar": "منتصف الليل" }
+          ]
+        },
+        {
+          "id": "u2-l3-e2", "type": "listening",
+          "prompt_ar": "استمع واختر الوقت الصحيح",
+          "audio_text": "It's half past four",
+          "options": ["4:30", "4:15", "3:30", "4:45"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l3-e3", "type": "listening",
+          "prompt_ar": "استمع واختر الوقت الصحيح",
+          "audio_text": "It's quarter to six",
+          "options": ["5:45", "6:15", "6:45", "5:15"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l3-e4", "type": "multiple_choice",
+          "prompt_ar": "تسأل عن الوقت. ما العبارة الصحيحة؟",
+          "options": ["What time is it?", "What is the hour?", "How much hour?"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l3-e5", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة: الساعة السابعة مساءً",
+          "sentence": "It's seven ___.",
+          "options": ["PM", "AM", "noon"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l3-e6", "type": "word_order",
+          "prompt_ar": "رتّب الكلمات: «الساعة الثالثة تمامًا»",
+          "words": ["o'clock", "three", "It's"],
+          "answer": ["It's", "three", "o'clock"]
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع ثم كرّر كل جملة بصوت عالٍ مرتين",
+        "repeat": ["What time is it?", "It's three o'clock.", "It's half past four.", "It's quarter to six."]
+      }
+    },
+    {
+      "id": "u2-l4",
+      "title_ar": "الأيام والشهور",
+      "title_en": "Days and Months",
+      "objectives_ar": [
+        "قول أيام الأسبوع وسؤال «أي يوم اليوم؟»",
+        "قول بعض الشهور وكتابتها بحرف كبير"
+      ],
+      "vocabulary": [
+        { "id": "v1", "en": "Monday", "ar": "الاثنين", "pron_ar": "مَنْدي", "example_en": "I work on Monday.", "example_ar": "أعمل يوم الاثنين." },
+        { "id": "v2", "en": "Tuesday", "ar": "الثلاثاء", "pron_ar": "تْيُوزدي", "example_en": "The class is on Tuesday.", "example_ar": "الحصة يوم الثلاثاء." },
+        { "id": "v3", "en": "Wednesday", "ar": "الأربعاء", "pron_ar": "وِنْزدي", "example_en": "See you on Wednesday.", "example_ar": "أراك يوم الأربعاء." },
+        { "id": "v4", "en": "Thursday", "ar": "الخميس", "pron_ar": "ثِرْزدي", "example_en": "Thursday is a busy day.", "example_ar": "الخميس يوم مزدحم." },
+        { "id": "v5", "en": "Friday", "ar": "الجمعة", "pron_ar": "فْرايدي", "example_en": "Friday is my day off.", "example_ar": "الجمعة يوم إجازتي." },
+        { "id": "v6", "en": "Saturday", "ar": "السبت", "pron_ar": "ساتِردي", "example_en": "I visit my family on Saturday.", "example_ar": "أزور أهلي يوم السبت." },
+        { "id": "v7", "en": "Sunday", "ar": "الأحد", "pron_ar": "سَنْدي", "example_en": "School starts on Sunday.", "example_ar": "تبدأ الدراسة يوم الأحد." },
+        { "id": "v8", "en": "today", "ar": "اليوم", "pron_ar": "تُودي", "example_en": "Today is Friday.", "example_ar": "اليوم هو الجمعة." },
+        { "id": "v9", "en": "tomorrow", "ar": "غدًا", "pron_ar": "تُومورو", "example_en": "See you tomorrow!", "example_ar": "أراك غدًا!" },
+        { "id": "v10", "en": "January", "ar": "يناير", "pron_ar": "جَنْيُواري", "example_en": "It's cold in January.", "example_ar": "الجو بارد في يناير." },
+        { "id": "v11", "en": "June", "ar": "يونيو", "pron_ar": "جُون", "example_en": "My birthday is in June.", "example_ar": "عيد ميلادي في يونيو." },
+        { "id": "v12", "en": "December", "ar": "ديسمبر", "pron_ar": "دِسِمْبر", "example_en": "The year ends in December.", "example_ar": "تنتهي السنة في ديسمبر." }
+      ],
+      "phrases": [
+        { "en": "What day is it today? It's Friday.", "ar": "أي يوم اليوم؟ إنه الجمعة." },
+        { "en": "See you tomorrow!", "ar": "أراك غدًا!" },
+        { "en": "My birthday is in June.", "ar": "عيد ميلادي في يونيو." }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "{{monday}} / {{june}}",
+          "right": "{{Monday}} / {{June}}",
+          "explain_ar": "في الإنجليزية تُكتب أسماء الأيام والشهور دائمًا بحرف كبير في أولها."
+        },
+        {
+          "wrong": "{{Today Friday}}.",
+          "right": "{{Today is Friday}}.",
+          "explain_ar": "نقول بالعربية «اليوم الجمعة» بدون فعل، أما الإنجليزية فتحتاج {{is}}."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u2-l4-e1", "type": "match",
+          "prompt_ar": "طابق اليوم مع معناه",
+          "pairs": [
+            { "en": "Monday", "ar": "الاثنين" },
+            { "en": "Friday", "ar": "الجمعة" },
+            { "en": "Sunday", "ar": "الأحد" },
+            { "en": "Thursday", "ar": "الخميس" }
+          ]
+        },
+        {
+          "id": "u2-l4-e2", "type": "match",
+          "prompt_ar": "طابق الكلمة مع معناها",
+          "pairs": [
+            { "en": "January", "ar": "يناير" },
+            { "en": "June", "ar": "يونيو" },
+            { "en": "December", "ar": "ديسمبر" },
+            { "en": "tomorrow", "ar": "غدًا" }
+          ]
+        },
+        {
+          "id": "u2-l4-e3", "type": "listening",
+          "prompt_ar": "استمع واختر المعنى الصحيح",
+          "audio_text": "Wednesday",
+          "options": ["الأربعاء", "الثلاثاء", "الخميس"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l4-e4", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة",
+          "sentence": "Today ___ Friday.",
+          "options": ["is", "are", "am"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l4-e5", "type": "multiple_choice",
+          "prompt_ar": "ما معنى {{tomorrow}}؟",
+          "options": ["أمس", "اليوم", "غدًا"],
+          "answer": 2
+        },
+        {
+          "id": "u2-l4-e6", "type": "multiple_choice",
+          "prompt_ar": "ما الكتابة الصحيحة؟",
+          "options": ["monday", "Monday", "monDay"],
+          "answer": 1,
+          "feedback_ar": "أسماء الأيام تبدأ بحرف كبير."
+        },
+        {
+          "id": "u2-l4-e7", "type": "word_order",
+          "prompt_ar": "رتّب الكلمات: «أراك غدًا»",
+          "words": ["tomorrow", "you", "See"],
+          "answer": ["See", "you", "tomorrow"]
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع ثم كرّر كل جملة بصوت عالٍ مرتين",
+        "repeat": ["What day is it today?", "Today is Friday.", "See you tomorrow!", "My birthday is in June."]
+      }
+    },
+    {
+      "id": "u2-l5",
+      "title_ar": "المواعيد وحروف الجر",
+      "title_en": "Appointments and at / on / in",
+      "objectives_ar": [
+        "حجز موعد بطريقة مهذبة",
+        "استخدام {{at}} مع الساعة، و{{on}} مع الأيام، و{{in}} مع الشهور"
+      ],
+      "vocabulary": [
+        { "id": "v1", "en": "appointment", "ar": "موعد", "pron_ar": "أبُوينتمنت", "example_en": "I have an appointment today.", "example_ar": "عندي موعد اليوم." },
+        { "id": "v2", "en": "I'd like to book an appointment.", "ar": "أريد حجز موعد.", "pron_ar": "آيد لايك تو بُوك أن أبُوينتمنت", "example_en": "Hello, I'd like to book an appointment.", "example_ar": "مرحبًا، أريد حجز موعد." },
+        { "id": "v3", "en": "at 5 PM", "ar": "في الساعة 5 مساءً (at للساعة)", "pron_ar": "أت فايف بي إم", "example_en": "The appointment is at 5 PM.", "example_ar": "الموعد الساعة 5 مساءً." },
+        { "id": "v4", "en": "on Monday", "ar": "يوم الاثنين (on للأيام)", "pron_ar": "أون مَنْدي", "example_en": "I'm free on Monday.", "example_ar": "أنا متفرغ يوم الاثنين." },
+        { "id": "v5", "en": "in June", "ar": "في يونيو (in للشهور)", "pron_ar": "إن جُون", "example_en": "The exam is in June.", "example_ar": "الامتحان في يونيو." },
+        { "id": "v6", "en": "doctor", "ar": "طبيب", "pron_ar": "دُكْتر", "example_en": "I have a doctor appointment.", "example_ar": "عندي موعد عند الطبيب." },
+        { "id": "v7", "en": "table for two", "ar": "طاولة لشخصين", "pron_ar": "تيبل فور تو", "example_en": "A table for two, please.", "example_ar": "طاولة لشخصين من فضلك." },
+        { "id": "v8", "en": "next week", "ar": "الأسبوع القادم", "pron_ar": "نِكست ويك", "example_en": "See you next week.", "example_ar": "أراك الأسبوع القادم." },
+        { "id": "v9", "en": "I'm free", "ar": "أنا متفرغ", "pron_ar": "آيم فْري", "example_en": "I'm free on Friday.", "example_ar": "أنا متفرغ يوم الجمعة." },
+        { "id": "v10", "en": "See you then.", "ar": "أراك حينها.", "pron_ar": "سي يو ذِن", "example_en": "Monday at 5? See you then.", "example_ar": "الاثنين الساعة 5؟ أراك حينها." }
+      ],
+      "phrases": [
+        { "en": "I'd like to book an appointment on Monday at 5 PM.", "ar": "أريد حجز موعد يوم الاثنين الساعة 5 مساءً." },
+        { "en": "A table for two, please.", "ar": "طاولة لشخصين من فضلك." },
+        { "en": "My appointment is in June.", "ar": "موعدي في يونيو." }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "{{The appointment is in Monday}}.",
+          "right": "{{The appointment is on Monday}}.",
+          "explain_ar": "قاعدة بسيطة: {{at}} مع الساعة ({{at 5 PM}})، و{{on}} مع الأيام والتواريخ ({{on Monday}})، و{{in}} مع الشهور والسنوات ({{in June}})."
+        },
+        {
+          "wrong": "{{I want an appointment}}.",
+          "right": "{{I'd like to book an appointment}}.",
+          "explain_ar": "عبارة {{I want}} تبدو مباشرة وجافة. استخدم {{I'd like}} فهي أكثر أدبًا في الحجز وفي الطلبات."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u2-l5-e1", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة",
+          "sentence": "The appointment is ___ Monday.",
+          "options": ["on", "in", "at"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l5-e2", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة",
+          "sentence": "See you ___ 5 PM.",
+          "options": ["at", "on", "in"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l5-e3", "type": "fill_blank",
+          "prompt_ar": "أكمل الجملة",
+          "sentence": "My birthday is ___ June.",
+          "options": ["in", "on", "at"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l5-e4", "type": "multiple_choice",
+          "prompt_ar": "تحجز عند الطبيب. ما العبارة الأكثر أدبًا؟",
+          "options": ["I want an appointment.", "I'd like to book an appointment.", "Give me an appointment."],
+          "answer": 1,
+          "feedback_ar": "{{I'd like to}} أكثر أدبًا من {{I want}}."
+        },
+        {
+          "id": "u2-l5-e5", "type": "listening",
+          "prompt_ar": "استمع واختر المعنى الصحيح",
+          "audio_text": "A table for two, please",
+          "options": ["طاولة لشخصين من فضلك", "طاولة لثلاثة من فضلك", "موعد عند الطبيب"],
+          "answer": 0
+        },
+        {
+          "id": "u2-l5-e6", "type": "word_order",
+          "prompt_ar": "رتّب الكلمات: «موعدي يوم الاثنين الساعة 5 مساءً»",
+          "words": ["Monday", "at", "is", "My", "5", "appointment", "on", "PM"],
+          "answer": ["My", "appointment", "is", "on", "Monday", "at", "5", "PM"]
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع ثم كرّر كل جملة بصوت عالٍ مرتين",
+        "repeat": ["I'd like to book an appointment.", "The appointment is on Monday.", "See you at 5 PM.", "A table for two, please."]
+      }
+    }
+  ],
+  "unit_test": {
+    "id": "u2-test",
+    "title_ar": "اختبار الوحدة الثانية",
+    "pass_score_percent": 70,
+    "xp": 50,
+    "questions": [
+      {
+        "id": "u2-t1", "type": "listening",
+        "prompt_ar": "استمع واختر الرقم الصحيح",
+        "audio_text": "thirteen",
+        "options": ["13", "30", "3"],
+        "answer": 0
+      },
+      {
+        "id": "u2-t2", "type": "multiple_choice",
+        "prompt_ar": "تسأل عن سعر شيء. ماذا تقول؟",
+        "options": ["How much is this?", "How much this?", "How many is this?"],
+        "answer": 0
+      },
+      {
+        "id": "u2-t3", "type": "listening",
+        "prompt_ar": "استمع واختر الوقت الصحيح",
+        "audio_text": "It's quarter past five",
+        "options": ["5:15", "5:45", "4:15"],
+        "answer": 0
+      },
+      {
+        "id": "u2-t4", "type": "fill_blank",
+        "prompt_ar": "أكمل الجملة",
+        "sentence": "Today ___ Tuesday.",
+        "options": ["is", "are", "am"],
+        "answer": 0
+      },
+      {
+        "id": "u2-t5", "type": "multiple_choice",
+        "prompt_ar": "ما الكتابة الصحيحة؟",
+        "options": ["june", "June", "jUne"],
+        "answer": 1
+      },
+      {
+        "id": "u2-t6", "type": "fill_blank",
+        "prompt_ar": "أكمل الجملة",
+        "sentence": "The appointment is ___ Friday.",
+        "options": ["on", "in", "at"],
+        "answer": 0
+      },
+      {
+        "id": "u2-t7", "type": "word_order",
+        "prompt_ar": "رتّب الكلمات: «كم الساعة؟»",
+        "words": ["is", "time", "What", "it"],
+        "answer": ["What", "time", "is", "it"]
+      },
+      {
+        "id": "u2-t8", "type": "match",
+        "prompt_ar": "طابق الكلمة مع معناها",
+        "pairs": [
+          { "en": "cheap", "ar": "رخيص" },
+          { "en": "tomorrow", "ar": "غدًا" },
+          { "en": "appointment", "ar": "موعد" },
+          { "en": "midnight", "ar": "منتصف الليل" }
+        ]
+      }
+    ]
+  }
+}
