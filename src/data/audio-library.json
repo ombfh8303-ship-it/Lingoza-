@@ -1,10 +1,28 @@
 {
-  "version": 1,
-  "description": "Shared pronunciation recordings used across all Lingoza lessons, conversations, reviews and exercises.",
+  "version": 2,
+  "description": "Shared English pronunciation recordings reused across lessons, conversations, reviews and exercises.",
   "locale": "en-US",
   "accent": "American English",
   "format": "mp3",
-  "sample_rate_hz": 44100,
-  "channels": 1,
-  "recordings": {}
+  "recordings": {
+    "bye see you later": "Bye__See_you_later.mp3",
+    "good afternoon": "Good_afternoon.mp3",
+    "good afternoon everyone": "Good_afternoon__everyone.mp3",
+    "good evening": "Good_evening.mp3",
+    "good evening mr ali": "Good_evening__Mr__Ali.mp3",
+    "good morning": "Good_morning.mp3",
+    "good morning ahmed": "Good_morning__Ahmed.mp3",
+    "good morning teacher": "Good_morning__teacher.mp3",
+    "good night": "Good_night.mp3",
+    "good night mum": "Good_night__Mum.mp3",
+    "goodbye": "Goodbye.mp3",
+    "goodbye ahmed": "Goodbye__Ahmed.mp3",
+    "goodbye see you later": "Goodbye__See_you_later.mp3",
+    "hello": "Hello.mp3",
+    "hello good evening": "Hello__Good_evening.mp3",
+    "hello sara": "Hello__Sara.mp3",
+    "hi": "Hi.mp3",
+    "hi omar": "Hi__Omar.mp3",
+    "see you later": "See_you_later.mp3"
+  }
 }
