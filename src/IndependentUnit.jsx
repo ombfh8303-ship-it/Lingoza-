@@ -214,6 +214,11 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const phases = ['vocabulary', 'phrases', 'mistakes', 'exercises', 'speaking'];
   const phaseLabels = rtl ? ['المفردات', 'العبارات', 'أخطاء شائعة', 'التدريبات', 'التحدث'] : ['Vocabulary', 'Phrases', 'Common mistakes', 'Exercises', 'Speaking'];
   const phaseIndex = phases.indexOf(phase);
+  const phaseCounts = [vocabulary.length, phrases.length, mistakes.length, exercises.length, 1];
+  const lessonProgressTotal = phaseCounts.reduce((sum,count)=>sum+count,0);
+  const lessonProgressDone = phaseCounts.slice(0,Math.max(0,phaseIndex)).reduce((sum,count)=>sum+count,0)
+    + (phase==='exercises' ? exerciseIndex + (checked ? 1 : 0) : phase==='speaking' ? 1 : contentIndex);
+  const lessonProgressPercent = lessonProgressTotal ? Math.min(100,Math.round(lessonProgressDone/lessonProgressTotal*100)) : 0;
   const goPhase = (nextPhase) => { setPhase(nextPhase); setContentIndex(0); setExerciseIndex(0); resetExercise(); };
   const lessonContent = phase === 'vocabulary' ? vocabulary : phase === 'phrases' ? phrases : mistakes;
   const activeContent = lessonContent[contentIndex];
@@ -265,7 +270,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
 
     {(activeLesson || testMode) && <div className="iu-overlay iu-fullscreen-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'} onPointerDownCapture={unlockAudio} onClickCapture={e=>{if(e.target.closest("button")&&!e.target.closest("button").disabled)playUnitTone("click",soundOn)}}>
       <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?('الوحدة الأولى · الدرس '+lessonNumber):('UNIT 1 · LESSON '+lessonNumber))}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
-      <div className="iu-game-hud"><div className="iu-game-progress"><i style={{width:((exerciseIndex+1)/Math.max(1,exercises.length)*100)+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
+      <div className="iu-game-hud"><div className="iu-game-progress" role="progressbar" aria-label={rtl?'تقدم الدرس':'Lesson progress'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={lessonProgressPercent}><i style={{width:lessonProgressPercent+'%'}}/></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
       {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
       <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood} action={luluAction}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{renderMixedText(checked?(comboMessage || luluMessage):luluMessage)}</p></div></div>
       {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
