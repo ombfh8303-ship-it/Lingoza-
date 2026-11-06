@@ -306,7 +306,8 @@ function App(){
  const photoOptions=photoAnswer?[photoAnswer,...photoPool.filter(word=>word!==photoAnswer).slice(photoIndex%Math.max(1,photoPool.length-1),photoIndex%Math.max(1,photoPool.length-1)+3)]:[];
  const photoCorrectIndex=0;
  const photoDisplayOptions=photoOptions.length?[...photoOptions.slice(photoCorrectIndex),...photoOptions.slice(0,photoCorrectIndex)]:[];
- const courseCompleted=completedLessons.filter(x=>x.startsWith(course+'-')).length;
+ const independentUnitCompleted=course==='en'?safeStoredArray('lingoza-independent-unit-1-lessons').length:0;
+ const courseCompleted=completedLessons.filter(x=>x.startsWith(course+'-')).length+independentUnitCompleted;
  const unit1Done=courseLessons.slice(0,8).filter((_,i)=>completedLessons.includes(course+'-'+i)).length;
  const unit2Done=courseLessons.slice(8,16).filter((_,i)=>completedLessons.includes(course+'-'+(i+8))).length;
  const unit3Done=courseLessons.slice(16,24).filter((_,i)=>completedLessons.includes(course+'-'+(i+16))).length;
@@ -333,7 +334,7 @@ function App(){
  const currentLevelIndex=xpLevels.reduce((idx,threshold,i)=>earned>=threshold?i:idx,0);
  const nextLevelXp=xpLevels[currentLevelIndex+1]??null;
  const levelProgress=nextLevelXp===null?100:Math.min(100,Math.round((earned-xpLevels[currentLevelIndex])/(nextLevelXp-xpLevels[currentLevelIndex])*100));
- const progress=Math.min(100,Math.round((courseCompleted/24)*100));
+ const progress=Math.min(100,Math.round((courseCompleted/(course==='en'?29:24))*100));
  const days=[t.mon,t.tue,t.wed,t.thu,t.fri,t.sat,t.sun];
  const nav=[{id:'home',label:t.navHome,icon:Home},{id:'path',label:t.navPath,icon:BookOpen},{id:'words',label:t.navWords,icon:MessageCircle},{id:'ranks',label:t.navRanks,icon:UserRound}];
  const saveUi=(v)=>{setLang(v);localStorage.setItem('lingoza-ui',v)};
