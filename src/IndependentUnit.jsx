@@ -13,7 +13,29 @@ const speak = (value) => {
   utterance.rate = 0.88;
   window.speechSynthesis.speak(utterance);
 };
-const normalizeExercise = (item) => ({
+
+function UnitLulu({ mood = 'idle' }) {
+  return <svg viewBox="0 0 120 120" className={"iu-lulu-art mood-" + mood} role="img" aria-label="لولو">
+    <path d="M83 82Q112 82 108 48Q105 70 88 64" fill="#e98532" stroke="#a94e1c" strokeWidth="3"/><path d="M103 50Q109 62 96 67" fill="#fff1dc"/>
+    <path d="M25 42 18 8Q38 14 46 38Z M75 38Q83 14 103 8L95 48Z" fill="#ed933f" stroke="#a94e1c" strokeWidth="3"/><path d="M27 30 24 17 39 36Z M82 36 98 17 94 33Z" fill="#f7b4a1"/>
+    <ellipse cx="60" cy="68" rx="42" ry="39" fill="#f39b43" stroke="#a94e1c" strokeWidth="3"/><path d="M24 70Q60 42 96 70Q88 104 60 104Q32 104 24 70Z" fill="#fff0dd"/>
+    <ellipse cx="45" cy="62" rx="4" ry="6" fill="#34271f"/><ellipse cx="75" cy="62" rx="4" ry="6" fill="#34271f"/><path d="M55 75Q60 70 65 75L60 80Z" fill="#9b4c40"/><path d="M51 85Q60 93 69 85" fill="none" stroke="#78402d" strokeWidth="3" strokeLinecap="round"/>
+    <g fill="#ffc84d"><path d="M12 35 15 43 23 46 15 49 12 57 9 49 1 46 9 43Z"/><path d="M105 74 108 81 115 84 108 87 105 94 102 87 95 84 102 81Z"/></g>
+  </svg>;
+}
+const playUnitTone = (kind, enabled) => {
+  if (!enabled || typeof window === 'undefined') return;
+  try {
+    const Audio = window.AudioContext || window.webkitAudioContext;
+    if (!Audio) return;
+    const ctx = new Audio();
+    const notes = kind === 'wrong' ? [300,210] : kind === 'combo' ? [520,660,820,1040] : kind === 'click' ? [650] : [560,780];
+    let at = ctx.currentTime + .02;
+    notes.forEach(hz => { const osc=ctx.createOscillator(), gain=ctx.createGain(); osc.type='sine'; osc.frequency.setValueAtTime(hz,at); gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(.026,at+.025); gain.gain.exponentialRampToValueAtTime(.0001,at+.14); osc.connect(gain); gain.connect(ctx.destination); osc.start(at); osc.stop(at+.15); at+=.16; });
+    window.setTimeout(()=>ctx.close().catch(()=>{}),800);
+  } catch {}
+};
+\nconst normalizeExercise = (item) => ({
   ...item,
   prompt: item.prompt_ar || '',
   answerIndex: Number.isInteger(item.answer) ? item.answer : 0
@@ -34,7 +56,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const [testMode, setTestMode] = useState(false);
   const [testIndex, setTestIndex] = useState(0);
   const [testScore, setTestScore] = useState(0);
-  const [testDone, setTestDone] = useState(false);
+  const [testDone, setTestDone] = useState(false);\n  const [combo, setCombo] = useState(0);\n  const [bestCombo, setBestCombo] = useState(0);\n  const [soundOn, setSoundOn] = useState(true);\n  const [luluMood, setLuluMood] = useState('idle');
 
   const exercises = testMode
     ? unitData.unit_test.questions.map(normalizeExercise)
@@ -52,7 +74,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
   const percent = Math.round(completed.length / unitData.lessons.length * 100);
   const unitComplete = completed.length === unitData.lessons.length;
 
-  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };
+  const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };\n  const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
   const beginLesson = (lesson) => {
     setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
@@ -92,7 +114,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     if (pair.ar === current.pairs[index].ar) {
       const next = [...matches, matchLeft];
       setMatches(next); setMatchLeft(null);
-      if (next.length === current.pairs.length) setChecked(true);
+      if (next.length === current.pairs.length) { setChecked(true); resolveFeedback(true); }
     } else { setMatchLeft(null); }
   };
   const beginSpeaking = () => { setPhase('speaking'); setContentIndex(0); };
@@ -147,7 +169,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     })}</div>
     <div className="iu-test-card iu-reference-test"><div><small>{rtl?'الاختبار النهائي':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?'أكمل الدروس الخمسة لفتح الاختبار. درجة النجاح 70٪.':'Complete all five lessons to unlock the test. Pass mark: 70%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'إعادة الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
 
-    {(activeLesson || testMode) && <div className="iu-overlay"><section className="iu-modal" dir={rtl?'rtl':'ltr'}>
+    {(activeLesson || testMode) && <div className="iu-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'}>
       <header><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?'الوحدة الأولى · الدرس':'UNIT 1 · LESSON')}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
       {!testMode && <><div className="iu-tabs">{phaseLabels.map((label,i)=><button key={label} className={phaseIndex===i?'active':''} onClick={()=>goPhase(phases[i])}>{String(i+1).padStart(2,'0')} · {label}</button>)}</div>
       {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter">{contentIndex+1} / {vocabulary.length}</div><h3 dir="ltr">{activeContent.en}</h3><strong>{activeContent.ar}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{activeContent.pron_ar}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{activeContent.example_en}</b><span>{activeContent.example_ar}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
