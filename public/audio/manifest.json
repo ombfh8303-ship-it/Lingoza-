@@ -1,85 +1,197 @@
 {
-  "schemaVersion": 1,
-  "note": "Editorial catalog starter. Current player does not load this manifest yet. Entries are scripts only; no recordings approved or published.",
+  "schemaVersion": 2,
+  "note": "19 supplied MP3 files are indexed in the shared audio-library. The player reuses a matching phrase anywhere in the app.",
   "entries": [
     {
-      "id": "en-us-restaurant-what-would-you-like",
+      "id": "en-us-bye-see-you-later",
       "locale": "en-US",
-      "accent": "General American",
+      "accent": "American",
       "kind": "phrase",
-      "transcript": "What would you like?",
-      "path": "/Lingoza-/audio/en/what-would-you-like.mp3",
-      "status": "script-only",
-      "speakerId": null,
-      "source": null,
-      "license": null,
-      "reviewedAt": null
+      "transcript": "bye see you later",
+      "filename": "Bye__See_you_later.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
     },
     {
-      "id": "en-us-restaurant-id-like-a-burger-please",
+      "id": "en-us-good-afternoon",
       "locale": "en-US",
-      "accent": "General American",
+      "accent": "American",
       "kind": "phrase",
-      "transcript": "I'd like a burger, please.",
-      "path": "/Lingoza-/audio/en/id-like-a-burger-please.mp3",
-      "status": "script-only",
-      "speakerId": null,
-      "source": null,
-      "license": null,
-      "reviewedAt": null
+      "transcript": "good afternoon",
+      "filename": "Good_afternoon.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
     },
     {
-      "id": "en-us-restaurant-anything-to-drink",
+      "id": "en-us-good-afternoon-everyone",
       "locale": "en-US",
-      "accent": "General American",
+      "accent": "American",
       "kind": "phrase",
-      "transcript": "Anything to drink?",
-      "path": "/Lingoza-/audio/en/anything-to-drink.mp3",
-      "status": "script-only",
-      "speakerId": null,
-      "source": null,
-      "license": null,
-      "reviewedAt": null
+      "transcript": "good afternoon everyone",
+      "filename": "Good_afternoon__everyone.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
     },
     {
-      "id": "en-us-restaurant-a-glass-of-water-please",
+      "id": "en-us-good-evening",
       "locale": "en-US",
-      "accent": "General American",
+      "accent": "American",
       "kind": "phrase",
-      "transcript": "A glass of water, please.",
-      "path": "/Lingoza-/audio/en/a-glass-of-water-please.mp3",
-      "status": "script-only",
-      "speakerId": null,
-      "source": null,
-      "license": null,
-      "reviewedAt": null
+      "transcript": "good evening",
+      "filename": "Good_evening.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
     },
     {
-      "id": "en-us-restaurant-sorry-were-out-of-burgers",
+      "id": "en-us-good-evening-mr-ali",
       "locale": "en-US",
-      "accent": "General American",
+      "accent": "American",
       "kind": "phrase",
-      "transcript": "Sorry, we're out of burgers.",
-      "path": "/Lingoza-/audio/en/sorry-were-out-of-burgers.mp3",
-      "status": "script-only",
-      "speakerId": null,
-      "source": null,
-      "license": null,
-      "reviewedAt": null
+      "transcript": "good evening mr ali",
+      "filename": "Good_evening__Mr__Ali.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
     },
     {
-      "id": "en-us-restaurant-could-i-have-the-bill-please",
+      "id": "en-us-good-morning",
       "locale": "en-US",
-      "accent": "General American",
+      "accent": "American",
       "kind": "phrase",
-      "transcript": "Could I have the bill, please?",
-      "path": "/Lingoza-/audio/en/could-i-have-the-bill-please.mp3",
-      "status": "script-only",
-      "speakerId": null,
-      "source": null,
-      "license": null,
-      "reviewedAt": null
+      "transcript": "good morning",
+      "filename": "Good_morning.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-good-morning-ahmed",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "good morning ahmed",
+      "filename": "Good_morning__Ahmed.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-good-morning-teacher",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "good morning teacher",
+      "filename": "Good_morning__teacher.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-good-night",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "good night",
+      "filename": "Good_night.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-good-night-mum",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "good night mum",
+      "filename": "Good_night__Mum.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-goodbye",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "goodbye",
+      "filename": "Goodbye.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-goodbye-ahmed",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "goodbye ahmed",
+      "filename": "Goodbye__Ahmed.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-goodbye-see-you-later",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "goodbye see you later",
+      "filename": "Goodbye__See_you_later.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-hello",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "hello",
+      "filename": "Hello.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-hello-good-evening",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "hello good evening",
+      "filename": "Hello__Good_evening.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-hello-sara",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "hello sara",
+      "filename": "Hello__Sara.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-hi",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "hi",
+      "filename": "Hi.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-hi-omar",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "hi omar",
+      "filename": "Hi__Omar.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
+    },
+    {
+      "id": "en-us-see-you-later",
+      "locale": "en-US",
+      "accent": "American",
+      "kind": "phrase",
+      "transcript": "see you later",
+      "filename": "See_you_later.mp3",
+      "status": "provided",
+      "storage": "Dropbox shared ZIP"
     }
   ],
-  "approvalStatus": "No files recorded or approved"
+  "approvalStatus": "Supplied recordings indexed; in-app playback verification remains pending."
 }
