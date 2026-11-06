@@ -187,7 +187,8 @@
             "Hello",
             "Good morning"
           ],
-          "answer": 0
+          "answer": 0,
+          "answer_explanation_ar": "مع السلامة! أراك لاحقًا."
         },
         {
           "id": "u1-l1-e6",
@@ -212,6 +213,12 @@
           "Good morning.",
           "Good evening.",
           "Goodbye! See you later."
+        ],
+        "repeat_ar": [
+          "مرحبًا!",
+          "صباح الخير.",
+          "مساء الخير.",
+          "مع السلامة! أراك لاحقًا."
         ]
       }
     },
@@ -372,7 +379,8 @@
             "your",
             "yours"
           ],
-          "answer": 0
+          "answer": 0,
+          "answer_explanation_ar": "أنا بخير، شكرًا. وأنت؟"
         },
         {
           "id": "u1-l2-e5",
@@ -411,6 +419,12 @@
           "I'm fine, thank you.",
           "And you?",
           "Not bad, thanks."
+        ],
+        "repeat_ar": [
+          "كيف حالك؟",
+          "أنا بخير، شكرًا.",
+          "وأنت؟",
+          "ليس سيئًا، شكرًا."
         ]
       }
     },
@@ -541,7 +555,8 @@
             "are",
             "am"
           ],
-          "answer": 0
+          "answer": 0,
+          "answer_explanation_ar": "اسمي عمر."
         },
         {
           "id": "u1-l3-e3",
@@ -607,6 +622,12 @@
           "My name is Layla.",
           "I'm Omar.",
           "Nice to meet you."
+        ],
+        "repeat_ar": [
+          "ما اسمك؟",
+          "اسمي ليلى.",
+          "أنا عمر.",
+          "تشرفت بمعرفتك."
         ]
       }
     },
@@ -772,7 +793,8 @@
             "is",
             "are"
           ],
-          "answer": 0
+          "answer": 0,
+          "answer_explanation_ar": "أنا من المملكة العربية السعودية."
         },
         {
           "id": "u1-l4-e4",
@@ -820,6 +842,12 @@
           "I'm from Egypt.",
           "I'm Moroccan.",
           "She is from Jordan."
+        ],
+        "repeat_ar": [
+          "من أين أنت؟",
+          "أنا من مصر.",
+          "أنا مغربي.",
+          "هي من الأردن."
         ]
       }
     },
@@ -962,7 +990,8 @@
             "am",
             "are"
           ],
-          "answer": 0
+          "answer": 0,
+          "answer_explanation_ar": "هو متعب."
         },
         {
           "id": "u1-l5-e3",
@@ -974,7 +1003,8 @@
             "am",
             "are"
           ],
-          "answer": 2
+          "answer": 2,
+          "answer_explanation_ar": "أنت صديقي."
         },
         {
           "id": "u1-l5-e4",
@@ -1023,7 +1053,8 @@
             "He",
             "She"
           ],
-          "answer": 0
+          "answer": 0,
+          "answer_explanation_ar": "أنا من مصر."
         }
       ],
       "speaking": {
@@ -1033,6 +1064,12 @@
           "You are my friend.",
           "He is tired.",
           "She is a teacher."
+        ],
+        "repeat_ar": [
+          "أنا طالب.",
+          "أنت صديقي.",
+          "هو متعب.",
+          "هي معلمة."
         ]
       }
     }
@@ -1076,7 +1113,8 @@
           "am",
           "are"
         ],
-        "answer": 0
+        "answer": 0,
+        "answer_explanation_ar": "اسمي سارة."
       },
       {
         "id": "u1-t4",
