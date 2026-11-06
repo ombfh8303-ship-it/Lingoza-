@@ -1,29 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import defaultUnitData from './data/unit-1.json';
-import unit1Audio from './data/unit-1-audio.json';
+import { speakLingoza } from './audio.js';
 import { ArrowLeft, BookOpen, Check, Headphones, LockKeyhole, Volume2, X } from 'lucide-react';
 
 const readArray = (key) => { try { const value = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(value) ? value : []; } catch { return []; } };
-const speakFallback = (value, data = defaultUnitData) => {
-  if (!value || !('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(value);
-  utterance.lang = data.tts_lang || 'en-US';
-  utterance.rate = 0.86;
-  window.speechSynthesis.speak(utterance);
-};
-
 const playPronunciation = (value, data = defaultUnitData) => {
-  if (!value || typeof window === 'undefined') return;
-  const recordingPath = data.id === 'unit-1' ? unit1Audio.recordings?.[value] : null;
-  if (!recordingPath) {
-    speakFallback(value, data);
-    return;
-  }
-  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-  const audio = new Audio(recordingPath);
-  audio.preload = 'auto';
-  audio.play().catch(() => speakFallback(value, data));
+  speakLingoza(value, { lang: data.tts_lang || 'en-US', rate: 0.86 });
 };
 
 function UnitLulu({ mood = 'idle', action = 'none' }) {
