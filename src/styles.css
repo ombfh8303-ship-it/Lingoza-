@@ -2032,3 +2032,8 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .iu-lulu-art.sad .iu-lulu-ears{transform:rotate(-7deg)}
 @keyframes iuEarTwitch{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(-5deg)}96%{transform:rotate(5deg)}}
 @keyframes iuTailSway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(8deg)}}
+
+.iu-lesson-complete{align-items:center!important;text-align:center;min-height:50vh}
+.iu-lesson-complete .iu-lulu-art{width:132px;height:132px}
+.iu-lesson-complete h3{font-size:clamp(22px,4vw,30px)!important}
+.iu-lesson-complete p{color:#6f8a7d;font-weight:700}
