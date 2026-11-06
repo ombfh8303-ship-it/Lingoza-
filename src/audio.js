@@ -6,7 +6,7 @@ const normalizeSpeechText = (value) => String(value || '')
   .replace(/[’']/g, "'")
   .replace(/[^a-z0-9]+/g, ' ')
   .trim()
-  .replace(/\\s+/g, ' ');
+  .replace(/\s+/g, ' ');
 
 const recordingPathFor = (value) => {
   const key = normalizeSpeechText(value);
