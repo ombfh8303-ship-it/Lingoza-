@@ -1,15 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import unitData from './data/unit-1.json';
+import defaultUnitData from './data/unit-1.json';
 import { ArrowLeft, BookOpen, Check, Headphones, LockKeyhole, Volume2, X } from 'lucide-react';
 
-const PROGRESS_KEY = 'lingoza-independent-unit-1-lessons';
-const TEST_KEY = 'lingoza-independent-unit-1-test';
 const readArray = (key) => { try { const value = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(value) ? value : []; } catch { return []; } };
-const speak = (value) => {
+const speak = (value, data = defaultUnitData) => {
   if (!value || !('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(value);
-  utterance.lang = unitData.tts_lang || 'en-US';
+  utterance.lang = data.tts_lang || 'en-US';
   utterance.rate = 0.88;
   window.speechSynthesis.speak(utterance);
 };
@@ -81,9 +79,17 @@ const normalizeExercise = (item) => ({
   answerIndex: Number.isInteger(item.answer) ? item.answer : 0
 });
 
-export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUnitComplete }) {
-  const [completed, setCompleted] = useState(() => readArray(PROGRESS_KEY));
-  const [testPassed, setTestPassed] = useState(() => localStorage.getItem(TEST_KEY) === 'passed');
+export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUnitComplete, unitData: suppliedUnitData }) {
+  const unitData = suppliedUnitData || defaultUnitData;
+  const unitNumber = Number((unitData.id.match(/\d+/) || ['1'])[0]);
+  const storageKeys = {
+    progress: unitData.id === 'unit-1' ? 'lingoza-independent-unit-1-lessons' : `lingoza-independent-${unitData.id}-lessons`,
+    test: unitData.id === 'unit-1' ? 'lingoza-independent-unit-1-test' : `lingoza-independent-${unitData.id}-test`,
+    sound: unitData.id === 'unit-1' ? 'lingoza-unit1-sound' : `lingoza-${unitData.id}-sound`,
+    vibration: unitData.id === 'unit-1' ? 'lingoza-unit1-vibration' : `lingoza-${unitData.id}-vibration`
+  };
+  const [completed, setCompleted] = useState(() => readArray(storageKeys.progress));
+  const [testPassed, setTestPassed] = useState(() => localStorage.getItem(storageKeys.test) === 'passed');
   const [activeLesson, setActiveLesson] = useState(null);
   const [phase, setPhase] = useState('vocabulary');
   const [contentIndex, setContentIndex] = useState(0);
@@ -101,8 +107,8 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
   const [bestCombo, setBestCombo] = useState(0);
   const [firstTryCorrect, setFirstTryCorrect] = useState(0);
   const [lessonXpEarned, setLessonXpEarned] = useState(0);
-  const [soundOn, setSoundOn] = useState(() => localStorage.getItem('lingoza-unit1-sound') !== 'off');
-  const [vibrationOn, setVibrationOn] = useState(() => localStorage.getItem('lingoza-unit1-vibration') !== 'off');
+  const [soundOn, setSoundOn] = useState(() => localStorage.getItem(storageKeys.sound) !== 'off');
+  const [vibrationOn, setVibrationOn] = useState(() => localStorage.getItem(storageKeys.vibration) !== 'off');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [luluMood, setLuluMood] = useState('idle');
   const [luluAction, setLuluAction] = useState('none');
@@ -183,7 +189,7 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
     setLessonXpEarned(xpEarned);
     if (!completed.includes(activeLesson.id)) {
       const next = [...completed, activeLesson.id];
-      setCompleted(next); localStorage.setItem(PROGRESS_KEY, JSON.stringify(next));
+      setCompleted(next); localStorage.setItem(storageKeys.progress, JSON.stringify(next));
       onEarnXp?.(xpEarned);
     }
     setPhase('complete');
@@ -200,7 +206,7 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
       if (isLastExercise) {
         setTestDone(true);
         if (score / exercises.length * 100 >= unitData.unit_test.pass_score_percent && !testPassed) {
-          setTestPassed(true); localStorage.setItem(TEST_KEY, 'passed'); onEarnXp?.(unitData.unit_test.xp || 50); onUnitComplete?.();
+          setTestPassed(true); localStorage.setItem(storageKeys.test, 'passed'); onEarnXp?.(unitData.unit_test.xp || 50); onUnitComplete?.();
         }
       } else { setExerciseIndex(v => v + 1); resetExercise(); }
       return;
@@ -241,7 +247,7 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
     </div>;
     const options = current.options || [];
     return <div className="iu-options">
-      {current.type === 'listening' && <button className="iu-listen" onClick={()=>speak(current.audio_text)}><Volume2 size={19}/>{rtl?'استمع إلى العبارة':'Play audio'}</button>}
+      {current.type === 'listening' && <button className="iu-listen" onClick={()=>speak(current.audio_text, unitData)}><Volume2 size={19}/>{rtl?'استمع إلى العبارة':'Play audio'}</button>}
       {current.sentence && <p className="iu-sentence" dir="ltr">{renderMixedText(current.sentence)}</p>}
       {options.map((option,i)=><button key={i} dir={/[A-Za-z]/.test(option)?'ltr':'rtl'} className={'iu-option '+(selected===i?'selected':'')+(checked&&i===current.answerIndex?' correct':'')+(checked&&selected===i&&i!==current.answerIndex?' wrong':'')} onClick={()=>chooseOption(i)}>{renderMixedText(option)}</button>)}
     </div>;
@@ -251,7 +257,7 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
   const lessonKinds = rtl ? ['مفردات','قواعد','استماع','تحدث','مراجعة'] : ['Vocabulary','Grammar','Listening','Speaking','Review'];
   return <section className="iu-unit iu-reference-style">
     <div className="iu-reference-heading">
-      <div className="iu-reference-title"><small>{rtl?'الوحدة الأولى · أساسيات المحادثة':'UNIT 01 · CONVERSATION BASICS'}</small><h3>{rtl?unitData.title_ar:unitData.title_en}</h3></div>
+      <div className="iu-reference-title"><small>{rtl?('الوحدة '+unitNumber+' · '+unitData.title_ar):('UNIT '+String(unitNumber).padStart(2,'0')+' · '+unitData.title_en)}</small><h3>{rtl?unitData.title_ar:unitData.title_en}</h3></div>
       <b className="iu-reference-count">{completed.length}/{unitData.lessons.length}</b>
       <div className="iu-reference-track"><i style={{width:percent+'%'}}/></div>
     </div>
@@ -270,20 +276,20 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
         </div>
       </article>;
     })}</div>
-    <div className="iu-test-card iu-reference-test"><div><small>{rtl?'الاختبار النهائي':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?'أكمل الدروس الخمسة لفتح الاختبار. درجة النجاح 70٪.':'Complete all five lessons to unlock the test. Pass mark: 70%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'إعادة الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
+    <div className="iu-test-card iu-reference-test"><div><small>{rtl?'الاختبار النهائي':'FINAL ASSESSMENT'}</small><h3>{rtl?unitData.unit_test.title_ar:'Unit test'}</h3><p>{rtl?('أكمل الدروس '+unitData.lessons.length+' لفتح الاختبار. درجة النجاح '+unitData.unit_test.pass_score_percent+'٪.'):'Complete all '+unitData.lessons.length+' lessons to unlock the test. Pass mark: '+unitData.unit_test.pass_score_percent+'%.'}</p></div><button disabled={!unitComplete} onClick={beginTest}>{testPassed?(rtl?'إعادة الاختبار':'Retake test'):(rtl?'ابدأ الاختبار':'Start test')} {unitComplete?'':'🔒'}</button></div>
 
     {(activeLesson || testMode) && <div className="iu-overlay iu-fullscreen-overlay"><section className="iu-modal iu-adventure-modal" dir={rtl?'rtl':'ltr'} onPointerDownCapture={unlockAudio} onClickCapture={e=>{if(e.target.closest("button")&&!e.target.closest("button").disabled)playUnitTone("click",soundOn)}}>
-      <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?('الوحدة الأولى · الدرس '+lessonNumber):('UNIT 1 · LESSON '+lessonNumber))}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
+      <header className="iu-adventure-header"><div><small>{testMode?(rtl?'اختبار الوحدة':'UNIT TEST'):(rtl?('الوحدة '+unitNumber+' · الدرس '+lessonNumber):('UNIT '+unitNumber+' · LESSON '+lessonNumber))}</small><h2>{testMode?(rtl?unitData.unit_test.title_ar:'Unit test'):(rtl?activeLesson.title_ar:activeLesson.title_en)}</h2></div><button className="iu-close" onClick={closeLesson}><X size={20}/></button></header>
       <div className="iu-game-hud"><div className="iu-game-progress" role="progressbar" aria-label={rtl?'تقدم الدرس':'Lesson progress'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={lessonProgressPercent}><i style={{width:lessonProgressPercent+'%'}}/></div><div className="iu-game-hearts" aria-label={rtl?'القلوب المتبقية':'Hearts remaining'}><span>❤️</span><b dir="ltr">{hearts}</b></div><div className={'iu-game-combo '+(combo>=3?'is-hot':'')}><span>🔥</span><b>{combo}</b><small>{rtl?'كومبو':'COMBO'}</small></div><button className="iu-sound-toggle" onClick={()=>setSettingsOpen(v=>!v)} aria-label={rtl?'الإعدادات':'Settings'}>⚙️</button></div>
-      {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem('lingoza-unit1-sound',e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem('lingoza-unit1-vibration',e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
+      {settingsOpen && <div className="iu-settings-panel"><label><input type="checkbox" checked={soundOn} onChange={e=>{setSoundOn(e.target.checked);localStorage.setItem(storageKeys.sound,e.target.checked?'on':'off')}}/> {rtl?'الأصوات':'Sound effects'}</label><label><input type="checkbox" checked={vibrationOn} onChange={e=>{setVibrationOn(e.target.checked);localStorage.setItem(storageKeys.vibration,e.target.checked?'on':'off')}}/> {rtl?'الاهتزاز':'Vibration'}</label></div>}
       <div className="iu-lulu-coach"><div className="iu-lulu-stage"><UnitLulu mood={luluMood} action={luluAction}/>{(luluMood==='cheer'||luluMood==='fire')&&<span className="iu-lulu-sparks">✨ ⭐ 🔥</span>}</div><div><b>لولو</b><p>{renderMixedText(checked?(comboMessage || luluMessage):luluMessage)}</p></div></div>
       {combo>=3 && comboMessage && <div className="iu-combo-banner"><span>🔥</span><b>{comboMessage}</b><strong>×{combo}</strong><span>✨</span></div>}
       {!testMode && <>
-      {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {vocabulary.length}</span></div><h3 dir="ltr">{renderMixedText(activeContent.en)}</h3><strong>{renderMixedText(activeContent.ar)}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{renderMixedText(activeContent.pron_ar)}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en)}><Volume2 size={17}/></button><b dir="ltr">{renderMixedText(activeContent.example_en)}</b><span>{renderMixedText(activeContent.example_ar)}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
-      {phase==='phrases' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {phrases.length}</span></div><h3 dir="ltr">{renderMixedText(activeContent.en)}</h3><strong>{renderMixedText(activeContent.ar)}</strong><button className="iu-listen" onClick={()=>speak(activeContent.en)}><Volume2 size={18}/>{rtl?'استمع للنطق':'Listen'}</button><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===phrases.length-1?goPhase('mistakes'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
+      {phase==='vocabulary' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {vocabulary.length}</span></div><h3 dir="ltr">{renderMixedText(activeContent.en)}</h3><strong>{renderMixedText(activeContent.ar)}</strong><p>{rtl?'النطق التقريبي: ': 'Pronunciation: '}{renderMixedText(activeContent.pron_ar)}</p><div className="iu-example"><button onClick={()=>speak(activeContent.example_en, unitData)}><Volume2 size={17}/></button><b dir="ltr">{renderMixedText(activeContent.example_en)}</b><span>{renderMixedText(activeContent.example_ar)}</span></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===vocabulary.length-1?goPhase('phrases'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
+      {phase==='phrases' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {phrases.length}</span></div><h3 dir="ltr">{renderMixedText(activeContent.en)}</h3><strong>{renderMixedText(activeContent.ar)}</strong><button className="iu-listen" onClick={()=>speak(activeContent.en, unitData)}><Volume2 size={18}/>{rtl?'استمع للنطق':'Listen'}</button><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===phrases.length-1?goPhase('mistakes'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
       {phase==='mistakes' && activeContent && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{contentIndex+1} / {mistakes.length}</span></div><div className="iu-mistake"><span>{rtl?'❌ الخطأ الشائع':'❌ Common mistake'}</span><b>{renderMixedText(activeContent.wrong)}</b><span>{rtl?'✅ الصحيح':'✅ Correct form'}</span><b>{renderMixedText(activeContent.right)}</b><p>{renderMixedText(activeContent.explain_ar)}</p></div><footer><button disabled={contentIndex===0} onClick={()=>setContentIndex(v=>v-1)}>{rtl?'السابق':'Previous'}</button><button onClick={()=>contentIndex===mistakes.length-1?goPhase('exercises'):setContentIndex(v=>v+1)}>{rtl?'التالي':'Next'}<ArrowLeft size={15}/></button></footer></div>}
       {phase==='exercises' && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{exerciseIndex+1} / {exercises.length}</span></div><h3 className="iu-exercise-prompt">{renderMixedText(current?.prompt)}</h3>{renderExercise()}{checked && <div className={'iu-feedback '+(isCorrect?'good':'bad')}>{current?.feedback_ar?renderMixedText(current.feedback_ar):(isCorrect?(rtl?'إجابة صحيحة، أحسنت!':'Correct! Well done.'):(rtl?'ليست صحيحة، حاول مرة أخرى.':'Not quite. Try again.'))}</div>}{checked && current?.type==='match' && !isCorrect && <div className="iu-match-corrections" role="status"><strong>{rtl?'راجع الأخطاء والإجابات الصحيحة:':'Review the incorrect pairs:'}</strong>{matches.filter(({left,right})=>current.pairs[left]?.ar!==current.pairs[right]?.ar).map(({left,right})=><p key={left}><span dir="ltr">{current.pairs[left]?.en}</span><b>←</b><span>{rtl?current.pairs[left]?.ar:current.pairs[left]?.ar}</span></p>)}</div>}<button className="iu-primary" disabled={current?.type==='match'?matches.length!==current.pairs.length:current?.type==='word_order'?order.length!==(current.answer||[]).length:selected===null} onClick={submit}>{!checked?(rtl?'تحقق من الإجابة':'Check answer'):(isCorrect?(isLastExercise?(testMode?(rtl?'إنهاء الاختبار':'Finish test'):(rtl?'إنهاء الدرس':'Finish lesson')):(rtl?'التالي':'Next')):(rtl?'حاول مجدداً':'Try again'))}<ArrowLeft size={17}/></button></div>}
-      {phase==='speaking' && <div className="iu-content-card"><h3>{renderMixedText(activeLesson.speaking.prompt_ar)}</h3>{activeLesson.speaking.repeat.map((line,i)=><div className="iu-speaking-line" key={i}><span dir="ltr">{renderMixedText(line)}</span><button onClick={()=>speak(line)}><Volume2 size={18}/></button></div>)}<button className="iu-primary" onClick={finishLesson}>{rtl?'إنهاء الدرس · +30 XP':'Complete lesson · +30 XP'}<Check size={17}/></button></div>}
+      {phase==='speaking' && <div className="iu-content-card"><h3>{renderMixedText(activeLesson.speaking.prompt_ar)}</h3>{activeLesson.speaking.repeat.map((line,i)=><div className="iu-speaking-line" key={i}><span dir="ltr">{renderMixedText(line)}</span><button onClick={()=>speak(line, unitData)}><Volume2 size={18}/></button></div>)}<button className="iu-primary" onClick={finishLesson}>{rtl?'إنهاء الدرس · +30 XP':'Complete lesson · +30 XP'}<Check size={17}/></button></div>}
       {phase==='complete' && <div className="iu-content-card iu-lesson-complete"><UnitLulu mood="fire"/><h3>{rtl?'أحسنت! أنهيت الدرس 🎉':'Lesson complete! 🎉'}</h3><p>{rtl?'لولو فخورة بإنجازك!':'Lulu is proud of you!'}</p><div className="iu-completion-stats"><div><strong dir="ltr">{lessonXpEarned} XP</strong><span>{rtl?'النقاط المكتسبة':'Points earned'}</span></div><div><strong dir="ltr">{Math.round(firstTryCorrect/Math.max(1,exercises.length)*100)}%</strong><span>{rtl?'الصحيح من أول محاولة':'Correct on first try'}</span></div><div><strong dir="ltr">×{bestCombo}</strong><span>{rtl?'أعلى كومبو':'Best combo'}</span></div></div><div className="iu-completion-actions"><button className="iu-primary" onClick={()=>{const index=unitData.lessons.findIndex(item=>item.id===activeLesson.id);const nextLesson=unitData.lessons[index+1];if(nextLesson)beginLesson(nextLesson);else beginTest();}}>{rtl?(unitData.lessons.findIndex(item=>item.id===activeLesson.id)===unitData.lessons.length-1?'اختبار الوحدة':'الدرس التالي'):(unitData.lessons.findIndex(item=>item.id===activeLesson.id)===unitData.lessons.length-1?'Unit test':'Next lesson')}<ArrowLeft size={17}/></button><button className="iu-completion-secondary" onClick={closeLesson}>{rtl?'العودة إلى الوحدة':'Back to unit'}</button></div></div>}
       </>}
       {testMode && !testDone && <div className="iu-content-card"><div className="iu-card-counter"><span dir="ltr">{exerciseIndex+1} / {exercises.length}</span></div><h3>{renderMixedText(current?.prompt)}</h3>{renderExercise()}{checked && <div className={'iu-feedback '+(isCorrect?'good':'bad')}>{current?.feedback_ar?renderMixedText(current.feedback_ar):(isCorrect?(rtl?'إجابة صحيحة، أحسنت!':'Correct! Well done.'):(rtl?'ليست صحيحة، حاول مرة أخرى.':'Not quite. Try again.'))}</div>}<button className="iu-primary" disabled={current?.type==='match'?matches.length!==current.pairs.length:current?.type==='word_order'?order.length!==(current.answer||[]).length:selected===null} onClick={submit}>{!checked?(rtl?'تحقق من الإجابة':'Check answer'):(isCorrect?(isLastExercise?(rtl?'إنهاء الاختبار':'Finish test'):(rtl?'التالي':'Next')):(rtl?'حاول مجدداً':'Try again'))}<ArrowLeft size={17}/></button></div>}
