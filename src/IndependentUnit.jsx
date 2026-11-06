@@ -76,7 +76,7 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
 
   const resetExercise = () => { setSelected(null); setChecked(false); setOrder([]); setMatchLeft(null); setMatches([]); };\n  const resolveFeedback = (correct) => { if (correct) { const next=combo+1; setCombo(next); setBestCombo(v=>Math.max(v,next)); setLuluMood(next>=3?'fire':'happy'); playUnitTone(next>=3?'combo':'correct',soundOn); } else { setCombo(0); setLuluMood('sad'); playUnitTone('wrong',soundOn); } };
   const beginLesson = (lesson) => {
-    setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
+    setCombo(0); setLuluMood('idle'); setActiveLesson(lesson); setTestMode(false); setPhase('vocabulary'); setContentIndex(0); setExerciseIndex(0); resetExercise();
   };
   const closeLesson = () => { setActiveLesson(null); setTestMode(false); setTestDone(false); resetExercise(); };
   const finishLesson = () => {
@@ -88,11 +88,11 @@ export default function IndependentUnit({ rtl = true, onEarnXp, onUnitComplete }
     closeLesson();
   };
   const beginTest = () => {
-    setTestMode(true); setActiveLesson(null); setPhase('exercises'); setTestIndex(0); setTestScore(0); setTestDone(false); setExerciseIndex(0); resetExercise();
+    setCombo(0); setLuluMood('idle'); setTestMode(true); setActiveLesson(null); setPhase('exercises'); setTestIndex(0); setTestScore(0); setTestDone(false); setExerciseIndex(0); resetExercise();
   };
   const chooseOption = (index) => { if (!checked) setSelected(index); };
   const submit = () => {
-    if (!checked) { setChecked(true); return; }
+    if (!checked) { setChecked(true); resolveFeedback(isCorrect); return; }
     if (testMode) {
       const score = testScore + (isCorrect ? 1 : 0);
       setTestScore(score);
