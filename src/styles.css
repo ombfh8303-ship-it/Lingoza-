@@ -2484,3 +2484,12 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
  .iu-fullscreen-overlay .iu-speaking-copy>small{font-size:13px}
  .iu-answer-meaning{padding:12px}
 }
+
+/* Smart spaced-repetition review */
+.iu-smart-review-card{margin:14px 0;background:linear-gradient(135deg,#f1fbf7,#ffffff);border:1px solid #cfeee1;border-radius:16px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;direction:inherit}
+.iu-smart-review-card small{font-size:10px;font-weight:800;letter-spacing:.08em;color:#169b73}
+.iu-smart-review-card h3{margin:5px 0;color:#20364b;font-size:16px}
+.iu-smart-review-card p{margin:0;color:#7c8999;font-size:12px;line-height:1.7}
+.iu-smart-review-card button{flex-shrink:0;border:0;border-radius:10px;background:#19ae80;color:#fff;padding:11px 15px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.iu-smart-review-card button:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:520px){.iu-smart-review-card{align-items:stretch;flex-direction:column}.iu-smart-review-card button{width:100%}}
