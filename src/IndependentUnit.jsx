@@ -212,7 +212,7 @@ export default function IndependentUnit({ rtl = true, hearts = 5, onEarnXp, onUn
     if (!checked) {
       if (!testMode && !reviewMode && isCorrect) setFirstTryCorrect(value=>value+1);
       if (reviewMode) recordAnswer(current, { lessonId: reviewQueue[exerciseIndex]?.lessonId, lessonTitle: reviewQueue[exerciseIndex]?.lessonTitle, correct: isCorrect, isReview: true });
-      else if (!testMode && !isCorrect) {
+      else if (!testMode) {
         const lesson = unitData.lessons.find(item => item.exercises?.some(ex => ex.id === current?.id));
         recordAnswer(current, { lessonId: lesson?.id, lessonTitle: lesson?.title_ar || lesson?.title_en, correct: false });
       }
