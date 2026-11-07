@@ -862,14 +862,6 @@
       ],
       "vocabulary": [
         {
-          "id": "v1",
-          "en": "I am (I'm)",
-          "ar": "أنا",
-          "pron_ar": "آي أم / آيم",
-          "example_en": "I'm a student.",
-          "example_ar": "أنا طالب."
-        },
-        {
           "id": "v2",
           "en": "you are (you're)",
           "ar": "أنت / أنتم",
