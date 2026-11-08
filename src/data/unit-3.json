@@ -1,0 +1,2308 @@
+{
+  "id": "unit-3",
+  "version": 1,
+  "level": "A1",
+  "title_ar": "السفر",
+  "title_en": "Travel",
+  "goal_ar": "تواصل بثقة في المطار والطائرة والفندق والمقهى، واطلب المساعدة أثناء السفر.",
+  "tts_lang": "en-US",
+  "xp_per_lesson": 30,
+  "lesson_flow": [
+    "vocabulary",
+    "phrases",
+    "common_mistakes",
+    "exercises",
+    "speaking"
+  ],
+  "lessons": [
+    {
+      "id": "u3-l1",
+      "title_ar": "في المطار",
+      "title_en": "At the Airport",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l1-v1",
+          "en": "passport",
+          "ar": "جواز السفر",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Here is my passport.",
+          "example_ar": "هذا جواز سفري.",
+          "image_emoji": "🛂",
+          "image_alt": "جواز السفر"
+        },
+        {
+          "id": "u3-l1-v2",
+          "en": "suitcase",
+          "ar": "حقيبة سفر",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I have one suitcase.",
+          "example_ar": "لدي حقيبة سفر واحدة.",
+          "image_emoji": "🧳",
+          "image_alt": "حقيبة سفر"
+        },
+        {
+          "id": "u3-l1-v3",
+          "en": "gate",
+          "ar": "بوابة الصعود",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Where is gate 5?",
+          "example_ar": "أين البوابة رقم 5؟",
+          "image_emoji": "✈️",
+          "image_alt": "بوابة الصعود"
+        },
+        {
+          "id": "u3-l1-v4",
+          "en": "window seat",
+          "ar": "مقعد بجانب النافذة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Window seat, please.",
+          "example_ar": "مقعد بجانب النافذة، من فضلك.",
+          "image_emoji": "🪟",
+          "image_alt": "مقعد بجانب النافذة"
+        }
+      ],
+      "phrases": [
+        {
+          "en": "Here is my passport.",
+          "ar": "هذا جواز سفري."
+        },
+        {
+          "en": "I have one suitcase.",
+          "ar": "لدي حقيبة سفر واحدة."
+        },
+        {
+          "en": "Where is gate 5?",
+          "ar": "أين البوابة رقم 5؟"
+        },
+        {
+          "en": "Window seat, please.",
+          "ar": "مقعد بجانب النافذة، من فضلك."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Here is my passport. (صياغة غير طبيعية)",
+          "right": "Here is my passport.",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "I have one suitcase. (ترتيب غير صحيح)",
+          "right": "I have one suitcase.",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l1-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
+          "options": [
+            "هذا جواز سفري.",
+            "لدي حقيبة سفر واحدة.",
+            "أين البوابة رقم 5؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "why_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "arab_tip": "تعلّم العبارة كوحدة واحدة ولا تترجم كل كلمة حرفيًا."
+        },
+        {
+          "id": "u3-l1-e2",
+          "type": "listening",
+          "prompt_ar": "استمع إلى العبارة واختر معناها:",
+          "audio_text": "I have one suitcase.",
+          "options": [
+            "لدي حقيبة سفر واحدة.",
+            "هذا جواز سفري.",
+            "مقعد بجانب النافذة، من فضلك."
+          ],
+          "answer": 0,
+          "feedback_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "why_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "arab_tip": "استمع إلى الجملة كاملة ولا تعتمد على كلمة واحدة فقط."
+        },
+        {
+          "id": "u3-l1-e3",
+          "type": "match",
+          "prompt_ar": "صِل العبارة بمعناها الصحيح:",
+          "pairs": [
+            {
+              "en": "Here is my passport.",
+              "ar": "هذا جواز سفري."
+            },
+            {
+              "en": "I have one suitcase.",
+              "ar": "لدي حقيبة سفر واحدة."
+            },
+            {
+              "en": "Where is gate 5?",
+              "ar": "أين البوابة رقم 5؟"
+            }
+          ],
+          "why_ar": "كل عبارة لها معنى محدد يناسب الموقف.",
+          "arab_tip": "ابدأ بالكلمات التي تعرفها ثم أكمل المطابقة."
+        },
+        {
+          "id": "u3-l1-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات لتكوين العبارة الصحيحة:",
+          "words": [
+            "passport",
+            "my",
+            "is",
+            "Here"
+          ],
+          "answer": [
+            "Here",
+            "is",
+            "my",
+            "passport"
+          ],
+          "why_ar": "ترتيب الكلمات في الإنجليزية يساعد على وضوح المعنى.",
+          "arab_tip": "ابدأ بالفاعل إن وُجد، ثم الفعل، ثم بقية الجملة."
+        },
+        {
+          "id": "u3-l1-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
+          "options": [
+            "أين البوابة رقم 5؟",
+            "هذا جواز سفري.",
+            "مقعد بجانب النافذة، من فضلك."
+          ],
+          "answer": 0,
+          "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "why_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "arab_tip": "فكّر في الموقف قبل اختيار العبارة."
+        },
+        {
+          "id": "u3-l1-e6",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "Window seat, please.",
+          "options": [
+            "مقعد بجانب النافذة، من فضلك.",
+            "هذا جواز سفري.",
+            "لدي حقيبة سفر واحدة."
+          ],
+          "answer": 0,
+          "feedback_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "why_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "arab_tip": "انتبه إلى الكلمات القصيرة ونهاية الجملة."
+        },
+        {
+          "id": "u3-l1-e7",
+          "type": "word_order",
+          "prompt_ar": "أعد ترتيب الكلمات لتكوين جملة طبيعية:",
+          "words": [
+            "suitcase",
+            "one",
+            "have",
+            "I"
+          ],
+          "answer": [
+            "I",
+            "have",
+            "one",
+            "suitcase"
+          ],
+          "why_ar": "الجملة الإنجليزية لها ترتيب ثابت نسبيًا.",
+          "arab_tip": "لا تنقل ترتيب الكلمات من العربية حرفيًا."
+        },
+        {
+          "id": "u3-l1-e8",
+          "type": "match",
+          "prompt_ar": "طابق العبارات مع المعاني:",
+          "pairs": [
+            {
+              "en": "Where is gate 5?",
+              "ar": "أين البوابة رقم 5؟"
+            },
+            {
+              "en": "Here is my passport.",
+              "ar": "هذا جواز سفري."
+            },
+            {
+              "en": "Window seat, please.",
+              "ar": "مقعد بجانب النافذة، من فضلك."
+            }
+          ],
+          "why_ar": "المعنى الصحيح هو الذي يطابق العبارة الإنجليزية.",
+          "arab_tip": "اربط العبارة بموقف استخدامها لتسهيل التذكر."
+        },
+        {
+          "id": "u3-l1-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
+          "options": [
+            "هذا جواز سفري.",
+            "أين البوابة رقم 5؟",
+            "مقعد بجانب النافذة، من فضلك."
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "why_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "arab_tip": "حاول استرجاع العبارة من الذاكرة قبل النظر إلى الخيارات."
+        },
+        {
+          "id": "u3-l1-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "options": [
+            "مقعد بجانب النافذة، من فضلك.",
+            "لدي حقيبة سفر واحدة.",
+            "أين البوابة رقم 5؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "Here is my passport.",
+          "Yes, I have one suitcase.",
+          "Over there. Window seat, please."
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Lulu: Here is my passport.",
+        "Sara: Thank you. Do you have a suitcase?",
+        "Lulu: Yes, I have one suitcase.",
+        "Sara: Where is gate 5?",
+        "Lulu: Over there. Window seat, please."
+      ]
+    },
+    {
+      "id": "u3-l2",
+      "title_ar": "مراقبة الجوازات",
+      "title_en": "Passport Control",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l2-v1",
+          "en": "purpose",
+          "ar": "الغرض",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "What is the purpose of your visit?",
+          "example_ar": "ما الغرض من زيارتك؟"
+        },
+        {
+          "id": "u3-l2-v2",
+          "en": "holiday",
+          "ar": "عطلة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I'm here on holiday.",
+          "example_ar": "أنا هنا في عطلة."
+        },
+        {
+          "id": "u3-l2-v3",
+          "en": "stay",
+          "ar": "الإقامة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "How long will you stay?",
+          "example_ar": "كم ستبقى؟"
+        },
+        {
+          "id": "u3-l2-v4",
+          "en": "week",
+          "ar": "أسبوع",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "For one week.",
+          "example_ar": "لمدة أسبوع واحد."
+        }
+      ],
+      "phrases": [
+        {
+          "en": "What is the purpose of your visit?",
+          "ar": "ما الغرض من زيارتك؟"
+        },
+        {
+          "en": "I'm here on holiday.",
+          "ar": "أنا هنا في عطلة."
+        },
+        {
+          "en": "How long will you stay?",
+          "ar": "كم ستبقى؟"
+        },
+        {
+          "en": "For one week.",
+          "ar": "لمدة أسبوع واحد."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "What is the purpose of your visit? (صياغة غير طبيعية)",
+          "right": "What is the purpose of your visit?",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "I'm here on holiday. (ترتيب غير صحيح)",
+          "right": "I'm here on holiday.",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l2-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
+          "options": [
+            "ما الغرض من زيارتك؟",
+            "أنا هنا في عطلة.",
+            "كم ستبقى؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "why_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "arab_tip": "تعلّم العبارة كوحدة واحدة ولا تترجم كل كلمة حرفيًا."
+        },
+        {
+          "id": "u3-l2-e2",
+          "type": "listening",
+          "prompt_ar": "استمع إلى العبارة واختر معناها:",
+          "audio_text": "I'm here on holiday.",
+          "options": [
+            "أنا هنا في عطلة.",
+            "ما الغرض من زيارتك؟",
+            "لمدة أسبوع واحد."
+          ],
+          "answer": 0,
+          "feedback_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "why_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "arab_tip": "استمع إلى الجملة كاملة ولا تعتمد على كلمة واحدة فقط."
+        },
+        {
+          "id": "u3-l2-e3",
+          "type": "match",
+          "prompt_ar": "صِل العبارة بمعناها الصحيح:",
+          "pairs": [
+            {
+              "en": "What is the purpose of your visit?",
+              "ar": "ما الغرض من زيارتك؟"
+            },
+            {
+              "en": "I'm here on holiday.",
+              "ar": "أنا هنا في عطلة."
+            },
+            {
+              "en": "How long will you stay?",
+              "ar": "كم ستبقى؟"
+            }
+          ],
+          "why_ar": "كل عبارة لها معنى محدد يناسب الموقف.",
+          "arab_tip": "ابدأ بالكلمات التي تعرفها ثم أكمل المطابقة."
+        },
+        {
+          "id": "u3-l2-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات لتكوين العبارة الصحيحة:",
+          "words": [
+            "visit",
+            "your",
+            "of",
+            "purpose",
+            "the",
+            "is",
+            "What"
+          ],
+          "answer": [
+            "What",
+            "is",
+            "the",
+            "purpose",
+            "of",
+            "your",
+            "visit"
+          ],
+          "why_ar": "ترتيب الكلمات في الإنجليزية يساعد على وضوح المعنى.",
+          "arab_tip": "ابدأ بالفاعل إن وُجد، ثم الفعل، ثم بقية الجملة."
+        },
+        {
+          "id": "u3-l2-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
+          "options": [
+            "كم ستبقى؟",
+            "ما الغرض من زيارتك؟",
+            "لمدة أسبوع واحد."
+          ],
+          "answer": 0,
+          "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "why_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "arab_tip": "فكّر في الموقف قبل اختيار العبارة."
+        },
+        {
+          "id": "u3-l2-e6",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "For one week.",
+          "options": [
+            "لمدة أسبوع واحد.",
+            "ما الغرض من زيارتك؟",
+            "أنا هنا في عطلة."
+          ],
+          "answer": 0,
+          "feedback_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "why_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "arab_tip": "انتبه إلى الكلمات القصيرة ونهاية الجملة."
+        },
+        {
+          "id": "u3-l2-e7",
+          "type": "word_order",
+          "prompt_ar": "أعد ترتيب الكلمات لتكوين جملة طبيعية:",
+          "words": [
+            "holiday",
+            "on",
+            "here",
+            "I'm"
+          ],
+          "answer": [
+            "I'm",
+            "here",
+            "on",
+            "holiday"
+          ],
+          "why_ar": "الجملة الإنجليزية لها ترتيب ثابت نسبيًا.",
+          "arab_tip": "لا تنقل ترتيب الكلمات من العربية حرفيًا."
+        },
+        {
+          "id": "u3-l2-e8",
+          "type": "match",
+          "prompt_ar": "طابق العبارات مع المعاني:",
+          "pairs": [
+            {
+              "en": "How long will you stay?",
+              "ar": "كم ستبقى؟"
+            },
+            {
+              "en": "What is the purpose of your visit?",
+              "ar": "ما الغرض من زيارتك؟"
+            },
+            {
+              "en": "For one week.",
+              "ar": "لمدة أسبوع واحد."
+            }
+          ],
+          "why_ar": "المعنى الصحيح هو الذي يطابق العبارة الإنجليزية.",
+          "arab_tip": "اربط العبارة بموقف استخدامها لتسهيل التذكر."
+        },
+        {
+          "id": "u3-l2-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
+          "options": [
+            "ما الغرض من زيارتك؟",
+            "كم ستبقى؟",
+            "لمدة أسبوع واحد."
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "why_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "arab_tip": "حاول استرجاع العبارة من الذاكرة قبل النظر إلى الخيارات."
+        },
+        {
+          "id": "u3-l2-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "options": [
+            "لمدة أسبوع واحد.",
+            "أنا هنا في عطلة.",
+            "كم ستبقى؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "I'm here on holiday.",
+          "For one week."
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Sara: What is the purpose of your visit?",
+        "Lulu: I'm here on holiday.",
+        "Sara: How long will you stay?",
+        "Lulu: For one week."
+      ]
+    },
+    {
+      "id": "u3-l3",
+      "title_ar": "في الطائرة",
+      "title_en": "On the Plane",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l3-v1",
+          "en": "seat",
+          "ar": "مقعد",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Excuse me, this is my seat.",
+          "example_ar": "عذرًا، هذا مقعدي.",
+          "image_emoji": "💺",
+          "image_alt": "مقعد"
+        },
+        {
+          "id": "u3-l3-v2",
+          "en": "water",
+          "ar": "ماء",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Can I have some water, please?",
+          "example_ar": "هل يمكنني الحصول على بعض الماء، من فضلك؟",
+          "image_emoji": "💧",
+          "image_alt": "ماء"
+        },
+        {
+          "id": "u3-l3-v3",
+          "en": "land",
+          "ar": "يهبط",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "What time do we land?",
+          "example_ar": "متى نهبط؟"
+        },
+        {
+          "id": "u3-l3-v4",
+          "en": "bag",
+          "ar": "حقيبة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Could you help me with my bag?",
+          "example_ar": "هل يمكنك مساعدتي في حقيبتي؟"
+        }
+      ],
+      "phrases": [
+        {
+          "en": "Excuse me, this is my seat.",
+          "ar": "عذرًا، هذا مقعدي."
+        },
+        {
+          "en": "Can I have some water, please?",
+          "ar": "هل يمكنني الحصول على بعض الماء، من فضلك؟"
+        },
+        {
+          "en": "What time do we land?",
+          "ar": "متى نهبط؟"
+        },
+        {
+          "en": "Could you help me with my bag?",
+          "ar": "هل يمكنك مساعدتي في حقيبتي؟"
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Excuse me, this is my seat. (صياغة غير طبيعية)",
+          "right": "Excuse me, this is my seat.",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "Can I have some water, please? (ترتيب غير صحيح)",
+          "right": "Can I have some water, please?",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l3-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
+          "options": [
+            "عذرًا، هذا مقعدي.",
+            "هل يمكنني الحصول على بعض الماء، من فضلك؟",
+            "متى نهبط؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "why_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "arab_tip": "تعلّم العبارة كوحدة واحدة ولا تترجم كل كلمة حرفيًا."
+        },
+        {
+          "id": "u3-l3-e2",
+          "type": "listening",
+          "prompt_ar": "استمع إلى العبارة واختر معناها:",
+          "audio_text": "Can I have some water, please?",
+          "options": [
+            "هل يمكنني الحصول على بعض الماء، من فضلك؟",
+            "عذرًا، هذا مقعدي.",
+            "هل يمكنك مساعدتي في حقيبتي؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "why_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "arab_tip": "استمع إلى الجملة كاملة ولا تعتمد على كلمة واحدة فقط."
+        },
+        {
+          "id": "u3-l3-e3",
+          "type": "match",
+          "prompt_ar": "صِل العبارة بمعناها الصحيح:",
+          "pairs": [
+            {
+              "en": "Excuse me, this is my seat.",
+              "ar": "عذرًا، هذا مقعدي."
+            },
+            {
+              "en": "Can I have some water, please?",
+              "ar": "هل يمكنني الحصول على بعض الماء، من فضلك؟"
+            },
+            {
+              "en": "What time do we land?",
+              "ar": "متى نهبط؟"
+            }
+          ],
+          "why_ar": "كل عبارة لها معنى محدد يناسب الموقف.",
+          "arab_tip": "ابدأ بالكلمات التي تعرفها ثم أكمل المطابقة."
+        },
+        {
+          "id": "u3-l3-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات لتكوين العبارة الصحيحة:",
+          "words": [
+            "seat",
+            "my",
+            "is",
+            "this",
+            "me",
+            "Excuse"
+          ],
+          "answer": [
+            "Excuse",
+            "me",
+            "this",
+            "is",
+            "my",
+            "seat"
+          ],
+          "why_ar": "ترتيب الكلمات في الإنجليزية يساعد على وضوح المعنى.",
+          "arab_tip": "ابدأ بالفاعل إن وُجد، ثم الفعل، ثم بقية الجملة."
+        },
+        {
+          "id": "u3-l3-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
+          "options": [
+            "متى نهبط؟",
+            "عذرًا، هذا مقعدي.",
+            "هل يمكنك مساعدتي في حقيبتي؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "why_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "arab_tip": "فكّر في الموقف قبل اختيار العبارة."
+        },
+        {
+          "id": "u3-l3-e6",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "Could you help me with my bag?",
+          "options": [
+            "هل يمكنك مساعدتي في حقيبتي؟",
+            "عذرًا، هذا مقعدي.",
+            "هل يمكنني الحصول على بعض الماء، من فضلك؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "why_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "arab_tip": "انتبه إلى الكلمات القصيرة ونهاية الجملة."
+        },
+        {
+          "id": "u3-l3-e7",
+          "type": "word_order",
+          "prompt_ar": "أعد ترتيب الكلمات لتكوين جملة طبيعية:",
+          "words": [
+            "please",
+            "water",
+            "some",
+            "have",
+            "I",
+            "Can"
+          ],
+          "answer": [
+            "Can",
+            "I",
+            "have",
+            "some",
+            "water",
+            "please"
+          ],
+          "why_ar": "الجملة الإنجليزية لها ترتيب ثابت نسبيًا.",
+          "arab_tip": "لا تنقل ترتيب الكلمات من العربية حرفيًا."
+        },
+        {
+          "id": "u3-l3-e8",
+          "type": "match",
+          "prompt_ar": "طابق العبارات مع المعاني:",
+          "pairs": [
+            {
+              "en": "What time do we land?",
+              "ar": "متى نهبط؟"
+            },
+            {
+              "en": "Excuse me, this is my seat.",
+              "ar": "عذرًا، هذا مقعدي."
+            },
+            {
+              "en": "Could you help me with my bag?",
+              "ar": "هل يمكنك مساعدتي في حقيبتي؟"
+            }
+          ],
+          "why_ar": "المعنى الصحيح هو الذي يطابق العبارة الإنجليزية.",
+          "arab_tip": "اربط العبارة بموقف استخدامها لتسهيل التذكر."
+        },
+        {
+          "id": "u3-l3-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
+          "options": [
+            "عذرًا، هذا مقعدي.",
+            "متى نهبط؟",
+            "هل يمكنك مساعدتي في حقيبتي؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "why_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "arab_tip": "حاول استرجاع العبارة من الذاكرة قبل النظر إلى الخيارات."
+        },
+        {
+          "id": "u3-l3-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "options": [
+            "هل يمكنك مساعدتي في حقيبتي؟",
+            "هل يمكنني الحصول على بعض الماء، من فضلك؟",
+            "متى نهبط؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "Oh, sorry! Here you are.",
+          "Of course. What time do we land?"
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Sara: Excuse me, this is my seat.",
+        "Lulu: Oh, sorry! Here you are.",
+        "Sara: Can I have some water, please?",
+        "Lulu: Of course. What time do we land?"
+      ]
+    },
+    {
+      "id": "u3-l4",
+      "title_ar": "حجز الفندق",
+      "title_en": "At the Hotel",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l4-v1",
+          "en": "reservation",
+          "ar": "حجز",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I have a reservation.",
+          "example_ar": "لدي حجز.",
+          "image_emoji": "🏨",
+          "image_alt": "حجز"
+        },
+        {
+          "id": "u3-l4-v2",
+          "en": "breakfast",
+          "ar": "الإفطار",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "What time is breakfast?",
+          "example_ar": "في أي وقت الإفطار؟"
+        },
+        {
+          "id": "u3-l4-v3",
+          "en": "Wi-Fi password",
+          "ar": "كلمة مرور الواي فاي",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Can I have the Wi-Fi password?",
+          "example_ar": "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+        },
+        {
+          "id": "u3-l4-v4",
+          "en": "check-out",
+          "ar": "تسجيل المغادرة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "What time is check-out?",
+          "example_ar": "في أي وقت تسجيل المغادرة؟"
+        }
+      ],
+      "phrases": [
+        {
+          "en": "I have a reservation.",
+          "ar": "لدي حجز."
+        },
+        {
+          "en": "What time is breakfast?",
+          "ar": "في أي وقت الإفطار؟"
+        },
+        {
+          "en": "Can I have the Wi-Fi password?",
+          "ar": "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+        },
+        {
+          "en": "What time is check-out?",
+          "ar": "في أي وقت تسجيل المغادرة؟"
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "I have a reservation. (صياغة غير طبيعية)",
+          "right": "I have a reservation.",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "What time is breakfast? (ترتيب غير صحيح)",
+          "right": "What time is breakfast?",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l4-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
+          "options": [
+            "لدي حجز.",
+            "في أي وقت الإفطار؟",
+            "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "why_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "arab_tip": "تعلّم العبارة كوحدة واحدة ولا تترجم كل كلمة حرفيًا."
+        },
+        {
+          "id": "u3-l4-e2",
+          "type": "listening",
+          "prompt_ar": "استمع إلى العبارة واختر معناها:",
+          "audio_text": "What time is breakfast?",
+          "options": [
+            "في أي وقت الإفطار؟",
+            "لدي حجز.",
+            "في أي وقت تسجيل المغادرة؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "why_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "arab_tip": "استمع إلى الجملة كاملة ولا تعتمد على كلمة واحدة فقط."
+        },
+        {
+          "id": "u3-l4-e3",
+          "type": "match",
+          "prompt_ar": "صِل العبارة بمعناها الصحيح:",
+          "pairs": [
+            {
+              "en": "I have a reservation.",
+              "ar": "لدي حجز."
+            },
+            {
+              "en": "What time is breakfast?",
+              "ar": "في أي وقت الإفطار؟"
+            },
+            {
+              "en": "Can I have the Wi-Fi password?",
+              "ar": "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+            }
+          ],
+          "why_ar": "كل عبارة لها معنى محدد يناسب الموقف.",
+          "arab_tip": "ابدأ بالكلمات التي تعرفها ثم أكمل المطابقة."
+        },
+        {
+          "id": "u3-l4-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات لتكوين العبارة الصحيحة:",
+          "words": [
+            "reservation",
+            "a",
+            "have",
+            "I"
+          ],
+          "answer": [
+            "I",
+            "have",
+            "a",
+            "reservation"
+          ],
+          "why_ar": "ترتيب الكلمات في الإنجليزية يساعد على وضوح المعنى.",
+          "arab_tip": "ابدأ بالفاعل إن وُجد، ثم الفعل، ثم بقية الجملة."
+        },
+        {
+          "id": "u3-l4-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
+          "options": [
+            "هل يمكنني الحصول على كلمة مرور الواي فاي؟",
+            "لدي حجز.",
+            "في أي وقت تسجيل المغادرة؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "why_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "arab_tip": "فكّر في الموقف قبل اختيار العبارة."
+        },
+        {
+          "id": "u3-l4-e6",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "What time is check-out?",
+          "options": [
+            "في أي وقت تسجيل المغادرة؟",
+            "لدي حجز.",
+            "في أي وقت الإفطار؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "why_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "arab_tip": "انتبه إلى الكلمات القصيرة ونهاية الجملة."
+        },
+        {
+          "id": "u3-l4-e7",
+          "type": "word_order",
+          "prompt_ar": "أعد ترتيب الكلمات لتكوين جملة طبيعية:",
+          "words": [
+            "breakfast",
+            "is",
+            "time",
+            "What"
+          ],
+          "answer": [
+            "What",
+            "time",
+            "is",
+            "breakfast"
+          ],
+          "why_ar": "الجملة الإنجليزية لها ترتيب ثابت نسبيًا.",
+          "arab_tip": "لا تنقل ترتيب الكلمات من العربية حرفيًا."
+        },
+        {
+          "id": "u3-l4-e8",
+          "type": "match",
+          "prompt_ar": "طابق العبارات مع المعاني:",
+          "pairs": [
+            {
+              "en": "Can I have the Wi-Fi password?",
+              "ar": "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+            },
+            {
+              "en": "I have a reservation.",
+              "ar": "لدي حجز."
+            },
+            {
+              "en": "What time is check-out?",
+              "ar": "في أي وقت تسجيل المغادرة؟"
+            }
+          ],
+          "why_ar": "المعنى الصحيح هو الذي يطابق العبارة الإنجليزية.",
+          "arab_tip": "اربط العبارة بموقف استخدامها لتسهيل التذكر."
+        },
+        {
+          "id": "u3-l4-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
+          "options": [
+            "لدي حجز.",
+            "هل يمكنني الحصول على كلمة مرور الواي فاي؟",
+            "في أي وقت تسجيل المغادرة؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "why_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "arab_tip": "حاول استرجاع العبارة من الذاكرة قبل النظر إلى الخيارات."
+        },
+        {
+          "id": "u3-l4-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "options": [
+            "في أي وقت تسجيل المغادرة؟",
+            "في أي وقت الإفطار؟",
+            "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "I have a reservation.",
+          "At eight, please."
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Lulu: I have a reservation.",
+        "Sara: Welcome! What time is breakfast?",
+        "Lulu: At eight, please.",
+        "Sara: Can I have the Wi-Fi password?"
+      ]
+    },
+    {
+      "id": "u3-l5",
+      "title_ar": "أخطاء العرب الشائعة",
+      "title_en": "Common Mistakes for Arabic Speakers",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l5-v1",
+          "en": "student",
+          "ar": "طالب",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I am a student.",
+          "example_ar": "أنا طالب."
+        },
+        {
+          "id": "u3-l5-v2",
+          "en": "agree",
+          "ar": "يوافق",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I agree.",
+          "example_ar": "أنا أوافق."
+        },
+        {
+          "id": "u3-l5-v3",
+          "en": "years old",
+          "ar": "سنة من العمر",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I am 25 years old.",
+          "example_ar": "عمري 25 سنة."
+        },
+        {
+          "id": "u3-l5-v4",
+          "en": "home",
+          "ar": "المنزل",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "go home",
+          "example_ar": "اذهب إلى المنزل.",
+          "image_emoji": "🏠",
+          "image_alt": "المنزل"
+        }
+      ],
+      "phrases": [
+        {
+          "en": "I am a student.",
+          "ar": "أنا طالب."
+        },
+        {
+          "en": "I agree.",
+          "ar": "أنا أوافق."
+        },
+        {
+          "en": "I am 25 years old.",
+          "ar": "عمري 25 سنة."
+        },
+        {
+          "en": "go home",
+          "ar": "اذهب إلى المنزل."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "I am student.",
+          "right": "I am a student.",
+          "explain_ar": "نستخدم a قبل الاسم المفرد المعدود student.",
+          "arab_tip": "العربية لا تحتاج أداة نكرة هنا غالبًا، أما الإنجليزية فتحتاج a."
+        },
+        {
+          "wrong": "I am agree.",
+          "right": "I agree.",
+          "explain_ar": "agree فعل، ولا نضع am قبله.",
+          "arab_tip": "لا تضف فعل الكينونة قبل فعل آخر."
+        },
+        {
+          "wrong": "I have 25 years.",
+          "right": "I am 25 years old.",
+          "explain_ar": "نستخدم am للتعبير عن العمر.",
+          "arab_tip": "في العربية قد نستخدم «عندي»، لكن الإنجليزية تستخدم am."
+        },
+        {
+          "wrong": "go to home",
+          "right": "go home",
+          "explain_ar": "لا نستخدم to قبل home في هذا التعبير.",
+          "arab_tip": "احفظ go home دون حرف جر."
+        },
+        {
+          "wrong": "a / an / the",
+          "right": "a student · an apple · the book",
+          "explain_ar": "a وan لاسم مفرد غير محدد، وthe لشيء محدد.",
+          "arab_tip": "اختر a أو an حسب الصوت الأول، وthe عند التحديد."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l5-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر الجملة الصحيحة:",
+          "options": [
+            "I am student.",
+            "I am a student.",
+            "I student am."
+          ],
+          "answer": 1,
+          "why_ar": "نحتاج أداة a قبل الاسم المفرد المعدود student.",
+          "arab_tip": "في العربية لا نستخدم أداة نكرة مماثلة دائمًا، لكن الإنجليزية تحتاج a هنا.",
+          "feedback_ar": "نحتاج أداة a قبل الاسم المفرد المعدود student."
+        },
+        {
+          "id": "u3-l5-e2",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الصحيحة للموافقة:",
+          "options": [
+            "I am agree.",
+            "I agree.",
+            "I agreeing."
+          ],
+          "answer": 1,
+          "why_ar": "agree فعل، لذلك لا نضع am قبله.",
+          "arab_tip": "لا تضف am لمجرد أن المعنى بالعربية يبدأ بكلمة «أنا».",
+          "feedback_ar": "agree فعل، لذلك لا نضع am قبله."
+        },
+        {
+          "id": "u3-l5-e3",
+          "type": "multiple_choice",
+          "prompt_ar": "كيف تقول «عمري 25 سنة»؟",
+          "options": [
+            "I have 25 years.",
+            "I am 25 years old.",
+            "I am 25 year."
+          ],
+          "answer": 1,
+          "why_ar": "نستخدم am مع العمر، ثم years old.",
+          "arab_tip": "العربية تستخدم «عندي» أحيانًا للتعبير عن العمر، لكن الإنجليزية تستخدم فعل الكينونة be.",
+          "feedback_ar": "نستخدم am مع العمر، ثم years old."
+        },
+        {
+          "id": "u3-l5-e4",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر التعبير الطبيعي:",
+          "options": [
+            "go to home",
+            "go home",
+            "go at home"
+          ],
+          "answer": 1,
+          "why_ar": "نقول go home دون to؛ فكلمة home هنا ظرف اتجاه.",
+          "arab_tip": "احفظ go home كوحدة ثابتة ولا تضف to.",
+          "feedback_ar": "نقول go home دون to؛ فكلمة home هنا ظرف اتجاه."
+        },
+        {
+          "id": "u3-l5-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر أداة النكرة المناسبة: ___ apple",
+          "options": [
+            "a",
+            "an",
+            "the"
+          ],
+          "answer": 1,
+          "why_ar": "نستخدم an قبل الصوت المتحرك في بداية apple.",
+          "arab_tip": "الاختيار يعتمد على الصوت الأول لا على الحرف فقط.",
+          "feedback_ar": "نستخدم an قبل الصوت المتحرك في بداية apple."
+        },
+        {
+          "id": "u3-l5-e6",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر أداة النكرة المناسبة: ___ student",
+          "options": [
+            "a",
+            "an",
+            "the"
+          ],
+          "answer": 0,
+          "why_ar": "student تبدأ بصوت ساكن، لذلك نستخدم a.",
+          "arab_tip": "استخدم a قبل الصوت الساكن، وan قبل الصوت المتحرك.",
+          "feedback_ar": "student تبدأ بصوت ساكن، لذلك نستخدم a."
+        },
+        {
+          "id": "u3-l5-e7",
+          "type": "multiple_choice",
+          "prompt_ar": "تتحدث عن كتاب محدد يعرفه الطرفان. اختر الأداة:",
+          "options": [
+            "a",
+            "an",
+            "the"
+          ],
+          "answer": 2,
+          "why_ar": "نستخدم the عندما يكون الشيء محددًا أو معروفًا للطرفين.",
+          "arab_tip": "the تشير إلى شيء محدد معروف من السياق.",
+          "feedback_ar": "نستخدم the عندما يكون الشيء محددًا أو معروفًا للطرفين."
+        },
+        {
+          "id": "u3-l5-e8",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات:",
+          "words": [
+            "student",
+            "a",
+            "am",
+            "I"
+          ],
+          "answer": [
+            "I",
+            "am",
+            "a",
+            "student"
+          ],
+          "why_ar": "الترتيب الصحيح: فاعل ثم فعل be ثم أداة ثم اسم.",
+          "arab_tip": "لا تحذف am؛ فهي فعل الكينونة الذي يربط الفاعل بالاسم."
+        },
+        {
+          "id": "u3-l5-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: أي جملة صحيحة؟",
+          "options": [
+            "I am agree.",
+            "I agree.",
+            "I have agree."
+          ],
+          "answer": 1,
+          "why_ar": "agree فعل مستقل ولا يحتاج إلى am.",
+          "arab_tip": "تذكّر أن am لا تأتي قبل كل كلمة؛ نوع الكلمة مهم.",
+          "feedback_ar": "agree فعل مستقل ولا يحتاج إلى am."
+        },
+        {
+          "id": "u3-l5-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: اختر الجملة الصحيحة:",
+          "options": [
+            "I am 25 years old.",
+            "I have 25 years.",
+            "I am 25 year old."
+          ],
+          "answer": 0,
+          "why_ar": "نستخدم am مع العمر، وyears تأتي بصيغة الجمع بعد 25.",
+          "arab_tip": "تذكّر صيغة العمر كاملة: I am + number + years old.",
+          "feedback_ar": "نستخدم am مع العمر، وyears تأتي بصيغة الجمع بعد 25."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "I am a student.",
+          "I am 25 years old."
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Lulu: I am a student.",
+        "Sara: Great! I agree with you.",
+        "Lulu: I am 25 years old.",
+        "Sara: Let's go home after the trip."
+      ]
+    },
+    {
+      "id": "u3-l6",
+      "title_ar": "طلب المساعدة",
+      "title_en": "Asking for Help",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l6-v1",
+          "en": "help",
+          "ar": "مساعدة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Excuse me, can you help me?",
+          "example_ar": "عذرًا، هل يمكنك مساعدتي؟"
+        },
+        {
+          "id": "u3-l6-v2",
+          "en": "lost",
+          "ar": "تائه",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I'm lost.",
+          "example_ar": "أنا تائه."
+        },
+        {
+          "id": "u3-l6-v3",
+          "en": "bathroom",
+          "ar": "دورة المياه",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Where is the bathroom?",
+          "example_ar": "أين دورة المياه؟"
+        },
+        {
+          "id": "u3-l6-v4",
+          "en": "doctor",
+          "ar": "طبيب",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I need a doctor.",
+          "example_ar": "أحتاج إلى طبيب."
+        }
+      ],
+      "phrases": [
+        {
+          "en": "Excuse me, can you help me?",
+          "ar": "عذرًا، هل يمكنك مساعدتي؟"
+        },
+        {
+          "en": "I'm lost.",
+          "ar": "أنا تائه."
+        },
+        {
+          "en": "Where is the bathroom?",
+          "ar": "أين دورة المياه؟"
+        },
+        {
+          "en": "I need a doctor.",
+          "ar": "أحتاج إلى طبيب."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Excuse me, can you help me? (صياغة غير طبيعية)",
+          "right": "Excuse me, can you help me?",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "I'm lost. (ترتيب غير صحيح)",
+          "right": "I'm lost.",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l6-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
+          "options": [
+            "عذرًا، هل يمكنك مساعدتي؟",
+            "أنا تائه.",
+            "أين دورة المياه؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "why_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "arab_tip": "تعلّم العبارة كوحدة واحدة ولا تترجم كل كلمة حرفيًا."
+        },
+        {
+          "id": "u3-l6-e2",
+          "type": "listening",
+          "prompt_ar": "استمع إلى العبارة واختر معناها:",
+          "audio_text": "I'm lost.",
+          "options": [
+            "أنا تائه.",
+            "عذرًا، هل يمكنك مساعدتي؟",
+            "أحتاج إلى طبيب."
+          ],
+          "answer": 0,
+          "feedback_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "why_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "arab_tip": "استمع إلى الجملة كاملة ولا تعتمد على كلمة واحدة فقط."
+        },
+        {
+          "id": "u3-l6-e3",
+          "type": "match",
+          "prompt_ar": "صِل العبارة بمعناها الصحيح:",
+          "pairs": [
+            {
+              "en": "Excuse me, can you help me?",
+              "ar": "عذرًا، هل يمكنك مساعدتي؟"
+            },
+            {
+              "en": "I'm lost.",
+              "ar": "أنا تائه."
+            },
+            {
+              "en": "Where is the bathroom?",
+              "ar": "أين دورة المياه؟"
+            }
+          ],
+          "why_ar": "كل عبارة لها معنى محدد يناسب الموقف.",
+          "arab_tip": "ابدأ بالكلمات التي تعرفها ثم أكمل المطابقة."
+        },
+        {
+          "id": "u3-l6-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات لتكوين العبارة الصحيحة:",
+          "words": [
+            "me",
+            "help",
+            "you",
+            "can",
+            "me",
+            "Excuse"
+          ],
+          "answer": [
+            "Excuse",
+            "me",
+            "can",
+            "you",
+            "help",
+            "me"
+          ],
+          "why_ar": "ترتيب الكلمات في الإنجليزية يساعد على وضوح المعنى.",
+          "arab_tip": "ابدأ بالفاعل إن وُجد، ثم الفعل، ثم بقية الجملة."
+        },
+        {
+          "id": "u3-l6-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
+          "options": [
+            "أين دورة المياه؟",
+            "عذرًا، هل يمكنك مساعدتي؟",
+            "أحتاج إلى طبيب."
+          ],
+          "answer": 0,
+          "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "why_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "arab_tip": "فكّر في الموقف قبل اختيار العبارة."
+        },
+        {
+          "id": "u3-l6-e6",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "I need a doctor.",
+          "options": [
+            "أحتاج إلى طبيب.",
+            "عذرًا، هل يمكنك مساعدتي؟",
+            "أنا تائه."
+          ],
+          "answer": 0,
+          "feedback_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "why_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "arab_tip": "انتبه إلى الكلمات القصيرة ونهاية الجملة."
+        },
+        {
+          "id": "u3-l6-e7",
+          "type": "word_order",
+          "prompt_ar": "أعد ترتيب الكلمات لتكوين جملة طبيعية:",
+          "words": [
+            "lost",
+            "I'm"
+          ],
+          "answer": [
+            "I'm",
+            "lost"
+          ],
+          "why_ar": "الجملة الإنجليزية لها ترتيب ثابت نسبيًا.",
+          "arab_tip": "لا تنقل ترتيب الكلمات من العربية حرفيًا."
+        },
+        {
+          "id": "u3-l6-e8",
+          "type": "match",
+          "prompt_ar": "طابق العبارات مع المعاني:",
+          "pairs": [
+            {
+              "en": "Where is the bathroom?",
+              "ar": "أين دورة المياه؟"
+            },
+            {
+              "en": "Excuse me, can you help me?",
+              "ar": "عذرًا، هل يمكنك مساعدتي؟"
+            },
+            {
+              "en": "I need a doctor.",
+              "ar": "أحتاج إلى طبيب."
+            }
+          ],
+          "why_ar": "المعنى الصحيح هو الذي يطابق العبارة الإنجليزية.",
+          "arab_tip": "اربط العبارة بموقف استخدامها لتسهيل التذكر."
+        },
+        {
+          "id": "u3-l6-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
+          "options": [
+            "عذرًا، هل يمكنك مساعدتي؟",
+            "أين دورة المياه؟",
+            "أحتاج إلى طبيب."
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "why_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "arab_tip": "حاول استرجاع العبارة من الذاكرة قبل النظر إلى الخيارات."
+        },
+        {
+          "id": "u3-l6-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "options": [
+            "أحتاج إلى طبيب.",
+            "أنا تائه.",
+            "أين دورة المياه؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "Excuse me, can you help me?",
+          "I'm lost. Where is the bathroom?"
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Lulu: Excuse me, can you help me?",
+        "Sara: Of course. What's wrong?",
+        "Lulu: I'm lost. Where is the bathroom?",
+        "Sara: It's over there."
+      ]
+    },
+    {
+      "id": "u3-l7",
+      "title_ar": "في المقهى",
+      "title_en": "At the Café",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l7-v1",
+          "en": "latte",
+          "ar": "لاتيه",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Can I have a latte, please?",
+          "example_ar": "هل يمكنني الحصول على لاتيه، من فضلك؟"
+        },
+        {
+          "id": "u3-l7-v2",
+          "en": "tea",
+          "ar": "شاي",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I'd like a tea.",
+          "example_ar": "أود شايًا."
+        },
+        {
+          "id": "u3-l7-v3",
+          "en": "price",
+          "ar": "السعر",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "How much is it?",
+          "example_ar": "كم سعره؟"
+        },
+        {
+          "id": "u3-l7-v4",
+          "en": "Here you go",
+          "ar": "تفضل",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Here you go.",
+          "example_ar": "تفضل."
+        }
+      ],
+      "phrases": [
+        {
+          "en": "Can I have a latte, please?",
+          "ar": "هل يمكنني الحصول على لاتيه، من فضلك؟"
+        },
+        {
+          "en": "I'd like a tea.",
+          "ar": "أود شايًا."
+        },
+        {
+          "en": "How much is it?",
+          "ar": "كم سعره؟"
+        },
+        {
+          "en": "Here you go.",
+          "ar": "تفضل."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Can I have a latte, please? (صياغة غير طبيعية)",
+          "right": "Can I have a latte, please?",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "I'd like a tea. (ترتيب غير صحيح)",
+          "right": "I'd like a tea.",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l7-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
+          "options": [
+            "هل يمكنني الحصول على لاتيه، من فضلك؟",
+            "أود شايًا.",
+            "كم سعره؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "why_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
+          "arab_tip": "تعلّم العبارة كوحدة واحدة ولا تترجم كل كلمة حرفيًا."
+        },
+        {
+          "id": "u3-l7-e2",
+          "type": "listening",
+          "prompt_ar": "استمع إلى العبارة واختر معناها:",
+          "audio_text": "I'd like a tea.",
+          "options": [
+            "أود شايًا.",
+            "هل يمكنني الحصول على لاتيه، من فضلك؟",
+            "تفضل."
+          ],
+          "answer": 0,
+          "feedback_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "why_ar": "استمع إلى الكلمات الأساسية ثم اختر المعنى المطابق.",
+          "arab_tip": "استمع إلى الجملة كاملة ولا تعتمد على كلمة واحدة فقط."
+        },
+        {
+          "id": "u3-l7-e3",
+          "type": "match",
+          "prompt_ar": "صِل العبارة بمعناها الصحيح:",
+          "pairs": [
+            {
+              "en": "Can I have a latte, please?",
+              "ar": "هل يمكنني الحصول على لاتيه، من فضلك؟"
+            },
+            {
+              "en": "I'd like a tea.",
+              "ar": "أود شايًا."
+            },
+            {
+              "en": "How much is it?",
+              "ar": "كم سعره؟"
+            }
+          ],
+          "why_ar": "كل عبارة لها معنى محدد يناسب الموقف.",
+          "arab_tip": "ابدأ بالكلمات التي تعرفها ثم أكمل المطابقة."
+        },
+        {
+          "id": "u3-l7-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب الكلمات لتكوين العبارة الصحيحة:",
+          "words": [
+            "please",
+            "latte",
+            "a",
+            "have",
+            "I",
+            "Can"
+          ],
+          "answer": [
+            "Can",
+            "I",
+            "have",
+            "a",
+            "latte",
+            "please"
+          ],
+          "why_ar": "ترتيب الكلمات في الإنجليزية يساعد على وضوح المعنى.",
+          "arab_tip": "ابدأ بالفاعل إن وُجد، ثم الفعل، ثم بقية الجملة."
+        },
+        {
+          "id": "u3-l7-e5",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
+          "options": [
+            "كم سعره؟",
+            "هل يمكنني الحصول على لاتيه، من فضلك؟",
+            "تفضل."
+          ],
+          "answer": 0,
+          "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "why_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
+          "arab_tip": "فكّر في الموقف قبل اختيار العبارة."
+        },
+        {
+          "id": "u3-l7-e6",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "Here you go.",
+          "options": [
+            "تفضل.",
+            "هل يمكنني الحصول على لاتيه، من فضلك؟",
+            "أود شايًا."
+          ],
+          "answer": 0,
+          "feedback_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "why_ar": "العبارة المسموعة تطابق الاختيار الصحيح.",
+          "arab_tip": "انتبه إلى الكلمات القصيرة ونهاية الجملة."
+        },
+        {
+          "id": "u3-l7-e7",
+          "type": "word_order",
+          "prompt_ar": "أعد ترتيب الكلمات لتكوين جملة طبيعية:",
+          "words": [
+            "tea",
+            "a",
+            "like",
+            "I'd"
+          ],
+          "answer": [
+            "I'd",
+            "like",
+            "a",
+            "tea"
+          ],
+          "why_ar": "الجملة الإنجليزية لها ترتيب ثابت نسبيًا.",
+          "arab_tip": "لا تنقل ترتيب الكلمات من العربية حرفيًا."
+        },
+        {
+          "id": "u3-l7-e8",
+          "type": "match",
+          "prompt_ar": "طابق العبارات مع المعاني:",
+          "pairs": [
+            {
+              "en": "How much is it?",
+              "ar": "كم سعره؟"
+            },
+            {
+              "en": "Can I have a latte, please?",
+              "ar": "هل يمكنني الحصول على لاتيه، من فضلك؟"
+            },
+            {
+              "en": "Here you go.",
+              "ar": "تفضل."
+            }
+          ],
+          "why_ar": "المعنى الصحيح هو الذي يطابق العبارة الإنجليزية.",
+          "arab_tip": "اربط العبارة بموقف استخدامها لتسهيل التذكر."
+        },
+        {
+          "id": "u3-l7-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
+          "options": [
+            "هل يمكنني الحصول على لاتيه، من فضلك؟",
+            "كم سعره؟",
+            "تفضل."
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "why_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
+          "arab_tip": "حاول استرجاع العبارة من الذاكرة قبل النظر إلى الخيارات."
+        },
+        {
+          "id": "u3-l7-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "options": [
+            "تفضل.",
+            "أود شايًا.",
+            "كم سعره؟"
+          ],
+          "answer": 0,
+          "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "Can I have a latte, please?",
+          "How much is it?"
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Lulu: Can I have a latte, please?",
+        "Sara: Sure. I'd like a tea.",
+        "Lulu: How much is it?",
+        "Sara: Six dollars. Here you go."
+      ]
+    },
+    {
+      "id": "u3-l8",
+      "title_ar": "مراجعة السفر",
+      "title_en": "Travel Challenge",
+      "objectives_ar": [
+        "استخدام العبارات الطبيعية في مواقف السفر",
+        "فهم الأسئلة والردود الشائعة بثقة"
+      ],
+      "vocabulary": [
+        {
+          "id": "u3-l8-v1",
+          "en": "passport",
+          "ar": "جواز السفر",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Here is my passport.",
+          "example_ar": "هذا جواز سفري.",
+          "image_emoji": "🛂",
+          "image_alt": "جواز السفر"
+        },
+        {
+          "id": "u3-l8-v2",
+          "en": "holiday",
+          "ar": "عطلة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I'm here on holiday.",
+          "example_ar": "أنا هنا في عطلة."
+        },
+        {
+          "id": "u3-l8-v3",
+          "en": "reservation",
+          "ar": "حجز",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "I have a reservation.",
+          "example_ar": "لدي حجز.",
+          "image_emoji": "🏨",
+          "image_alt": "حجز"
+        },
+        {
+          "id": "u3-l8-v4",
+          "en": "help",
+          "ar": "مساعدة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Can you help me?",
+          "example_ar": "هل يمكنك مساعدتي؟"
+        }
+      ],
+      "phrases": [
+        {
+          "en": "Here is my passport.",
+          "ar": "هذا جواز سفري."
+        },
+        {
+          "en": "I'm here on holiday.",
+          "ar": "أنا هنا في عطلة."
+        },
+        {
+          "en": "I have a reservation.",
+          "ar": "لدي حجز."
+        },
+        {
+          "en": "Can you help me?",
+          "ar": "هل يمكنك مساعدتي؟"
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Here is my passport. (صياغة غير طبيعية)",
+          "right": "Here is my passport.",
+          "explain_ar": "استخدم العبارة كما تُقال طبيعيًا في هذا الموقف.",
+          "arab_tip": "لا تترجم تركيب العربية حرفيًا؛ احفظ العبارة الإنجليزية كاملة."
+        },
+        {
+          "wrong": "I'm here on holiday. (ترتيب غير صحيح)",
+          "right": "I'm here on holiday.",
+          "explain_ar": "انتبه إلى ترتيب الكلمات وإلى الكلمات الصغيرة في العبارة.",
+          "arab_tip": "تدرّب على العبارة كاملة بصوت عالٍ."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "u3-l8-e1",
+          "type": "multiple_choice",
+          "prompt_ar": "في المطار، ماذا تقول عند تقديم جوازك؟",
+          "options": [
+            "Here is my passport.",
+            "I need a doctor.",
+            "I'd like a tea."
+          ],
+          "answer": 0,
+          "why_ar": "هذه العبارة مناسبة لتقديم جواز السفر.",
+          "arab_tip": "استخدم Here is عند تقديم شيء.",
+          "feedback_ar": "هذه العبارة مناسبة لتقديم جواز السفر."
+        },
+        {
+          "id": "u3-l8-e2",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة التي سمعتها:",
+          "audio_text": "I'm here on holiday.",
+          "options": [
+            "I'm here on holiday.",
+            "I have one suitcase.",
+            "Here you go."
+          ],
+          "answer": 0,
+          "why_ar": "هذه العبارة تشرح أن سبب الزيارة هو العطلة.",
+          "arab_tip": "on holiday تعبير شائع يعني في عطلة.",
+          "feedback_ar": "هذه العبارة تشرح أن سبب الزيارة هو العطلة."
+        },
+        {
+          "id": "u3-l8-e3",
+          "type": "multiple_choice",
+          "prompt_ar": "في الفندق، كيف تخبر الموظف أن لديك حجزًا؟",
+          "options": [
+            "I have a reservation.",
+            "Where is gate 5?",
+            "I'm lost."
+          ],
+          "answer": 0,
+          "why_ar": "reservation تعني حجزًا، وهذه صيغة طبيعية عند الوصول للفندق.",
+          "arab_tip": "احفظ I have a reservation كجملة جاهزة.",
+          "feedback_ar": "reservation تعني حجزًا، وهذه صيغة طبيعية عند الوصول للفندق."
+        },
+        {
+          "id": "u3-l8-e4",
+          "type": "word_order",
+          "prompt_ar": "رتّب كلمات السؤال:",
+          "words": [
+            "long",
+            "How",
+            "you",
+            "will",
+            "stay"
+          ],
+          "answer": [
+            "How",
+            "long",
+            "will",
+            "you",
+            "stay"
+          ],
+          "why_ar": "في سؤال How long يأتي الفعل المساعد will قبل الفاعل.",
+          "arab_tip": "في الأسئلة الإنجليزية انتبه لموقع الفعل المساعد."
+        },
+        {
+          "id": "u3-l8-e5",
+          "type": "match",
+          "prompt_ar": "طابق العبارة بمعناها:",
+          "pairs": [
+            {
+              "en": "Where is gate 5?",
+              "ar": "أين البوابة رقم 5؟"
+            },
+            {
+              "en": "I have one suitcase.",
+              "ar": "لدي حقيبة سفر واحدة."
+            },
+            {
+              "en": "I need a doctor.",
+              "ar": "أحتاج إلى طبيب."
+            }
+          ],
+          "why_ar": "كل عبارة ترتبط بموقف مختلف خلال الرحلة.",
+          "arab_tip": "اربط كل جملة بمكان استخدامها."
+        },
+        {
+          "id": "u3-l8-e6",
+          "type": "multiple_choice",
+          "prompt_ar": "في الطائرة، كيف تطلب الماء بأدب؟",
+          "options": [
+            "Can I have some water, please?",
+            "What time is breakfast?",
+            "How much is it?"
+          ],
+          "answer": 0,
+          "why_ar": "Can I have ... please? صيغة مهذبة لطلب شيء.",
+          "arab_tip": "إضافة please تجعل الطلب ألطف.",
+          "feedback_ar": "Can I have ... please? صيغة مهذبة لطلب شيء."
+        },
+        {
+          "id": "u3-l8-e7",
+          "type": "listening",
+          "prompt_ar": "استمع واختر المعنى الصحيح:",
+          "audio_text": "What time do we land?",
+          "options": [
+            "متى نهبط؟",
+            "كم ستبقى؟",
+            "أين دورة المياه؟"
+          ],
+          "answer": 0,
+          "why_ar": "land تعني يهبط، والسؤال عن وقت هبوط الطائرة.",
+          "arab_tip": "انتبه إلى الفعل land في سياق الطيران.",
+          "feedback_ar": "land تعني يهبط، والسؤال عن وقت هبوط الطائرة."
+        },
+        {
+          "id": "u3-l8-e8",
+          "type": "multiple_choice",
+          "prompt_ar": "في المقهى، ما العبارة المناسبة لطلب شاي؟",
+          "options": [
+            "I'd like a tea.",
+            "I am a student.",
+            "Here is my passport."
+          ],
+          "answer": 0,
+          "why_ar": "I'd like طريقة مهذبة للتعبير عما تود طلبه.",
+          "arab_tip": "I'd like اختصار I would like.",
+          "feedback_ar": "I'd like طريقة مهذبة للتعبير عما تود طلبه."
+        },
+        {
+          "id": "u3-l8-e9",
+          "type": "multiple_choice",
+          "prompt_ar": "ماذا تقول إذا ضعت في مكان جديد؟",
+          "options": [
+            "I'm lost.",
+            "I have a reservation.",
+            "Window seat, please."
+          ],
+          "answer": 0,
+          "why_ar": "I'm lost تعني أنني تائه وأحتاج إلى مساعدة.",
+          "arab_tip": "احفظ I'm lost كعبارة قصيرة لطلب المساعدة.",
+          "feedback_ar": "I'm lost تعني أنني تائه وأحتاج إلى مساعدة."
+        },
+        {
+          "id": "u3-l8-e10",
+          "type": "multiple_choice",
+          "prompt_ar": "ما العبارة المناسبة عند تقديم شيء؟",
+          "options": [
+            "Here you go.",
+            "How long will you stay?",
+            "What is the purpose of your visit?"
+          ],
+          "answer": 0,
+          "why_ar": "Here you go تُقال عند إعطاء شيء لشخص.",
+          "arab_tip": "يمكنك استخدامها عند تسليم الطلب أو إعطاء غرض.",
+          "feedback_ar": "Here you go تُقال عند إعطاء شيء لشخص."
+        }
+      ],
+      "speaking": {
+        "prompt_ar": "استمع إلى الحوار ثم كرّر عبارات لولو بصوت واضح.",
+        "repeat": [
+          "Yes! Here is my passport.",
+          "I'm here on holiday for one week.",
+          "Can you help me find gate 5?"
+        ],
+        "repeat_ar": [
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار.",
+          "دور لولو في الحوار."
+        ]
+      },
+      "dialogue": [
+        "Sara: Are you ready for our trip?",
+        "Lulu: Yes! Here is my passport.",
+        "Sara: What is the purpose of your visit?",
+        "Lulu: I'm here on holiday for one week.",
+        "Sara: I have a hotel reservation.",
+        "Lulu: Can you help me find gate 5?",
+        "Sara: Of course. Let's have a tea after we land."
+      ]
+    }
+  ],
+  "unit_test": {
+    "title_ar": "اختبار وحدة السفر",
+    "title_en": "Travel Unit Test",
+    "pass_score_percent": 80,
+    "xp": 60,
+    "questions": [
+      {
+        "id": "u3-test-1",
+        "type": "multiple_choice",
+        "prompt_ar": "في المطار، كيف تقدم جوازك؟",
+        "options": [
+          "Here is my passport.",
+          "I need a doctor.",
+          "I'd like a tea."
+        ],
+        "answer": 0,
+        "why_ar": "نستخدم Here is عند تقديم شيء.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "نستخدم Here is عند تقديم شيء."
+      },
+      {
+        "id": "u3-test-2",
+        "type": "multiple_choice",
+        "prompt_ar": "ماذا تعني I have one suitcase؟",
+        "options": [
+          "لدي حقيبة سفر واحدة.",
+          "لدي حجز.",
+          "أنا تائه."
+        ],
+        "answer": 0,
+        "why_ar": "suitcase تعني حقيبة سفر.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "suitcase تعني حقيبة سفر."
+      },
+      {
+        "id": "u3-test-3",
+        "type": "multiple_choice",
+        "prompt_ar": "ما السؤال عن البوابة؟",
+        "options": [
+          "Where is gate 5?",
+          "What time is breakfast?",
+          "How long will you stay?"
+        ],
+        "answer": 0,
+        "why_ar": "نستخدم Where is للسؤال عن المكان.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "نستخدم Where is للسؤال عن المكان."
+      },
+      {
+        "id": "u3-test-4",
+        "type": "multiple_choice",
+        "prompt_ar": "ما الإجابة المناسبة عن سبب الزيارة؟",
+        "options": [
+          "I'm here on holiday.",
+          "For one week.",
+          "Here you go."
+        ],
+        "answer": 0,
+        "why_ar": "هذه العبارة تشرح سبب الزيارة.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "هذه العبارة تشرح سبب الزيارة."
+      },
+      {
+        "id": "u3-test-5",
+        "type": "multiple_choice",
+        "prompt_ar": "كيف تسأل عن مدة الإقامة؟",
+        "options": [
+          "How long will you stay?",
+          "What time do we land?",
+          "How much is it?"
+        ],
+        "answer": 0,
+        "why_ar": "How long يسأل عن المدة.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "How long يسأل عن المدة."
+      },
+      {
+        "id": "u3-test-6",
+        "type": "multiple_choice",
+        "prompt_ar": "كيف تطلب الماء بأدب؟",
+        "options": [
+          "Can I have some water, please?",
+          "I have a reservation.",
+          "I'm lost."
+        ],
+        "answer": 0,
+        "why_ar": "Can I have صيغة مهذبة للطلب.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "Can I have صيغة مهذبة للطلب."
+      },
+      {
+        "id": "u3-test-7",
+        "type": "multiple_choice",
+        "prompt_ar": "ماذا تعني I have a reservation؟",
+        "options": [
+          "لدي حجز.",
+          "أحتاج إلى طبيب.",
+          "أين دورة المياه؟"
+        ],
+        "answer": 0,
+        "why_ar": "reservation تعني حجز.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "reservation تعني حجز."
+      },
+      {
+        "id": "u3-test-8",
+        "type": "multiple_choice",
+        "prompt_ar": "اختر الجملة الصحيحة:",
+        "options": [
+          "I am student.",
+          "I am a student.",
+          "I student am."
+        ],
+        "answer": 1,
+        "why_ar": "نحتاج a قبل الاسم المفرد المعدود.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "نحتاج a قبل الاسم المفرد المعدود."
+      },
+      {
+        "id": "u3-test-9",
+        "type": "multiple_choice",
+        "prompt_ar": "اختر العبارة الصحيحة:",
+        "options": [
+          "I am agree.",
+          "I agree.",
+          "I have agree."
+        ],
+        "answer": 1,
+        "why_ar": "agree فعل ولا يسبقه am.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "agree فعل ولا يسبقه am."
+      },
+      {
+        "id": "u3-test-10",
+        "type": "multiple_choice",
+        "prompt_ar": "كيف تقول عمري 25 سنة؟",
+        "options": [
+          "I have 25 years.",
+          "I am 25 years old.",
+          "I am 25 year."
+        ],
+        "answer": 1,
+        "why_ar": "العمر يستخدم am وyears old.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "العمر يستخدم am وyears old."
+      },
+      {
+        "id": "u3-test-11",
+        "type": "multiple_choice",
+        "prompt_ar": "ما التعبير الصحيح؟",
+        "options": [
+          "go to home",
+          "go home",
+          "go at home"
+        ],
+        "answer": 1,
+        "why_ar": "لا نستخدم to قبل home في هذا التعبير.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "لا نستخدم to قبل home في هذا التعبير."
+      },
+      {
+        "id": "u3-test-12",
+        "type": "multiple_choice",
+        "prompt_ar": "اختر أداة التعريف لشيء محدد معروف:",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answer": 2,
+        "why_ar": "نستخدم the لشيء محدد أو معروف للطرفين.",
+        "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
+        "feedback_ar": "نستخدم the لشيء محدد أو معروف للطرفين."
+      }
+    ]
+  }
+}
