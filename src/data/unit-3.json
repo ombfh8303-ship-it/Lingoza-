@@ -853,8 +853,7 @@
           "example_en": "I have a reservation.",
           "example_ar": "لدي حجز.",
           "image_emoji": "🏨",
-          "image_alt": "حجز",
-          "image_src": "/travel-hotel.svg"
+          "image_alt": "حجز"
         },
         {
           "id": "u3-l4-v2",
@@ -1928,8 +1927,7 @@
           "example_en": "I have a reservation.",
           "example_ar": "لدي حجز.",
           "image_emoji": "🏨",
-          "image_alt": "حجز",
-          "image_src": "/travel-hotel.svg"
+          "image_alt": "حجز"
         },
         {
           "id": "u3-l8-v4",
