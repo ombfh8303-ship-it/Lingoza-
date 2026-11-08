@@ -32,7 +32,8 @@
           "example_en": "Here is my passport.",
           "example_ar": "هذا جواز سفري.",
           "image_emoji": "🛂",
-          "image_alt": "جواز السفر"
+          "image_alt": "جواز السفر",
+          "image_src": "/travel-passport.svg"
         },
         {
           "id": "u3-l1-v2",
@@ -42,7 +43,8 @@
           "example_en": "I have one suitcase.",
           "example_ar": "لدي حقيبة سفر واحدة.",
           "image_emoji": "🧳",
-          "image_alt": "حقيبة سفر"
+          "image_alt": "حقيبة سفر",
+          "image_src": "/travel-suitcase.svg"
         },
         {
           "id": "u3-l1-v3",
@@ -596,6 +598,16 @@
           "pron_ar": "استمع إلى النطق",
           "example_en": "Could you help me with my bag?",
           "example_ar": "هل يمكنك مساعدتي في حقيبتي؟"
+        },
+        {
+          "id": "u3-l3-v5",
+          "en": "airplane",
+          "ar": "طائرة",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "The airplane is ready.",
+          "example_ar": "الطائرة جاهزة.",
+          "image_src": "/travel-plane.svg",
+          "image_alt": "طائرة"
         }
       ],
       "phrases": [
@@ -841,7 +853,8 @@
           "example_en": "I have a reservation.",
           "example_ar": "لدي حجز.",
           "image_emoji": "🏨",
-          "image_alt": "حجز"
+          "image_alt": "حجز",
+          "image_src": "/travel-hotel.svg"
         },
         {
           "id": "u3-l4-v2",
@@ -866,6 +879,16 @@
           "pron_ar": "استمع إلى النطق",
           "example_en": "What time is check-out?",
           "example_ar": "في أي وقت تسجيل المغادرة؟"
+        },
+        {
+          "id": "u3-l4-v4",
+          "en": "hotel",
+          "ar": "فندق",
+          "pron_ar": "استمع إلى النطق",
+          "example_en": "Our hotel is near the airport.",
+          "example_ar": "فندقنا قريب من المطار.",
+          "image_src": "/travel-hotel.svg",
+          "image_alt": "فندق"
         }
       ],
       "phrases": [
@@ -1886,7 +1909,8 @@
           "example_en": "Here is my passport.",
           "example_ar": "هذا جواز سفري.",
           "image_emoji": "🛂",
-          "image_alt": "جواز السفر"
+          "image_alt": "جواز السفر",
+          "image_src": "/travel-passport.svg"
         },
         {
           "id": "u3-l8-v2",
@@ -1904,7 +1928,8 @@
           "example_en": "I have a reservation.",
           "example_ar": "لدي حجز.",
           "image_emoji": "🏨",
-          "image_alt": "حجز"
+          "image_alt": "حجز",
+          "image_src": "/travel-hotel.svg"
         },
         {
           "id": "u3-l8-v4",
