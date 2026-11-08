@@ -2501,3 +2501,11 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 .iu-travel-why p{margin:0;font:700 14px/1.8 'Tajawal',sans-serif}
 .iu-travel-why>button{justify-self:start;padding:7px 12px;border:1px solid #b8d9c5;border-radius:10px;background:#fff;color:#167653;font:900 13px 'Tajawal',sans-serif}
 .iu-travel-why-detail{padding:9px 11px;border-radius:10px;background:#edf7f0;font:700 13px/1.8 'Tajawal',sans-serif;color:#476b55}
+
+.iu-travel-turn-label{display:block;width:max-content;margin:0 auto 8px;padding:5px 10px;border-radius:99px;background:#fff4df;color:#946321;font:900 12px 'Tajawal',sans-serif}
+.iu-travel-dialogue{display:grid;gap:9px;margin:12px 0 18px}
+.iu-travel-dialogue-line{display:grid;gap:5px;max-width:92%;padding:11px 13px;border-radius:14px;border:1px solid #e4ebe6;background:#f7faf8}
+.iu-travel-dialogue-line.lulu{justify-self:start;border-color:#f2d9b8;background:#fff8ee}
+.iu-travel-dialogue-line.sara{justify-self:end;border-color:#e2d8f2;background:#f8f5ff}
+.iu-travel-dialogue-line>span{font:900 11px 'Tajawal',sans-serif;color:#6b7e72}
+.iu-travel-dialogue-line>bdi{font:700 14px/1.6 'DM Sans',sans-serif;text-align:start;direction:ltr;unicode-bidi:isolate;color:#29483b}
