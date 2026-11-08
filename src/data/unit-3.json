@@ -103,9 +103,9 @@
           "type": "multiple_choice",
           "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
           "options": [
-            "هذا جواز سفري.",
-            "لدي حقيبة سفر واحدة.",
-            "أين البوابة رقم 5؟"
+            "Here is my passport.",
+            "I have one suitcase.",
+            "Where is gate 5?"
           ],
           "answer": 0,
           "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
@@ -172,9 +172,9 @@
           "type": "multiple_choice",
           "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
           "options": [
-            "أين البوابة رقم 5؟",
-            "هذا جواز سفري.",
-            "مقعد بجانب النافذة، من فضلك."
+            "Where is gate 5?",
+            "Window seat, please.",
+            "Here is my passport."
           ],
           "answer": 0,
           "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
@@ -241,9 +241,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
           "options": [
-            "هذا جواز سفري.",
-            "أين البوابة رقم 5؟",
-            "مقعد بجانب النافذة، من فضلك."
+            "Here is my passport.",
+            "I have one suitcase.",
+            "Where is gate 5?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
@@ -255,9 +255,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
           "options": [
-            "مقعد بجانب النافذة، من فضلك.",
-            "لدي حقيبة سفر واحدة.",
-            "أين البوابة رقم 5؟"
+            "Window seat, please.",
+            "Here is my passport.",
+            "I have one suitcase."
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
@@ -366,9 +366,9 @@
           "type": "multiple_choice",
           "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
           "options": [
-            "ما الغرض من زيارتك؟",
-            "أنا هنا في عطلة.",
-            "كم ستبقى؟"
+            "What is the purpose of your visit?",
+            "I'm here on holiday.",
+            "How long will you stay?"
           ],
           "answer": 0,
           "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
@@ -441,9 +441,9 @@
           "type": "multiple_choice",
           "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
           "options": [
-            "كم ستبقى؟",
-            "ما الغرض من زيارتك؟",
-            "لمدة أسبوع واحد."
+            "How long will you stay?",
+            "For one week.",
+            "What is the purpose of your visit?"
           ],
           "answer": 0,
           "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
@@ -510,9 +510,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
           "options": [
-            "ما الغرض من زيارتك؟",
-            "كم ستبقى؟",
-            "لمدة أسبوع واحد."
+            "What is the purpose of your visit?",
+            "I'm here on holiday.",
+            "How long will you stay?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
@@ -524,9 +524,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
           "options": [
-            "لمدة أسبوع واحد.",
-            "أنا هنا في عطلة.",
-            "كم ستبقى؟"
+            "For one week.",
+            "What is the purpose of your visit?",
+            "I'm here on holiday."
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
@@ -636,9 +636,9 @@
           "type": "multiple_choice",
           "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
           "options": [
-            "عذرًا، هذا مقعدي.",
-            "هل يمكنني الحصول على بعض الماء، من فضلك؟",
-            "متى نهبط؟"
+            "Excuse me, this is my seat.",
+            "Can I have some water, please?",
+            "What time do we land?"
           ],
           "answer": 0,
           "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
@@ -709,9 +709,9 @@
           "type": "multiple_choice",
           "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
           "options": [
-            "متى نهبط؟",
-            "عذرًا، هذا مقعدي.",
-            "هل يمكنك مساعدتي في حقيبتي؟"
+            "What time do we land?",
+            "Could you help me with my bag?",
+            "Excuse me, this is my seat."
           ],
           "answer": 0,
           "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
@@ -782,9 +782,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
           "options": [
-            "عذرًا، هذا مقعدي.",
-            "متى نهبط؟",
-            "هل يمكنك مساعدتي في حقيبتي؟"
+            "Excuse me, this is my seat.",
+            "Can I have some water, please?",
+            "What time do we land?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
@@ -796,9 +796,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
           "options": [
-            "هل يمكنك مساعدتي في حقيبتي؟",
-            "هل يمكنني الحصول على بعض الماء، من فضلك؟",
-            "متى نهبط؟"
+            "Could you help me with my bag?",
+            "Excuse me, this is my seat.",
+            "Can I have some water, please?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
@@ -906,9 +906,9 @@
           "type": "multiple_choice",
           "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
           "options": [
-            "لدي حجز.",
-            "في أي وقت الإفطار؟",
-            "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+            "I have a reservation.",
+            "What time is breakfast?",
+            "Can I have the Wi-Fi password?"
           ],
           "answer": 0,
           "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
@@ -975,9 +975,9 @@
           "type": "multiple_choice",
           "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
           "options": [
-            "هل يمكنني الحصول على كلمة مرور الواي فاي؟",
-            "لدي حجز.",
-            "في أي وقت تسجيل المغادرة؟"
+            "Can I have the Wi-Fi password?",
+            "What time is check-out?",
+            "I have a reservation."
           ],
           "answer": 0,
           "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
@@ -1044,9 +1044,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
           "options": [
-            "لدي حجز.",
-            "هل يمكنني الحصول على كلمة مرور الواي فاي؟",
-            "في أي وقت تسجيل المغادرة؟"
+            "I have a reservation.",
+            "What time is breakfast?",
+            "Can I have the Wi-Fi password?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
@@ -1058,9 +1058,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
           "options": [
-            "في أي وقت تسجيل المغادرة؟",
-            "في أي وقت الإفطار؟",
-            "هل يمكنني الحصول على كلمة مرور الواي فاي؟"
+            "What time is check-out?",
+            "I have a reservation.",
+            "What time is breakfast?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
@@ -1425,9 +1425,9 @@
           "type": "multiple_choice",
           "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
           "options": [
-            "عذرًا، هل يمكنك مساعدتي؟",
-            "أنا تائه.",
-            "أين دورة المياه؟"
+            "Excuse me, can you help me?",
+            "I'm lost.",
+            "Where is the bathroom?"
           ],
           "answer": 0,
           "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
@@ -1498,9 +1498,9 @@
           "type": "multiple_choice",
           "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
           "options": [
-            "أين دورة المياه؟",
-            "عذرًا، هل يمكنك مساعدتي؟",
-            "أحتاج إلى طبيب."
+            "Where is the bathroom?",
+            "I need a doctor.",
+            "Excuse me, can you help me?"
           ],
           "answer": 0,
           "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
@@ -1563,9 +1563,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
           "options": [
-            "عذرًا، هل يمكنك مساعدتي؟",
-            "أين دورة المياه؟",
-            "أحتاج إلى طبيب."
+            "Excuse me, can you help me?",
+            "I'm lost.",
+            "Where is the bathroom?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
@@ -1577,9 +1577,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
           "options": [
-            "أحتاج إلى طبيب.",
-            "أنا تائه.",
-            "أين دورة المياه؟"
+            "I need a doctor.",
+            "Excuse me, can you help me?",
+            "I'm lost."
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
@@ -1685,9 +1685,9 @@
           "type": "multiple_choice",
           "prompt_ar": "اختر العبارة الإنجليزية المناسبة:",
           "options": [
-            "هل يمكنني الحصول على لاتيه، من فضلك؟",
-            "أود شايًا.",
-            "كم سعره؟"
+            "Can I have a latte, please?",
+            "I'd like a tea.",
+            "How much is it?"
           ],
           "answer": 0,
           "feedback_ar": "هذه هي العبارة الطبيعية المستخدمة في هذا الموقف.",
@@ -1758,9 +1758,9 @@
           "type": "multiple_choice",
           "prompt_ar": "ما العبارة الأنسب في هذا الموقف؟",
           "options": [
-            "كم سعره؟",
-            "هل يمكنني الحصول على لاتيه، من فضلك؟",
-            "تفضل."
+            "How much is it?",
+            "Here you go.",
+            "Can I have a latte, please?"
           ],
           "answer": 0,
           "feedback_ar": "اختر العبارة التي تناسب الموقف والمعنى المقصود.",
@@ -1827,9 +1827,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي تذكّر: اختر العبارة الصحيحة:",
           "options": [
-            "هل يمكنني الحصول على لاتيه، من فضلك؟",
-            "كم سعره؟",
-            "تفضل."
+            "Can I have a latte, please?",
+            "I'd like a tea.",
+            "How much is it?"
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة من أهم عبارات الدرس وستفيدك في السفر.",
@@ -1841,9 +1841,9 @@
           "type": "multiple_choice",
           "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
           "options": [
-            "تفضل.",
-            "أود شايًا.",
-            "كم سعره؟"
+            "Here you go.",
+            "Can I have a latte, please?",
+            "I'd like a tea."
           ],
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
