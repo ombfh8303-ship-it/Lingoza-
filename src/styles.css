@@ -2496,7 +2496,7 @@ button:focus-visible{outline:3px solid #a9cb92;outline-offset:3px}
 
 
 /* Travel unit: tangible vocabulary cards and gentle why feedback */
-.iu-travel-vocab-image{display:grid;place-items:center;width:112px;height:92px;margin:12px auto;border-radius:20px;background:linear-gradient(145deg,#eef8f3,#fff8e9);font-size:54px;box-shadow:0 8px 22px rgba(37,90,66,.09)}
+.iu-travel-vocab-image{display:block;width:180px;height:132px;object-fit:contain;margin:12px auto;border-radius:20px;background:linear-gradient(145deg,#eef8f3,#fff8e9);font-size:54px;box-shadow:0 8px 22px rgba(37,90,66,.09)}
 .iu-travel-why{display:grid;gap:8px;margin:12px 0;padding:12px 14px;border:1px solid #d9e9df;border-radius:14px;background:#f7fbf8;color:#365d49}
 .iu-travel-why p{margin:0;font:700 14px/1.8 'Tajawal',sans-serif}
 .iu-travel-why>button{justify-self:start;padding:7px 12px;border:1px solid #b8d9c5;border-radius:10px;background:#fff;color:#167653;font:900 13px 'Tajawal',sans-serif}
