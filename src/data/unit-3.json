@@ -254,8 +254,8 @@
         },
         {
           "id": "u3-l1-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "Window seat, please.",
             "Here is my passport.",
@@ -264,7 +264,8 @@
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
           "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
-          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح.",
+          "audio_text": "Window seat, please."
         }
       ],
       "speaking": {
@@ -523,8 +524,8 @@
         },
         {
           "id": "u3-l2-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "For one week.",
             "What is the purpose of your visit?",
@@ -533,7 +534,8 @@
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
           "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
-          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح.",
+          "audio_text": "For one week."
         }
       ],
       "speaking": {
@@ -805,8 +807,8 @@
         },
         {
           "id": "u3-l3-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "Could you help me with my bag?",
             "Excuse me, this is my seat.",
@@ -815,7 +817,8 @@
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
           "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
-          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح.",
+          "audio_text": "Could you help me with my bag?"
         }
       ],
       "speaking": {
@@ -1077,8 +1080,8 @@
         },
         {
           "id": "u3-l4-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "What time is check-out?",
             "I have a reservation.",
@@ -1087,7 +1090,8 @@
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
           "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
-          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح.",
+          "audio_text": "What time is check-out?"
         }
       ],
       "speaking": {
@@ -1219,8 +1223,8 @@
         },
         {
           "id": "u3-l5-e2",
-          "type": "multiple_choice",
-          "prompt_ar": "اختر العبارة الصحيحة للموافقة:",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "I am agree.",
             "I agree.",
@@ -1229,7 +1233,8 @@
           "answer": 1,
           "why_ar": "agree فعل، لذلك لا نضع am قبله.",
           "arab_tip": "لا تضف am لمجرد أن المعنى بالعربية يبدأ بكلمة «أنا».",
-          "feedback_ar": "agree فعل، لذلك لا نضع am قبله."
+          "feedback_ar": "agree فعل، لذلك لا نضع am قبله.",
+          "audio_text": "I agree."
         },
         {
           "id": "u3-l5-e3",
@@ -1247,8 +1252,8 @@
         },
         {
           "id": "u3-l5-e4",
-          "type": "multiple_choice",
-          "prompt_ar": "اختر التعبير الطبيعي:",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "go to home",
             "go home",
@@ -1257,7 +1262,8 @@
           "answer": 1,
           "why_ar": "نقول go home دون to؛ فكلمة home هنا ظرف اتجاه.",
           "arab_tip": "احفظ go home كوحدة ثابتة ولا تضف to.",
-          "feedback_ar": "نقول go home دون to؛ فكلمة home هنا ظرف اتجاه."
+          "feedback_ar": "نقول go home دون to؛ فكلمة home هنا ظرف اتجاه.",
+          "audio_text": "go home"
         },
         {
           "id": "u3-l5-e5",
@@ -1275,8 +1281,8 @@
         },
         {
           "id": "u3-l5-e6",
-          "type": "multiple_choice",
-          "prompt_ar": "اختر أداة النكرة المناسبة: ___ student",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "a",
             "an",
@@ -1285,7 +1291,8 @@
           "answer": 0,
           "why_ar": "student تبدأ بصوت ساكن، لذلك نستخدم a.",
           "arab_tip": "استخدم a قبل الصوت الساكن، وan قبل الصوت المتحرك.",
-          "feedback_ar": "student تبدأ بصوت ساكن، لذلك نستخدم a."
+          "feedback_ar": "student تبدأ بصوت ساكن، لذلك نستخدم a.",
+          "audio_text": "a"
         },
         {
           "id": "u3-l5-e7",
@@ -1336,8 +1343,8 @@
         },
         {
           "id": "u3-l5-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: اختر الجملة الصحيحة:",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "I am 25 years old.",
             "I have 25 years.",
@@ -1346,7 +1353,8 @@
           "answer": 0,
           "why_ar": "نستخدم am مع العمر، وyears تأتي بصيغة الجمع بعد 25.",
           "arab_tip": "تذكّر صيغة العمر كاملة: I am + number + years old.",
-          "feedback_ar": "نستخدم am مع العمر، وyears تأتي بصيغة الجمع بعد 25."
+          "feedback_ar": "نستخدم am مع العمر، وyears تأتي بصيغة الجمع بعد 25.",
+          "audio_text": "I am 25 years old."
         }
       ],
       "speaking": {
@@ -1596,8 +1604,8 @@
         },
         {
           "id": "u3-l6-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "I need a doctor.",
             "Excuse me, can you help me?",
@@ -1606,7 +1614,8 @@
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
           "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
-          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح.",
+          "audio_text": "I need a doctor."
         }
       ],
       "speaking": {
@@ -1860,8 +1869,8 @@
         },
         {
           "id": "u3-l7-e10",
-          "type": "multiple_choice",
-          "prompt_ar": "تحدي الختام: أي عبارة تناسب الحوار؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "Here you go.",
             "Can I have a latte, please?",
@@ -1870,7 +1879,8 @@
           "answer": 0,
           "feedback_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
           "why_ar": "هذه العبارة تكمل الحوار بطريقة طبيعية.",
-          "arab_tip": "تدرّب على قول العبارة بصوت واضح."
+          "arab_tip": "تدرّب على قول العبارة بصوت واضح.",
+          "audio_text": "Here you go."
         }
       ],
       "speaking": {
@@ -2101,8 +2111,8 @@
         },
         {
           "id": "u3-l8-e9",
-          "type": "multiple_choice",
-          "prompt_ar": "ماذا تقول إذا ضعت في مكان جديد؟",
+          "type": "listening",
+          "prompt_ar": "استمع واختر العبارة الصحيحة:",
           "options": [
             "I'm lost.",
             "I have a reservation.",
@@ -2111,7 +2121,8 @@
           "answer": 0,
           "why_ar": "I'm lost تعني أنني تائه وأحتاج إلى مساعدة.",
           "arab_tip": "احفظ I'm lost كعبارة قصيرة لطلب المساعدة.",
-          "feedback_ar": "I'm lost تعني أنني تائه وأحتاج إلى مساعدة."
+          "feedback_ar": "I'm lost تعني أنني تائه وأحتاج إلى مساعدة.",
+          "audio_text": "I'm lost."
         },
         {
           "id": "u3-l8-e10",
@@ -2174,8 +2185,8 @@
       },
       {
         "id": "u3-test-2",
-        "type": "multiple_choice",
-        "prompt_ar": "ماذا تعني I have one suitcase؟",
+        "type": "listening",
+        "prompt_ar": "استمع واختر الإجابة الصحيحة: ماذا تعني I have one suitcase؟",
         "options": [
           "لدي حقيبة سفر واحدة.",
           "لدي حجز.",
@@ -2184,7 +2195,8 @@
         "answer": 0,
         "why_ar": "suitcase تعني حقيبة سفر.",
         "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
-        "feedback_ar": "suitcase تعني حقيبة سفر."
+        "feedback_ar": "suitcase تعني حقيبة سفر.",
+        "audio_text": "لدي حقيبة سفر واحدة."
       },
       {
         "id": "u3-test-3",
@@ -2202,8 +2214,8 @@
       },
       {
         "id": "u3-test-4",
-        "type": "multiple_choice",
-        "prompt_ar": "ما الإجابة المناسبة عن سبب الزيارة؟",
+        "type": "listening",
+        "prompt_ar": "استمع واختر الإجابة الصحيحة: ما الإجابة المناسبة عن سبب الزيارة؟",
         "options": [
           "I'm here on holiday.",
           "For one week.",
@@ -2212,7 +2224,8 @@
         "answer": 0,
         "why_ar": "هذه العبارة تشرح سبب الزيارة.",
         "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
-        "feedback_ar": "هذه العبارة تشرح سبب الزيارة."
+        "feedback_ar": "هذه العبارة تشرح سبب الزيارة.",
+        "audio_text": "I'm here on holiday."
       },
       {
         "id": "u3-test-5",
@@ -2230,8 +2243,8 @@
       },
       {
         "id": "u3-test-6",
-        "type": "multiple_choice",
-        "prompt_ar": "كيف تطلب الماء بأدب؟",
+        "type": "listening",
+        "prompt_ar": "استمع واختر الإجابة الصحيحة: كيف تطلب الماء بأدب؟",
         "options": [
           "Can I have some water, please?",
           "I have a reservation.",
@@ -2240,7 +2253,8 @@
         "answer": 0,
         "why_ar": "Can I have صيغة مهذبة للطلب.",
         "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
-        "feedback_ar": "Can I have صيغة مهذبة للطلب."
+        "feedback_ar": "Can I have صيغة مهذبة للطلب.",
+        "audio_text": "Can I have some water, please?"
       },
       {
         "id": "u3-test-7",
@@ -2258,8 +2272,8 @@
       },
       {
         "id": "u3-test-8",
-        "type": "multiple_choice",
-        "prompt_ar": "اختر الجملة الصحيحة:",
+        "type": "listening",
+        "prompt_ar": "استمع واختر الإجابة الصحيحة: اختر الجملة الصحيحة:",
         "options": [
           "I am student.",
           "I am a student.",
@@ -2268,7 +2282,8 @@
         "answer": 1,
         "why_ar": "نحتاج a قبل الاسم المفرد المعدود.",
         "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
-        "feedback_ar": "نحتاج a قبل الاسم المفرد المعدود."
+        "feedback_ar": "نحتاج a قبل الاسم المفرد المعدود.",
+        "audio_text": "I am a student."
       },
       {
         "id": "u3-test-9",
@@ -2286,8 +2301,8 @@
       },
       {
         "id": "u3-test-10",
-        "type": "multiple_choice",
-        "prompt_ar": "كيف تقول عمري 25 سنة؟",
+        "type": "listening",
+        "prompt_ar": "استمع واختر الإجابة الصحيحة: كيف تقول عمري 25 سنة؟",
         "options": [
           "I have 25 years.",
           "I am 25 years old.",
@@ -2296,7 +2311,8 @@
         "answer": 1,
         "why_ar": "العمر يستخدم am وyears old.",
         "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
-        "feedback_ar": "العمر يستخدم am وyears old."
+        "feedback_ar": "العمر يستخدم am وyears old.",
+        "audio_text": "I am 25 years old."
       },
       {
         "id": "u3-test-11",
@@ -2314,8 +2330,8 @@
       },
       {
         "id": "u3-test-12",
-        "type": "multiple_choice",
-        "prompt_ar": "اختر أداة التعريف لشيء محدد معروف:",
+        "type": "listening",
+        "prompt_ar": "استمع واختر الإجابة الصحيحة: اختر أداة التعريف لشيء محدد معروف:",
         "options": [
           "a",
           "an",
@@ -2324,7 +2340,8 @@
         "answer": 2,
         "why_ar": "نستخدم the لشيء محدد أو معروف للطرفين.",
         "arab_tip": "اقرأ الجملة كاملة وانتبه إلى تركيبها، لا إلى ترجمتها الحرفية.",
-        "feedback_ar": "نستخدم the لشيء محدد أو معروف للطرفين."
+        "feedback_ar": "نستخدم the لشيء محدد أو معروف للطرفين.",
+        "audio_text": "the"
       }
     ]
   }
